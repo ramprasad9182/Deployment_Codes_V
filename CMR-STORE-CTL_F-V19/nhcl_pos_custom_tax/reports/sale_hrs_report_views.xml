@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Customise the view_report_pos_order_pivot  -->
+    <record id="view_report_pos_order_pivot_inh" model="ir.ui.view">
+        <field name="name">report.pos.order.pivot</field>
+        <field name="model">report.pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_report_pos_order_pivot" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_qty']" position="replace" />
+        </field>
+    </record>
+    <record id="point_of_sale.action_report_pos_order_all" model="ir.actions.act_window">
+        <field name="view_id" ref="point_of_sale.view_report_pos_order_pivot" />
+    </record>
+    <record id="view_report_hourly_sale_pivot" model="ir.ui.view">
+        <field name="name">report.hourly.sale.pivot</field>
+        <field name="model">report.pos.order</field>
+        <field name="arch" type="xml">
+            <pivot string="Hourly Sales Report" disable_linking="True">
+                <field name="date" interval="day" type="col" />
+                <field name="price_total" type="measure" />
+            </pivot>
+        </field>
+    </record>
+    <record id="view_stock_product_tree2_inh" model="ir.ui.view">
+        <field name="name">product.stock.tree.2.inh</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="stock.view_stock_product_tree" />
+        <field name="arch" type="xml">
+            <field name="qty_available" position="after">
+                <field name="standard_price" sum="Total" />
+            </field>
+        </field>
+    </record>
+</odoo>

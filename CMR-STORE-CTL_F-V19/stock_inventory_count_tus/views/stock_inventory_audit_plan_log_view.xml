@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+     <record id="replications_audit_graph_view" model="ir.ui.view">
+        <field name="name">Source Performance Analysis</field>
+        <field name="model">nhcl.audit.replication.log</field>
+        <field name="arch" type="xml">
+            <graph string="Source Performance Analysis" type="bar">
+                <field name="nhcl_date_of_log" interval="month"/>
+                <field name="nhcl_destination_name"/>
+            </graph>
+        </field>
+    </record>
+    <record id="cmr_audit_replication_log_tree_view" model="ir.ui.view">
+        <field name="name">nhcl.audit.replication.log.tree</field>
+        <field name="model">nhcl.audit.replication.log</field>
+        <field name="arch" type="xml">
+            <tree string="Audit Replication Log" create="0" expand
+                    ="1">
+                <!--                  decoration-info="nhcl_source_id == False and nhcl_source_name == False and nhcl_status =='success'" decoration-danger="nhcl_source_id == False and nhcl_source_name == False and nhcl_status =='failure'"-->
+                <!--            >-->
+                <field name="nhcl_serial_no" readonly="1" force_save="1"/>
+                <field name="nhcl_date_of_log" readonly="1" force_save="1"/>
+<!--                <field name="nhcl_source_id" readonly="1" force_save="1"/>-->
+                <field name="nhcl_source_name" readonly="1" string="Source" force_save="1"/>
+<!--                <field name="nhcl_destination_id" readonly="1" force_save="1"/>-->
+                <field name="nhcl_destination_name" readonly="1" string="Destination" force_save="1"/>
+                <field name="nhcl_model" readonly="1" force_save="1"/>
+                <field name="nhcl_record_id" readonly="1" force_save="1"/>
+                <field name="nhcl_function_required" readonly="1" string="Function Req." force_save="1"/>
+                <field name="nhcl_status_code" readonly="1" force_save="1"/>
+                <field name="nhcl_status" readonly="1" force_save="1"/>
+                <field name="nhcl_details_status" readonly="1" force_save="1"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="action_cmr_audit_replication_log" model="ir.actions.act_window">
+        <field name="name">Audit Replication Log</field>
+        <field name="res_model">nhcl.audit.replication.log</field>
+        <field name="view_mode">tree,graph</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to add a Transaction new Log
+            </p>
+        </field>
+    </record>
+
+     <menuitem id="menu_cmr_audit_replication_log" name="Audit Plan Integration Log"
+              parent="stock_inventory_count_tus.menu_action_inventory_root_parent"
+              sequence="4"
+              action="action_cmr_audit_replication_log"/>
+</odoo>

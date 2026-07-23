@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="nhcl_pos_delivery_hour_report_form" model="ir.ui.view">
+        <field name="name">POS Delivery Hour Report Form</field>
+        <field name="model">nhcl.pos.delivery.hour.report</field>
+        <field name="arch" type="xml">
+            <form string="POS Delivery Based on Quantity" create="0">
+                <h1 style="color:black;text-align:center;">POS Delivery Based on Quantity
+                </h1>
+                <sheet>
+                    <header>
+                        <button name="get_pos_delivery_order_hour_report" type="object"
+                                string="Load Report" />
+                        <button name="action_to_reset" type="object"
+                                string="Reset" />
+                        <button name="get_excel_sheet" type="object"
+                                string="Excel"/>
+                        <button name="action_view_pos_delivery_order_lines" type="object"
+                                string="View Detailed Report" invisible="1"/>
+                    </header>
+                    <group name="pos_delivery_hour_report" style="border: 2px solid #990099; padding: 10px;">
+                        <group name="pos_delivery_hour_report_group">
+                                <field name="nhcl_company_id" required="1"  options="{'no_create': True,'no_open': True}"
+                                       />
+<!--                            <field name="from_date" required="1" widget="daterange"-->
+<!--                                       options="{'to_date_field': 'to_date'}"/>-->
+<!--                                <field name="to_date" required="1"/>-->
+                            <!--                            <field name="nhcl_store_id" widget="many2many_kanban">   <kanban quick_create="false" create="true" delete="true">      <field name="nhcl_store_id"/>      <templates>          <t t-name="kanban-box">              <div class="oe_kanban_global_click" style="position: relative">                  <a t-if="! read_only_mode" type="delete" style="position: absolute; right: 0; padding: 4px; diplay: inline-block">X</a>                  <div class="oe_module_vignette">                      <img t-att-src="kanban_image('nhcl.ho.store.master', 'image_small', record.id.value)" class="oe_avatar oe_kanban_avatar_smallbox"/>                      <div class="oe_module_desc">                          <field name="name"/>                      </div>                  </div>              </div>          </t>      </templates>  </kanban></field>-->
+                        </group>
+                        <group name="pos_delivery_hour_report_date_details">
+                            <group>
+                                <field name="from_date" required="1" widget="daterange"
+                                       options="{'to_date_field': 'to_date'}"/>
+                                <field name="to_date" required="1"/>
+                            </group>
+
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="POS Delivered Orders Report" invisible="1">
+                            <field name="nhcl_pos_delivery_order_hour_report_ids" readonly="1" forsesave="1">
+                                <tree create="0" delete="0" editable="bottom" limit="1000000">
+                                    <field name="nhcl_company_id"/>
+                                    <field name="nhcl_name"/>
+                                    <field name="nhcl_product_id"/>
+                                    <field name="nhcl_date_order"/>
+                                    <field name="nhcl_order_quantity"/>
+                                    <field name="nhcl_serial"/>
+                                    <field name="nhcl_product_barcode"/>
+                                </tree>
+                            </field>
+
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_nhcl_pos_delivery_hour_report_line_tree" model="ir.ui.view">
+        <field name="name">nhcl.pos.delivery.order.hour.report.line.tree</field>
+        <field name="model">nhcl.pos.delivery.order.hour.report.line</field>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false" delete="false" limit="1000000">
+                <field name="nhcl_company_id"/>
+                <field name="nhcl_name"/>
+                <field name="nhcl_product_id"/>
+                <field name="nhcl_serial"/>
+                <field name="nhcl_product_barcode"/>
+                <field name="nhcl_date_order"/>
+                <field name="nhcl_order_quantity" sum="Total"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_nhcl_pos_delivery_hour_report_line_pivot" model="ir.ui.view">
+        <field name="name">nhcl.pos.delivery.order.hour.report.line.pivot</field>
+        <field name="model">nhcl.pos.delivery.order.hour.report.line</field>
+        <field name="arch" type="xml">
+            <pivot string="POS Delivery Hour Report Analysis">
+                <field name="nhcl_company_id" type="row"/>
+                <field name="nhcl_name" type="row"/>
+                <field name="nhcl_product_id" type="row"/>
+                <field name="nhcl_serial" type="row"/>
+                <field name="nhcl_product_barcode" type="row"/>
+                <field name="nhcl_date_order" interval="day" type="col"/>
+                <field name="nhcl_order_quantity" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+
+
+</odoo>
+

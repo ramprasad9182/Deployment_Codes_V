@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="pos_payment_method_view" model="ir.ui.view">
+            <field name="name">pos_payment_method_account_journal_form</field>
+            <field name="model">pos.payment.method</field>
+            <field name="inherit_id" ref="point_of_sale.pos_payment_method_view_form"/>
+            <field name="arch" type="xml">
+                <field name="journal_id" position="after">
+                    <field name="upi"/>
+                      <field name="is_credit_settlement"/>
+                    <field name="pos_upi_payment_ids" widget="many2many_tags" invisible= "not upi"/>
+                </field>
+            </field>
+        </record>
+        <record id="pos_upi_payment_view_form" model="ir.ui.view">
+            <field name="name">pos.upi.payment.form</field>
+            <field name="model">pos.upi.payment</field>
+            <field name="arch" type="xml">
+                <form string="POS UPI Payments">
+					<sheet>
+						<group>
+							<group>
+                                <field name="upi_image" widget="image"/>
+                                <field name="name"/>
+                                <field name="visible_in_pos"/>
+                                <field name="upi_name"/>
+                                <field name="upi_vpa"/>
+                                <field name="pos_config_id"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+            </field>
+        </record> 
+        <record id="pos_upi_payment_view_tree" model="ir.ui.view">
+            <field name="name">pos.upi.payment.tree</field>
+            <field name="model">pos.upi.payment</field>
+            <field name="arch" type="xml">
+                <tree string="POS UPI Payments">
+					<field name="name"/>
+                    <field name="visible_in_pos"/>
+                    <field name="pos_config_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_pos_upi_payment_action" model="ir.actions.act_window">
+            <field name="name">POS UPI Payment</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pos.upi.payment</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="view_pos_config_kanban_inherit" model="ir.ui.view">
+            <field name="name">pos.config.kanban.view.inherit</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_config_kanban"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('o_kanban_manage_new')]" 
+                    position="inside">
+                        <div>
+                            <a name="%(bi_pos_upi_payment.action_pos_upi_payment_action)d" type="action" groups="point_of_sale.group_pos_manager">UPI</a>
+                        </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

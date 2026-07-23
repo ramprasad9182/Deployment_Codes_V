@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle 
+ -->
+<odoo>
+        
+        <record id="dev_stock_picking_tracking" model="ir.sequence">
+            <field name="name">Delivery Order Tracking</field>
+            <field name="code">stock.picking.tracking</field>
+            <field name="prefix">TRA/</field>
+            <field name="padding">4</field>
+        </record>
+
+     <record id="dev_stock_picking_lr_number" model="ir.sequence">
+        <field name="name">Delivery Order LR Number</field>
+        <field name="code">stock.picking.lr_number</field>
+        <field name="prefix">LR/</field>
+        <field name="padding">5</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+         <record id="return_seq_picking_batch" model="ir.sequence">
+         <field name="name">Batch Transfer</field>
+         <field name="code">picking.batch.return</field>
+         <field name="prefix">BATCH/RETURN/</field>
+         <field name="padding">5</field>
+         <field name="company_id" eval="False"/>
+     </record>
+
+
+    <record id="nhcl_product_product_round_up" model="product.product">
+        <field name="name">Rounding Up</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="detailed_type">service</field>
+        <field name="sale_ok">True</field>
+        <field name="purchase_ok">False</field>
+        <field name="invoice_policy">order</field>
+    </record>
+
+    <!-- Round Down Product -->
+    <record id="nhcl_product_product_round_down" model="product.product">
+        <field name="name">Rounding Down</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="detailed_type">service</field>
+        <field name="sale_ok">True</field>
+        <field name="purchase_ok">False</field>
+        <field name="invoice_policy">order</field>
+    </record>
+
+    <!-- Cash Customer Product -->
+    <record id="nhcl_product_product_cash_customer" model="product.product">
+        <field name="name">Cash Customer</field>
+        <field name="categ_id" ref="product.product_category_all"/>
+        <field name="detailed_type">service</field>
+        <field name="sale_ok">True</field>
+        <field name="purchase_ok">False</field>
+        <field name="invoice_policy">order</field>
+    </record>
+
+    <record id="nhcl_public_partner" model="res.partner">
+        <field name="name">Cash Customer</field>
+    </record>
+
+    <record id="seq_cash_register" model="ir.sequence">
+        <field name="name">Cash Register</field>
+        <field name="code">cash.register.seq</field>
+        <field name="prefix">CR/%(year)s/</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False"/>
+    </record>
+        
+	<record id="seq_inventory_count" model="ir.sequence">
+        <field name="name">Inventory Count</field>
+        <field name="code">inventory.count</field>
+        <field name="prefix">AC/%(year)s/</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+    <record id="seq_matching_material" model="ir.sequence">
+        <field name="name">Matching Material Sequence</field>
+        <field name="code">matching.material</field>
+        <field name="prefix">MM/%(year)s/</field>
+        <field name="padding">4</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+</odoo>

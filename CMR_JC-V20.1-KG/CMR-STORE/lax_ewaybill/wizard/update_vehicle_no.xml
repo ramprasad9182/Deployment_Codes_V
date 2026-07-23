@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="update_vehicle_wizard" model="ir.ui.view">
+            <field name="name">update.vehicle</field>
+            <field name="model">update.vehicle</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="vehicle_no" required="1"/>
+                        <field name="reason_code" required="1"/>
+                        <field name="remark" required="1"/>
+                    </group>
+                    <footer>
+                        <button class="btn-primary" name="update_eway_vehical" string="Submit" type="object"/>
+                        <button class="btn-primary" special="cancel" string="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

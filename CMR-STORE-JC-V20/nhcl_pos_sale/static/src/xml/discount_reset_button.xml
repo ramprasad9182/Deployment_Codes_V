@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="pos_discount_manager.CustomButton" owl="1">
+        <button class="control-button btn btn-light rounded-0 fw-bolder"
+                    t-on-click="() => this.click()">
+            <i role="img" aria-label="Custom Button" title="Reset Discount"/>
+                Reset Discount
+        </button>
+    </t>
+</templates>

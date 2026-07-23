@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="seq_logistic_screen_data" model="ir.sequence">
+        <field name="name">Logistic Number</field>
+        <field name="code">logistic.screen.data</field>
+        <field name="prefix">LOG/</field>
+        <field name="padding">5</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+    <!-- Transport Sequence -->
+    <record id="seq_transport_check" model="ir.sequence">
+        <field name="name">Transport Check</field>
+        <field name="code">transport.check</field>
+        <field name="prefix">TRN/</field>
+        <field name="padding">5</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+
+    <!-- Delivery Sequence -->
+    <record id="seq_delivery_check" model="ir.sequence">
+        <field name="name">Delivery Check</field>
+        <field name="code">delivery.check</field>
+        <field name="prefix">DEL/</field>
+        <field name="padding">5</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+
+    <!-- Delivery Barcode -->
+    <record id="seq_delivery_barcode" model="ir.sequence">
+        <field name="name">Delivery Barcode</field>
+        <field name="code">delivery.barcode</field>
+        <field name="prefix">DB</field>
+        <field name="padding">5</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+
+
+    <record id="seq_open_parcel" model="ir.sequence">
+        <field name="name">Open Parcel</field>
+        <field name="code">open.parcel</field>
+        <field name="prefix">PAR/</field>
+        <field name="padding">5</field>
+        <field name="number_next">1</field>
+        <field name="number_increment">1</field>
+    </record>
+
+</odoo>

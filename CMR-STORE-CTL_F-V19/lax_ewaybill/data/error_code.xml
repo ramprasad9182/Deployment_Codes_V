@@ -1,0 +1,1224 @@
+<odoo>
+    <data noupdate="1">
+        <record id="error_code_100" model="ewaybill.error.code">
+            <field name="code">100</field>
+            <field name="name">Invalid Json</field>
+        </record>
+        <record id="error_code_101" model="ewaybill.error.code">
+            <field name="code">101</field>
+            <field name="name">Invalid Username</field>
+        </record>
+        <record id="error_code_102" model="ewaybill.error.code">
+            <field name="code">102</field>
+            <field name="name">Invalid Password</field>
+        </record>
+        <record id="error_code_103" model="ewaybill.error.code">
+            <field name="code">103</field>
+            <field name="name">Invalid Client -Id</field>
+        </record>
+        <record id="error_code_104" model="ewaybill.error.code">
+            <field name="code">104</field>
+            <field name="name">Invalid Client -Id</field>
+        </record>
+        <record id="error_code_105" model="ewaybill.error.code">
+            <field name="code">105</field>
+            <field name="name">Invalid Token</field>
+        </record>
+        <record id="error_code_106" model="ewaybill.error.code">
+            <field name="code">106</field>
+            <field name="name">Token Expired</field>
+        </record>
+        <record id="error_code_107" model="ewaybill.error.code">
+            <field name="code">107</field>
+            <field name="name">Authentication failed. Pls. inform the helpdesk</field>
+        </record>
+        <record id="error_code_108" model="ewaybill.error.code">
+            <field name="code">108</field>
+            <field name="name">Invalid login credentials.</field>
+        </record>
+        <record id="error_code_109" model="ewaybill.error.code">
+            <field name="code">109</field>
+            <field name="name">Decryption of data failed</field>
+        </record>
+        <record id="error_code_110" model="ewaybill.error.code">
+            <field name="code">110</field>
+            <field name="name">Invalid Client-ID/Client-Secret</field>
+        </record>
+        <record id="error_code_111" model="ewaybill.error.code">
+            <field name="code">111</field>
+            <field name="name">GSTIN is not registered to this GSP</field>
+        </record>
+        <record id="error_code_112" model="ewaybill.error.code">
+            <field name="code">112</field>
+            <field name="name">IMEI does not belong to the user</field>
+        </record>
+        <record id="error_code_113" model="ewaybill.error.code">
+            <field name="code">113</field>
+            <field name="name">os-type is mandatory in header</field>
+        </record>
+        <record id="error_code_114" model="ewaybill.error.code">
+            <field name="code">114</field>
+            <field name="name">Invalid os-type parameter value</field>
+        </record>
+        <record id="error_code_201" model="ewaybill.error.code">
+            <field name="code">201</field>
+            <field name="name">Invalid Supply Type</field>
+        </record>
+        <record id="error_code_202" model="ewaybill.error.code">
+            <field name="code">202</field>
+            <field name="name">Invalid Sub-supply Type</field>
+        </record>
+        <record id="error_code_203" model="ewaybill.error.code">
+            <field name="code">203</field>
+            <field name="name">Sub-transaction type does not belongs to transaction type</field>
+        </record>
+        <record id="error_code_204" model="ewaybill.error.code">
+            <field name="code">204</field>
+            <field name="name">Invalid Document type</field>
+        </record>
+        <record id="error_code_205" model="ewaybill.error.code">
+            <field name="code">205</field>
+            <field name="name">Document type does not match with transaction &amp; Sub trans type</field>
+        </record>
+        <record id="error_code_206" model="ewaybill.error.code">
+            <field name="code">206</field>
+            <field name="name">Invaild Invoice Number</field>
+        </record>
+        <record id="error_code_207" model="ewaybill.error.code">
+            <field name="code">207</field>
+            <field name="name">Invalid Invoice Date</field>
+        </record>
+        <record id="error_code_208" model="ewaybill.error.code">
+            <field name="code">208</field>
+            <field name="name">Invalid Supplier GSTIN</field>
+        </record>
+        <record id="error_code_209" model="ewaybill.error.code">
+            <field name="code">209</field>
+            <field name="name">Blank Supplier Address</field>
+        </record>
+        <record id="error_code_210" model="ewaybill.error.code">
+            <field name="code">210</field>
+            <field name="name">Invalid or Blank Supplier PIN Code</field>
+        </record>
+        <record id="error_code_211" model="ewaybill.error.code">
+            <field name="code">211</field>
+            <field name="name">Invalid or Blank Supplier state Code</field>
+        </record>
+        <record id="error_code_212" model="ewaybill.error.code">
+            <field name="code">212</field>
+            <field name="name">Invalid Consignee GSTIN</field>
+        </record>
+        <record id="error_code_213" model="ewaybill.error.code">
+            <field name="code">213</field>
+            <field name="name">Invalid Consignee Address</field>
+        </record>
+        <record id="error_code_214" model="ewaybill.error.code">
+            <field name="code">214</field>
+            <field name="name">Invalid Consignee PIN Code</field>
+        </record>
+        <record id="error_code_215" model="ewaybill.error.code">
+            <field name="code">215</field>
+            <field name="name">Invalid Consignee State Code</field>
+        </record>
+        <record id="error_code_216" model="ewaybill.error.code">
+            <field name="code">216</field>
+            <field name="name">Invalid HSN Code</field>
+        </record>
+        <record id="error_code_217" model="ewaybill.error.code">
+            <field name="code">217</field>
+            <field name="name">Invalid UQC Code</field>
+        </record>
+        <record id="error_code_218" model="ewaybill.error.code">
+            <field name="code">218</field>
+            <field name="name">Invalid Tax Rate for Intra State Transaction</field>
+        </record>
+        <record id="error_code_219" model="ewaybill.error.code">
+            <field name="code">219</field>
+            <field name="name">Invalid Tax Rate for Inter State Transaction</field>
+        </record>
+        <record id="error_code_220" model="ewaybill.error.code">
+            <field name="code">220</field>
+            <field name="name">Invalid Trans mode</field>
+        </record>
+        <record id="error_code_221" model="ewaybill.error.code">
+            <field name="code">221</field>
+            <field name="name">Invalid Approximate Distance</field>
+        </record>
+        <record id="error_code_222" model="ewaybill.error.code">
+            <field name="code">222</field>
+            <field name="name">Invalid Transporter Id</field>
+        </record>
+        <record id="error_code_223" model="ewaybill.error.code">
+            <field name="code">223</field>
+            <field name="name">Invalid Transaction Document Number</field>
+        </record>
+        <record id="error_code_224" model="ewaybill.error.code">
+            <field name="code">224</field>
+            <field name="name">Invalid Transaction Date</field>
+        </record>
+        <record id="error_code_225" model="ewaybill.error.code">
+            <field name="code">225</field>
+            <field name="name">Invalid Vehicle Number Format</field>
+        </record>
+        <record id="error_code_226" model="ewaybill.error.code">
+            <field name="code">226</field>
+            <field name="name">Both Transaction and Vehicle Number Blank</field>
+        </record>
+        <record id="error_code_227" model="ewaybill.error.code">
+            <field name="code">227</field>
+            <field name="name">User Gstin cannot be blank</field>
+        </record>
+        <record id="error_code_228" model="ewaybill.error.code">
+            <field name="code">228</field>
+            <field name="name">User id cannot be blank</field>
+        </record>
+        <record id="error_code_229" model="ewaybill.error.code">
+            <field name="code">229</field>
+            <field name="name">Supplier name is required</field>
+        </record>
+        <record id="error_code_230" model="ewaybill.error.code">
+            <field name="code">230</field>
+            <field name="name">Supplier place is required</field>
+        </record>
+        <record id="error_code_231" model="ewaybill.error.code">
+            <field name="code">231</field>
+            <field name="name">Consignee name is required</field>
+        </record>
+        <record id="error_code_232" model="ewaybill.error.code">
+            <field name="code">232</field>
+            <field name="name">Consignee place is required</field>
+        </record>
+        <record id="error_code_233" model="ewaybill.error.code">
+            <field name="code">233</field>
+            <field name="name">Eway bill does not contains any items</field>
+        </record>
+        <record id="error_code_234" model="ewaybill.error.code">
+            <field name="code">234</field>
+            <field name="name">Total amount/Taxable amount is mandatory</field>
+        </record>
+        <record id="error_code_235" model="ewaybill.error.code">
+            <field name="code">235</field>
+            <field name="name">Tax rates for Intra state transaction is blank</field>
+        </record>
+        <record id="error_code_236" model="ewaybill.error.code">
+            <field name="code">236</field>
+            <field name="name">Tax rates for Inter state transaction is blank</field>
+        </record>
+        <record id="error_code_237" model="ewaybill.error.code">
+            <field name="code">237</field>
+            <field name="name">Invalid client -Id/client-secret</field>
+        </record>
+        <record id="error_code_238" model="ewaybill.error.code">
+            <field name="code">238</field>
+            <field name="name">Invalid auth token</field>
+        </record>
+        <record id="error_code_239" model="ewaybill.error.code">
+            <field name="code">239</field>
+            <field name="name">Invalid action</field>
+        </record>
+        <record id="error_code_240" model="ewaybill.error.code">
+            <field name="code">240</field>
+            <field name="name">Could not generate eway bill, pls contact helpdesk</field>
+        </record>
+        <record id="error_code_242" model="ewaybill.error.code">
+            <field name="code">242</field>
+            <field name="name">Invalid or Blank Officer StateCode</field>
+        </record>
+        <record id="error_code_243" model="ewaybill.error.code">
+            <field name="code">243</field>
+            <field name="name">Invalid or Blank IR Number</field>
+        </record>
+        <record id="error_code_244" model="ewaybill.error.code">
+            <field name="code">244</field>
+            <field name="name">Invalid or Blank Actual Vehicle Number Format</field>
+        </record>
+        <record id="error_code_245" model="ewaybill.error.code">
+            <field name="code">245</field>
+            <field name="name">Invalid Verification Date Format</field>
+        </record>
+        <record id="error_code_246" model="ewaybill.error.code">
+            <field name="code">246</field>
+            <field name="name">Invalid Vehicle Release Date Format</field>
+        </record>
+        <record id="error_code_247" model="ewaybill.error.code">
+            <field name="code">247</field>
+            <field name="name">Invalid Verification Time Format</field>
+        </record>
+        <record id="error_code_248" model="ewaybill.error.code">
+            <field name="code">248</field>
+            <field name="name">Invalid Vehicle Release Date Format</field>
+        </record>
+        <record id="error_code_249" model="ewaybill.error.code">
+            <field name="code">249</field>
+            <field name="name">Actual Value cannot be less than or equal to zero</field>
+        </record>
+        <record id="error_code_250" model="ewaybill.error.code">
+            <field name="code">250</field>
+            <field name="name">Invalid Vehicle Release Date Format</field>
+        </record>
+        <record id="error_code_251" model="ewaybill.error.code">
+            <field name="code">251</field>
+            <field name="name">CGST and SGST TaxRate should be same</field>
+        </record>
+        <record id="error_code_252" model="ewaybill.error.code">
+            <field name="code">252</field>
+            <field name="name">Invalid CGST Tax Rate</field>
+        </record>
+        <record id="error_code_253" model="ewaybill.error.code">
+            <field name="code">253</field>
+            <field name="name">Invalid SGST Tax Rate</field>
+        </record>
+        <record id="error_code_254" model="ewaybill.error.code">
+            <field name="code">254</field>
+            <field name="name">Invalid IGST Tax Rate</field>
+        </record>
+        <record id="error_code_255" model="ewaybill.error.code">
+            <field name="code">255</field>
+            <field name="name">Invalid CESS Rate</field>
+        </record>
+        <record id="error_code_256" model="ewaybill.error.code">
+            <field name="code">256</field>
+            <field name="name">Invalid Cess Non Advol value</field>
+        </record>
+        <record id="error_code_278" model="ewaybill.error.code">
+            <field name="code">278</field>
+            <field name="name">User Gstin does not match with Transporter Id</field>
+        </record>
+        <record id="error_code_280" model="ewaybill.error.code">
+            <field name="code">280</field>
+            <field name="name">Status is not ACTIVE</field>
+        </record>
+        <record id="error_code_281" model="ewaybill.error.code">
+            <field name="code">281</field>
+            <field name="name">Eway Bill is already expired hence update transporter is not allowed.</field>
+        </record>
+        <record id="error_code_282" model="ewaybill.error.code">
+            <field name="code">282</field>
+            <field name="name">Atleast 4 digits HSN code is mandatory for taxpayers with turnover less than 5cr.</field>
+        </record>
+        <record id="error_code_283" model="ewaybill.error.code">
+            <field name="code">283</field>
+            <field name="name">Atleast 6 digits HSN code is mandatory for taxpayers with turnover less than 5cr. and above.</field>
+        </record>
+        <record id="error_code_301" model="ewaybill.error.code">
+            <field name="code">301</field>
+            <field name="name">Invalid eway bill number</field>
+        </record>
+        <record id="error_code_302" model="ewaybill.error.code">
+            <field name="code">302</field>
+            <field name="name">Invalid transporter mode</field>
+        </record>
+        <record id="error_code_303" model="ewaybill.error.code">
+            <field name="code">303</field>
+            <field name="name">Vehicle number is required</field>
+        </record>
+        <record id="error_code_304" model="ewaybill.error.code">
+            <field name="code">304</field>
+            <field name="name">Invalid vehicle format</field>
+        </record>
+        <record id="error_code_305" model="ewaybill.error.code">
+            <field name="code">305</field>
+            <field name="name">Place from is required</field>
+        </record>
+        <record id="error_code_306" model="ewaybill.error.code">
+            <field name="code">306</field>
+            <field name="name">Invalid from state</field>
+        </record>
+        <record id="error_code_307" model="ewaybill.error.code">
+            <field name="code">307</field>
+            <field name="name">Invalid reason</field>
+        </record>
+        <record id="error_code_308" model="ewaybill.error.code">
+            <field name="code">308</field>
+            <field name="name">Invalid remarks</field>
+        </record>
+        <record id="error_code_309" model="ewaybill.error.code">
+            <field name="code">309</field>
+            <field name="name">Could not update vehicle details, pl contact helpdesk</field>
+        </record>
+        <record id="error_code_311" model="ewaybill.error.code">
+            <field name="code">311</field>
+            <field name="name">Validity period lapsed, you cannot update vehicle details</field>
+        </record>
+        <record id="error_code_312" model="ewaybill.error.code">
+            <field name="code">312</field>
+            <field name="name">This eway bill is either not generated by you or cancelled</field>
+        </record>
+        <record id="error_code_313" model="ewaybill.error.code">
+            <field name="code">313</field>
+            <field name="name">Error in validating ewaybill for vehicle updation</field>
+        </record>
+        <record id="error_code_315" model="ewaybill.error.code">
+            <field name="code">315</field>
+            <field name="name">Validity period lapsed, you cannot cancel this eway bill</field>
+        </record>
+        <record id="error_code_316" model="ewaybill.error.code">
+            <field name="code">316</field>
+            <field name="name">Eway bill is already verified, you cannot cancel it</field>
+        </record>
+        <record id="error_code_317" model="ewaybill.error.code">
+            <field name="code">317</field>
+            <field name="name">Could not cancel eway bill, please contact helpdesk</field>
+        </record>
+        <record id="error_code_320" model="ewaybill.error.code">
+            <field name="code">320</field>
+            <field name="name">Invalid state to</field>
+        </record>
+        <record id="error_code_321" model="ewaybill.error.code">
+            <field name="code">321</field>
+            <field name="name">Invalid place to</field>
+        </record>
+        <record id="error_code_322" model="ewaybill.error.code">
+            <field name="code">322</field>
+            <field name="name">Could not generate consolidated eway bill</field>
+        </record>
+        <record id="error_code_325" model="ewaybill.error.code">
+            <field name="code">325</field>
+            <field name="name">Could not retrieve data</field>
+        </record>
+        <record id="error_code_326" model="ewaybill.error.code">
+            <field name="code">326</field>
+            <field name="name">Could not retrieve GSTIN details for the given GSTIN number</field>
+        </record>
+        <record id="error_code_327" model="ewaybill.error.code">
+            <field name="code">327</field>
+            <field name="name">Could not retrieve data from hsn</field>
+        </record>
+        <record id="error_code_328" model="ewaybill.error.code">
+            <field name="code">328</field>
+            <field name="name">Could not retrieve transporter details from gstin</field>
+        </record>
+        <record id="error_code_329" model="ewaybill.error.code">
+            <field name="code">329</field>
+            <field name="name">Could not retrieve States List</field>
+        </record>
+        <record id="error_code_330" model="ewaybill.error.code">
+            <field name="code">330</field>
+            <field name="name">Could not retrieve UQC list</field>
+        </record>
+        <record id="error_code_331" model="ewaybill.error.code">
+            <field name="code">331</field>
+            <field name="name">Could not retrieve Error code</field>
+        </record>
+        <record id="error_code_334" model="ewaybill.error.code">
+            <field name="code">334</field>
+            <field name="name">Could not retrieve user details by userid</field>
+        </record>
+        <record id="error_code_336" model="ewaybill.error.code">
+            <field name="code">336</field>
+            <field name="name">Could not retrieve transporter data by gstin</field>
+        </record>
+        <record id="error_code_337" model="ewaybill.error.code">
+            <field name="code">337</field>
+            <field name="name">Could not retrieve HSN details for the given HSN number</field>
+        </record>
+        <record id="error_code_338" model="ewaybill.error.code">
+            <field name="code">338</field>
+            <field name="name">You cannot update transporter details, as the current tranporter is already entered Part B details of the eway bill</field>
+        </record>
+        <record id="error_code_339" model="ewaybill.error.code">
+            <field name="code">339</field>
+            <field name="name">You are not assigned to update the tranporter details of this eway bill</field>
+        </record>
+        <record id="error_code_341" model="ewaybill.error.code">
+            <field name="code">341</field>
+            <field name="name">This e-way bill is generated by you and hence you cannot reject it</field>
+        </record>
+        <record id="error_code_342" model="ewaybill.error.code">
+            <field name="code">342</field>
+            <field name="name">You cannot reject this e-way bill as you are not the other party to do so</field>
+        </record>
+        <record id="error_code_343" model="ewaybill.error.code">
+            <field name="code">343</field>
+            <field name="name">This e-way bill is cancelled</field>
+        </record>
+        <record id="error_code_344" model="ewaybill.error.code">
+            <field name="code">344</field>
+            <field name="name">Invalid eway bill number</field>
+        </record>
+        <record id="error_code_345" model="ewaybill.error.code">
+            <field name="code">345</field>
+            <field name="name">Validity period lapsed, you cannot reject the e-way bill</field>
+        </record>
+        <record id="error_code_346" model="ewaybill.error.code">
+            <field name="code">346</field>
+            <field name="name">You can reject the e-way bill only within 72 hours from generated time</field>
+        </record>
+        <record id="error_code_347" model="ewaybill.error.code">
+            <field name="code">347</field>
+            <field name="name">Validation of eway bill number failed, while rejecting ewaybill</field>
+        </record>
+        <record id="error_code_348" model="ewaybill.error.code">
+            <field name="code">348</field>
+            <field name="name">Part-B is not generated for this e-way bill, hence rejection is not allowed.</field>
+        </record>
+        <record id="error_code_350" model="ewaybill.error.code">
+            <field name="code">350</field>
+            <field name="name">Could not generate consolidated eway bill</field>
+        </record>
+        <record id="error_code_351" model="ewaybill.error.code">
+            <field name="code">351</field>
+            <field name="name">Invalid state code</field>
+        </record>
+        <record id="error_code_352" model="ewaybill.error.code">
+            <field name="code">352</field>
+            <field name="name">Invalid rfid date</field>
+        </record>
+        <record id="error_code_353" model="ewaybill.error.code">
+            <field name="code">353</field>
+            <field name="name">Invalid location code</field>
+        </record>
+        <record id="error_code_354" model="ewaybill.error.code">
+            <field name="code">354</field>
+            <field name="name">Invalid rfid number</field>
+        </record>
+        <record id="error_code_355" model="ewaybill.error.code">
+            <field name="code">355</field>
+            <field name="name">Invalid Vehicle Number Format</field>
+        </record>
+        <record id="error_code_356" model="ewaybill.error.code">
+            <field name="code">356</field>
+            <field name="name">Invalid wt on bridge</field>
+        </record>
+        <record id="error_code_357" model="ewaybill.error.code">
+            <field name="code">357</field>
+            <field name="name">Could not retrieve eway bill details, pl. contact helpdesk</field>
+        </record>
+        <record id="error_code_358" model="ewaybill.error.code">
+            <field name="code">358</field>
+            <field name="name">GSTIN passed in request header is not matching with the user gstin mentioned in payload JSON</field>
+        </record>
+        <record id="error_code_359" model="ewaybill.error.code">
+            <field name="code">359</field>
+            <field name="name">User GSTIN should match to GSTIN(from) for outward transactions</field>
+        </record>
+        <record id="error_code_360" model="ewaybill.error.code">
+            <field name="code">360</field>
+            <field name="name">User GSTIN should match to GSTIN(to) for inward transactions</field>
+        </record>
+        <record id="error_code_361" model="ewaybill.error.code">
+            <field name="code">361</field>
+            <field name="name">Invalid Vehicle Type</field>
+        </record>
+        <record id="error_code_362" model="ewaybill.error.code">
+            <field name="code">362</field>
+            <field name="name">Transporter document date cannot be earlier than the invoice date</field>
+        </record>
+        <record id="error_code_363" model="ewaybill.error.code">
+            <field name="code">363</field>
+            <field name="name">E-way bill is not enabled for intra state movement for you state</field>
+        </record>
+        <record id="error_code_364" model="ewaybill.error.code">
+            <field name="code">364</field>
+            <field name="name">Error in verifying eway bill</field>
+        </record>
+        <record id="error_code_365" model="ewaybill.error.code">
+            <field name="code">365</field>
+            <field name="name">Error in verifying consolidated eway bill</field>
+        </record>
+        <record id="error_code_366" model="ewaybill.error.code">
+            <field name="code">366</field>
+            <field name="name">You will not get the ewaybills generated today, however you can access the ewaybills of yester days</field>
+        </record>
+        <record id="error_code_367" model="ewaybill.error.code">
+            <field name="code">367</field>
+            <field name="name">Could not retrieve data for officer login</field>
+        </record>
+        <record id="error_code_368" model="ewaybill.error.code">
+            <field name="code">368</field>
+            <field name="name">Could not update transporter</field>
+        </record>
+        <record id="error_code_369" model="ewaybill.error.code">
+            <field name="code">369</field>
+            <field name="name">GSTIN/Transin passed in request header should match with the transported Id mentioned in payload JSON</field>
+        </record>
+        <record id="error_code_370" model="ewaybill.error.code">
+            <field name="code">370</field>
+            <field name="name">GSTIN/Transin passed in request header should not be the same as supplier(fromGSTIN) or recepient(toGSTIN)</field>
+        </record>
+        <record id="error_code_371" model="ewaybill.error.code">
+            <field name="code">371</field>
+            <field name="name">Invalid or Blank Supplier Ship-to State Code</field>
+        </record>
+        <record id="error_code_372" model="ewaybill.error.code">
+            <field name="code">372</field>
+            <field name="name">Invalid or Blank Consignee Ship-to State Code</field>
+        </record>
+        <record id="error_code_373" model="ewaybill.error.code">
+            <field name="code">373</field>
+            <field name="name">The Supplier ship-to state code should be Other Country for Sub Supply Type- Export</field>
+        </record>
+        <record id="error_code_374" model="ewaybill.error.code">
+            <field name="code">374</field>
+            <field name="name">The Consignee pin code should be 999999 for Sub Supply Type- Export</field>
+        </record>
+        <record id="error_code_375" model="ewaybill.error.code">
+            <field name="code">375</field>
+            <field name="name">The Supplier ship-from state code should be Other Country for Sub Supply Type- Import</field>
+        </record>
+        <record id="error_code_376" model="ewaybill.error.code">
+            <field name="code">376</field>
+            <field name="name">The Supplier pin code should be 999999 for Sub Supply Type- Import</field>
+        </record>
+        <record id="error_code_377" model="ewaybill.error.code">
+            <field name="code">377</field>
+            <field name="name">Sub Supply Type is mentioned as Others, the description for that is mandatory</field>
+        </record>
+        <record id="error_code_378" model="ewaybill.error.code">
+            <field name="code">378</field>
+            <field name="name">The supplier or conginee belong to SEZ, Inter state tax rates are applicable here</field>
+        </record>
+        <record id="error_code_379" model="ewaybill.error.code">
+            <field name="code">379</field>
+            <field name="name">Eway Bill can not be extended.. Already Cancelled</field>
+        </record>
+        <record id="error_code_380" model="ewaybill.error.code">
+            <field name="code">380</field>
+            <field name="name">Eway Bill Can not be Extended. Not in Active State</field>
+        </record>
+        <record id="error_code_381" model="ewaybill.error.code">
+            <field name="code">381</field>
+            <field name="name">There is No PART-B/Vehicle Entry.. So Please Update Vehicle Information..</field>
+        </record>
+        <record id="error_code_382" model="ewaybill.error.code">
+            <field name="code">382</field>
+            <field name="name">You Cannot Extend as EWB can be Extended only 8 hour before or after w.r.t Validity of EWB..!!</field>
+        </record>
+        <record id="error_code_383" model="ewaybill.error.code">
+            <field name="code">383</field>
+            <field name="name">Error While Extending..Please Contact Helpdesk.</field>
+        </record>
+        <record id="error_code_384" model="ewaybill.error.code">
+            <field name="code">384</field>
+            <field name="name">You are not current transporter or Generator of the ewayBill, with no transporter details.</field>
+        </record>
+        <record id="error_code_385" model="ewaybill.error.code">
+            <field name="code">385</field>
+            <field name="name">For Rail/Ship/Air transDocDate is mandatory</field>
+        </record>
+        <record id="error_code_386" model="ewaybill.error.code">
+            <field name="code">386</field>
+            <field name="name">Reason Code, Remarks is mandatory.</field>
+        </record>
+        <record id="error_code_387" model="ewaybill.error.code">
+            <field name="code">387</field>
+            <field name="name">No Record Found for Entered consolidated eWay bill.</field>
+        </record>
+        <record id="error_code_388" model="ewaybill.error.code">
+            <field name="code">388</field>
+            <field name="name">Exception in regenration of consolidated eWayBill!!Please Contact helpdesk</field>
+        </record>
+        <record id="error_code_389" model="ewaybill.error.code">
+            <field name="code">389</field>
+            <field name="name">Remaining Distance Required</field>
+        </record>
+        <record id="error_code_390" model="ewaybill.error.code">
+            <field name="code">390</field>
+            <field name="name">Remaining Distance Can not be greater than Actual Distance.</field>
+        </record>
+        <record id="error_code_391" model="ewaybill.error.code">
+            <field name="code">391</field>
+            <field name="name">No eway bill of specified tripsheet, neither ACTIVE nor not Valid.</field>
+        </record>
+        <record id="error_code_392" model="ewaybill.error.code">
+            <field name="code">392</field>
+            <field name="name">Tripsheet is already cancelled, Hence Regeration is not possible</field>
+        </record>
+        <record id="error_code_393" model="ewaybill.error.code">
+            <field name="code">393</field>
+            <field name="name">Invalid GSTIN</field>
+        </record>
+        <record id="error_code_394" model="ewaybill.error.code">
+            <field name="code">394</field>
+            <field name="name">For other than Road Transport, TransDoc number is required</field>
+        </record>
+        <record id="error_code_395" model="ewaybill.error.code">
+            <field name="code">395</field>
+            <field name="name">Eway Bill Number should be numeric only</field>
+        </record>
+        <record id="error_code_396" model="ewaybill.error.code">
+            <field name="code">396</field>
+            <field name="name">Either Eway Bill Number Or Consolidated Eway Bill Number is required for Verification</field>
+        </record>
+        <record id="error_code_397" model="ewaybill.error.code">
+            <field name="code">397</field>
+            <field name="name">Error in Multi Vehicle Movement Initiation</field>
+        </record>
+        <record id="error_code_398" model="ewaybill.error.code">
+            <field name="code">398</field>
+            <field name="name">Eway Bill Item List is Empty</field>
+        </record>
+        <record id="error_code_399" model="ewaybill.error.code">
+            <field name="code">399</field>
+            <field name="name">Unit Code is not matching with any of the Unit Code from ItemList</field>
+        </record>
+        <record id="error_code_400" model="ewaybill.error.code">
+            <field name="code">400</field>
+            <field name="name">total quantity is exceeding from multi vehicle movement initiation quantity</field>
+        </record>
+        <record id="error_code_401" model="ewaybill.error.code">
+            <field name="code">401</field>
+            <field name="name">Error in inserting multi vehicle details</field>
+        </record>
+        <record id="error_code_402" model="ewaybill.error.code">
+            <field name="code">402</field>
+            <field name="name">total quantity can not be less than or equal to zero</field>
+        </record>
+        <record id="error_code_403" model="ewaybill.error.code">
+            <field name="code">403</field>
+            <field name="name">Error in multi vehicle details</field>
+        </record>
+        <record id="error_code_405" model="ewaybill.error.code">
+            <field name="code">405</field>
+            <field name="name">No record found for multi vehicle update with specified ewbNo groupNo and old vehicleNo/transDocNo with status as ACT</field>
+        </record>
+        <record id="error_code_406" model="ewaybill.error.code">
+            <field name="code">406</field>
+            <field name="name">Group number cannot be empty or zero</field>
+        </record>
+        <record id="error_code_407" model="ewaybill.error.code">
+            <field name="code">407</field>
+            <field name="name">Invalid old vehicle number format</field>
+        </record>
+        <record id="error_code_408" model="ewaybill.error.code">
+            <field name="code">408</field>
+            <field name="name">Invalid new vehicle number format</field>
+        </record>
+        <record id="error_code_409" model="ewaybill.error.code">
+            <field name="code">409</field>
+            <field name="name">Invalid old transDoc number</field>
+        </record>
+        <record id="error_code_410" model="ewaybill.error.code">
+            <field name="code">410</field>
+            <field name="name">Invalid new transDoc number</field>
+        </record>
+        <record id="error_code_411" model="ewaybill.error.code">
+            <field name="code">411</field>
+            <field name="name">Multi Vehicle Initiation data is not there for specified ewayBill and group No</field>
+        </record>
+        <record id="error_code_412" model="ewaybill.error.code">
+            <field name="code">412</field>
+            <field name="name">Multi Vehicle movement is already Initiated,hence PART B updation not allowed</field>
+        </record>
+        <record id="error_code_413" model="ewaybill.error.code">
+            <field name="code">413</field>
+            <field name="name">Unit Code is not matching with unit code of first initiaton</field>
+        </record>
+        <record id="error_code_415" model="ewaybill.error.code">
+            <field name="code">415</field>
+            <field name="name">Error in fetching in verification data for officer</field>
+        </record>
+        <record id="error_code_416" model="ewaybill.error.code">
+            <field name="code">416</field>
+            <field name="name">Date range is exceeding allowed date range</field>
+        </record>
+        <record id="error_code_417" model="ewaybill.error.code">
+            <field name="code">417</field>
+            <field name="name">No verification data found for officer</field>
+        </record>
+        <record id="error_code_418" model="ewaybill.error.code">
+            <field name="code">418</field>
+            <field name="name">No record found</field>
+        </record>
+        <record id="error_code_419" model="ewaybill.error.code">
+            <field name="code">419</field>
+            <field name="name">Error in fetching search result for taxpayer/transporter</field>
+        </record>
+        <record id="error_code_420" model="ewaybill.error.code">
+            <field name="code">420</field>
+            <field name="name">Minimum six character required for Tradename/legalname search</field>
+        </record>
+        <record id="error_code_421" model="ewaybill.error.code">
+            <field name="code">421</field>
+            <field name="name">Invalid pincode</field>
+        </record>
+        <record id="error_code_422" model="ewaybill.error.code">
+            <field name="code">422</field>
+            <field name="name">Invalid mobile number</field>
+        </record>
+        <record id="error_code_423" model="ewaybill.error.code">
+            <field name="code">423</field>
+            <field name="name">Error in fetching ewaybill list by vehicle number</field>
+        </record>
+        <record id="error_code_424" model="ewaybill.error.code">
+            <field name="code">424</field>
+            <field name="name">Invalid PAN number</field>
+        </record>
+        <record id="error_code_425" model="ewaybill.error.code">
+            <field name="code">425</field>
+            <field name="name">Error in fetching Part A data by IR Number</field>
+        </record>
+        <record id="error_code_426" model="ewaybill.error.code">
+            <field name="code">426</field>
+            <field name="name">For Vehicle Released vehicle release date and time is mandatory</field>
+        </record>
+        <record id="error_code_427" model="ewaybill.error.code">
+            <field name="code">427</field>
+            <field name="name">Error in saving Part-A verification Report</field>
+        </record>
+        <record id="error_code_428" model="ewaybill.error.code">
+            <field name="code">428</field>
+            <field name="name">For Goods Detained,Vehicle Released feild is mandatory</field>
+        </record>
+        <record id="error_code_429" model="ewaybill.error.code">
+            <field name="code">429</field>
+            <field name="name">Error in saving Part-B verification Report</field>
+        </record>
+        <record id="error_code_430" model="ewaybill.error.code">
+            <field name="code">430</field>
+            <field name="name">Goods Detained Field required.</field>
+        </record>
+        <record id="error_code_431" model="ewaybill.error.code">
+            <field name="code">431</field>
+            <field name="name">Part-A for this ewaybill is already generated by you.</field>
+        </record>
+        <record id="error_code_432" model="ewaybill.error.code">
+            <field name="code">432</field>
+            <field name="name">invalid vehicle released value</field>
+        </record>
+        <record id="error_code_433" model="ewaybill.error.code">
+            <field name="code">433</field>
+            <field name="name">invalid goods detained parameter value</field>
+        </record>
+        <record id="error_code_434" model="ewaybill.error.code">
+            <field name="code">434</field>
+            <field name="name">invalid ewbNoAvailable parameter value</field>
+        </record>
+        <record id="error_code_435" model="ewaybill.error.code">
+            <field name="code">435</field>
+            <field name="name">Part B is already updated,hence updation is not allowed</field>
+        </record>
+        <record id="error_code_436" model="ewaybill.error.code">
+            <field name="code">436</field>
+            <field name="name">Invalid Consignee ship to State Code for the given pincode</field>
+        </record>
+        <record id="error_code_437" model="ewaybill.error.code">
+            <field name="code">437</field>
+            <field name="name">Invalid Supplier ship from State Code for the given pincode</field>
+        </record>
+        <record id="error_code_438" model="ewaybill.error.code">
+            <field name="code">438</field>
+            <field name="name">Invalid Latitude</field>
+        </record>
+        <record id="error_code_439" model="ewaybill.error.code">
+            <field name="code">439</field>
+            <field name="name">Invalid Longitude</field>
+        </record>
+        <record id="error_code_440" model="ewaybill.error.code">
+            <field name="code">440</field>
+            <field name="name">Error in inserting in verification data</field>
+        </record>
+        <record id="error_code_441" model="ewaybill.error.code">
+            <field name="code">441</field>
+            <field name="name">Invalid verification type</field>
+        </record>
+        <record id="error_code_442" model="ewaybill.error.code">
+            <field name="code">442</field>
+            <field name="name">Error in inserting verification details</field>
+        </record>
+        <record id="error_code_443" model="ewaybill.error.code">
+            <field name="code">443</field>
+            <field name="name">invalid invoice available value</field>
+        </record>
+        <record id="error_code_600" model="ewaybill.error.code">
+            <field name="code">600</field>
+            <field name="name">Invalid category</field>
+        </record>
+        <record id="error_code_601" model="ewaybill.error.code">
+            <field name="code">601</field>
+            <field name="name">Invalid date format</field>
+        </record>
+        <record id="error_code_602" model="ewaybill.error.code">
+            <field name="code">602</field>
+            <field name="name">Invalid File Number</field>
+        </record>
+        <record id="error_code_603" model="ewaybill.error.code">
+            <field name="code">603</field>
+            <field name="name">For file details file number is required</field>
+        </record>
+        <record id="error_code_604" model="ewaybill.error.code">
+            <field name="code">604</field>
+            <field name="name">E-way bill(s) are already generated for the same document number, you cannot generate again on same document number</field>
+        </record>
+        <record id="error_code_607" model="ewaybill.error.code">
+            <field name="code">607</field>
+            <field name="name">dispatch from gstin is mandatary</field>
+        </record>
+        <record id="error_code_608" model="ewaybill.error.code">
+            <field name="code">608</field>
+            <field name="name">ship to from gstin is mandatary</field>
+        </record>
+        <record id="error_code_609" model="ewaybill.error.code">
+            <field name="code">609</field>
+            <field name="name">invalid ship to from gstin</field>
+        </record>
+        <record id="error_code_610" model="ewaybill.error.code">
+            <field name="code">610</field>
+            <field name="name">invalid dispatch from gstin</field>
+        </record>
+        <record id="error_code_611" model="ewaybill.error.code">
+            <field name="code">611</field>
+            <field name="name">Invalid document type for the given supply type</field>
+        </record>
+        <record id="error_code_612" model="ewaybill.error.code">
+            <field name="code">612</field>
+            <field name="name">Invalid transaction type</field>
+        </record>
+        <record id="error_code_613" model="ewaybill.error.code">
+            <field name="code">613</field>
+            <field name="name">Exception in getting Officer Role</field>
+        </record>
+        <record id="error_code_614" model="ewaybill.error.code">
+            <field name="code">614</field>
+            <field name="name">Transaction type is mandatory</field>
+        </record>
+        <record id="error_code_615" model="ewaybill.error.code">
+            <field name="code">615</field>
+            <field name="name">Dispatch From GSTIN cannot be sent as the transaction type selected is Regular</field>
+        </record>
+        <record id="error_code_616" model="ewaybill.error.code">
+            <field name="code">616</field>
+            <field name="name">Ship to GSTIN cannot be sent as the transaction type selected is Regular</field>
+        </record>
+        <record id="error_code_617" model="ewaybill.error.code">
+            <field name="code">617</field>
+            <field name="name">Bill-from and dispatch-from gstin should not be same for this transaction type</field>
+        </record>
+        <record id="error_code_618" model="ewaybill.error.code">
+            <field name="code">618</field>
+            <field name="name">Bill-to and ship-to gstin should not be same for this transaction type</field>
+        </record>
+        <record id="error_code_619" model="ewaybill.error.code">
+            <field name="code">619</field>
+            <field name="name">Transporter Id is mandatory for generation of Part A slip</field>
+        </record>
+        <record id="error_code_620" model="ewaybill.error.code">
+            <field name="code">620</field>
+            <field name="name">Total invoice value cannot be less than the sum of total assessible value and tax values</field>
+        </record>
+        <record id="error_code_621" model="ewaybill.error.code">
+            <field name="code">621</field>
+            <field name="name">Trans mode is mandatory since vehicle number is present</field>
+        </record>
+        <record id="error_code_622" model="ewaybill.error.code">
+            <field name="code">622</field>
+            <field name="name">Trans mode is mandatory since trans doc number is present</field>
+        </record>
+        <record id="error_code_623" model="ewaybill.error.code">
+            <field name="code">623</field>
+            <field name="name">IGST value is not applicable for Intra State Transaction</field>
+        </record>
+        <record id="error_code_624" model="ewaybill.error.code">
+            <field name="code">624</field>
+            <field name="name">SGST/CGST value is not applicable for Inter State Transaction</field>
+        </record>
+        <record id="error_code_627" model="ewaybill.error.code">
+            <field name="code">627</field>
+            <field name="name">Total value should not be negative</field>
+        </record>
+        <record id="error_code_628" model="ewaybill.error.code">
+            <field name="code">628</field>
+            <field name="name">Total invoice value should not be negative</field>
+        </record>
+        <record id="error_code_629" model="ewaybill.error.code">
+            <field name="code">629</field>
+            <field name="name">IGST value should not be negative</field>
+        </record>
+        <record id="error_code_630" model="ewaybill.error.code">
+            <field name="code">630</field>
+            <field name="name">CGST value should not be negative</field>
+        </record>
+        <record id="error_code_631" model="ewaybill.error.code">
+            <field name="code">631</field>
+            <field name="name">SGST value should not be negative</field>
+        </record>
+        <record id="error_code_632" model="ewaybill.error.code">
+            <field name="code">632</field>
+            <field name="name">Cess value should not be negative</field>
+        </record>
+        <record id="error_code_633" model="ewaybill.error.code">
+            <field name="code">633</field>
+            <field name="name">Cess non advol should not be negative</field>
+        </record>
+        <record id="error_code_634" model="ewaybill.error.code">
+            <field name="code">634</field>
+            <field name="name">Vehicle type should not be ODC when transmode is other than road</field>
+        </record>
+        <record id="error_code_635" model="ewaybill.error.code">
+            <field name="code">635</field>
+            <field name="name">You cannot update part B, as the current tranporter is already entered Part B details of the eway bill</field>
+        </record>
+        <record id="error_code_636" model="ewaybill.error.code">
+            <field name="code">636</field>
+            <field name="name">You are not assigned to update part B</field>
+        </record>
+        <record id="error_code_637" model="ewaybill.error.code">
+            <field name="code">637</field>
+            <field name="name">You cannot extend ewaybill, as the current tranporter is already entered Part B details of the ewaybill</field>
+        </record>
+        <record id="error_code_638" model="ewaybill.error.code">
+            <field name="code">638</field>
+            <field name="name">Transport mode is mandatory as Vehicle Number/Transport Document Number is given</field>
+        </record>
+        <record id="error_code_640" model="ewaybill.error.code">
+            <field name="code">640</field>
+            <field name="name">Tolal Invoice Value is mandatory</field>
+        </record>
+        <record id="error_code_641" model="ewaybill.error.code">
+            <field name="code">641</field>
+            <field name="name">For outward CKD/SKD/Lots supply type, Bill To state should be as Other Country, since the Bill To GSTIN given is of SEZ unit</field>
+        </record>
+        <record id="error_code_642" model="ewaybill.error.code">
+            <field name="code">642</field>
+            <field name="name">For inward CKD/SKD/Lots supply type, Bill From state should be as Other Country, since the Bill From GSTIN given is of SEZ unit</field>
+        </record>
+        <record id="error_code_643" model="ewaybill.error.code">
+            <field name="code">643</field>
+            <field name="name">For regular transaction, Bill from state code and Dispatch from state code should be same</field>
+        </record>
+        <record id="error_code_644" model="ewaybill.error.code">
+            <field name="code">644</field>
+            <field name="name">For regular transaction, Bill to state code and Ship to state code should be same</field>
+        </record>
+        <record id="error_code_645" model="ewaybill.error.code">
+            <field name="code">645</field>
+            <field name="name">You cannot do Multi Vehicle movement, as current transporeter already entered part B</field>
+        </record>
+        <record id="error_code_646" model="ewaybill.error.code">
+            <field name="code">646</field>
+            <field name="name">You are not assigned to do multi vehicle movement</field>
+        </record>
+        <record id="error_code_647" model="ewaybill.error.code">
+            <field name="code">647</field>
+            <field name="name">Could not insert RFID data, pl. contact helpdisk</field>
+        </record>
+        <record id="error_code_648" model="ewaybill.error.code">
+            <field name="code">648</field>
+            <field name="name">Multi Vehicle movement is already Initiated,hence generation of consolidated eway bill is not allowed</field>
+        </record>
+        <record id="error_code_649" model="ewaybill.error.code">
+            <field name="code">649</field>
+            <field name="name">You cannot generate consolidated eway bill , as the current tranporter is already entered Part B details of the eway bill</field>
+        </record>
+        <record id="error_code_650" model="ewaybill.error.code">
+            <field name="code">650</field>
+            <field name="name">You are not assigned to generate consolidated ewaybill</field>
+        </record>
+        <record id="error_code_651" model="ewaybill.error.code">
+            <field name="code">651</field>
+            <field name="name">For Category Part-A or Part-B ewbdt is mandatory</field>
+        </record>
+        <record id="error_code_652" model="ewaybill.error.code">
+            <field name="code">652</field>
+            <field name="name">For Category EWB03 procdt is mandatory</field>
+        </record>
+        <record id="error_code_654" model="ewaybill.error.code">
+            <field name="code">654</field>
+            <field name="name">This GSTIN has generated a common Enrolment Number. Hence you are not allowed to generate Eway bill</field>
+        </record>
+        <record id="error_code_655" model="ewaybill.error.code">
+            <field name="code">655</field>
+            <field name="name">This GSTIN has generated a common Enrolment Number. Hence you cannot mention it as a tranporter</field>
+        </record>
+        <record id="error_code_656" model="ewaybill.error.code">
+            <field name="code">656</field>
+            <field name="name">This Eway Bill does not belongs to your state</field>
+        </record>
+        <record id="error_code_657" model="ewaybill.error.code">
+            <field name="code">657</field>
+            <field name="name">Eway Bill Category wise details will be available after 4 days only</field>
+        </record>
+        <record id="error_code_658" model="ewaybill.error.code">
+            <field name="code">658</field>
+            <field name="name">You are blocked for accesing this API as the allowed number of requests has been exceeded for this duration</field>
+        </record>
+        <record id="error_code_659" model="ewaybill.error.code">
+            <field name="code">659</field>
+            <field name="name">Remarks is mandatory</field>
+        </record>
+        <record id="error_code_670" model="ewaybill.error.code">
+            <field name="code">670</field>
+            <field name="name">Invalid Month Parameter</field>
+        </record>
+        <record id="error_code_671" model="ewaybill.error.code">
+            <field name="code">671</field>
+            <field name="name">Invalid Year Parameter</field>
+        </record>
+        <record id="error_code_672" model="ewaybill.error.code">
+            <field name="code">672</field>
+            <field name="name">User Id is mandatory</field>
+        </record>
+        <record id="error_code_673" model="ewaybill.error.code">
+            <field name="code">673</field>
+            <field name="name">Error in getting officer dashboard</field>
+        </record>
+        <record id="error_code_675" model="ewaybill.error.code">
+            <field name="code">675</field>
+            <field name="name">Error in getting EWB03 details by acknowledgement date range</field>
+        </record>
+        <record id="error_code_676" model="ewaybill.error.code">
+            <field name="code">676</field>
+            <field name="name">Error in getting EWB Not Available List by entered date range</field>
+        </record>
+        <record id="error_code_677" model="ewaybill.error.code">
+            <field name="code">677</field>
+            <field name="name">Error in getting EWB Not Available List by closed date range</field>
+        </record>
+        <record id="error_code_678" model="ewaybill.error.code">
+            <field name="code">678</field>
+            <field name="name">Invalid Uniq No</field>
+        </record>
+        <record id="error_code_679" model="ewaybill.error.code">
+            <field name="code">679</field>
+            <field name="name">Invalid EWB03 Ack No</field>
+        </record>
+        <record id="error_code_680" model="ewaybill.error.code">
+            <field name="code">680</field>
+            <field name="name">Invalid Close Reason</field>
+        </record>
+        <record id="error_code_681" model="ewaybill.error.code">
+            <field name="code">681</field>
+            <field name="name">Error in Closing EWB Verification Data</field>
+        </record>
+        <record id="error_code_682" model="ewaybill.error.code">
+            <field name="code">682</field>
+            <field name="name">No Record available to Close</field>
+        </record>
+        <record id="error_code_683" model="ewaybill.error.code">
+            <field name="code">683</field>
+            <field name="name">Error in fetching WatchList Data</field>
+        </record>
+        <record id="error_code_685" model="ewaybill.error.code">
+            <field name="code">685</field>
+            <field name="name">Exception in fetching dashboard data</field>
+        </record>
+        <record id="error_code_700" model="ewaybill.error.code">
+            <field name="code">700</field>
+            <field name="name">You are not assigned to extend e-waybill</field>
+        </record>
+        <record id="error_code_701" model="ewaybill.error.code">
+            <field name="code">701</field>
+            <field name="name">Invalid Vehicle Direction</field>
+        </record>
+        <record id="error_code_702" model="ewaybill.error.code">
+            <field name="code">702</field>
+            <field name="name">The distance between the pincodes given is too high</field>
+        </record>
+        <record id="error_code_703" model="ewaybill.error.code">
+            <field name="code">703</field>
+            <field name="name">Since the consignor is Composite Taxpayer, inter state transactions are not allowed</field>
+        </record>
+        <record id="error_code_704" model="ewaybill.error.code">
+            <field name="code">704</field>
+            <field name="name">Since the consignor is Composite Taxpayer, Tax rates should be zero</field>
+        </record>
+        <record id="error_code_705" model="ewaybill.error.code">
+            <field name="code">705</field>
+            <field name="name">Invalid transit type</field>
+        </record>
+        <record id="error_code_706" model="ewaybill.error.code">
+            <field name="code">706</field>
+            <field name="name">Address Line1 is mandatory</field>
+        </record>
+        <record id="error_code_707" model="ewaybill.error.code">
+            <field name="code">707</field>
+            <field name="name">Address Line2 is mandatory</field>
+        </record>
+        <record id="error_code_708" model="ewaybill.error.code">
+            <field name="code">708</field>
+            <field name="name">Address Line3 is mandatory</field>
+        </record>
+        <record id="error_code_709" model="ewaybill.error.code">
+            <field name="code">709</field>
+            <field name="name">Pin to pin distance is not available for the given pin codes</field>
+        </record>
+        <record id="error_code_710" model="ewaybill.error.code">
+            <field name="code">710</field>
+            <field name="name">Invalid state code for the given pincode</field>
+        </record>
+        <record id="error_code_711" model="ewaybill.error.code">
+            <field name="code">711</field>
+            <field name="name">Invalid value for isInTransit field</field>
+        </record>
+        <record id="error_code_712" model="ewaybill.error.code">
+            <field name="code">712</field>
+            <field name="name">Transit Type is not required as the good are not in movement</field>
+        </record>
+        <record id="error_code_713" model="ewaybill.error.code">
+            <field name="code">713</field>
+            <field name="name">Transit Address is not required as the good are not in movement</field>
+        </record>
+        <record id="error_code_714" model="ewaybill.error.code">
+            <field name="code">714</field>
+            <field name="name">Document type - Tax Invoice is not allowed for composite tax payer</field>
+        </record>
+        <record id="error_code_715" model="ewaybill.error.code">
+            <field name="code">715</field>
+            <field name="name">The Consignor GSTIN is blocked from e-waybill generation as Return is not filed for past 2 months</field>
+        </record>
+        <record id="error_code_716" model="ewaybill.error.code">
+            <field name="code">716</field>
+            <field name="name">The Consignee GSTIN is blocked from e-waybill generation as Return is not filed for past 2 months</field>
+        </record>
+        <record id="error_code_717" model="ewaybill.error.code">
+            <field name="code">717</field>
+            <field name="name">The Transporter GSTIN is blocked from e-waybill generation as Return is not filed for past 2 months</field>
+        </record>
+        <record id="error_code_718" model="ewaybill.error.code">
+            <field name="code">718</field>
+            <field name="name">The User GSTIN is blocked from Transporter Updation as Return is not filed for past 2 months</field>
+        </record>
+        <record id="error_code_719" model="ewaybill.error.code">
+            <field name="code">719</field>
+            <field name="name">The Transporter GSTIN is blocked from Transporter Updation as Return is not filed for past 2 months</field>
+        </record>
+        <record id="error_code_720" model="ewaybill.error.code">
+            <field name="code">720</field>
+            <field name="name">E Way Bill should be generated as part of IRN generation or with reference to IRN in E Invoice System, Since Supplier is enabled for E Invoice.</field>
+        </record>
+        <record id="error_code_721" model="ewaybill.error.code">
+            <field name="code">721</field>
+            <field name="name">The distance between the given pincodes are not available in the system. Please provide distance.</field>
+        </record>
+        <record id="error_code_722" model="ewaybill.error.code">
+            <field name="code">722</field>
+            <field name="name">Consignee GSTIN is cancelled and document date is later than the De-Registration date</field>
+        </record>
+        <record id="error_code_724" model="ewaybill.error.code">
+            <field name="code">724</field>
+            <field name="name">HSN code of at least one item should be of goods to generate e-Way Bill</field>
+        </record>
+        <record id="error_code_726" model="ewaybill.error.code">
+            <field name="code">726</field>
+            <field name="name">Vehicle type can not be regular when transportation mode is ship</field>
+        </record>
+        <record id="error_code_727" model="ewaybill.error.code">
+            <field name="code">727</field>
+            <field name="name">For Ship Transport, either vehicle number or transport document number is required</field>
+        </record>
+        <record id="error_code_728" model="ewaybill.error.code">
+            <field name="code">728</field>
+            <field name="name">You can cancel the ewaybill within 24 hours from Part B entry</field>
+        </record>
+        <record id="error_code_729" model="ewaybill.error.code">
+            <field name="code">729</field>
+            <field name="name">TransDoc date is required for transport mode Ship as the transport document number is provided</field>
+        </record>
+        <record id="error_code_813" model="ewaybill.error.code">
+            <field name="code">813</field>
+            <field name="name">Duplicate request at the same time</field>
+        </record>
+        <record id="error_code_817" model="ewaybill.error.code">
+            <field name="code">817</field>
+            <field name="name">MultiVehicleMovement cannot be initiated.Eway Bill is not in Active State</field>
+        </record>
+        <record id="error_code_818" model="ewaybill.error.code">
+            <field name="code">818</field>
+            <field name="name">Validity period lapsed.Cannot generate consolidated Eway Bill</field>
+        </record>
+        <record id="error_code_819" model="ewaybill.error.code">
+            <field name="code">819</field>
+            <field name="name">Ewaybill cannot be generated for the document date which is prior to 01/07/2017</field>
+        </record>
+    </data>
+</odoo>

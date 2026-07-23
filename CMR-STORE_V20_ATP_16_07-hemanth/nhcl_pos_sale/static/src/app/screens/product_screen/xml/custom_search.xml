@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--ADDING BUTTON IN POS-->
+<templates id="template" xml:space="preserve">
+    <t t-name="nhcl_pos_sale.CustomSearch">
+       <div class="d-flex shadow-sm bg-view justify-content-end custom-search">
+           <div class="p-2 d-flex align-items-center gap-1 w-50">
+                <div class="input-group h-100">
+                    <div class="form-control input-container d-flex align-items-center py-1 bg-view">
+                        <i class="fa fa-search text-muted"/>
+                        <input class="border-0 mx-2 w-100 bg-transparent text-body" type="text" style="min-width: 60px; outline: none;"
+                            placeholder="Search Products .."
+                            t-on-keydown="handleKeyDown"
+                            t-on-focus="ev => ev.target.select()"
+                        />
+                    </div>
+                </div>
+            </div>
+       </div>
+    </t>
+</templates>

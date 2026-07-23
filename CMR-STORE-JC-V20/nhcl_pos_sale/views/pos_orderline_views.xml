@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="account_move_inherited_form_view" model="ir.ui.view">
+            <field name="name">inherited.account.move.view</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet//notebook//page[1]//field[@name='invoice_line_ids']//tree//field[@name='discount']"
+                        position="after">
+                    <field name="gdiscount"/>
+                </xpath>
+            </field>
+    </record>
+
+    <!--    Add a field sales persons in pos order form tree view-->
+    <record id="view_pos_pos_form" model="ir.ui.view">
+        <field name="name">pos.order.view.inherit.salesperson.pos.order.line</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet/notebook/page/field[@name='lines']/tree/field[@name='full_product_name']"
+                   position="after">
+                <field name="nhcl_reward_id" optional="hide"/>
+                <field name="employ_id"/>
+                <field name="employe_no" optional="hide"/>
+                <field name="badge_id" optional="hide"/>
+                 <field name ="disc_lines" optional="hide"/>
+                 <field name ="total_discount"/>
+            </xpath>
+            <field name="discount" position="after">
+				<field name ="total_reward_discount"/>
+                <field name="gdiscount" string="G.Discount(%)"/>
+			</field>
+            <xpath expr="//group[@name='order_total']/field[@name='amount_tax']" position="after">
+                <field name="amount_reward_discount"/>
+                <field name="amount_discount"/>
+                <field name="amount_untaxed"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+
+            <xpath expr="//sheet//div[@class='oe_button_box']" position="inside">
+                <button name="action_view_credit_notes"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-file-text-o"
+                        invisible="credit_note_count == 0 ">
+                    <field name="credit_note_count"
+                           widget="statinfo"
+                           string="Credit Notes"/>
+                </button>
+            </xpath>
+
+            <page name="payments" position="after">
+                <page name="used_credits" string="Used Credits" invisible="not credit_ids">
+                    <field name="credit_ids" nolabel="1">
+                        <tree string="Used Credits" edit="0" create="0" delete="0">
+                            <field name="partner_credit_id"/>
+                            <field name="credit_id" column_invisible="1"/>
+                            <field name="amount"/>
+                        </tree>
+                    </field>
+                </page>
+            </page>
+        </field>
+    </record>
+
+
+    <record id="view_pos_payment_search_inherit_cashier" model="ir.ui.view">
+        <field name="name">pos.payment.search.inherit.cashier</field>
+        <field name="model">pos.payment</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_payment_search"/>
+        <field name="arch" type="xml">
+
+            <!-- Insert Cashier group-by without touching source -->
+            <xpath expr="//group[@expand='0']" position="inside">
+                <filter
+                        name="group_by_cashier"
+                        string="Cashier"
+                        domain="[]"
+                        context="{'group_by': 'nhcl_cashier'}"/>
+                <filter
+                        name="group_by_counter"
+                        string="Point of Sale"
+                        domain="[]"
+                        context="{'group_by': 'nhcl_counter_id'}"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_pos_order_line_tree" model="ir.ui.view">
+        <field name="name">pos.order.line.tree</field>
+        <field name="model">pos.order.line</field>
+        <field name="arch" type="xml">
+            <tree string="Order Summary" edit="0" create="0" duplicate="0" delete="0">
+                <field name="config_id" />
+                <field name="order_id" />
+                <field name="partner_id" />
+                <field name="phone" />
+                <field name="product_id" />
+                <field name="qty" />
+                <field name="total_discount" />
+                <field name="price_subtotal_incl" widget="monetary"/>
+                <field name="state" widget="badge" decoration-info="state == 'draft'"
+                       decoration-success="state not in ('draft','cancel')"/>
+                <field name="currency_id" column_invisible="True"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_pos_order_line_filter" model="ir.ui.view">
+        <field name="name">pos.order.line.list.select</field>
+        <field name="model">pos.order.line</field>
+        <field name="arch" type="xml">
+            <search string="Search Sales Order line">
+                <field name="order_id"/>
+                <field name="product_id"/>
+                <field name="partner_id"/>
+                <field name="config_id"/>
+                <filter string="Invoiced" name="invoiced" domain="[('state', '=', 'invoiced')]"/>
+                <filter string="Posted" name="posted" domain="[('state', '=', 'done')]"/>
+                <filter string="Cancelled" name="posted" domain="[('state', '=', 'cancel')]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="Order" name="order" domain="[]" context="{'group_by': 'order_id'}"/>
+                    <filter string="Point of Sale" name="config_id" domain="[]" context="{'group_by': 'config_id'}"/>
+                    <filter string="Customer" name="customer" domain="[]" context="{'group_by': 'partner_id'}"/>
+                    <filter string="Status" name="status" domain="[]" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_pos_line_form" model="ir.actions.act_window">
+        <field name="name">Order Summary</field>
+        <field name="res_model">pos.order.line</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_pos_order_line_tree" />
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_empty_folder">
+                No order lines found
+            </p><p>
+                To record new orders, start a new session.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_point_of_sale_line" parent="point_of_sale.menu_point_of_sale"
+              action="action_pos_line_form" sequence="2"
+              groups="point_of_sale.group_pos_manager,point_of_sale.group_pos_user"/>
+
+
+<!--    cash payment screen-->
+    <record id="view_pos_payment_form_custom" model="ir.ui.view">
+        <field name="name">pos.payment.form.custom</field>
+        <field name="model">pos.payment</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_payment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='session_id']" position="after">
+                <field name="order_ref_no"/>
+                <field name="customer_id"/>
+                <field name="order_total"/>
+                <field name="order_date"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="action_pos_payment_user" model="ir.actions.act_window">
+        <field name="name">My Payments</field>
+        <field name="res_model">pos.payment</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="point_of_sale.view_pos_payment_tree"/>
+        <field name="domain">[('payment_method_id.name','=','Cash')]</field>
+
+    </record>
+    <menuitem id="menu_pos_cashier" name="Cash Payments"
+              parent="point_of_sale.menu_point_of_sale" action="action_pos_payment_user" sequence="10"/>
+
+</odoo>

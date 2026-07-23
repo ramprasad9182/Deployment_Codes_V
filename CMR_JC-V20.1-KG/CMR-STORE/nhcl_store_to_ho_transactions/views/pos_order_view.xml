@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_pos_order_form_inherit_integration_status" model="ir.ui.view">
+        <field name="name">pos.order.form.pos.sale.status</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='refund']" position="after">
+                <button name="each_record_pos_order_data_to_ho" type="object" string="Sync-HO"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="nhcl_status" invisible="1"/>
+                                <field name="nhcl_integration_count"/>
+
+            </xpath>
+            <xpath expr="//sheet" position="before">
+f
+                <div class="alert alert-success"
+                     role="alert"
+                     invisible="not nhcl_status">
+                    <field name="warning_message" nolabel="1"
+                           style="white-space: pre-wrap;"/>
+                </div>
+
+                <div class="alert alert-danger"
+                     role="alert"
+                     invisible="nhcl_status">
+                    <field name="warning_message" nolabel="1"
+                           style="white-space: pre-wrap;"/>
+                </div>
+
+            </xpath>
+
+
+        </field>
+    </record>
+
+        <record id="view_journal_form_inherit_integration_status" model="ir.ui.view">
+        <field name="name">account.move.form.status</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='ref']" position="after">
+                <field name="nhcl_replication_status" invisible="1"/>
+                                <field name="nhcl_integration_count"/>
+
+            </xpath>
+            <xpath expr="//sheet" position="before">
+
+                <div class="alert alert-success"
+                     role="alert"
+                     invisible="not nhcl_replication_status">
+                    <field name="warning_message" nolabel="1"
+                           style="white-space: pre-wrap;"/>
+                </div>
+
+                <div class="alert alert-danger"
+                     role="alert"
+                     invisible="nhcl_replication_status">
+                    <field name="warning_message" nolabel="1"
+                           style="white-space: pre-wrap;"/>
+                </div>
+
+            </xpath>
+
+
+        </field>
+    </record>
+
+</odoo>

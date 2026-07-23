@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_message_wizard,access_message_wizard,model_message_wizard,base.group_user,1,1,1,1
+access_cancel_irn_wizard,access_cancel_irn_wizard,model_cancel_irn_wizard,base.group_user,1,1,1,1
+l10n_in_e_invoice_lax.access_port_code,access_port_code,l10n_in_e_invoice_lax.model_port_code,base.group_user,1,1,1,1

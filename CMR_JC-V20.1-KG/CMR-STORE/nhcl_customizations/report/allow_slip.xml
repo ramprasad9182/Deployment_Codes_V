@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="allow_slip_note_pos">
+        <main class="page">
+            <t t-foreach="docs" t-as="o">
+                <div class="page" style="width:80mm;margin:0;padding:0;">
+                    <!-- HEADER -->
+                    <div style="text-align:center;">
+                        <div style="font-weight:bold;font-size:16px;">
+                            <t t-esc="o.company_id.name"/>
+                        </div>
+                        <div style="font-size:11px;">
+                            <t t-esc="o.company_id.partner_id.contact_address"/>
+                        </div>
+                    </div>
+                    <div style="border-top:1px dashed black;margin:6px 0;width:300px;"></div>
+                    <!-- TITLE -->
+                    <div style="text-align:center;font-size:18px;font-weight:bold;">
+                        ALLOW SLIP
+                    </div>
+                    <div style="border-top:1px dashed black;margin:6px 0;width:300px;"></div>
+                    <!-- INFO -->
+                    <div style="font-size: 16px;">
+                        Slip No :
+                        <span t-field="o.name"/>
+                    </div>
+                    <div style="font-size: 16px; ">
+                        Date :
+                        <span t-field="o.date_time_nh"/>
+                    </div>
+                    <div style="font-size: 16px; ">
+                        Bill No :
+                        <span t-field="o.nhcl_pos_order"/>
+                    </div>
+                    <div style="border-top:1px dashed black;margin:6px 0;width:300px;"></div>
+                    <!-- ITEMS -->
+                    <table style="width:100%; border-collapse:collapse;">
+                        <!-- HEADER ROW -->
+                        <tr style="border-bottom:1px solid black; font-weight:bold;">
+                            <td style="width:40%;">Item</td>
+                            <td style=" width:25%; text-align:center;padding-left:6px;padding-right:6px;">
+                                SN
+                            </td>
+                            <td style=" width:15%;text-align:center;padding-left:10px; padding-right:10px;">
+                                Qty
+                            </td>
+                        </tr>
+
+                        <!-- PRODUCT LINES -->
+                        <t t-foreach="o.move_ids_without_package.filtered(lambda m: m.nhcl_exchange)" t-as="line">
+                            <tr style="border-bottom:1px dotted black;">
+                                <!-- ITEM -->
+                                <td style="width:40%; padding:3px 0;">
+                                    <div>
+                                        <t t-esc="line.product_id.display_name"/>
+                                    </div>
+                                    <div t-if="line.product_id.barcode" style="font-size:11px;">
+                                        <t t-esc="line.product_id.barcode"/>
+                                    </div>
+                                </td>
+                                <!-- SERIAL NUMBER -->
+                                <td style="width:25%;text-align:center;padding-left:6px;padding-right:6px;white-space:nowrap;">
+                                    <t t-if="line.serial_no">
+                                        <t t-esc="line.serial_no"/>
+                                    </t>
+                                </td>
+                                <!-- QUANTITY -->
+                                <td style=" width:15%;text-align:center; padding-left:10px;padding-right:10px;white-space:nowrap;">
+                                    <t t-esc="'%.2f' % line.quantity"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </table>
+                    <!-- SIGNATURE -->
+                     <div style="font-weight: bold; margin-top:20px;font-size:16px;">
+                        Signature
+                        <div style="border-bottom:1px solid black;width:300px;"></div>
+                    </div>
+<!--                    <div style="text-align:center;margin-top:10px;font-size:11px; font-size:16px;">-->
+<!--                        Slip to be returned at allow slip counter-->
+<!--                    </div>-->
+                </div>
+            </t>
+        </main>
+    </template>
+
+    <!-- Thermal Paper Format -->
+    <record id="custom_paper_format" model="report.paperformat">
+        <field name="name">POS Slip Paper</field>
+        <field name="default" eval="False"/>
+        <field name="format">custom</field>
+        <field name="page_height">297</field>
+        <field name="page_width">80</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="dpi">96</field>
+    </record>
+
+    <record id="allow_slip_credit_note" model="ir.actions.report">
+        <field name="name">Your Slip</field>
+        <field name="model">stock.picking</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">nhcl_customizations.allow_slip_note_pos</field>
+        <field name="report_file">nhcl_customizations.allow_slip_note_pos</field>
+        <field name="paperformat_id" ref="nhcl_customizations.custom_paper_format"/>
+    </record>
+</odoo>

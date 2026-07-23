@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template id="template" xml:space="preserve">
+    <t t-name="ultimate_pos_shortcuts.CategorySelector">
+        <div class="cselect_background">
+            <div class="cselect_selector"> 
+                <div class="cselect_items" t-foreach="categoryToShowList" t-as="category" t-key="category.id">
+                    <CategoryItem category="category" isActive="isActive(category)"/>
+                </div>
+            </div>
+        </div>
+    </t>
+</template>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="PartnerListScreen" t-inherit="point_of_sale.PartnerListScreen" t-inherit-mode="extension">
+        <xpath expr="//table[hasclass('partner-list')]//th[hasclass('py-2')][2]" position="replace">
+            <th class="py-2">Wallet Amount</th>
+        </xpath>
+    </t>
+
+    <t t-name="PartnerLine" t-inherit="point_of_sale.PartnerLine" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('partner-line-adress')]" position="replace">
+            <div class="mb-2" t-if="props.partner.wallet_amount">
+                ₹ <t t-esc="props.partner.wallet_amount"/>
+            </div>
+        </xpath>
+    </t>
+</templates>

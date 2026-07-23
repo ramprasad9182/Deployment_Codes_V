@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="PaymentScreen" t-inherit="point_of_sale.PaymentScreen" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('right-content')]" position="inside">
+            <PaymentScreenPaymentLines paymentLines="paymentLines" deleteLine.bind="deletePaymentLine" sendForceDone.bind="sendForceDone" sendPaymentReverse.bind="sendPaymentReverse" sendPaymentCancel.bind="sendPaymentCancel" sendPaymentRequest.bind="sendPaymentRequest" selectLine.bind="selectPaymentLine" updateSelectedPaymentline.bind="updateSelectedPaymentline" />
+        </xpath>
+    </t>
+
+    <t t-name="PaymentScreenMethods" t-inherit="point_of_sale.PaymentScreenMethods" t-inherit-mode="extension" owl="1">
+        <PaymentScreenPaymentLines position="replace"/>
+	</t>
+
+
+    <t t-name="nhcl_pos_sale.PaymentScreenPaymentLines" t-inherit="point_of_sale.PaymentScreenPaymentLines"
+       t-inherit-mode="extension">
+        <xpath expr="//span[hasclass('payment-name')]" position="inside">
+            <t t-if="line.payment_method.is_credit_settlement and line.order.credit_ids.length > 0">
+                <t t-foreach="line.order.credit_ids_list" t-as="credit" t-key="credit.id">
+                    <br/>
+                    <t t-esc="credit.voucher_number"/>
+                </t>
+            </t>
+        </xpath>
+        <xpath expr="//div[hasclass('bg-view')]//div[hasclass('payment-amount')]" position="before">
+            <t t-if="line.payment_method.is_credit_settlement and line.order.credit_ids.length > 0">
+                <t t-foreach="line.order.credit_ids_list" t-as="credit" t-key="credit.id">
+                    <br/>
+                    <t t-esc="credit.voucher_number"/>
+                </t>
+            </t>
+        </xpath>
+    </t>
+</templates>

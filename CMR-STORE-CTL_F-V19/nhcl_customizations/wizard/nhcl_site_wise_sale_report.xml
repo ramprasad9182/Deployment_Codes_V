@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+
+    <record id="nhcl_pos_sale_report_form" model="ir.ui.view">
+        <field name="name">As on Date Sale Report</field>
+        <field name="model">nhcl.pos.sale.report</field>
+        <field name="arch" type="xml">
+            <form string="Hourly Sale Report" create="0">
+                <h1 style="color:black;text-align:center;">Hourly Sale Report</h1>
+                <sheet>
+                    <header>
+                        <button name="get_pos_order_sale_report" type="object"
+                                string="Load Report"/>
+                        <button name="action_to_reset" type="object"
+                                string="Reset"/>
+                        <button name="get_excel_sheet" type="object"
+                                string="Excel"/>
+                         <button name="action_pos_sale_detailed_view" type="object"
+                                string="View Detailed Report" invisible="1"/>
+                    </header>
+                    <group name="pos_sale_report" style="border: 2px solid #990099; padding: 10px;">
+                        <group name="pos_sale_report_group">
+                            <field name="nhcl_company_id" required="1"  options="{'no_create': True, 'no_open': True}"/>
+                        </group>
+                        <group name="pos_sale_report_date_details">
+                            <group>
+                                <field name="from_date" required="1" widget="daterange"
+                                       options="{'to_date_field': 'to_date'}"/>
+                                <field name="to_date" required="1"/>
+                            </group>
+
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Hourly Sale Report" invisible="1">
+                            <field name="nhcl_pos_sale_report_ids" readonly="1" forsesave="1">
+                                <tree create="0" delete="0" editable="bottom" limit="1000000">
+                                    <field name="nhcl_company_id"/>
+                                    <field name="nhcl_amount_total"/>
+                                    <field name="nhcl_amount_incl_tax_total"/>
+                                    <field name="nhcl_quantity"/>
+                                    <field name="nhcl_total_quantity"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+     <record id="view_nhcl_pos_sale_hourly_report_line_tree" model="ir.ui.view">
+        <field name="name">nhcl.pos.sale.report.line.tree</field>
+        <field name="model">nhcl.pos.sale.report.line</field>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false" delete="false" limit="1000000">
+                <field name="nhcl_company_id"/>
+                <field name="nhcl_quantity" sum="Total"/>
+                <field name="nhcl_total_quantity" sum="Total"/>
+                <field name="nhcl_amount_incl_tax_total" sum="Total"/>
+                <field name="nhcl_amount_total" sum="Total"/>
+
+            </tree>
+        </field>
+    </record>
+    <record id="view_nhcl_pos_sale_hourly_report_line_pivot" model="ir.ui.view">
+        <field name="name">nhcl.pos.sale.report.line.pivot</field>
+        <field name="model">nhcl.pos.sale.report.line</field>
+        <field name="arch" type="xml">
+            <pivot string="POS Sale Hourly Report Analysis">
+                <field name="nhcl_company_id" type="row"/>
+                <field name="nhcl_quantity" type="measure"/>
+                <field name="nhcl_total_quantity" type="measure"/>
+                <field name="nhcl_amount_incl_tax_total" type="measure"/>
+                <field name="nhcl_amount_total" type="measure"/>
+
+            </pivot>
+        </field>
+    </record>
+
+
+
+</odoo>
+

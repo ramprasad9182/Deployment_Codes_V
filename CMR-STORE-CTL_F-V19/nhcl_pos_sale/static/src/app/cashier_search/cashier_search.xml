@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="nhcl_pos_sale.SelectionPopup" t-inherit="point_of_sale.SelectionPopup" t-inherit-mode="extension">
+        <xpath expr="//div[@class='modal-header drag-handle']" position="after">
+            <t t-if="isCashierPopup">
+                <div class="p-2 position-relative">
+
+                    <i class="fa fa-search position-absolute"
+                       style="left: 14px; top: 50%; transform: translateY(-50%); color: #888;"/>
+
+                    <input type="text"
+                           class="form-control ps-5 pe-5"
+                           placeholder="Search cashier..."
+                           t-model="state.search"/>
+
+                    <i t-if="state.search"
+                       class="fa fa-times position-absolute"
+                       style="right: 14px; top: 50%; transform: translateY(-50%); cursor: pointer;"
+                       t-on-click="() => state.search = ''"/>
+                </div>
+            </t>
+        </xpath>
+        <xpath expr="//div[contains(@class, 'selection')]//t[@t-foreach='props.list']" position="replace">
+            <t t-foreach="filteredList" t-as="item" t-key="item.id">
+                <button type="button"
+                        class="selection-item d-flex align-items-center justify-content-between btn btn-lg btn-outline-secondary w-100 p-3 text-start"
+                        t-att-class="{ 'selected active': item.isSelected }"
+                        t-on-click="() => this.selectItem(item.id)">
+                    <div class="d-flex flex-column">
+                        <span t-esc="item.label"/>
+                        <span t-esc="item.description" t-if="item.description"/>
+                    </div>
+                    <i class="oi oi-chevron-right"/>
+                </button>
+            </t>
+        </xpath>
+    </t>
+</templates>

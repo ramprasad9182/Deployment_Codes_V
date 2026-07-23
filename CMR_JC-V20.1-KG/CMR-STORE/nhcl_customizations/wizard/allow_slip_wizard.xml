@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="allow_slip_wizard_form_view" model="ir.ui.view">
+        <field name="name">allow.slip.wizard.form</field>
+        <field name="model">allow.slip.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="slip_type"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string="Open Form" name="button_confirm" type="object"
+                            class="btn-primary" data-hotkey="o"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_allow_slip_wizard" model="ir.actions.act_window">
+        <field name="name">Allow Slip</field>
+        <field name="res_model">allow.slip.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem name="Allow Slip" id="nhcl_menu_matching_materials"
+              action="action_allow_slip_wizard"
+              parent="point_of_sale.menu_point_of_sale" sequence="22"/>
+</odoo>

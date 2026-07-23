@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--    # Purchase Order Approval Buttons-->
+    <record id="view_purchase_order_form_inherit" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_ref']" position="attributes">
+                <attribute name="readonly">state in ['cancel', 'done', 'purchase']</attribute>
+            </xpath>
+
+            <!-- Insert the 'po' field after 'partner_id' -->
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <!--                <field name="po"/>-->
+                <field name="po_approval" invisible="1"/>
+                <field name="nhcl_po_type" required="0" placeholder="Please PO Type..." readonly="state not in ['draft','sent']"/>
+                <field name="dummy_po_type" placeholder="Please PO Type..." force_save="1" invisible="1"/>
+                <field name="nhcl_store_status" readonly="1" force_save="1"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="options">{'no_create': True, 'no_open': True, 'no_edit':True}</attribute>
+                <attribute name="domain">[('group_contact.name', 'in', ['Vendor','Branch','Agent'])]</attribute>
+            </xpath>
+            <xpath expr="//field[@name='product_id']" position="before">
+                <field name="s_no" optional="hide"/>
+            </xpath>
+            <!--            ## Name changes to Request For Quation and Print RFQ-->
+            <xpath expr="//div[hasclass('oe_title')]/span[hasclass('o_form_label')]"
+                   position="replace">
+                <span class="o_form_label" invisible="state not in ('draft', 'sent')">Request for Purchase Indent </span>
+
+            </xpath>
+            <xpath expr="//button[@name='print_quotation']" position="replace">
+                <button name="print_quotation" string="Print PI" type="object" invisible="state != 'draft'" class="oe_highlight" groups="base.group_user" data-hotkey="k"/>
+            </xpath>
+            <xpath expr="//button[@name='print_quotation'][2]" position="replace">
+                <button name="print_quotation" string="Print PI" type="object" invisible="state != 'sent'" groups="base.group_user" data-hotkey="k"/>
+            </xpath>
+            <xpath expr="//form/sheet/group/group/field[@name='date_order']" position="before">
+                <field name="advt_status" widget="badge" invisible="nhcl_po_type != 'advertisement'"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page name="advertisement_info" string="Advertisement Info" invisible="nhcl_po_type != 'advertisement'">
+                    <group>
+                        <field name="start_date" readonly="state in ['purchase','done']" required="nhcl_po_type == 'advertisement'"/>
+                        <field name="end_date" readonly="state in ['purchase','done']" required="nhcl_po_type == 'advertisement'"/>
+                        <field name="due_days" readonly="state in ['purchase','done']"/>
+                        <field name="renewal_date" readonly="state in ['purchase','done']" required="nhcl_po_type == 'advertisement'"/>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//form/sheet/notebook/page[@name='products']/field[@name='order_line']"
+                   position="attributes">
+                <attribute name="readonly">state in ('done', 'cancel') or nhcl_store_status == True</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="purchase_order_kpis_tree_cmr" model="ir.ui.view">
+        <field name="name">purchase.order.tree.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_kpis_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="after">
+                <field name="nhcl_po_type" optional="hide" />
+<!--                <field name="ho_status" optional="hide" widget="badge"/>-->
+                <field name="advt_status" widget="badge" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!--    Purchase Order Filter by PO Type View-->
+    <record id="view_purchase_order_filter_cmr" model="ir.ui.view">
+        <field name="name">purchase.order.search.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.view_purchase_order_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='my_purchases']" position="before">
+                <filter name="po_advertisement" string="Advertisement" domain="[('nhcl_po_type', '=', 'advertisement')]"/>
+                <filter name="po_ho_operation" string="HO Operation" domain="[('nhcl_po_type', '=', 'ho_operation')]"/>
+                <filter name="po_inter_state" string="Inter State" domain="[('nhcl_po_type', '=', 'inter_state')]"/>
+                <filter name="po_others" string="Others" domain="[('nhcl_po_type', '=', 'others')]"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_purchase_order_inherit_domain_product" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit.domain</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase_product_matrix.purchase_order_form_matrix"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_template_id']" position="attributes">
+                <attribute name="options">{'no_create': True, 'no_open': True, 'no_edit':True}</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.menu" id="purchase.menu_purchase_rfq">
+        <field name="name">Purchase Indent</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="purchase.purchase_rfq">
+        <field name="name">Purchase Indent</field>
+    </record>
+
+</odoo>

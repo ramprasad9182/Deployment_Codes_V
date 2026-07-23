@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- Tree View -->
+    <record id="view_inventory_movement_report_tree" model="ir.ui.view">
+        <field name="name">inventory.movement.report.tree</field>
+        <field name="model">inventory.movement.report</field>
+        <field name="arch" type="xml">
+            <tree create="false" delete="false" edit="false">
+                <header>
+                    <button name="action_open_date_wizard"
+                            type="object"
+                            display="always"
+                            string="Generate Report"
+                            class="btn-primary"/>
+                </header>
+                <field name="division_name"/>
+                <field name="section_name"/>
+                <field name="department_name"/>
+                <field name="category_name"/>
+                <field name="product_id"/>
+
+                <field name="opening_qty" sum="oq"/>
+                <field name="opening_rs_total" sum="ot"/>
+
+
+                <field name="receipt_qty" sum="rq"/>
+                <field name="receipt_rs_total" sum="rt"/>
+
+                <field name="delivery_qty" sum="dq"/>
+                <field name="delivery_rs_total" sum="dt"/>
+
+                <field name="maintodamage_qty" sum="mdq"/>
+                <field name="maintodamage_rs_total" sum="mdt"/>
+
+                <field name="goodsreturn_damage_qty" sum="grdq"/>
+                <field name="goodsreturn_damage_rs_total" sum="grdt"/>
+
+                <field name="damagetomain_qty" sum="dtmq"/>
+                <field name="damagetomain_rs_total" sum="dtmt"/>
+
+                <field name="pos_order_qty" sum="poq"/>
+                <field name="pos_order_rs_total" sum="pot"/>
+
+<!--                <field name="pos_exchange_qty"/>-->
+<!--                <field name="pos_exchange_rs_total"/>-->
+
+                <field name="pos_return_qty" sum="prq"/>
+                <field name="pos_return_rs_total" sum="prt"/>
+
+                <field name="closing_qty" sum="cq"/>
+                <field name="closing_rs_total" sum="ct"/>
+
+
+                <!--                <field name="receipt_qty" sum="receipt qty"/>-->
+                <!--                <field name="delivery_qty" sum="delivery qty"/>-->
+                <!--                <field name="maintodamage_qty" sum="m2d qty"/>-->
+                <!--                <field name="goodsreturn_damage_qty" sum="grd qty"/>-->
+                <!--                <field name="damagetomain_qty" sum="d2m qty"/>-->
+                <!--                <field name="pos_order_qty" sum="po qty"/>-->
+                <!--                <field name="pos_exchange_qty" sum="pos ex qty"/>-->
+                <!--                <field name="pos_return_qty" sum="pos ret qty"/>-->
+                <button name="action_view_moves"
+                        type="object"
+                        string="View Records"
+                        class="btn-primary"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_inventory_movement_report_search" model="ir.ui.view">
+        <field name="name">inventory.movement.report.search</field>
+        <field name="model">inventory.movement.report</field>
+        <field name="arch" type="xml">
+            <search>
+
+                <field name="product_id"/>
+                <field name="division_name"/>
+                <field name="section_name"/>
+                <field name="department_name"/>
+                <field name="category_name"/>
+
+                <group expand="0" string="Group By">
+                    <filter name="group_by_division"
+                            string="Division"
+                            context="{'group_by': 'division_name'}"/>
+
+                    <filter name="grou_by_section"
+                            string="Section"
+                            context="{'group_by': 'section_name'}"/>
+
+                    <filter name="group_by_department"
+                            string="Department"
+                            context="{'group_by': 'department_name'}"/>
+
+                    <filter name="group_by_category"
+                            string="Category"
+                            context="{'group_by': 'category_name'}"/>
+                </group>
+
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_inventory_movement_report" model="ir.actions.act_window">
+        <field name="name">Inventory Movement Report</field>
+        <field name="res_model">inventory.movement.report</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_inventory_movement_report_tree"/>
+        <field name="search_view_id" ref="view_inventory_movement_report_search"/>
+        <field name="context">{'search_default_group_by_division': True,
+            'search_default_grou_by_section': True,
+            'search_default_group_by_department': True,
+            'search_default_group_by_category': True
+            }
+        </field>
+    </record>
+
+    <!-- Menu Root -->
+    <menuitem id="menu_inventory_analysis_root"
+              name="Inventory Analysis"
+              parent="stock.menu_stock_root"
+              sequence="60"/>
+
+    <!-- Sub Menu -->
+    <menuitem id="menu_inventory_movement_report"
+              name="Inventory Movement Report"
+              parent="stock.menu_warehouse_report"
+              action="action_inventory_movement_report"
+    />
+
+</odoo>

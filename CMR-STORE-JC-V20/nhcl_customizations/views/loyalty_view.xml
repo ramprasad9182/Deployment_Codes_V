@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="cmr_loyalty_rule_view_form_view" model="ir.ui.view">
+        <field name="name">loyalty.rule.view.form.inherit</field>
+        <field name="model">loyalty.rule</field>
+        <field name="inherit_id" ref="loyalty.loyalty_rule_view_form"/>
+        <field name="arch" type="xml">
+<!--            <xpath expr="//form/sheet/group/group/field[@name='product_tag_id']" position="after">-->
+<!--                <label for="range_from" string="Serial Range"/>-->
+<!--                    <div>-->
+<!--                        <field name="range_from" class="oe_inline" readonly="type_filter =='serial'"/> To <field name="range_to" class="oe_inline" readonly="type_filter =='serial'"/>-->
+<!--                    </div>-->
+<!--            </xpath>-->
+            <xpath expr="//form/sheet/group/group/field[@name='product_ids']" position="before">
+                <field name="type_filter" required="1"/>
+                <field name="ref_product_ids" options="{'no_create': True, 'no_open': True, 'no_edit':True}" domain="[('type', 'in', ['consu', 'product'])]" readonly="type_filter =='serial'" widget="many2many_tags"/>
+            </xpath>
+            <xpath expr="//form/sheet/group/group/field[@name='product_ids']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//form/sheet/group/group/field[@name='product_category_id']" position="replace">
+                <field name="product_category_ids" widget="many2many_tags" options="{'no_create': True, 'no_open': True, 'no_edit':True}" readonly="type_filter =='serial'" invisible="type_filter not in ['serial','filter']"/>
+            </xpath>
+<!--            <xpath expr="//form/sheet/group/group/field[@name='product_category_id']" position="attributes">-->
+<!--                <attribute name="options">{'no_create': True, 'no_open': True, 'no_edit':True}</attribute>-->
+<!--                <attribute name="readonly">type_filter =='serial'</attribute>-->
+<!--            </xpath>-->
+            <xpath expr="//form/sheet/group/group/field[@name='product_tag_id']" position="attributes">
+                <attribute name="options">{'no_create': True, 'no_open': True, 'no_edit':True}</attribute>
+                <attribute name="readonly">type_filter =='serial'</attribute>
+            </xpath>
+            <xpath expr="//form/sheet" position="inside">
+            <button name="apply_loyalty_rule" string="Get Serial No" type="object" class="btn-primary"/>
+            <button name="reset_to_filters" string="Reset All Filters" type="object" class="btn-secondary" confirm="Are you sure to reset data"/>
+                <notebook>
+                    <page string="Category And Description Master">
+                        <group>
+                            <group>
+                                <field name="category_1_ids" readonly="type_filter =='serial'"
+                                       options="{'no_create': True, 'no_open': True, 'no_edit':True}"
+                                       placeholder="Please Select ...." widget="many2many_tags"
+                                       />
+                                <field name="category_2_ids" readonly="type_filter =='serial'"
+                                       options="{'no_create': True, 'no_open': True, 'no_edit':True}"
+                                       placeholder="Please Select ...." widget="many2many_tags"
+                                       />
+                                <field name="category_3_ids" readonly="type_filter =='serial'"
+                                       options="{'no_create': True, 'no_open': True, 'no_edit':True}"
+                                       placeholder="Please Select ...." widget="many2many_tags"
+                                      />
+                                <field name="category_4_ids" readonly="type_filter =='serial'"
+                                       options="{'no_create': True, 'no_open': True, 'no_edit':True}"
+                                       placeholder="Please Select ...." widget="many2many_tags"
+                                       />
+                                <field name="category_5_ids" readonly="type_filter =='serial'"
+                                       options="{'no_create': True, 'no_open': True, 'no_edit':True}"
+                                       placeholder="Please Select ...." widget="many2many_tags"
+                                       />
+                                <field name="category_6_ids" readonly="type_filter =='serial'"
+                                       options="{'no_create': True, 'no_open': True, 'no_edit':True}"
+                                       placeholder="Please Select ...." widget="many2many_tags"
+                                      />
+                                 <field name="category_7_ids" readonly="type_filter =='serial'"
+                                       options="{'no_create': True, 'no_open': True, 'no_edit':True}"
+                                       placeholder="Please Select ...." widget="many2many_tags"
+                                      />
+                                 <field name="category_8_ids" readonly="type_filter =='serial'"
+                                       options="{'no_create': True, 'no_open': True, 'no_edit':True}"
+                                       placeholder="Please Select ...." widget="many2many_tags"
+                                      />
+
+                                <field name="serial_import" invisible="type_filter !='serial'"/>
+                                <button name="action_import_serials"
+                                        string="Import Serials"
+                                        type="object"
+                                        class="btn-primary"
+                                        invisible="type_filter !='serial'"
+                                />
+
+                            </group>
+                            <group>
+                                <field name="description_1_ids" readonly="type_filter =='serial'"
+                                       options="{'no_create': True, 'no_open': True, 'no_edit':True}"
+                                       placeholder="Please Select ...." widget="many2many_tags"
+                                       />
+                                <field name="description_2_ids" readonly="type_filter =='serial'"
+                                       options="{'no_create': True, 'no_open': True, 'no_edit':True}"
+                                       placeholder="Please Select ...." widget="many2many_tags"
+                                       />
+                                <field name="description_3_ids" readonly="type_filter =='serial'"
+                                       options="{'no_create': True, 'no_open': True, 'no_edit':True}"
+                                       placeholder="Please Select ...." widget="many2many_tags"
+                                       />
+                                <field name="description_4_ids" readonly="type_filter =='serial'"
+                                       options="{'no_create': True, 'no_open': True, 'no_edit':True}"
+                                       placeholder="Please Select ...." widget="many2many_tags"
+                                       />
+                                <field name="description_5_ids" readonly="type_filter =='serial'"
+                                       options="{'no_create': True, 'no_open': True, 'no_edit':True}"
+                                       placeholder="Please Select ...." widget="many2many_tags"
+                                      />
+                                <field name="description_6_ids" readonly="type_filter =='serial'"
+                                       options="{'no_create': True, 'no_open': True, 'no_edit':True}"
+                                       placeholder="Please Select ...." widget="many2many_tags"
+                                       />
+                                 <field name="description_7_ids" readonly="type_filter =='serial'"
+                                       options="{'no_create': True, 'no_open': True, 'no_edit':True}"
+                                       placeholder="Please Select ...." widget="many2many_tags"
+                                       />
+                                 <field name="description_8_ids" readonly="type_filter =='serial'"
+                                       options="{'no_create': True, 'no_open': True, 'no_edit':True}"
+                                       placeholder="Please Select ...." widget="many2many_tags"
+                                       />
+                                <field name="serial_ids" options="{'no_create': True, 'no_open': True, 'no_edit':True}" readonly="type_filter =='filter'"
+                                       placeholder="Please Select ...." widget="many2many_tags" invisible="0"/>
+                                <field name="serial_nos" readonly="1" force_save="1" invisible="1"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page name="loyalty_line" string="Filtered Barcodes">
+                        <field name="loyalty_line_id" readonly="1" force_save="1">
+                            <tree editable="bottom">
+                                <field name="lot_id"/>
+                                <field name="ref"/>
+                                <field name="product_id"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+
+<!--    <record id="loyalty.loyalty_program_discount_loyalty_action" model="ir.actions.act_window">-->
+<!--        <field name="context">{'create': False,'edit':False}</field>-->
+<!--    </record>-->
+
+<!--    <record id="loyalty.loyalty_program_gift_ewallet_action" model="ir.actions.act_window">-->
+<!--        <field name="context">{'menu_type': 'gift_ewallet', 'default_program_type': 'gift_card','create': False,'edit':False}</field>-->
+<!--    </record>-->
+</odoo>

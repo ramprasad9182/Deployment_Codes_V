@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="assets_backend" name="nhcl_customizations assets"
+              inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript"
+                    src="/nhcl_customizations/static/src/js/web_groups_expand.js"/>
+        </xpath>
+    </template>
+
+</odoo>

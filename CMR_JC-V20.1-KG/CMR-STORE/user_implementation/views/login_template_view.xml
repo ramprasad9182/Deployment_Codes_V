@@ -1,0 +1,12 @@
+<odoo>
+        <template id="custom_login_template" inherit_id="web.login" name="Custom Login Template">
+                <xpath expr="//form[@class='oe_login_form']" position="before">
+                    <t t-if="error">
+                        <div class="alert alert-danger" role="alert">
+                            <t t-esc="error"/>
+                        </div>
+                    </t>
+               </xpath>
+       </template>
+
+</odoo>

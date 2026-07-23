@@ -1,0 +1,17 @@
+/* Promo / Discount → Yellow */
+.pos .orderline.promo-highlight,
+.pos .orderline.promo-highlight.selected {
+    background-color: #fefebe !important;
+}
+
+/* Global Discount → Green */
+.pos .orderline.single-discount-highlight,
+.pos .orderline.single-discount-highlight.selected {
+    background-color: #e1ffcb !important;
+}
+
+/* Both → Peach */
+.pos .orderline.multi-discount-highlight,
+.pos .orderline.multi-discount-highlight.selected {
+    background-color: #ffe0b2 !important;
+}

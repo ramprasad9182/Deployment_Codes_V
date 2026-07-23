@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="nhcl_view_loyalty_program_tree_inherit" model="ir.ui.view">
+        <field name="name">NHCL_loyalty.program.tree.inherit.add_dates</field>
+        <field name="model">loyalty.program</field>
+        <!-- inherit the existing tree view by external id -->
+        <field name="inherit_id" ref="loyalty.loyalty_program_view_tree"/>
+        <field name="arch" type="xml">
+            <!-- target the exact tree with the js_class attribute shown in your snippet -->
+            <xpath expr="//tree[@js_class='loyalty_program_list_view']/field[@name='coupon_count_display']"
+                   position="after">
+                <!-- date fields -->
+                <field name="date_from" string="Start Date"/>
+                <field name="date_to" string="End Date"/>
+                <!-- boolean to indicate active for POS -->
+                <field name="is_active" string="Active"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="NHCL_view_loyalty_program_search_inherit" model="ir.ui.view">
+        <field name="name">NHCL_loyalty.program.search.inherit.add_is_active_filters</field>
+        <field name="model">loyalty.program</field>
+        <field name="inherit_id" ref="loyalty.loyalty_program_view_search"/>
+        <field name="arch" type="xml">
+            <!-- find a stable anchor in the existing search view -->
+            <xpath expr="//search/field[@name='name']" position="after">
+                <separator/>
+                <!-- Filters to quickly show active / not active loyalty programs (POS usage) -->
+                <filter string="Active Promotions" name="is_active_true" domain="[('is_active', '=', True)]"/>
+                <filter string="Not Active Promotions" name="is_active_false" domain="[('is_active', '=', False)]"/>
+                <!-- Group by filter (adds a 'Group By' option that groups by is_active) -->
+                <filter string="Active and Inactive" name="group_by_is_active"
+                        context="{'group_by':'is_active'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

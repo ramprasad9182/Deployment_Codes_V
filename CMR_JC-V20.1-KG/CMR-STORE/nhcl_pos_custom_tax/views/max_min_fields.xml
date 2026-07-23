@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="view_tax_form_inherited_for_max_min" model="ir.ui.view">
+            <field name="name">account.tax.form.inherited.custom</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_tax_form" />
+            <field name="arch" type="xml">
+                 <xpath expr="//field[@name='tax_scope']" position="after">
+                            <field name="min_amount" invisible="amount_type != 'group'" />
+                            <field name="max_amount" invisible="amount_type != 'group'" />
+                </xpath>
+            </field>
+        </record>
+</odoo>

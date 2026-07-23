@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template id="template" xml:space="preserve">
+    <t t-name="ultimate_pos_shortcuts.CategoryItem">
+    <!-- t-att-class="{'active':props.isActive}" t-on-click="props.onClick" -->
+        <div class="cselect_item " t-att-class="{'active':props.isActive}" >
+            <img t-attf-src="#{src}" class="cselect_image"/>
+        </div>
+    </t>
+</template>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="nhcl_pos_sale.ApplicableProgramsInfoPopup">
+            <div class="popup product-info-popup" style="width: 40%;">
+                <div class="modal-header">
+                    <h4 class="modal-title">Benefits</h4>
+                    <div class="btn" t-on-click="cancel">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <main class="body modal-body overflow-auto">
+                    <t t-foreach="state.applicable_rewards" t-as="item" t-key="item.id">
+                        <div class="selection-item d-flex align-items-center justify-content-between w-100 p-1 text-start">
+                            <div class="d-flex flex-column">
+                                <span t-esc="item.label" />
+                                <span t-esc="item.description" t-if="item.description" />
+                            </div>
+                        </div>
+                    </t>
+                </main>
+            </div>
+    </t>
+</templates>

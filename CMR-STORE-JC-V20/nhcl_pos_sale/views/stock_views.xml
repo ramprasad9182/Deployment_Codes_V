@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="stock_picking_view_inherit" model="ir.ui.view">
+        <field name="name">view.picking.form.inherit</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='move_ids_without_package']/tree//field[@name='product_uom_qty']"
+                   position="after">
+                <field name="nhcl_discount" column_invisible="parent.stock_picking_type != 'exchange'" readonly="1"
+                       force_save="1"/>
+                <field name="total_reward_discount" column_invisible="parent.stock_picking_type != 'exchange'" readonly="1"
+                       force_save="1"/>
+            </xpath>
+
+            <field name="nhcl_tax_totals_json" position="before">
+                <field  name="amount_discount"/>
+                <field  name="amount_reward_discount"/>
+            </field>
+
+        </field>
+    </record>
+</odoo>

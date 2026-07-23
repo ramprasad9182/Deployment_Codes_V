@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+lax_ewaybill.access_eway_bill_details,access_eway_bill_details,lax_ewaybill.model_eway_bill_details,base.group_user,1,1,1,1
+lax_ewaybill.access_eway_bill_item_line,access_eway_bill_item_line,lax_ewaybill.model_eway_bill_item_line,base.group_user,1,1,1,1
+lax_ewaybill.access_message_wizard,access_message_wizard,lax_ewaybill.model_message_wizard,base.group_user,1,1,1,1
+lax_ewaybill.access_cancel_ewbno_wizard,access_cancel_ewbno_wizard,lax_ewaybill.model_cancel_ewbno_wizard,base.group_user,1,1,1,1
+lax_ewaybill.access_update_transpoter,access_update_transpoter,lax_ewaybill.model_update_transpoter,base.group_user,1,1,1,1
+lax_ewaybill.access_extend_ewaybill,access_extend_ewaybill,lax_ewaybill.model_extend_ewaybill,base.group_user,1,1,1,1
+lax_ewaybill.access_regenerate_consolidated,access_regenerate_consolidated,lax_ewaybill.model_regenerate_consolidated,base.group_user,1,1,1,1
+lax_ewaybill.access_ewaybill_error_code,access_ewaybill_error_code,lax_ewaybill.model_ewaybill_error_code,base.group_user,1,1,1,1
+lax_ewaybill.access_multi_vehicle_movement,access_multi_vehicle_movement,lax_ewaybill.model_multi_vehicle_movement,base.group_user,1,1,1,1
+lax_ewaybill.access_add_multi_vehicle,access_add_multi_vehicle,lax_ewaybill.model_add_multi_vehicle,base.group_user,1,1,1,1
+lax_ewaybill.access_eway_vehicle_line,access_eway_vehicle_line,lax_ewaybill.model_eway_vehicle_line,base.group_user,1,1,1,1
+lax_ewaybill.access_change_multi_vehicle,access_change_multi_vehicle,lax_ewaybill.model_change_multi_vehicle,base.group_user,1,1,1,1
+lax_ewaybill.access_update_vehicle,access_update_vehicle,lax_ewaybill.model_update_vehicle,base.group_user,1,1,1,1
+lax_ewaybill.access_l10n_in_ewaybill_type,access_l10n_in_ewaybill_type,lax_ewaybill.model_l10n_in_ewaybill_type,base.group_user,1,1,1,1
