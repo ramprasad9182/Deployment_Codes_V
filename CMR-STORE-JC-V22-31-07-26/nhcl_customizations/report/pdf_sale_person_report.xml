@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="pos_sales_employee_report_template">
+    <t t-call="web.external_layout">
+        <main>
+            <t t-foreach="docs" t-as="doc">
+                <div class="page">
+                    <h2>POS Sales Employee Report</h2>
+                    <p>
+                        <strong>Company:</strong>
+                        <t t-esc="doc.company_id.name"/>
+                    </p>
+                    <p>
+                        <strong>From:</strong>
+                        <t t-esc="doc.date_from"/>
+<!--                        &nbsp;&nbsp;-->
+                        <strong>To:</strong>
+                        <t t-esc="doc.date_to"/>
+                    </p>
+                    <table class="table table-sm table-bordered mt32">
+                        <thead>
+                            <tr>
+                                <th>Brand</th>
+                                <th>Sales Employee</th>
+                                <th class="text-end">Quantity</th>
+                                <th class="text-end">Total Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="doc.report_line_ids" t-as="line">
+                                <tr>
+                                    <td>
+                                        <t t-esc="line.category_id.name"/>
+                                    </td>
+                                    <td>
+                                        <t t-esc="line.employee_id.name"/>
+                                    </td>
+                                    <td class="text-end">
+                                        <t t-esc="line.quantity"/>
+                                    </td>
+                                    <td class="text-end">
+                                        <t t-esc="line.total_amount"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </main>
+    </t>
+</template>
+
+    <record id="pos_sales_employee_report_pdf" model="ir.actions.report">
+        <field name="name">POS Sales Employee Report</field>
+        <field name="model">pos.sales.employee.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">nhcl_customizations.pos_sales_employee_report_template</field>
+        <field name="report_file">nhcl_customizations.pos_sales_employee_report_template</field>
+        <field name="binding_model_id" ref="model_pos_sales_employee_report"/>
+    </record>
+</odoo>

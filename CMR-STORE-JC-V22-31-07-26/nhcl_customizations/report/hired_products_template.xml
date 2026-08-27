@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="hired_products_report">
+
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+
+                <t t-foreach="docs" t-as="doc">
+
+                    <div class="page">
+
+                        <h2 style="text-align:center;">Hired Products</h2>
+
+                        <br/>
+
+                        <p>
+                            <strong>Sale Order :</strong>
+                            <span t-field="doc.name"/>
+                        </p>
+
+                        <p>
+                            <strong>Customer :</strong>
+                            <span t-field="doc.partner_id"/>
+                        </p>
+
+                        <p>
+                            <strong>Date :</strong>
+                            <span t-field="doc.date_order"/>
+                        </p>
+
+                        <br/>
+
+                        <table class="table table-bordered">
+
+                            <thead>
+                                <tr>
+                                    <th>Lot Number</th>
+                                    <th>Barcode</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <t t-foreach="doc.hired_product_ids" t-as="line">
+
+                                    <tr>
+                                        <td>
+                                            <span t-field="line.lot_number.name"/>
+                                        </td>
+
+                                        <td>
+                                            <span t-field="line.barcode"/>
+                                        </td>
+
+                                        <td>
+                                            <span t-field="line.quantity"/>
+                                        </td>
+                                    </tr>
+
+                                </t>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </t>
+
+            </t>
+        </t>
+
+    </template>
+
+</odoo>

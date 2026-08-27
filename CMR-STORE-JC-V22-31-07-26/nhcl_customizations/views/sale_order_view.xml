@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_sale_order_inherit_domain_product" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.domain</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+<!--                <field name="transpoter_id" readonly="state not in ['draft','sent']" options="{'no_create': True, 'no_open': True, 'no_edit':True}"/>-->
+                <field name="nhcl_remarks" readonly="state not in ['draft','sent']"/>
+            </xpath>
+            <xpath expr="//field[@name='payment_term_id']" position="attributes">
+                <attribute name="readonly">state not in ['draft','sent']</attribute>
+            </xpath>
+            <xpath expr="//form/sheet/group/group[@name='partner_details']/field[@name='partner_id']" position="after">
+                <field name="so_type" placeholder="Please SO Type..." readonly="state not in ['draft','sent']"/>
+                <field name="transfer_type" placeholder="Please Transfer Type..." required="1" readonly="state not in ['draft','sent']"/>
+                <field name="operation_type" placeholder="Please Operation Type..." readonly="state not in ['draft','sent']"/>
+                <field name="dummy_so_type" invisible="1" placeholder="Please SO Type..." required="1" readonly="state not in ['draft','sent']"/>
+                <label for="picking_document" string="Document"/>
+                <div>
+                    <field name="picking_document" placeholder="Please Select Receipt..." domain="[('state','=','done'), ('stock_picking_type','=','receipt')]" class="oe_inline" invisible="operation_type != 'document'" options="{'no_create': True, 'no_open': True, 'no_edit':True}" readonly="state == 'sale'"/>
+                    <button name="get_picking_lines" type="object" string="Get Lines" class="oe_inline btn-primary" invisible="operation_type != 'document' or state == 'sale'"/>
+                </div>
+            </xpath>
+            <xpath expr="//form/sheet/group/group" position="inside">
+                <field name="entered_qty" readonly="state == 'sale'" invisible="operation_type != 'scan'"/>
+                <field name="barcode_scanned" readonly="state == 'sale'" style="border: 4px solid #714B67;padding-top: 6px;margin-bottom: 10px;" placeholder="Please, Scan Barcode Here......" invisible="operation_type != 'scan'"/>
+            </xpath>
+            <xpath expr="//form/sheet/notebook/page[@name='order_lines']/field[@name='order_line']" position="attributes">
+                <attribute name="readonly">so_type not in ['advertisement','others']</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+            <xpath expr="//form/sheet/notebook/page[@name='order_lines']/field[@name='order_line']//tree" position="inside">
+               <button name="remove_sale_order_line" type="object" class="fa fa-trash"/>
+            </xpath>
+            <xpath expr="//tree/field[@name='product_uom_qty']" position="attributes">
+                <attribute name="sum">Quantity</attribute>
+            </xpath>
+            <xpath expr="//tree/field[@name='qty_delivered']" position="attributes">
+                <attribute name="sum">Quantity</attribute>
+            </xpath>
+            <xpath expr="//tree/field[@name='qty_invoiced']" position="attributes">
+                <attribute name="sum">Quantity</attribute>
+            </xpath>
+            <xpath expr="//field[@name='product_template_id']" position="before">
+                <field name="s_no" />
+            </xpath>
+            <xpath expr="//tree/field[@name='product_id']" position="attributes">
+                <attribute name="domain">[('nhcl_type','=',parent.dummy_so_type)]</attribute>
+                <attribute name="options">{'no_create': True, 'no_open': True, 'no_edit':True}</attribute>
+            </xpath>
+            <xpath expr="//tree/field[@name='product_template_id']" position="attributes">
+                <attribute name="domain">[('nhcl_type','=',parent.dummy_so_type)]</attribute>
+                <attribute name="options">{'no_create': True, 'no_open': True, 'no_edit':True}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='product_template_id']" position="after">
+                <field name="lot_ids" widget="many2many_tags" options="{'no_create': True, 'no_open': True, 'no_edit':True}" readonly="1" force_save="1"/>
+                <field name="branded_barcode"/>
+                <field name="type_product" column_invisible="1"/>
+                <field name="sale_serial_type" column_invisible="1"/>
+            </xpath>
+            <xpath expr="//form/header" position="inside">
+                <button name="action_print_hired_products"
+                        string="Print Hired Products"
+                        type="object"
+                        class="btn-primary"
+                        invisible="transfer_type != 'hpo'"
+                />
+                <button name="reset_product_lines" type="object" string="Reset Lines" invisible="state not in ['draft','sent']"/>
+                <button name="action_open_import_wizard"
+						string="Import Products"
+                        type="object"
+                        class="btn-primary" invisible="operation_type != 'import' or state == 'sale'"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="options">{'no_create': True, 'no_open': True, 'no_edit':True}</attribute>
+                <attribute name="domain">[('group_contact.name', 'in', ['Customer','Branch'])]</attribute>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Mismatch Stock" invisible="transfer_type != 'stock_mismatch'">
+                    <field name="mismatch_stock_ids">
+                        <tree editable="bottom" create="0" edit="0" delete="0">
+                            <field name="serial_number"/>
+                            <field name="barcode"/>
+                            <field name="document_name"/>
+                            <field name="stock_qty"/>
+                        </tree>
+                    </field>
+                </page>
+                 <page string="Hired Products" invisible="transfer_type != 'hpo'">
+                    <field name="hired_product_ids" readonly="state in ['sale','cancel']">
+                        <tree editable="bottom" create="0" edit="0" delete="1">
+                            <field name="product_id"/>
+                            <field name="lot_number"/>
+                            <field name="barcode"/>
+                            <field name="quantity"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+
+        <!--    Sale Order Filter by SO Type View-->
+    <record id="view_sale_order_filter_cmr" model="ir.ui.view">
+        <field name="name">sale.order.search.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='campaign_id']" position="after">
+                <filter name="po_advertisement" string="Advertisement" domain="[('so_type', '=', 'advertisement')]"/>
+                <filter name="po_ho_operation" string="HO Operation" domain="[('so_type', '=', 'ho_operation')]"/>
+                <filter name="po_inter_state" string="Inter State" domain="[('so_type', '=', 'inter_state')]"/>
+                <filter name="po_others" string="Others" domain="[('so_type', '=', 'others')]"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="group_backorder_notification" model="res.groups">
+        <field name="name">Backorder Notification Group</field>
+        <field name="category_id" ref="base.module_category_inventory"/>
+    </record>
+
+    <record id="pos_exchange_group_menu_hide" model="res.groups">
+        <field name="name">POS Exchange Group Menu</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <record id="group_mis_reports" model="res.groups">
+        <field name="name">MIS Reports</field>
+    </record>
+
+    <record id="group_mis_cash_discount_notification" model="res.groups">
+        <field name="name">Cash Discount Group</field>
+    </record>
+
+</odoo>

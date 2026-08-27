@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_year_master,access.year.master,model_year_master,,1,1,1,1
+access_walkin_screen,walkin.screen,model_walkin_screen,,1,1,1,1
+access_walkin_screen_line,walkin.screen.line,model_walkin_screen_line,,1,1,1,1
+access_day_report,day.report,model_day_report,,1,1,1,1
+access_day_report_line,day.report.line,model_day_report_line,,1,1,1,1
+access_hour_report,hour.report,model_hour_report,,1,1,1,1
+access_hour_report_line,hour.report.line,model_hour_report_line,,1,1,1,1

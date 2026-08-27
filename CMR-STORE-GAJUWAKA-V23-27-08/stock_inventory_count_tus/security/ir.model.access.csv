@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_stock_inventory_user,stock.inventory user,model_stock_inventory,stock.group_stock_user,1,1,1,0
+access_stock_inventory_manager,stock.inventory manager,model_stock_inventory,stock.group_stock_manager,1,1,1,1
+access_stock_inventory_line,stock.inventory.line,model_stock_inventory_line,,1,1,1,1
+access_stock.adjustment.name,stock.adjustment.name,model_stock_adjustment_name,,1,1,1,1
+access_stock_inventory_scan_line,access.stock.inventory.scan.line,model_stock_inventory_scan_line,,1,1,1,1
+access_inventory_scan_report,inventory.scan.report,model_inventory_scan_report,,1,1,1,1
+access_inventory_scan_report_line,access_inventory_scan_report_line,model_inventory_scan_report_line,,1,1,1,1
+access_audit_replication_log,nhcl.audit.replication.log,model_nhcl_audit_replication_log,,1,1,1,1
+access_inventory_lock_wizard,inventory.lock.wizard,model_inventory_lock_wizard,base.group_user,1,1,1,1

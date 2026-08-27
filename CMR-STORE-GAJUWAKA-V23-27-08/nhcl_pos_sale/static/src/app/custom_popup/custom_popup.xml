@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="nhcl_pos_sale.CustomButtonPopup">
+        <div class="popup popup-textarea">
+            <div class="modal-header">
+
+                <h4 class="modal-title"><t t-esc="props.title" /></h4>
+
+                <!-- when modal fixed <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>-->
+            </div>
+
+            <div class="modal-body">
+                <input class="form-control" t-ref="input" placeholder="Scan or Enter,SalePerson Id" t-model="state.inputValue" t-on-keydown="handleKeyDown" rows="4" />
+            </div>
+
+            <footer class="footer footer-flex modal-footer">
+                <div class="button confirm highlight btn btn-lg btn-primary" t-on-click="confirm">
+                    <t t-esc="props.confirmText" />
+                </div>
+
+            </footer>
+        </div>
+    </t>
+
+</templates>

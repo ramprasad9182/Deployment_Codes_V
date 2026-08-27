@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_eway_bill_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+
+                <!-- Custom CSS for full borders -->
+                <style>
+                    table.full-border, 
+                    table.full-border th, 
+                    table.full-border td {
+                        border: 1px solid black !important;
+                        border-collapse: collapse;
+                        padding: 10px;
+                        padding-left: 5px;
+                        font-size: 16px;
+                    }
+                    h3 {
+                        margin-top: 8px;
+                        margin-bottom: 8px;
+                        font-size: 20px;
+                        font-weight: bold;
+                        border-bottom: 1px solid black;
+                        padding-bottom: 5px;
+                    }
+                </style>
+                <t t-call="web.basic_layout">
+
+                <div class="page">
+
+                    <!-- Header -->
+                    <div style="text-align:center; font-weight:bold; margin-bottom:20px;">
+
+                        <!-- TITLE -->
+                        <h2>Delivery Challan</h2>
+
+                        <!-- QR CODE (CENTERED BELOW) -->
+                        <div style="margin-top:10px;">
+                            <t t-if="o.qr_code">
+                                <img t-att-src="'data:image/png;base64,%s' % o.qr_code.decode('utf-8')"
+                                    style="width:120px; height:120px;"/>
+                            </t>
+                        </div>
+
+                    </div>
+
+                    <!-- Document Details -->
+                    <h3>Document Details</h3>
+                    <table class="full-border" style="width:100%; margin-bottom:30px;">
+                        <tr>
+                            <td style="padding: 7px;"><b>Document No.:</b> <span t-field="o.name"/></td>
+                            <td style="padding: 7px;"><b>Generated Date:</b> <span t-field="o.bill_date" t-options="{'widget': 'date'}"/></td>
+                        </tr>
+                    </table>
+
+                    <!-- Address Details -->
+                    <h3>Address Details</h3>
+                    <table class="full-border" style="width:100%; margin-bottom:30px;">
+                        <tr>
+                            <td width="50%" style="padding: 7px;">
+                                <b>From</b><br/>
+                                <span t-esc="o.company_id.name"/><br/>
+                                <span t-esc="o.company_id.city"/> <span t-esc="o.company_id.state_id.code"/><br/>
+                                <span t-esc="o.company_id.phone"/>
+                            </td>
+                            <td width="50%" style="padding: 7px;">
+                                <b>To</b><br/>
+                                <span t-esc="o.vendor_id.name"/><br/>
+                                <span t-esc="o.vendor_id.street"/> <span t-esc="o.vendor_id.city"/><br/>
+                                <span t-esc="o.vendor_id.state_id.code"/> <span t-esc="o.vendor_id.zip"/>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- Goods Details -->
+                    <h3>Goods Details</h3>
+                    <table class="full-border" style="width:100%; page-break-inside:auto; margin-bottom:30px;">
+                        <thead>
+                            <tr>
+                                <th style="padding: 7px;">HSN Code</th>
+                                <th style="padding: 7px;">Product Description</th>
+                                <th style="padding: 7px;">Quantity</th>
+                                <th style="padding: 7px;">Unit Price</th>
+                                <th style="padding: 7px;">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="o.item_ids" t-as="line" style="page-break-inside:avoid; page-break-after:auto;">
+                                <td style="padding: 7px;"><span t-esc="line.product_id.l10n_in_hsn_code or ''"/></td>
+                                <td style="padding: 7px;"><span t-esc="line.product_id.display_name"/></td>
+                                <td style="padding: 7px; text-align: right;"><span t-esc="line.product_qty"/> [<span t-esc="line.product_uom.name"/>]</td>
+                                <td style="padding: 7px; text-align: right;"><span t-esc="line.price_unit"/></td>
+                                <td style="padding: 7px; text-align: right;"><t t-esc="'{:.2f}'.format(line.price_subtotal)"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="full-border" style="width:100%; margin-bottom:30px;">
+                        <tr>
+                            <td style="padding: 7px;"><b>Total Taxable Amount:</b> <span t-esc="o.sub_total"/></td>
+                            <td style="padding: 7px;"><b>CGST Amount:</b> <span t-esc="o.total_cgst"/></td>
+                            <td style="padding: 7px;"><b>SGST Amount:</b> <span t-esc="o.total_sgst"/></td>
+                            <td style="padding: 7px;"><b>IGST Amount:</b> <span t-esc="o.total_igst"/></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 7px;"><b>CESS Amount:</b> <span t-esc="o.total_cess"/></td>
+                            <td style="padding: 7px;"><b>CESS Non.Advol Amt:</b>0.0</td>
+                            <td style="padding: 7px;"><b>Total Inv. Amt:</b> <span t-esc="o.grand_total"/></td>
+                        </tr>
+                    </table>
+
+                    <h3>Transportation Details</h3>
+                    <table class="full-border" style="width:100%; margin-bottom:30px;">
+                        <tr>
+                            <td style="padding: 7px;"><b>Transporter ID and Name:</b> <span t-esc="o.transportation_id.name"/></td>
+                            <td style="padding: 7px;"><b>Transporter Doc and Date:</b> <span t-esc="o.document_date"/></td>
+                        </tr>
+                    </table>
+
+                    <!-- Vehicle Details -->
+                    <h3>Vehicle Details</h3>
+                    <table class="full-border" style="width:100%; margin-bottom:30px;">
+                        <thead>
+                            <tr>
+                                <th style="padding: 7px;">Mode</th>
+                                <th style="padding: 7px;">Vehicle / Trans Doc No &amp; Dt.</th>
+                                <th style="padding: 7px;">Vehicle Type</th>
+                                <th style="padding: 7px;">Approx Distance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 7px;"><t t-esc="o.transportation_mode and dict(o._fields['transportation_mode'].selection).get(o.transportation_mode)"/></td>
+                                <td style="padding: 7px;"><span t-esc="o.vehical_no"/></td>
+                                <td style="padding: 7px;"><t t-esc="o.vehical_type and dict(o._fields['vehical_type'].selection).get(o.vehical_type)"/></td>
+                                <td style="padding: 7px;"><span t-esc="o.distance"/></td>
+                            </tr>   
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+        </t>
+    </template>
+</odoo>

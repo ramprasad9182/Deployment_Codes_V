@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="cmr_loyalty_rule_view_form_view" model="ir.ui.view">
+        <field name="name">loyalty.rule.view.form.inherit</field>
+        <field name="model">loyalty.rule</field>
+        <field name="inherit_id" ref="loyalty.loyalty_rule_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/button[@name='reset_to_filters']" position="after">
+                <button name="action_export_filtered_barcodes"
+                        string="Export Filtered Barcodes"
+                        type="object"
+                        class="btn-primary"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

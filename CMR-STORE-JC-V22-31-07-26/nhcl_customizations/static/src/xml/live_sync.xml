@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="nhcl_ho_store_cmr_integration.BulkTracking">
+
+        <div class="title"><span>Dashboard For Data Sync </span></div>
+        <div class="row">
+            <div class="border m-0 p-0 bg-white"/>
+            <div class="col-lg-3 sidebar" style="background-color: #fff; padding: 1rem;">
+                 <div class="bulk-sidebar">
+                     <t t-set="lastParent" t-value="''"/>
+                     <t t-foreach="menuItems" t-as="item" t-key="item.id">
+                         <t t-if="item.parent !== lastParent">
+                         <div class="sidebar-title">
+                            <t t-esc="item.parent"/>
+                         </div>
+                             <t t-set="lastParent" t-value="item.parent"/>
+                         </t>
+                         <div class="sidebar-item"
+                              t-att-class="state.selected === item.id ? 'active' : ''"
+                              t-on-click="() => selectMenu(item.id)">
+                            <t t-esc="item.label"/>
+                         </div>
+                     </t>
+                 </div>
+            </div>
+            <div class="col sidebar" style=" bg-white">
+
+                <t t-if="state.selected === 1">
+                    <div>
+                         <table class="styled-table">
+                            <tr class="master-tab">
+                                <td class="td">
+                                    <div class="info-title">
+                                        Transaction Not Processed
+                                    </div>
+                                    <div class="info-number clickable-div" style="padding-top: 15px;">
+                                        <span>452</span>
+                                        <i class="fa fa-chevron-down" style="padding-left:20px; font-size:10px;"></i>
+                                    </div>
+                                </td>
+                                <td class="td">
+                                    <div class="info-title">
+                                        Transactions Processed Today
+                                    </div>
+                                    <div class="info-number clickable-div" style="padding-top: 35px;">
+                                        <span>45</span>
+                                        <i class="fa fa-chevron-down" style="padding-left:20px; font-size:10px;"></i>
+                                    </div>
+                                </td>
+                                <td class="td">
+                                    <div class="info-title">
+                                        Transaction Failed To Processed Today
+                                    </div>
+                                    <div class="info-number clickable-div">
+                                        <span>63</span>
+                                        <i class="fa fa-chevron-down" style="padding-left:20px; font-size:10px;"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                         </table>
+                    </div>
+                </t>
+
+                <t t-if="state.selected === 2">
+                     <table class="styled-table">
+                         <tr class="master-tab">
+                            <td class="td">
+                                <div class="master-title">
+                                    Batch transfer-In
+                                </div>
+                                <div class="master-number clickable-div">
+                                    <div>
+                                        <span>545</span>
+                                    </div>
+                                    <div>
+                                        <span>14</span>
+                                    </div>
+                                    <div class="clickable-div">
+                                        <span>30</span>
+                                    </div>
+                                </div>
+                                <div class="master-third clickable-div">
+                                    <div style="color: #02a149">Total<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                    <div style="color: #0094d4">Processed<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                    <div style="color: #f72f2f">Failure <div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                </div>
+                            </td>
+                            <td class="td">
+                                <div class="master-title">
+                                    Batch transfer-Out
+                                </div>
+                                <div class="master-number clickable-div">
+                                    <div>
+                                        <span>455</span>
+                                    </div>
+                                    <div>
+                                        <span>63</span>
+                                    </div>
+                                    <div class="clickable-div">
+                                        <span>98</span>
+                                    </div>
+                                </div>
+                                <div class="master-third clickable-div">
+                                    <div style="color: #02a149">Total<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                    <div style="color: #0094d4">Processed<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                    <div style="color: #f72f2f">Failure <div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                </div>
+                            </td>
+                        </tr>
+                     </table>
+                </t>
+
+                <t t-if="state.selected === 3">
+                    <div>
+                         <table class="styled-table">
+                            <tr class="master-tab">
+                                <td>
+                                    <div class="master-title">
+                                        POS Orders
+                                    </div>
+                                    <div class="master-number clickable-div">
+                                        <div>
+                                            <span>554</span>
+                                        </div>
+                                        <div>
+                                            <span>231</span>
+                                        </div>
+                                        <div>
+                                            <span>9</span>
+                                        </div>
+                                    </div>
+                                    <div class="master-third clickable-div">
+                                        <div style="color: #02a149">Total<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                        <div style="color: #0094d4">Processed<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                        <div  style="color: #f72f2f">Failure <div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="master-title">
+                                        Picking
+                                    </div>
+                                    <div class="master-number clickable-div">
+                                        <div>
+                                            <span>890</span>
+                                        </div>
+                                        <div>
+                                            <span>80</span>
+                                        </div>
+                                        <div class="clickable-div">
+                                            <span>65</span>
+                                        </div>
+                                    </div>
+                                    <div class="master-third clickable-div">
+                                        <div style="color: #02a149">Total<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                        <div style="color: #0094d4">Processed<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                        <div style="color: #f72f2f">Failure <div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="master-title">
+                                        Invoices
+                                    </div>
+                                    <div class="master-number clickable-div">
+                                        <div>
+                                            <span>890</span>
+                                        </div>
+                                        <div>
+                                            <span>550</span>
+                                        </div>
+                                        <div class="clickable-div">
+                                            <span>30</span>
+                                        </div>
+                                    </div>
+                                    <div class="master-third clickable-div">
+                                        <div style="color: #02a149">Total<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                        <div style="color: #0094d4">Processed<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                        <div style="color: #f72f2f">Failure <div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="master-title">
+                                        Journal Entry
+                                    </div>
+                                    <div class="master-number clickable-div">
+                                        <div>
+                                            <span>454</span>
+                                        </div>
+                                        <div>
+                                            <span>54</span>
+                                        </div>
+                                        <div>
+                                            <span>78</span>
+                                        </div>
+                                    </div>
+                                    <div class="master-third clickable-div">
+                                        <div style="color: #02a149">Total<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                        <div style="color: #0094d4">Processed<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                        <div style="color: #f72f2f">Failure <div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                    </div>
+                                </td>
+                            </tr>
+                         </table>
+                    </div>
+                </t>
+
+                <t t-if="state.selected === 4">
+                    <div>
+                         <table class="styled-table">
+                            <tr class="master-tab">
+                                <td>
+                                    <div class="master-title">
+                                        Invoices
+                                    </div>
+                                    <div class="master-number clickable-div">
+                                        <div>
+                                            <span>423</span>
+                                        </div>
+                                        <div>
+                                            <span>32</span>
+                                        </div>
+                                        <div>
+                                            <span>78</span>
+                                        </div>
+                                    </div>
+                                    <div class="master-third clickable-div">
+                                        <div style="color: #02a149">Total<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                        <div style="color: #0094d4">Processed<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                        <div  style="color: #f72f2f">Failure <div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                    </div>
+                                </td>
+                            </tr>
+                         </table>
+                    </div>
+                </t>
+
+                <t t-if="state.selected === 5">
+                    <div>
+                         <table class="styled-table">
+                            <tr class="master-tab">
+                                <td>
+                                    <div class="master-title">
+                                        Internal Transfers
+                                    </div>
+                                    <div class="master-number clickable-div">
+                                        <div>
+                                            <span>452</span>
+                                        </div>
+                                        <div>
+                                            <span>70</span>
+                                        </div>
+                                        <div>
+                                            <span>100</span>
+                                        </div>
+                                    </div>
+                                    <div class="master-third clickable-div">
+                                        <div style="color: #02a149">Total<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                        <div style="color: #0094d4">Processed<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                        <div  style="color: #f72f2f">Failure <div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                    </div>
+                                </td>
+                            </tr>
+                         </table>
+                    </div>
+                </t>
+
+                <t t-if="state.selected === 6">
+                    <div>
+                         <table class="styled-table">
+                            <tr class="master-tab">
+                                <td>
+                                    <div class="master-title">
+                                        Internal Indents
+                                    </div>
+                                    <div class="master-number clickable-div">
+                                        <div>
+                                            <span>200</span>
+                                        </div>
+                                        <div>
+                                            <span>150</span>
+                                        </div>
+                                        <div>
+                                            <span>70</span>
+                                        </div>
+                                    </div>
+                                    <div class="master-third clickable-div">
+                                        <div style="color: #02a149">Total<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                        <div style="color: #0094d4">Processed<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                        <div  style="color: #f72f2f">Failure <div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                    </div>
+                                </td>
+                            </tr>
+                         </table>
+                    </div>
+                </t>
+
+                <t t-if="state.selected === 7">
+                    <div>
+                         <table class="styled-table">
+                            <tr class="master-tab">
+                                <td>
+                                    <div class="master-title">
+                                        Product categories
+                                    </div>
+                                    <div class="master-number clickable-div">
+                                        <div>
+                                            <span>1520</span>
+                                        </div>
+                                        <div>
+                                            <span>965</span>
+                                        </div>
+                                    </div>
+                                    <div class="master-third-master  clickable-div">
+                                        <div style="color: #02a149;">Total<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                        <div style="color: #0094d4;">Processed<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="master-title">
+                                        Products
+                                    </div>
+                                    <div class="master-number clickable-div">
+                                        <div>
+                                            <span>7050</span>
+                                        </div>
+                                        <div>
+                                            <span>3122</span>
+                                        </div>
+                                    </div>
+                                    <div class="master-third-master clickable-div">
+                                        <div style="color: #02a149">Total<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                        <div style="color: #0094d4">Processed<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                     </div>
+                                </td>
+                                <td>
+                                    <div class="master-title">
+                                        Product Variant
+                                    </div>
+                                    <div class="master-number clickable-div">
+                                        <div>
+                                            <span>45805</span>
+                                        </div>
+                                        <div>
+                                            <span>7081</span>
+                                        </div>
+                                    </div>
+                                    <div class="master-third-master clickable-div">
+                                        <div style="color: #02a149">Total<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                        <div style="color: #0094d4">Processed<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="master-title">
+                                        Product Attribute
+                                    </div>
+                                    <div class="master-number clickable-div">
+                                        <div>
+                                            <span>1621</span>
+                                        </div>
+                                        <div>
+                                            <span>800</span>
+                                        </div>
+                                    </div>
+                                    <div class="master-third-master clickable-div">
+                                        <div style="color: #02a149">Total<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                        <div style="color: #0094d4">Processed<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="master-title">
+                                        Employees Master Data
+                                    </div>
+                                    <div class="master-number clickable-div">
+                                        <div>
+                                            <span>504</span>
+                                        </div>
+                                        <div>
+                                            <span>327</span>
+                                        </div>
+                                    </div>
+                                    <div class="master-third-master clickable-div">
+                                        <div style="color: #02a149">Total<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                        <div style="color: #0094d4">Processed<div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div></div>
+                                     </div>
+                                </td>
+                            </tr>
+                         </table>
+                    </div>
+                </t>
+
+                <t t-if="state.selected === 8">
+                    <div>
+                        <div class="pos-card">
+                            <div class="pos-card-header">
+                                <h3>Transactions Received Table</h3>
+                            </div>
+                            <!-- KPI Row -->
+                            <!-- Actions -->
+                            <div class="pos-actions">
+                                <input type="text" placeholder="Search..." />
+                            </div>
+                            <!-- Table -->
+                            <table class="pos-table">
+                                <thead>
+                                    <tr>
+                                        <th>S.No</th>
+                                        <th>Model Name</th>
+                                        <th>Event Name</th>
+                                        <th>Doc Number</th>
+                                        <th>Doc Status</th>
+                                        <th>Integration Status</th> <!-- Processed -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+
+                <t t-if="state.selected === 9">
+                    <div>
+                        <div class="pos-card">
+                            <div class="pos-card-header">
+                                <h3>Transactions Pending Table</h3>
+                            </div>
+                            <!-- Actions -->
+                            <div class="pos-actions">
+                                <input type="text" placeholder="Search..." />
+                            </div>
+                            <!-- Table -->
+                            <table class="pos-table">
+                                <thead>
+                                    <tr>
+                                        <th>S.No</th>
+                                        <th>Model Name</th>
+                                        <th>Event Name</th>
+                                        <th>Doc Number</th>
+                                        <th>Doc Status</th>
+                                        <th>Integration Status</th> <!-- Pending  -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+
+                <t t-if="state.selected === 10">
+                    <div>
+                        <div class="pos-card">
+                            <div class="pos-card-header">
+                                <h3>Transactions Failed Table</h3>
+                            </div>
+                            <div class="pos-actions">
+                                <input type="text" placeholder="Search..." />
+                            </div>
+                            <!-- Table -->
+                            <table class="pos-table">
+                                <thead>
+                                    <tr>
+                                        <th>S.No</th>
+                                        <th>Model Name</th>
+                                        <th>Event Name</th>
+                                        <th>Doc Number</th>
+                                        <th>Doc Status</th>
+                                        <th>Integration Status</th> <!-- Failed -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+
+                <t t-if="state.selected === 11">
+                    <div>
+                        <div class="pos-card">
+                            <div class="pos-card-header">
+                                <h3>Master Data Integration Table</h3>
+                            </div>
+                            <div class="pos-actions">
+                                <input type="text" placeholder="Search..." />
+                            </div>
+                            <!-- Table -->
+                            <table class="pos-table">
+                                <thead>
+                                    <tr>
+                                        <th>S.No</th>
+                                        <th>Model Name</th>
+                                        <th>Event Name</th>
+                                        <th>NHCL ID</th>
+                                        <th>Status</th> <!-- Processed -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+          </div>
+        </div>
+    </t>
+</templates>

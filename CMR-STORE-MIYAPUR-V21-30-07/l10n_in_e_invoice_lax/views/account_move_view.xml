@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_move_form_inherit" model="ir.ui.view">
+        <field name="name">account.move.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='button_cancel']" position="before">
+                <button class="oe_highlight" invisible="move_type not in ('out_invoice', 'out_refund') or (state not in 'posted') or (irn_no != False) or (not is_indian_company)" name="generate_irn" string="Get IRN" type="object"/>
+                <button invisible="move_type not in ('out_invoice', 'out_refund') or (state not in 'posted') or (not is_indian_company) or (ewb_no != False)" class="oe_highlight" name="generate_irn_and_ewaybill" string="IRN + EwayBill " type="object"/>
+                <button invisible="move_type not in ('out_invoice', 'out_refund') or (state not in 'posted') or (ewb_no != False) or (not is_indian_company)" class="oe_highlight" name="ewaybill_by_irn" string="EwayBill by IRN" type="object"/>
+                <button invisible="irn_no == False or (state not in 'posted') or (cancel_date != False) or (cancel_remark != False)" class="oe_highlight" name="cancel_irn" string="Cancel IRN" type="object"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page invisible="move_type not in ('out_invoice', 'out_refund') or state != 'posted'" name="ewaybill_details" string="E-invoice Details">
+                    <group string="E-invoice Details">
+                        <field name="is_indian_company" invisible="1"/>
+                        <field name="supply_type"/>
+                        <field name="ack_no"/>
+                        <field name="irn_no"/>
+                        <field name="ack_date"/>
+                        <field name="signed_invoice"/>
+                    </group>
+                    <group string="Cancel Detail" invisible="cancel_date == False">
+                        <field name="cancel_reason" readonly="1"/>
+                        <field name="cancel_remark" readonly="1"/>
+                        <field name="cancel_date" readonly="1"/>
+                    </group>
+                    <group string="Eway Bill Detail" readonly="1">
+                        <field name="ewb_no"/>
+                        <field name="ewb_date"/>
+                        <field name="ewb_valid_till"/>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page invisible="move_type not in ('out_invoice', 'out_refund')" name="transportation_details" string="Transportation Details">
+                    <group string="Transportation Details">
+                        <group>
+                            <field name="distance" readonly="ewb_no"/>
+                            <field name="transportation_mode" readonly="ewb_no"/>
+                            <field name="transportation_id" readonly="ewb_no"/>
+                            <field name="transportation_gst" readonly="ewb_no"/>
+                        </group>
+                        <group>
+                            <field name="document_date" readonly="ewb_no"/>
+                            <field name="document_no" readonly="ewb_no"/>
+                            <field name="vehical_no" readonly="ewb_no"/>
+                            <field name="vehical_type" readonly="ewb_no"/>
+                        </group>
+                    </group>
+                    <group string="Export Details">
+                        <group>
+                            <field name="ship_b_no"/>
+                            <field name="ship_b_dt"/>
+                        </group>
+                        <group>
+                            <field name="port_id"/>
+                            <field name="ref_claim"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

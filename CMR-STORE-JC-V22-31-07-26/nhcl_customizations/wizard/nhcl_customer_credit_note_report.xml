@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Wizard Form View -->
+    <record id="view_nhcl_customer_credit_note_report_form" model="ir.ui.view">
+        <field name="name">nhcl.customer.credit.note.report.form</field>
+        <field name="model">nhcl.customer.credit.note.report</field>
+        <field name="arch" type="xml">
+            <form string="Customer Credit Note Report" create="0">
+                <h1 style="color:black;text-align:center;">Customer Credit Note Report</h1>
+                <sheet>
+                    <header>
+                        <button name="action_load_data" type="object" string="Load Report" class="oe_highlight"/>
+                        <button name="action_to_reset" type="object" string="Reset"/>
+                        <button name="action_get_excel" type="object" string="Excel"/>
+                    </header>
+                    <group style="border: 2px solid #990099; padding: 10px;">
+                        <group>
+                            <field name="company_id" placeholder="Select Store" options="{'no_create': True, 'no_open': True}" required="True"/>
+                            <field name="phone_no"/>
+                            <field name="partner_id" placeholder="Select Customer" options="{'no_create': True, 'no_open': True}"/>
+                        </group>
+                        <group>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="voucher_number"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Credit Notes" invisible="1">
+                            <field name="line_ids" readonly="1">
+                                <tree create="0" delete="0" edit="0" limit="1000000">
+                                    <field name="company_id"/>
+                                    <field name="partner_id"/>
+                                    <field name="partner_phone"/>
+<!--                                    <field name="voucher_number"/>-->
+<!--                                    <field name="pos_bill_number"/>-->
+                                    <field name="pos_bill_date"/>
+                                    <field name="total_amount" sum="Total Amount"/>
+                                    <field name="deducted_amount" sum="Deducted Amount"/>
+                                    <field name="balance" sum="Total Balance"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Line Tree View -->
+    <record id="view_nhcl_customer_credit_note_report_line_tree" model="ir.ui.view">
+        <field name="name">nhcl.customer.credit.note.report.line.tree</field>
+        <field name="model">nhcl.customer.credit.note.report.line</field>
+        <field name="arch" type="xml">
+            <tree create="0" delete="0" edit="0" limit="1000000">
+                <field name="company_id"/>
+                <field name="partner_id"/>
+                <field name="partner_phone"/>
+<!--                <field name="voucher_number"/>-->
+<!--                <field name="pos_bill_number"/>-->
+                <field name="pos_bill_date"/>
+                <field name="total_amount" sum="Total Amount"/>
+                <field name="deducted_amount" sum="Deducted Amount"/>
+                <field name="balance" sum="Total Balance"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <!-- Line Pivot View -->
+    <record id="view_nhcl_customer_credit_note_report_line_pivot" model="ir.ui.view">
+        <field name="name">nhcl.customer.credit.note.report.line.pivot</field>
+        <field name="model">nhcl.customer.credit.note.report.line</field>
+        <field name="arch" type="xml">
+            <pivot string="Customer Credit Note Analysis">
+                <field name="company_id" type="row"/>
+                <field name="partner_id" type="row"/>
+                <field name="total_amount" type="measure"/>
+                <field name="deducted_amount" type="measure"/>
+                <field name="balance" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+</odoo>

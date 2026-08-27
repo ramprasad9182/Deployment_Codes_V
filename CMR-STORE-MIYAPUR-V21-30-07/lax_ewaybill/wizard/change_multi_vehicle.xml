@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="change_multi_vehicle_wizard" model="ir.ui.view">
+            <field name="name">change.multi.vehicle</field>
+            <field name="model">change.multi.vehicle</field>
+            <field name="arch" type="xml">
+                <form string="Initiate Multi Vehicle Movement">
+                    <group>
+                        <field name="vehicle_no" required="1"/>
+                        <field name="new_document_no" required="1"/>
+                        <field name="reason_code" required="1"/>
+                        <field name="remark" required="1"/>                
+                    </group>
+                    <footer>
+                        <button class="btn-primary" name="change_multi_vehicle" string="Submit" type="object"/>
+                        <button class="btn-primary" special="cancel" string="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_form_day_report" model="ir.ui.view">
+    <field name="name">day.report.form</field>
+    <field name="model">day.report</field>
+    <field name="arch" type="xml">
+        <form string="Daily Walkin vs Sale">
+                <sheet>
+                    <!-- Header Title -->
+                    <div style="
+                        text-align: center;
+
+                        color: white;
+                        border: 2px solid #1F618D;
+                        border-radius: 10px;
+                        padding: 12px;
+                        margin-bottom: 20px;
+                    ">
+                        <h1 style="margin: 0; font-size: 36px;">Daily Walkin vs Sale</h1>
+                    </div>
+                    <header>
+                        <button name="action_export_excel" type="object" string="Export to Excel" class="btn-primary" />
+                    </header>
+                <group>
+                    <group>
+                        <field name="from_date"/>
+                    </group>
+                    <group>
+                        <field name="to_date"/>
+                    </group>
+                </group>
+                <field name="line_ids">
+                      <tree create="false" delete="false" edit="false">
+                        <field name="date"/>
+                        <field name="walkins"/>
+                        <field name="pos_lines"/>
+                        <field name="total_amount"/>
+                    </tree>
+                </field>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+</odoo>

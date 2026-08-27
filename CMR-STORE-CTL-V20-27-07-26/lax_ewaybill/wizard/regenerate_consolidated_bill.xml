@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="regenerate_consolidated_wizard" model="ir.ui.view">
+            <field name="name">regenerate.consolidated</field>
+            <field name="model">regenerate.consolidated</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="reason_code" required="1"/>
+                        <field name="remark" required="1"/>
+                    </group>
+                    <footer>
+                        <button class="btn-primary" name="regenerate_consolidated_ewaybill" string="Submit" type="object"/>
+                        <button class="btn-primary" special="cancel" string="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_pos_bulk_close" model="res.groups">
+        <field name="name">POS - Enable Bulk Close Sessions</field>
+        <field name="category_id" ref="base.module_category_sales_point_of_sale"/>
+    </record>
+
+    <record id="group_pos_show_recalculate_button" model="res.groups">
+        <field name="name">POS - Show Re-Calculate button</field>
+    </record>
+</odoo>

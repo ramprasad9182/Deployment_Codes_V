@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inherit POS Config Tree View to add Counted Amount and enable inline editing -->
+    <record id="view_pos_config_tree_inherit_counted_amount" model="ir.ui.view">
+        <field name="name">pos.config.tree.inherit.counted.amount</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_config_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="editable">bottom</attribute>
+            </xpath>
+            <!-- POS name should not be editable -->
+            <xpath expr="//field[@name='name']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+            <!-- Add invisible active and current_session_id fields for modifier evaluation -->
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="active" column_invisible="True"/>
+                <field name="current_session_id" column_invisible="True"/>
+            </xpath>
+            <!-- Move Counted Amount to the last position in tree view, readonly if inactive or no session -->
+            <xpath expr="//tree/field[last()]" position="after">
+                <field name="counted_amount" widget="monetary" readonly="not active or not current_session_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Server Action for Bulk Close Sessions restricted to group_pos_bulk_close -->
+    <record id="action_bulk_close_pos_sessions" model="ir.actions.server">
+        <field name="name">Bulk Close Sessions</field>
+        <field name="model_id" ref="point_of_sale.model_pos_config"/>
+        <field name="binding_model_id" ref="point_of_sale.model_pos_config"/>
+        <field name="binding_type">action</field>
+        <field name="groups_id" eval="[(4, ref('nhcl_pos_sale.group_pos_bulk_close'))]"/>
+        <field name="state">code</field>
+        <field name="code">records.action_bulk_close_sessions()</field>
+    </record>
+
+    <record id="res_users_form_inherit_pos_bulk_close" model="ir.ui.view">
+        <field name="name">res.users.form.inherit.pos.bulk.close</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='point_of_sale']//group[@name='pos_user_rights']/group[2]" position="inside">
+                <field name="allow_bulk_close_session"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

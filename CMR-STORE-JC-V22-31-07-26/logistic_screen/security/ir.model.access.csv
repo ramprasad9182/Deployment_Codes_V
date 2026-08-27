@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_logistic_screen_data,logistic.screen.data,model_logistic_screen_data,,1,1,1,1
+access_transport_check,transport.check,model_transport_check,,1,1,1,1
+access_delivery_check,delivery.check,model_delivery_check,,1,1,1,1
+access_delivery_barcode,delivery.barcode,model_delivery_barcode,,1,1,1,1
+access_open_parcel,open.parcel,model_open_parcel,,1,1,1,1

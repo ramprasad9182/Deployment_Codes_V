@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="nhcl_pos_sale.LineSalesmanButton">
+        <div class="control-button btn btn-light rounded-0 fw-bolder" t-on-click="click">
+            <i class="fa fa-user"/>
+            Salesman Popup
+        </div>
+    </t>
+
+</templates>

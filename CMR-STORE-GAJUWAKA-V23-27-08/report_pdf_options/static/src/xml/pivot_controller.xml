@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-inherit="web.PivotView.Buttons" t-inherit-mode="extension">
+        <xpath expr="//button[contains(@class, 'o_pivot_download')]"
+           position="replace">
+
+        <t t-if="canDownloadPivot">
+            <button class="btn btn-secondary fa fa-download o_pivot_download"
+                    t-on-click="onDownloadButtonClicked"
+                    data-tooltip="Download xlsx"
+                    aria-label="Download xlsx"
+                    t-attf-disabled="{{!model.hasData() || !model.metaData.activeMeasures.length ? 'disabled' : false}}"/>
+        </t>
+    </xpath>
+    </t>
+
+</templates>

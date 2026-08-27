@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_pos_tax_summary">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="text-center" style="border: 1px solid black;">
+                            <h2 style="font-size:40px">POS Tax Summary Report</h2>
+                        </div>
+                        <br/>
+                        <br/>
+                        <table style="width:100%; margin-left:auto; margin-right: auto;"
+                               class="table table-bordered">
+                            <tr>
+                                <th style="text-align:center;">
+                                    <b>Tax Name</b>
+                                </th>
+                                <th style="text-align:center;">
+                                    <b>POS Order Reference</b>
+                                </th>
+                                <th style="text-align:center;">
+                                    <b>Base Amount</b>
+                                </th>
+                                <th style="text-align:center;">
+                                    <b>Tax Amount</b>
+                                </th>
+                            </tr>
+                            <t t-as="order" t-foreach="tax_details['lines']">
+                                <tr>
+                                    <td style="text-align:center;">
+                                        <t t-esc="order[0]"/>
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <t t-esc="order[1]"/>
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <t t-esc="'%.2f'%order[2]"/>
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <t t-esc="'%.2f'%order[3]"/>
+                                    </td>
+                                </tr>
+                            </t>
+                            <td/>
+                            <td/>
+                            <td style="text-align:center;">
+                                <span>
+                                    <strong>Total</strong>
+                                </span>
+                            </td>
+                            <td style="text-align:center;">
+                                <t t-esc="'%.2f'% tax_details['total'][0]"/>
+                            </td>
+                        </table>
+                        <br/>
+                        <br/>
+                        <div class="text-center" style="border: 1px solid black;">
+                            <h2 style="font-size:40px">POS Tax Summary</h2>
+                        </div>
+                        <br/>
+                        <br/>
+                        <table style="width:100%; margin-left:auto; margin-right: auto;"
+                               class="table table-bordered">
+                            <tr>
+                                <th style="text-align:center;">
+                                    <b>Tax Name</b>
+                                </th>
+                                <th style="text-align:center;">
+                                    <b>Tax Amount</b>
+                                </th>
+                            </tr>
+                            <tr t-as="product" t-foreach="tax_details['all_tax']">
+                                <td style="text-align:center;">
+                                    <t t-esc="product"/>
+                                </td>
+                                <td style="text-align:center;">
+                                    <t t-esc="'%.2f'% tax_details['all_tax'][product]"/>
+                                </td>
+                            </tr>
+                            <td style="text-align:center;">
+                                <span>
+                                    <strong>Total</strong>
+                                </span>
+                            </td>
+                            <td style="text-align:center;">
+                                <t t-esc="'%.2f'% tax_details['total'][0]"/>
+                            </td>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

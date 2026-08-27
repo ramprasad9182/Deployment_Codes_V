@@ -1,0 +1,25 @@
+<odoo>
+    <data>
+        <record id="ir_cron_deactivate_expired_users" model="ir.cron">
+            <field name="name">Deactivate Expired Licensed Users</field>
+            <field name="model_id" ref="base.model_res_users"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_deactivate_expired_users()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="ir_cron_deactivate_expired_employee" model="ir.cron">
+            <field name="name">Deactivate Expired Licensed Employee</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_deactivate_expired_employee()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active">True</field>
+        </record>
+    </data>
+</odoo>

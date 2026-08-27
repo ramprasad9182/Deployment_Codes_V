@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="license_key_page_for_res_users" model="ir.ui.view">
+            <field name="name">res.user.form.inherits</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='preferences']" position="after">
+                    <page string="User License Details">
+                      <form>
+                          <group>
+                              <field name="expiry_date" readonly="True"/>
+                          </group>
+                      </form>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+         <record id="license_key_page_for_hr_employee" model="ir.ui.view">
+            <field name="name">hr.employee.form.inherits</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='work_email']" position="after">
+                    <field name="expiry_date" readonly="True"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

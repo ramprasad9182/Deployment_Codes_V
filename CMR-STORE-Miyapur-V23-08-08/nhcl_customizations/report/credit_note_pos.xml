@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="credit_note_header_pos">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+        <t t-if="not company">
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+        </t>
+        <!-- WRAP EVERYTHING IN A SMALL CONTAINER WITH WIDTH & PADDING FOR 100% SCALE -->
+        <div style="width: 93%; margin: 0 auto; padding: 0 4px; box-sizing: border-box; font-family: Arial, sans-serif;">
+            <div style="text-align: center; margin-top: 10px;">
+                <t t-if="company.logo">
+                    <img t-att-src="image_data_uri(company.logo)" alt="Logo"
+                         style="width: 120px; max-height: 120px; display: block; margin: 0 auto 5px auto;"/>
+                </t>
+                <div style="font-weight: bold; font-size: 16px; margin: 2px 0;">
+                    <t t-esc="company.name"/>
+                </div>
+                <div style="font-size: 11px; margin: 2px 0;">
+                    <t t-esc="company.email"/>
+                </div>
+                <div style="font-size: 11px; margin: 2px 0;">
+                    Phone: <span t-field="company.phone"/>
+                </div>
+                <div style="font-size: 11px; margin: 2px 0;">
+                    Served by <span t-field="user.name"/>
+                </div>
+                <div style="border-top:1px dashed black; margin: 6px auto; width: 100%;"></div>
+            </div>
+
+            <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+                 t-att-data-oe-lang="o and o.env.context.get('lang')" style="margin: 0; padding: 0; width: 100%;">
+                <t t-out="0"/>
+            </div>
+        </div>
+    </template>
+
+    <template id="final_credit_note_pos">
+        <t t-if="not o" t-set="o" t-value="doc"/>
+        <t t-if="not company">
+            <t t-if="company_id">
+                <t t-set="company" t-value="company_id"/>
+            </t>
+            <t t-elif="o and 'company_id' in o and o.company_id.sudo()">
+                <t t-set="company" t-value="o.company_id.sudo()"/>
+            </t>
+            <t t-else="else">
+                <t t-set="company" t-value="res_company"/>
+            </t>
+        </t>
+        <t t-foreach="docs" t-as="doc">
+            <t t-call="nhcl_customizations.credit_note_header_pos">
+                <t t-set="pos" t-value="env['stock.picking'].search([('name', '=', doc.picking_ref)])"/>
+
+                <!-- BODY WRAPPER -->
+                <div style="width: 92%; box-sizing: border-box; font-family: Arial, sans-serif;">
+                    <div style="width: 92%;">
+                        <table style="width: 100%; font-size: 13px; font-family: Arial, sans-serif; border-collapse: collapse;">
+                            <!-- Credit Note Header -->
+                             <tr>
+                                <td colspan="3" style="border-top: 1px solid black; padding: 2px 0;"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"
+                                    style="font-size: 18px; text-align: center; font-weight: bold; padding: 5px 0;">
+                                    Credit Note
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="border-top: 1px solid black; padding: 2px 0;"></td>
+                            </tr>
+
+                            <!-- GSTIN Row -->
+                            <tr>
+                                <td colspan="3" style="padding: 3px 0; text-align: center; font-weight: bold;">
+                                    GSTIN: <t t-esc="company.vat"/>
+                                </td>
+                            </tr>
+
+                            <!-- Customer Name and Casher -->
+                            <tr>
+                                <td style="padding: 2px 0; width: 40%; font-weight: bold;">Customer Name:</td>
+                                <td style="padding: 2px 0; width: 60%;" colspan="2">
+                                    <span t-field="doc.partner_id.name"/>
+                                </td>
+                            </tr>
+
+                            <!-- Customer Phone and Counter -->
+                            <tr>
+                                <td style="padding: 2px 0; font-weight: bold;">Customer Phone:</td>
+                                <td style="padding: 2px 0;" colspan="2">
+                                    <span t-field="doc.partner_id.phone"/>
+                                </td>
+                            </tr>
+
+                            <!-- Bill Number -->
+                            <tr>
+                                <td style="padding: 2px 0; font-weight: bold;">Bill No:</td>
+                                <td style="padding: 2px 0;" colspan="2">
+                                    <span t-field="pos.nhcl_pos_order"/>
+                                </td>
+                            </tr>
+
+                            <!-- Invoice Date -->
+                            <tr>
+                                <td style="padding: 2px 0; font-weight: bold;">Date:</td>
+                                <td style="padding: 2px 0;" colspan="2">
+                                    <span t-field="pos.nhcl_invoice_date"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2px 0; font-weight: bold;">Counter:</td>
+                                <td style="padding: 2px 0;" colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 2px 0; font-weight: bold;">Cashier:</td>
+                                <td style="padding: 2px 0;" colspan="2"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="border-top: 1px solid black; padding: 2px 0;"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <main>
+                        <div class="page" style="width: 100%;">
+                            <div style="width: 100%; margin:0;">
+                                <table style="width: 100%; font-size: 12px; font-family: Arial, sans-serif; border-collapse: collapse;">
+                                    <!-- Header Row -->
+                                    <tr style="border-top: 1px solid black; border-bottom: 1px solid black; font-weight: bold;">
+                                        <td colspan="4" style="padding: 4px 0;">
+                                            <table style="width: 100%; border-collapse: collapse;">
+                                                <tr>
+                                                    <td style="width: 70%; text-align: left;">Product</td>
+                                                    <td style="width: 30%; text-align: right;">RSP</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" style="padding-top: 2px;">
+                                                        <table style="width: 100%; border-collapse: collapse; font-size: 11px;">
+                                                            <tr>
+                                                                <td style="width: 25%; text-align: left;">Qty</td>
+                                                                <td style="width: 30%; text-align: left;">Serial</td>
+                                                                <td style="width: 25%; text-align: left;">Tax</td>
+                                                                <td style="width: 20%; text-align: right;">MRP</td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" style="padding-top: 2px;">
+                                                        <table style="width: 100%; border-collapse: collapse; font-size: 11px;">
+                                                            <tr>
+                                                                <td style="width: 40%; text-align: left;">HSN</td>
+                                                                <td style="width: 60%; text-align: left;">Barcode</td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Lines -->
+                                    <t t-set="index" t-value="0"/>
+                                    <t t-foreach="doc.invoice_line_ids" t-as="line">
+                                        <tr style="border-bottom: 1px dotted black;">
+                                            <td colspan="4" style="padding: 4px 0;">
+                                                <table style="width: 100%; border-collapse: collapse;">
+                                                    <!-- Line 1: Product Name & Unit Price -->
+                                                    <tr>
+                                                        <td style="width: 70%; text-align: left; font-weight: bold; word-break: break-all; font-size: 12px;">
+                                                            <span t-field="line.product_id.display_name"/>
+                                                        </td>
+                                                        <td style="width: 30%; text-align: right; font-weight: bold; font-size: 12px;">
+                                                            <span>-<span t-field="line.price_unit"/></span>
+                                                        </td>
+                                                    </tr>
+                                                    <!-- Line 2: Qty, Serial No, Tax, MRP -->
+                                                    <tr>
+                                                        <td colspan="2" style="padding-top: 2px;">
+                                                            <table style="width: 100%; border-collapse: collapse; font-size: 11px;">
+                                                                <tr>
+                                                                    <td style="width: 25%; text-align: left;">
+                                                                        Qty: <t t-esc="'%.2f' % line.quantity"/>
+                                                                    </td>
+                                                                    <td style="width: 30%; text-align: left; word-break: break-all;">
+                                                                        <t t-if="pos.move_ids_without_package and len(pos.move_ids_without_package) &gt; index">
+                                                                            <span t-field="pos.move_ids_without_package[index].serial_no"/>
+                                                                        </t>
+                                                                    </td>
+                                                                    <td style="width: 25%; text-align: left;">
+                                                                        <t t-foreach="line.tax_ids" t-as="tax">
+                                                                            <span t-field="tax.name"/>
+                                                                        </t>
+                                                                    </td>
+                                                                    <td style="width: 20%; text-align: right;">
+                                                                        <span t-field="line.price_unit"/>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <!-- Line 3: HSN Code & Barcode -->
+                                                    <tr>
+                                                        <td colspan="2" style="padding-top: 2px;">
+                                                            <table style="width: 100%; border-collapse: collapse; font-size: 11px;">
+                                                                <tr>
+                                                                    <td style="width: 40%; text-align: left;">
+                                                                        HSN: <span t-field="line.product_id.l10n_in_hsn_code"/>
+                                                                    </td>
+                                                                    <td style="width: 60%; text-align: left; word-break: break-all;">
+                                                                        <t t-if="pos.move_ids_without_package and len(pos.move_ids_without_package) &gt; index">
+                                                                            <t t-set="barcode" t-value="pos.move_ids_without_package[index].serial_no"/>
+                                                                            <t t-set="bar" t-value="env['stock.lot'].search([('name', '=', barcode)])"/>
+                                                                            <t t-esc="bar.ref"/>
+                                                                        </t>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <t t-set="index" t-value="index+1"/>
+                                    </t>
+                                </table>
+                            </div>
+                        </div>
+                    </main>
+
+                    <div style="width: 100%;">
+                        <table style="width: 100%; font-size: 13px; font-family: Arial, sans-serif; border-collapse: collapse;">
+                            <!-- Total Row -->
+                            <tr>
+                                <td colspan="4" style="text-align: right; font-weight: bold; padding: 5px 0;">
+                                    TOTAL ₹ -
+                                    <t t-esc="'%.2f' % doc.amount_total"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="border-top: 1px solid black; padding: 2px 0;"></td>
+                            </tr>
+
+                            <!-- Credit Note Row -->
+                            <tr>
+                                <td colspan="4" style="text-align: left; font-weight: bold; padding: 5px 0;">
+                                    Credit Note issued <t t-esc="doc.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="padding: 2px 0;">
+                                    Amount: + <t t-esc="'%.2f' % doc.amount_total"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="border-top: 1px solid black; padding: 2px 0;"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="font-size: 15px; padding: 5px 0; font-weight: bold;">Credit Note Issued:</td>
+                                <td colspan="2" style="text-align: right; font-size: 15px; padding: 5px 0; font-weight: bold;">
+                                    - <t t-esc="'%.2f' % doc.amount_total"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="padding: 3px 0;">Tender Amount: 0.00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="padding: 3px 0;">Balance Refund: 0.00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" style="border-top: 1px solid black; padding: 2px 0;"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <table style="width: 100%; font-size: 12px; font-family: Arial, sans-serif; border-collapse: collapse; margin-top: 10px;">
+                        <thead>
+                            <tr>
+                                <td colspan="4" style="text-align: center; font-weight: bold; padding: 5px 0;">GST SUMMARY</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid black; font-weight: bold;">
+                                <td style="text-align: left; width: 40%;">Tax</td>
+                                <td style="text-align: right; width: 20%;">Base</td>
+                                <td style="text-align: right; width: 20%;">CGST</td>
+                                <td style="text-align: right; width: 20%;">SGST</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="doc.invoice_line_ids" t-as="line">
+                                <!-- Compute half the tax (CGST/SGST) -->
+                                <t t-set="half_tax" t-value="(line.price_total - line.price_subtotal) / 2.0"/>
+
+                                <tr style="border-bottom: 1px dotted black;">
+                                    <!-- Tax Name(s) -->
+                                    <td style="text-align: left; padding: 4px 0;">
+                                        <t t-foreach="line.tax_ids" t-as="tax">
+                                            <span t-field="tax.name"/>
+                                        </t>
+                                    </td>
+
+                                    <!-- Price Subtotal -->
+                                    <td style="text-align: right; padding: 4px 0;">
+                                        -<t t-esc="'%.2f' % line.price_subtotal"/>
+                                    </td>
+
+                                    <!-- CGST (Half Tax) -->
+                                    <td style="text-align: right; padding: 4px 0;">
+                                        -<t t-esc="'%.2f' % half_tax"/>
+                                    </td>
+
+                                    <!-- SGST (Half Tax) -->
+                                    <td style="text-align: right; padding: 4px 0;">
+                                        -<t t-esc="'%.2f' % half_tax"/>
+                                    </td>
+                                </tr>
+                            </t>
+                            <tr style="font-weight: bold; border-bottom: 1px solid black;">
+                                <td style="text-align: left; padding: 5px 0;">Total</td>
+                                <td style="text-align: right; padding: 5px 0;">
+                                    -<t t-esc="doc.amount_untaxed"/>
+                                </td>
+                                <td style="text-align: right; padding: 5px 0;">
+                                    -<t t-esc="'%.2f' % (doc.amount_tax / 2)"/>
+                                </td>
+                                <td style="text-align: right; padding: 5px 0;">
+                                    -<t t-esc="'%.2f' % (doc.amount_tax / 2)"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div style="width: 100%; font-size: 11px; padding: 10px 0 0 0;">
+                        <p style="font-weight: bold; margin-bottom: 5px;">
+                            <u>Terms And Conditions</u>
+                        </p>
+                        <ol style="padding-left: 15px; margin: 0;">
+                            <li style="padding: 2px 0;">Exchange can be made within 7 days from the date of purchase with price tag and bill.</li>
+                            <li style="padding: 2px 0;">Exchange timings 11 AM to 8 PM.</li>
+                            <li style="padding: 2px 0;">No guarantee on fade of colour and zari.</li>
+                            <li style="padding: 2px 0;">Cash will not be refunded under any circumstances.</li>
+                            <li style="padding: 2px 0;">Exchange is allowed for unwashed goods checked at the time of purchase.</li>
+                            <li style="padding: 2px 0;">Inner garments, undergarments, men's ethnic wear, home appliances and footwear cannot be exchanged.</li>
+                            <li style="padding: 2px 0;">Electronic item cannot be exchanged or refunded.</li>
+                            <li style="padding: 2px 0;">No exchange on offer items.</li>
+                            <li style="padding: 2px 0;">Any disputes subject to Visakhapatnam jurisdiction only.</li>
+                        </ol>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="paperformat_credit_note_pos" model="report.paperformat">
+        <field name="name">POS Credit Note Paper</field>
+        <field name="default" eval="False"/>
+        <field name="format">custom</field>
+        <field name="page_height">297</field>
+        <field name="page_width">80</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="header_spacing">0</field>
+        <field name="dpi">96</field>
+    </record>
+
+    <record id="credit_note_pos" model="ir.actions.report">
+        <field name="name">Credit Note Pos Report</field>
+        <field name="model">account.move</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">nhcl_customizations.final_credit_note_pos</field>
+        <field name="report_file">nhcl_customizations.final_credit_note_pos</field>
+        <field name="binding_model_id" ref="account.model_account_move"/>
+        <field name="paperformat_id" ref="nhcl_customizations.paperformat_credit_note_pos"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

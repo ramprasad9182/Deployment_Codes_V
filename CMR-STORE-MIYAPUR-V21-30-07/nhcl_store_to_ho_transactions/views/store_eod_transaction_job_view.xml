@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+<!--    <record id="ir_cron_store_journal_entry_job_scheduler" model="ir.cron">-->
+<!--        <field name="name">EOD Transaction-Job</field>-->
+<!--        <field name="model_id" ref="model_account_move"/>-->
+<!--        <field name="state">code</field>-->
+<!--        <field name="code">model.store_eod_transaction()</field>-->
+<!--        <field name="interval_number">60</field>-->
+<!--        <field name="interval_type">minutes</field>-->
+<!--        <field name="numbercall">-1</field>-->
+<!--        <field name="active">True</field>-->
+<!--    </record>-->
+
+<!--    <record id="ir_cron_store_main_damage_delivery_job_scheduler" model="ir.cron">-->
+<!--        <field name="name">Main-Damage Transaction-Job</field>-->
+<!--        <field name="model_id" ref="model_stock_picking"/>-->
+<!--        <field name="state">code</field>-->
+<!--        <field name="code">model.store_damage_transaction()</field>-->
+<!--        <field name="interval_number">60</field>-->
+<!--        <field name="interval_type">minutes</field>-->
+<!--        <field name="numbercall">-1</field>-->
+<!--        <field name="active">True</field>-->
+<!--    </record>-->
+</odoo>
+

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="nhcl_sale_daily_report_form" model="ir.ui.view">
+        <field name="name">Pos Hour Report Form</field>
+        <field name="model">nhcl.daily.sale.report</field>
+        <field name="arch" type="xml">
+            <form string="Daily Sale DSD Report" create="0">
+                <h1 style="color:black;text-align:center;">Daily Sale DSD Report</h1>
+                <sheet>
+                    <header>
+                        <button name="daily_sale_dsd_report" type="object"
+                                string="Load Report" />
+                        <button name="action_to_reset" type="object"
+                                string="Reset" />
+                        <button name="action_daily_sale_detailed_view" type="object"
+                                string="View Detailed Report" invisible="1"/>
+                    </header>
+                    <group name="sale_daily_report" style="border: 2px solid #990099; padding: 10px;">
+                        <group name="sale_daily_report_group">
+                            <field name="nhcl_company_id" required="1" options="{'no_create': True,'no_open': True}"/>
+                            <field name="name" invisible="1"/>
+                        </group>
+                        <group name="sale_daily_report_date_details">
+                            <group>
+                                <field name="from_date" required="1" widget="daterange"
+                                       options="{'to_date_field': 'to_date'}"/>
+                                <field name="to_date" required="1"/>
+                                <field name="family" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="category" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="nhcl_class" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="brick" options="{'no_create': True, 'no_open': True}"/>
+                            </group>
+
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="sales Lines" invisible="1">
+                            <group>
+                                <group>
+                                    <field name="total_bill_qty"/>
+                                </group>
+                                <group>
+                                    <field name="total_net_amount"/>
+                                </group>
+                            </group>
+                            <field name="nhcl_daily_sale_report_ids" readonly="1" forsesave="1">
+                                <tree create="0" delete="0" editable="bottom" limit="1000000">
+                                    <field name="nhcl_company_id"/>
+                                    <field name="config_id"/>
+                                    <field name="family_name"/>
+                                    <field name="category_name"/>
+                                    <field name="class_name"/>
+                                    <field name="brick_name"/>
+                                    <field name="bill_qty" sum="total_qty"/>
+                                    <field name="net_amount" sum="net_total"/>
+                                </tree>
+                            </field>
+
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_nhcl_daily_sale_report_tree" model="ir.ui.view">
+        <field name="name">nhcl.daily.sale.report.tree</field>
+        <field name="model">nhcl.daily.sale.report.line</field>
+        <field name="arch" type="xml">
+            <tree create="0" delete="0" limit="1000000">
+                <field name="nhcl_company_id"/>
+                <field name="config_id" />
+                <field name="family_name"/>
+                <field name="category_name"/>
+                <field name="class_name"/>
+                <field name="brick_name"/>
+                <field name="bill_qty" sum="total_qty"/>
+                <field name="net_amount" sum="net_total"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_nhcl_daily_sale_report_pivot" model="ir.ui.view">
+        <field name="name">nhcl.daily.sale.report.pivot</field>
+        <field name="model">nhcl.daily.sale.report.line</field>
+        <field name="arch" type="xml">
+            <pivot string="Daily Sale Pivot">
+                <field name="nhcl_company_id" type="row"/>
+                <field name="config_id" type="row"/>
+                <field name="family_name" type="row"/>
+                <field name="category_name" type="row"/>
+                <field name="class_name" type="row"/>
+                <field name="brick_name" type="row"/>
+
+                <field name="bill_qty" type="measure"/>
+                <field name="net_amount" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+</odoo>

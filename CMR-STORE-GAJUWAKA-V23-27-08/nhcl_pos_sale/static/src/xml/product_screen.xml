@@ -1,0 +1,200 @@
+<templates id="template" xml:space="preserve">
+    <t t-name="nhcl_pos_sale.ProductScreen" t-inherit="point_of_sale.ProductScreen" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('product-screen')]" position="replace">
+            <div class="product-screen d-flex h-100 bg-100" t-att-class="{ 'd-none': !props.isShown }">
+                <div class="leftpane d-flex flex-column border-end bg-200" style="flex: 0 0 25%; overflow-y: hidden;">
+                    <div class="control-buttons d-flex flex-wrap border-bottom overflow-auto bg-300" t-if="!ui.isSmall"
+                        style="max-height: 300px;">
+                        <t t-foreach="controlButtons" t-as="cb" t-key="cb.name">
+                            <t t-component="cb.component" t-key="cb.name" />
+                        </t>
+                    </div>
+                    <Numpad buttons="getNumpadButtons()" onClick.bind="onNumpadClick" class="'w-100'" />
+                    <ActionpadWidget partner="partner" actionName="constructor.numpadActionName" actionType="'payment'"
+                        onClickMore.bind="displayAllControlPopup" />
+                </div>
+                <div class="middlepane d-flex flex-column bg-300" style="flex: 0 0 55%; overflow-y: hidden;">
+                    <CustomSearch />
+                    <OrderWidget lines="currentOrder.orderlines" t-slot-scope="scope"
+                        total="env.utils.formatCurrency(currentOrder.get_total_with_tax())"
+                        tax="!env.utils.floatIsZero(currentOrder.get_total_tax()) and env.utils.formatCurrency(currentOrder.get_total_tax()) or ''">
+                        <t t-set="line" t-value="scope.line" />
+                        <Orderline line="line.getDisplayData()" t-on-click="() => this.selectLine(line)"
+                            class="{ ...line.getDisplayClasses(), 'selected' : line.selected }">
+                            <t t-set-slot="product-name">
+                                <i t-if="line.get_product().isTracked()" role="img"
+                                    t-attf-class="{{ line.has_valid_product_lot() ? 'text-success' : 'text-danger'}} fa fa-list line-lot-icon ms-1"
+                                    t-attf-title="{{ line.has_valid_product_lot() ? 'Valid product lot' : 'Invalid product lot'}}" />
+                            </t>
+                            <ul t-if="line.pack_lot_lines">
+                                <li t-foreach="line.get_lot_lines()" t-as="lot" t-key="lot.cid"> SN
+                                    <t t-esc="lot.lot_name" />
+                                    <t t-set="lotobj" t-value="line.pos.stock_lots_by_name[lot.lot_name]"/>
+                                    <t t-if="lotobj and lotobj.stockLot.nhcl_lot_hsn_code">
+                                        , HSN: <span t-esc="lotobj.stockLot.nhcl_lot_hsn_code"/>
+                                    </t>
+                                </li>
+                            </ul>
+                        </Orderline>
+                        <t t-set-slot="details" />
+                    </OrderWidget>
+                </div>
+                <div class="rightpane border-start overflow-auto d-flex flex-grow-1 flex-column bg-300"
+                    style="flex: 0 0 20%;">
+                    <!--                    <ProductsWidget />-->
+                    <!--                    <t t-if="ui.isSmall">-->
+                    <!--                        <div class="product-reminder d-flex justify-content-center align-items-center py-1 text-bg-warning bg-opacity-50 fw-bolder" t-if="state.showProductReminder" t-key="animationKey" >-->
+                    <!--                            <span><t t-esc="selectedOrderlineQuantity"/> <t t-esc="selectedOrderlineDisplayName"/> <t t-esc="selectedOrderlineTotal"/></span>-->
+                    <!--                        </div>-->
+                    <!--                        <div class="switchpane d-flex h-12">-->
+                    <!--                            <button class="btn-switchpane pay-button btn w-50 rounded-0 fw-bolder" t-attf-class="{{ primaryPayButton ? 'btn-primary' : 'btn-secondary' }}" t-on-click="() => currentOrder.pay()">-->
+                    <!--                                <span class="fs-1 d-block">Pay</span>-->
+                    <!--                                <span><t t-esc="total" /></span>-->
+                    <!--                            </button>-->
+                    <!--                            <button class="btn-switchpane btn w-50 btn-secondary rounded-0 fw-bolder review-button" t-on-click="switchPane">-->
+                    <!--                                <span class="fs-1 d-block">Review</span>-->
+                    <!--                                <span><t t-esc="items"/> items</span>-->
+                    <!--                            </button>-->
+                    <!--                        </div>-->
+                    <!--                    </t>-->
+
+                    <div class="btn-primary">
+                        <h2 class="text-center pt-3 pb-0" style="font-family:Sans-serif;font-weight:bold;color:white;">
+                            POS TaskPad</h2>
+                    </div>
+
+                    <div class="control-buttons d-flex flex-wrap border-bottom overflow-auto bg-300" t-if="!ui.isSmall">
+
+                        <button class="control-button btn btn-light  rounded-0 fw-bolder">
+                            <span>Credit Note</span>
+                            <span>(alt + n)</span>
+                        </button>
+
+                        <button class="control-button btn btn-light  rounded-0 fw-bolder">
+                            <span>Remove All</span>
+                            <span>(ctrl + 0)</span>
+                        </button>
+
+                        <button class="control-button btn btn-light  rounded-0 fw-bolder">
+                            <span>Sale Id</span>
+                            <span>(ctrl + 3)</span>
+                        </button>
+
+                        <button class="control-button btn btn-light  rounded-0 fw-bolder">
+                            <span>Select Customer</span>
+                            <span>(ctrl + 1)</span>
+                        </button>
+
+                        <button class="control-button btn btn-light  rounded-0 fw-bolder">
+                            <span>Save Order</span>
+                            <span>(ctrl + 7)</span>
+                        </button>
+
+                        <button class="control-button btn btn-light  rounded-0 fw-bolder">
+                            <span>Validate Order</span>
+                            <span>(Shift + Y)</span>
+                        </button>
+
+                        <button class="control-button btn btn-light  rounded-0 fw-bolder">
+                            <span>Save/Edit Cus. Details</span>
+                            <span>(Alt + s)</span>
+                        </button>
+
+                        <button class="control-button btn btn-light  rounded-0 fw-bolder">
+                            <span>Select All Cart Lines</span>
+                            <span>(Shift + a)</span>
+                        </button>
+
+                        <button class="control-button btn btn-light  rounded-0 fw-bolder">
+                            <span>Close Session</span>
+                            <span>(Alt + X)</span>
+                        </button>
+
+                        <button class="control-button btn btn-light  rounded-0 fw-bolder">
+                            <span>Open Ongoing Orders</span>
+                            <span>(ctrl + 8)</span>
+                        </button>
+
+                        <button class="control-button btn btn-light  rounded-0 fw-bolder">
+                            <span>Glb Discount</span>
+                            <span>(ctrl + d)</span>
+                        </button>
+
+                        <button class="control-button btn btn-light  rounded-0 fw-bolder">
+                            <span>Amnt Discount</span>
+                            <span>(alt + d)</span>
+                        </button>
+
+                        <button class="control-button btn btn-light  rounded-0 fw-bolder">
+                            <span>Slct Lines Disc</span>
+                            <span>(shift + d)</span>
+                        </button>
+
+                        <button class="control-button btn btn-light  rounded-0 fw-bolder">
+                            <span>Product Info</span>
+                            <span>(F2)</span>
+                        </button>
+
+                        <button class="control-button btn btn-light  rounded-0 fw-bolder">
+                            <span>Customer Note</span>
+                            <span> (ctrl + 6)</span>
+                        </button>
+
+                        <button class="control-button btn btn-light  rounded-0 fw-bolder">
+                            <span>Remove a Line</span>
+                            <span> (alt + r)</span>
+                        </button>
+
+                        <button class="control-button btn btn-light  rounded-0 fw-bolder">
+                            <span>Change User</span>
+                            <span> (F5)</span>
+                        </button>
+
+                        <button class="control-button btn btn-light  rounded-0 fw-bolder">
+                            <span>Payment</span>
+                            <span> (F8)</span>
+                        </button>
+
+                        <button class="control-button btn btn-light  rounded-0 fw-bolder">
+                            <span>Benefits</span>
+                            <span> (CTRL + b)</span>
+                        </button>
+
+                        <button class="control-button btn btn-light  rounded-0 fw-bolder">
+                            <span>slct &amp; delete ongoing orders</span>
+                            <br/>
+                            <span> (Shift + a, CTRL + r)</span>
+                        </button>
+
+<!--                        <button class="control-button btn btn-light  rounded-0 fw-bolder">-->
+<!--                            <span>Back</span>-->
+<!--                            <span> (Escape)</span>-->
+<!--                        </button>-->
+
+                    </div>
+
+                    <div class="p-2 border-top bg-white" style="flex: 0 0 auto;">
+                        <OrderSummaryPopup />
+                    </div>
+
+                    <div class="p-2 border-top bg-white" style="flex: 0 0 auto;">
+                        <button t-on-click="get_credit_details" class="btn btn-primary">
+                            Credit note
+                        </button>
+                        <button t-on-click="applicable_rewards_popup" class="m-1 btn btn-success">
+                            Benefits
+                        </button>
+                    </div>
+                    <div class="p-2 border-top bg-white" style="flex: 0 0 auto;">
+                        <button t-on-click="action_move_product_damage_to_main" class="btn btn-primary">
+                            Damage-Main
+                        </button>
+                        <button t-on-click="action_move_product_return_to_main" class="m-1 btn btn-primary">
+                            Return-Main
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </t>
+</templates>

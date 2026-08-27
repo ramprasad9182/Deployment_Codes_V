@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	
+<templates id="categ_reports_template" inherit_id="point_of_sale.template" xml:space="preserve">
+
+	<t t-name="nhcl_bi_pos_reports.ReportCategoryButtonWidget"  owl="1">
+		<div class="control-button btn btn-light rounded-0 fw-bolder"
+         t-on-click="() => this.onClick()">
+            <i class="fa fa-shopping-cart me-1" role="img" aria-label="Category Summary" title="Category Summary" />
+            <span> </span>
+            Category Summary
+        </div>
+	</t>
+
+	<t t-name="nhcl_bi_pos_reports.PopupCategoryWidget" owl="1">
+
+		<div class="popup popup-import">
+			<div class="modal-header">
+             <h4 class="modal-title title drag-handle">
+                 Category Summary
+             </h4>
+         </div>
+         <main class="body modal-body">
+         	<div >
+				<div id="categ_dt_strt" class="alert" style="color: #ec1010; font-size: inherit; margin: 5px; text-align: center;">
+					<span class="closebtn"></span>  
+					Please fill Start Date.
+				</div>
+				<div id="categ_dt_end" class="alert" style="color: #ec1010; font-size: inherit; margin: 5px; text-align: center;">
+					<span class="closebtn"></span>  
+					Please fill End Date.
+				</div>
+				<div class="form-group" id="form1">  
+					<input id="categ_crnt_ssn" class="categ_crnt_ssn" type="checkbox" 
+					t-on-click="clickCurrentSession"  
+						style="min-height: 15px !important;width: 25px !important;box-shadow: none !important;"/>
+					<label for="categ_crnt_ssn">Current Session</label>
+				</div>
+				<div class="left_pane" id="ct_st_dt" style="width: 49%;display:inline-block;">
+					<p class="text-center">Start Date</p>
+					<input type="date" name="st_date" id="categ_st_date"/>
+				</div>
+				<div class="right_pane" id="ct_end_dt" style="width: 50%;display:inline-block;">
+					<p class="text-center">End Date</p>
+					<input type="date" name="ed_date" id="categ_ed_date"/>
+				</div>
+			</div>
+         </main>
+         <footer class="footer modal-footer">
+             <div class="button  btn btn-lg btn-primary" t-on-click="print_category_summary">
+                 Print
+             </div>
+             <div class="button  cancel btn btn-lg btn-primary" t-on-click="back">
+                 Close
+             </div>
+         </footer>
+      </div>
+	</t>
+
+	<t t-name="nhcl_bi_pos_reports.CategoryReceiptWidget" owl="1">
+
+		<div class="receipt-screen screen h-100 bg-100">
+			<div class="screen-content d-flex flex-column h-100">
+				<div class="top-content d-flex align-items-center py-3 border-bottom text-center">
+					<div class="button back btn btn-lg btn-secondary mx-2" t-on-click="back">
+						<i class="fa fa-angle-double-left"></i>
+						<span> </span>
+						<span>Back</span>
+					</div>
+					<div class="top-content-center flex-grow-1">
+						<h1> Category Summary</h1>
+					</div>
+				</div>
+
+
+				<div class="default-view d-flex flex-lg-row flex-column overflow-hidden flex-grow-1">
+                    <div class="actions d-flex flex-column justify-content-between flex-lg-grow-1 flex-grow-0 flex-shrink-1 flex-basis-0">
+                        <div class="d-flex flex-column m-4">
+                            <div class="buttons my-3">
+                                <button class="button print btn btn-lg btn-secondary w-100 py-3" t-on-click="printReceipt">
+                                    <i class="fa fa-print ms-2" t-ref="order-print-receipt-button"></i> Print
+                                </button>
+                            </div>
+                            
+                           
+                        </div>
+                       
+                    </div>
+                    <div class="pos-receipt-container d-flex flex-grow-1 flex-lg-grow-0 user-select-none justify-content-center bg-200 text-center overflow-hidden">
+                        <div class="d-inline-block m-3 p-3 border rounded bg-view text-start overflow-y-auto">
+                            <XMLPosCategorySummaryReceipt order="category_receipt_data"/>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+	</t>
+
+	<t t-name="nhcl_bi_pos_reports.XMLPosCategorySummaryReceipt" owl="1">
+		<div class="pos-receipt">
+			<t t-set="obj" t-value="props.order"/>
+			<img t-attf-src="/web/image?model=res.company&amp;id={{pos.company.id}}&amp;field=logo" alt="Logo" class="pos-receipt-logo"/>
+			<br/>
+			<div class="pos-receipt-contact">
+				<t t-if='pos.company.contact_address'>
+					<div><t t-esc='pos.company.contact_address' /></div>
+				</t>
+				<t t-if='pos.company.phone'>
+					<div>Tel:<t t-esc='pos.company.phone' /></div>
+				</t>
+				<t t-if='pos.company.vat'>
+					<div>VAT:<t t-esc='pos.company.vat' /></div>
+				</t>
+				<t t-if='pos.company.email'>
+					<div><t t-esc='pos.company.email' /></div>
+				</t>
+				<t t-if='pos.company.website'>
+					<div><t t-esc='pos.company.website' /></div>
+				</t>
+				<br/>
+				
+				<t t-if='pos.get_cashier()'>
+					<div class='cashier'>
+						<div>--------------------------------</div>
+						<div>Served by <t t-esc='pos.get_cashier().name' /></div>
+					</div>
+				</t>
+			</div>
+			<br />
+			<t t-if="obj">
+				<t t-if="!obj.categ_current_session">
+					<div class="receipt-periods">
+						Start Date: <span style="float:right;" t-esc="obj.st_date_categ"/>
+					</div>
+					<div class="receipt-periods">
+						End Date: <span style="float:right;" t-esc="obj.ed_date_categ"/>
+					</div>
+				</t>
+
+				<t t-if="!obj.categ_current_session">
+					<br/>
+					<div class="pos-receipt-center-align receipt-periods-month">
+						<span><strong>Month : </strong></span>
+						<t t-if="obj.st_month_categ">
+							<strong><t t-esc="obj.st_month_categ"/></strong>
+						</t>
+						<t t-if="obj.ed_month_categ">
+							<t t-if="obj.ed_month_categ != obj.st_month_categ">
+								<strong>To</strong>
+								<strong><t t-esc="obj.ed_month_categ"/></strong>
+							</t>
+						</t>
+					</div>
+				</t>
+				<br/>
+				<div>
+					<table class='receipt-orderlines' style="margin: 0px auto;margin-top:32px;" >
+						<colgroup>
+							<col width='33%' />
+							<col width='33%' />
+							<col width='33%' />
+						</colgroup>
+						<thead style="border-bottom:2px solid black;padding-bottom:5px;">
+							<th class="text-center">Category</th>
+							<th class="pos-right-align">Quantity</th>
+							<th class="pos-right-align">Total</th>
+						</thead>
+						<tbody>
+							<t t-set="a" t-value="0"/>
+							<tr t-foreach='cate_summary' t-as='data1' t-key='a'>
+								<t t-set="a" t-value="a + 1"/>
+								<td style="padding:5px 0;">
+									<span t-esc="data1.coalesce"/>
+								</td>
+								<td class="pos-center-align">
+									<span t-esc="data1.total"/>
+								</td>
+								<td class="pos-right-align">
+									<span t-esc="env.utils.formatCurrency(data1.sum)"/>
+								</td>
+							</tr>
+							<tr t-if="obj.final_total" style="border-top:2px solid black;">
+								<td style="padding:5px 0;">
+									<strong>Total</strong>
+								</td>
+								<td style="padding:5px 0;">
+									<p/>
+								</td>
+								<td class="pos-right-align">
+									<value><span t-esc="env.utils.formatCurrency(obj.final_total)"/></value>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<br/>
+			</t>
+		</div>
+	</t>
+	
+</templates>

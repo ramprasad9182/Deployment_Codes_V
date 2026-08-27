@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <!-- MAIN RECEIPT -->
+    <t t-name="nhcl_pos_custom_tax.OrderReceipt"
+       t-inherit="point_of_sale.OrderReceipt"
+       t-inherit-mode="extension">
+        <xpath expr="." position="replace">
+            <div class="pos-receipt">
+                <!-- CUSTOMER COPY -->
+                <div class="pos-receipt-center-align" style="padding-right:15px; text-align:right;">
+                    **Customer Copy**
+                </div>
+                <t t-call="nhcl_pos_custom_tax.full_receipt_body"/>
+                <div style="page-break-after: always;"></div>
+                <!-- DUPLICATE COPY -->
+                <div class="pos-receipt-center-align" style="padding-right:15px; text-align:right;">
+                    **Duplicate Copy**
+                </div>
+                <t t-call="nhcl_pos_custom_tax.full_receipt_body"/>
+            </div>
+        </xpath>
+    </t>
+    <!-- FULL RECEIPT BODY -->
+    <t t-name="nhcl_pos_custom_tax.full_receipt_body">
+        <!-- HEADER -->
+        <div class="cmr-header">
+        <!--LOGO-->
+            <img
+                src="/nhcl_pos_custom_tax/static/src/img/cmr-logo.png"
+                class="cmr-logo"
+            />
+            <!-- COMPANY NAME -->
+            <div class="cmr-company-name" style="padding-left: 12px;">
+                <t t-esc="props.data.headerData.company.name || ''"/>
+            </div>
+            <div>
+                <!-- ADDRESS -->
+                <div class="cmr-company-address">
+                    <div>
+                        <t t-esc="props.data.headerData.company.street || ''"/>
+                    </div>
+                </div>
+                <!-- GST -->
+                <div>
+                    <div class="cmr-company-gst">
+                        <div class="cmr-company-invoice">Tax Invoice</div>
+                        GSTIN:
+                        <t t-esc="props.data.headerData.company.vat || ''"/>
+                    </div>
+                </div>
+            </div>
+            <!-- CUSTOMER INFO - TABLE VERSION -->
+            <div class="cmr-customer-div">
+                <table class="cmr-customer-table">
+                    <tr>
+                        <td class="label"  style="text-align:left !important;">
+                            Customer Name:
+                            <span style="font-weight: 550;">
+                                <t t-esc="(props.data.partner?.name and props.data.partner?.name.length > 10) ? props.data.partner.name.substring(0,10) + '...' : props.data.partner?.name"/>
+                            </span>
+                        </td>
+                        <td class="label2" style="text-align:right !important;">
+                            <t t-esc="env.services.pos.config.name"/>
+                            <span style="font-weight: 550;">
+                                Counter
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label">
+                            <div class="td-flex">
+                                <span class="td-title" style="font-weight: bold;text-align:left">Contact No:</span>
+                                <span class="td-value" style="font-weight: 550;">
+                                    <t t-esc="props.data.partner?.phone || ''"/>
+                                </span>
+                            </div>
+                        </td>
+                        <td class="label2">
+                            <div>
+                                <span style="font-weight: bold; text-align:right">Cashier:</span>
+                                <span style="font-weight: 550;">
+                                    <t t-esc="props.data.cashier || ''"/>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="label" style="text-align:left !important;">
+                            Customer GST:
+                            <span style="font-weight: 550;">
+                                <t t-esc="props.data.partner?.vat || ''"/>
+                            </span>
+                        </td>
+                        <td class="label2"></td>
+                    </tr>
+
+                </table>
+            </div>
+            <!-- BILL INFO -->
+            <div class="cmr-bill-number">
+                <div class="cmr-bill-row bill-no">
+                    <span class="cmr-bill-label">
+                        Bill No:
+                    </span>
+                    <span class="cmr-bill-value" style="padding-right:20px;">
+                        <t t-esc="props.data.name || ''"/>
+                    </span>
+                </div>
+                <div class="cmr-bill-row bill-no">
+                    <span class="cmr-bill-label">
+                        DT
+                    </span>
+                    <span class="cmr-bill-value" style="padding-left: 10px; font-size: 16px; ">
+                        <t t-esc="props.data.date || ''"/>
+                    </span>
+                </div>
+            </div>
+            <!-- PRODUCT SECTION -->
+            <div class="cmr-product-box">
+                 <!-- HEADER -->
+                <table class="cmr-product-table line1-table">
+                    <tr class="header-line1">
+                        <td class="col-hsn">Hsn</td>
+                        <td class="col-sm" colspan="2">SM</td>
+                        <td class="col-gst">GST%</td>
+                        <td class="col-product">Product</td>
+                    </tr>
+                </table>
+                <table class="cmr-product-table line2-table">
+                    <tr class="header-line2">
+                        <td class="col-barcode">Barcode</td>
+                        <td class="col-rate">S.Rate</td>
+                        <td class="col-qty">Qty</td>
+                        <td class="col-disc">Dis</td>
+                        <td class="col-amount">Amount</td>
+                    </tr>
+                </table>
+                 <div class="cmr-product-inner-divider"></div>
+                <!-- PRODUCTS -->
+                <t t-foreach="props.data.orderlines" t-as="line" t-key="line.id || line_index">
+
+                    <t t-set="product_name"
+                       t-value="
+                            line.productName
+                            ? (
+                                line.productName.split('-').slice(-1)[0].trim().length > 20
+                                ? line.productName.split('-').slice(-1)[0].trim().substring(0,20) + '...'
+                                : line.productName.split('-').slice(-1)[0].trim()
+                            )
+                            : ''
+                       "/>
+                    <!-- LINE 1 -->
+                    <table class="cmr-product-table line1-table">
+                        <tr class="product-line1">
+                            <td class="col-seq">
+                                <t t-esc="line.nf_sequence || ''"/>
+                            </td>
+                             <td class="col-hsn">
+                                <t t-esc="line.l10n_in_hsn_code || ''"/>
+                            </td>
+                            <td class="col-sm" colspan="2">
+                                <t t-esc="line.badge || ''"/>
+                            </td>
+                            <td class="col-gst" colspan="2">
+                                <t t-esc="line.product_tax ? line.product_tax.split('%')[0] + '%' : '0%'"/>
+                            </td>
+                            <td class="col-product">
+                                <t t-esc="product_name"/>
+                            </td>
+
+                        </tr>
+                    </table>
+                    <!-- LINE 2 -->
+                    <table class="cmr-product-table line2-table">
+                        <tr class="product-line2">
+                            <td>
+                                <t t-foreach="line.pack_lot_lines || []" t-as="lot" t-key="lot_index">
+                                    <span
+                                        t-att-style="
+                                            line.reward_id
+                                            ? 'border:2px solid black;font-weight:bold;padding:2px 5px;'
+                                            : ''
+                                        ">
+                                        <t t-esc="lot.lot_name || ''"/>
+                                    </span>
+                                </t>
+                            </td>
+
+                            <td class="col-rate" colspan="2">
+                                <t t-esc="line.product_mrp"/>
+                            </td>
+                            <td class="col-qty">
+                                <t t-esc="line.qty" colspan="2"/>
+                            </td>
+                            <td class="col-disc">
+                                <t t-esc="(line.promo_amount || 0).toFixed(2)"/>
+                            </td>
+                            <td class="col-amount">
+                                <t t-esc="line.price.replace('₹', '').trim()"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="product-gap"></div>
+                </t>
+
+                <!-- TOTAL SECTION -->
+                <div class="cmr-total-box">
+
+                    <div class="cmr-total-line">
+
+                        <span class="cmr-total-label" style="text-align:left">
+                            Total:
+                        </span>
+
+                        <span class="cmr-total-qty">
+                            <t t-esc="props.data.total_qty"/>
+                        </span>
+
+                        <span class="cmr-total-amount">
+                            <t t-esc="props.formatCurrency(props.data.product_total || 0).replace('₹', '').trim()"/>
+                        </span>
+                    </div>
+                </div>
+                <div class="cmr-product-inner-divider"></div>
+                <div class="text-center">
+                     <span>Rs.</span><![CDATA[  ]]><span><t t-esc="this.amount_total_words"/></span>
+                </div>
+                <div  class="cmr-customer-div_custom">
+                     <table class="cmr-customer-table" style="font-size:20px; font-weight:650;">
+                        <t t-foreach="props.data.paymentlines" t-as="line" t-key="line_index">
+                            <tr style="font-weight: 650px; font-size:16px;margin-top:0px;">
+                                 <td style="text-align:left;" colspan="2"><t t-esc="line.name"/></td>
+                                 <td style="padding-right:5px;" colspan="2"><t t-esc="props.formatCurrency(line.amount).replace('₹', '').trim()"/></td>
+                            </tr>
+                        </t>
+                             <tr style="font-size:16px; font-weight:650; margin-top:0px;">
+                                 <!-- LABEL -->
+                                 <td style="padding-left:2px; text-align:left;margin-top:0px;" colspan="2">
+                                     Tender Amount:
+                                 </td>
+                                 <!-- VALUE -->
+                                 <td colspan="2" style="text-align:center">
+                                     <span><t t-esc="props.formatCurrency(props.data.tender_amount !== undefined ? props.data.tender_amount : (props.data.paymentlines.length ? props.data.paymentlines[0].amount : 0)).replace('₹', '').trim()"/></span>
+                                 </td>
+                            </tr>
+                         <!-- DISCOUNTS -->
+
+                        <t t-if="props.data.p_discount">
+                            <tr style="font-size:15px; font-weight:600;margin-top:0px;margin-top:0px;">
+                                <td colspan="2" style="padding-left:2px; font-weight:650; text-align:left;">
+                                    Promo. Discount:
+                                </td>
+                                <td colspan="2" style="text-align:right; font-weight:650; padding-right:2px; text-align:center;">
+                                    <span t-esc="env.utils.formatCurrency(props.data.p_discount).replace('₹', '').trim()"/>
+                                </td>
+                            </tr>
+                        </t>
+
+                        <t t-if="props.data.global_discount || props.data.m_discount || props.data.selectedLineDiscount ">
+                            <tr style="font-size:15px; font-weight:600;margin-top:0px;">
+                                <td colspan="2" style="padding-left:2px; text-align:left;">
+                                    Manual Discount
+                                </td>
+                                <td colspan="2" style="text-align:center; font-weight:650; padding-right:2px;margin-top:0px;">
+                                    <span><t t-esc="
+                                        props.formatCurrency(
+                                            (props.data.global_discount || 0) +
+                                            (props.data.m_discount || 0) +
+                                            (props.data.selectedLineDiscount || 0)
+                                        ).replace('₹', '').trim()
+                                    "/></span>
+                                </td>
+                            </tr>
+                        </t>
+                        <!-- BALANCE -->
+                        <tr style="font-size:16px; font-weight:650; margin-top:0px;margin-top:0px;">
+                            <td style="padding-left:2px; text-align:left; margin-top:0px;" colspan="2" >
+                                Balance Refund:
+                            </td>
+                            <td colspan="2" style="text-align:center; font-weight:650; padding-right:2px;margin-top:0px;">
+                               <strong>
+                                    <span t-esc=" props.formatCurrency(props.data.change).replace('₹', '').trim()"/>
+                               </strong>
+                            </td>
+                        </tr>
+                     </table>
+                </div>
+                <div class="cmr-bill-info">
+
+                    <!--Total Sale-->
+                    <div class="cmr-bill-row bill-no">
+
+                        <span class="cmr-bill-label_custom" >
+                           Total Sale:
+                        </span>
+
+                        <span class="cmr-bill-value_custom">
+                             <t t-esc="props.formatCurrency(props.data.gross_sale || 0).replace('₹', '').trim()"/>
+                        </span>
+
+                    </div>
+
+                    <!-- Round Off  -->
+                    <div class="cmr-bill-row bill-no">
+
+                        <span class="cmr-bill-label_custom" >
+                             Round Off:
+                        </span>
+
+                        <span class="cmr-bill-value_custom">
+
+                            <t t-esc="props.formatCurrency(props.data.rounding_applied || 0).replace('₹', '').trim()"/>
+                        </span>
+                    </div>
+                     <!-- Net Payable  -->
+                    <div class="cmr-bill-row bill-no" style="font-size:18px" >
+
+                        <span class="cmr-bill-label_custom" >
+                           Net Payable:
+                        </span>
+
+                        <span class="cmr-bill-value_custom">
+
+                            <t t-esc="props.formatCurrency(props.data.amount_total + props.data.rounding_applied).replace('₹', '').trim() "/>
+                        </span>
+                    </div>
+                </div>
+               <div class="cmr-customer-div">
+                    <t t-if="props.data.gst_summary and props.data.gst_summary.length > 0">
+
+                        <div class="gst-summary-box">
+                            <div class="gst-summary-title">
+                                GST Summary
+                            </div>
+
+                            <table class="gst-summary-table">
+                                <thead>
+                                    <tr>
+                                        <th>Description</th>
+                                        <th>Taxable</th>
+                                        <th>CGST</th>
+                                        <th>SGST</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <t t-foreach="props.data.gst_summary"
+                                       t-as="gst"
+                                       t-key="gst.rate">
+
+                                        <tr>
+                                            <td>
+                                                <t t-esc="gst.rate"/>% GST
+                                            </td>
+
+                                            <td class="text-right"
+                                                t-esc="props.formatCurrency(gst.taxable, false)"/>
+
+                                            <td class="text-right"
+                                                t-esc="props.formatCurrency(gst.cgst, false)"/>
+
+                                            <td class="text-right"
+                                                t-esc="props.formatCurrency(gst.sgst, false)"/>
+                                        </tr>
+
+                                    </t>
+                                    <tr class="gst-total-row">
+                                        <td>
+                                            <span>Totals</span>
+                                        </td>
+
+                                        <td class="text-right">
+                                            <span t-esc="props.formatCurrency(
+                                                props.data.gst_summary.reduce((s, g) => s + g.taxable, 0),
+                                                false
+                                            )"/>
+                                        </td>
+
+                                        <td class="text-right">
+                                            <span t-esc="props.formatCurrency(
+                                                props.data.gst_summary.reduce((s, g) => s + g.cgst, 0),
+                                                false
+                                            )"/>
+                                        </td>
+
+                                        <td class="text-right">
+                                            <span t-esc="props.formatCurrency(
+                                                props.data.gst_summary.reduce((s, g) => s + g.sgst, 0),
+                                                false
+                                            )"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+               </div>
+            </div>
+            <!-- TERMS & CONDITIONS -->
+            <div class="cmr-terms-box">
+                <div class="cmr-terms-title">
+                    Terms &amp; Conditions
+                </div>
+                <ol class="cmr-terms-list">
+                    <li>
+                       1. Exchange can be made within 7 days from the date of purchase only with price tag and bill.
+                    </li>
+                    <li>
+                       2. Exchange timings 11 AM to 8 PM.
+                    </li>
+                    <li>
+                       3. No guarantee on fade off colour and zari.
+                    </li>
+                    <li>
+                       4. Cash will not be refunded against goods exchanged or returned.
+                    </li>
+                    <li>
+                       5. Cosmetic, toys, undergarments, men's ethnic wear,
+                        home appliances and footwear cannot be exchanged.
+                    </li>
+                    <li>
+                       6. Alteration items cannot be exchanged or refunded.
+                    </li>
+                    <li>
+                       7. No exchange on offer item.
+                    </li>
+                    <li>
+                       8. Any disputes subject to Visakhapatnam jurisdiction only.
+                    </li>
+
+                </ol>
+
+                <div class="cmr-festival-message">
+                    CMR Wishes you a Merry Christmas, a Happy New Year for 2026, and a Joyful Pongal.
+                </div>
+
+            </div>
+            <!-- FOOTER BILL NUMBER -->
+            <div class="cmr-footer-bill">
+                <span style="opacity: 0.85;">
+                   * <t t-esc="props.data.name || ''"/>*
+                </span>
+            </div>
+            <div style="font-size: 24px;text-align: left;">
+
+                <span class="cmr-footer-bill-label">
+                    Bill No :
+                </span>
+
+                <span class="cmr-footer-bill-value">
+                    <t t-esc="props.data.name || ''"/>
+                </span>
+            </div>
+        </div>
+    </t>
+</templates>

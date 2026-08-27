@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_pos_pos_form_inherit_return_button" model="ir.ui.view">
+        <field name="name">pos.order.form.return.button.access</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/header" position="inside">
+                <field name="user_allow_return_products" invisible="1"/>
+            </xpath>
+            <xpath expr="//button[@name='refund']" position="replace">
+                <button name="refund"
+                        string="Return Products"
+                        type="object"
+                        invisible="state == 'draft' or not has_refundable_lines or not user_allow_return_products"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

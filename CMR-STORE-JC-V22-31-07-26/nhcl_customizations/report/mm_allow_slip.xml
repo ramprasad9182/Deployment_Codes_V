@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="allow_slip_note_mm">
+        <main class="page">
+            <t t-foreach="docs" t-as="o">
+                <div style="width:88mm;margin:0 auto;font-family:'Courier New', monospace;font-size:12px;color:#000;">
+                    <!-- HEADER -->
+                    <div style="text-align:center;">
+                        <div style="font-weight:bold;font-size:16px;">
+                            <t t-esc="o.company_id.name"/>
+                        </div>
+
+                        <div style="font-size:11px;">
+                            <t t-esc="o.company_id.partner_id.contact_address"/>
+                        </div>
+                    </div>
+
+                    <div style="border-top:1px dashed black;margin:6px 0;width:300px;"></div>
+
+                    <!-- TITLE -->
+                    <div style="text-align:center;font-size:18px;font-weight:bold;">
+                        ALLOW SLIP
+                    </div>
+
+                    <div style="border-top:1px dashed black;margin:6px 0;width:300px;"></div>
+
+                    <!-- INFO -->
+                    <div style="font-size: 16px;">
+                        Slip No :
+                        <span t-field="o.name"/>
+
+                    </div>
+
+                    <div style="font-size: 16px; ">
+                        Date :
+                        <span t-field="o.date_time_nh"/>
+                    </div>
+
+                    <div style="border-top:1px dashed black;margin:6px 0;width:300px;"></div>
+
+                    <div style="font-size: 16px; ">
+                        Product Description : <span t-field="o.product_description"/>
+                    </div>
+                    <div style="font-size: 16px; ">
+                        Quantity : <span t-field="o.quantity"/>
+                    </div>
+
+                    <div style="border-top:1px dashed black;margin:6px 0;width:300px;"></div>
+
+
+                    <!-- SIGNATURE -->
+                    <div style="font-weight: bold; margin-top:20px;font-size:16px;">
+                        Signature
+                        <div style="border-bottom:1px solid black;width:300px;"></div>
+                    </div>
+
+
+                    <div style="text-align:center;margin-top:10px;font-size:11px; font-size:16px;">
+                        Slip to be returned at allow slip counter
+                    </div>
+
+                </div>
+
+            </t>
+        </main>
+    </template>
+
+    <!-- Thermal Paper Format -->
+    <record id="custom_paper_format" model="report.paperformat">
+        <field name="name">POS Slip Paper</field>
+        <field name="default" eval="False"/>
+        <field name="format">custom</field>
+        <field name="page_height">297</field>
+        <field name="page_width">80</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">0</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">0</field>
+        <field name="dpi">96</field>
+    </record>
+
+    <record id="report_action_allow_slip_mm" model="ir.actions.report">
+        <field name="name">Allow Slip for MM</field>
+        <field name="model">matching.material</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">nhcl_customizations.allow_slip_note_mm</field>
+        <field name="report_file">nhcl_customizations.allow_slip_note_mm</field>
+        <field name="paperformat_id" ref="nhcl_customizations.custom_paper_format"/>
+    </record>
+
+</odoo>

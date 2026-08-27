@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_location_tracking,acces.location.tracking,model_location_tracking,,1,1,1,1
+access_used_credits,access.used.credits,model_used_credits,,1,1,1,1
+

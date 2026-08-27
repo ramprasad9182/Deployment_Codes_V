@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Inherited the product.template form view for adding new fields related to the traceability-->
+    <record id="product_template_form_view_custom_inherit" model="ir.ui.view">
+        <field name="name">product.template.view.form.inherit.product.type</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='categ_id']" position="before">
+                <field name="nhcl_type" required="1" placeholder="Please Article Type..."/>
+                <field name="segment"  readonly="1" force_save="1"/>
+                <field name="nhcl_id" invisible="1"/>
+                <field name="item_type"  placeholder="Please Item Type..."/>
+            </xpath>
+            <xpath expr="//page[@name='general_information']" position="after">
+                <page string="Product Description">
+                    <group>
+                        <field name="web_product"/>
+                        <field name="product_description"/>
+                    </group>
+
+                </page>
+            </xpath>
+
+
+
+            <xpath expr="//div[hasclass('oe_title')]/h1/div[hasclass('d-flex')]/field[@name='name']"
+                   position="attributes">
+                <attribute name="readonly">nhcl_type == 'ho_operation'</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+            <xpath expr="//form/sheet/notebook/page[@name='general_information']/group/group[@name='group_general']/field[@name='detailed_type']"
+                   position="before">
+                <field name="category_abbr" readonly="1" force_save="1"/>
+                <field name="nhcl_product_type" placeholder="Please Brand Type..." invisible="0"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_product_supplier_inherit_invisible" model="ir.ui.view">
+        <field name="name">product.template.supplier.form.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="purchase.view_product_supplier_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='seller_ids']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='variant_seller_ids']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_product_supplier_inherit_taxes_read" model="ir.ui.view">
+        <field name="name">product.template.taxes.form.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="account.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='taxes_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='supplier_taxes_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="inherit_cmr_product_supplierinfo_inherit" model="ir.ui.view">
+        <field name="name">product.supplierinfo.inherit</field>
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="product.product_supplierinfo_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="options">{'no_create': True, 'no_open': True, 'no_edit':True}</attribute>
+                <attribute name="domain">[('group_contact.name', 'in', ['Vendor','Branch','Agent'])]</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="inherit_cmr_product_category_max" model="ir.ui.view">
+        <field name="name">product.category.max</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="product.product_category_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group[@name='first']/field[@name='parent_id']" position="after">
+                <field name="max_num" readonly="1" force_save="1"/>
+                <field name="nhcl_id" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="product_form_view_barcode" model="ir.ui.view">
+        <field name="name">product.product.form.inherit.barcode</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="stock.product_form_view_procurement_button"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='barcode']" position="after">
+                <field name="serial_no" invisible="1"/>
+                <field name="nhcl_detailed_type" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="inherit_cmr_product_attribute" model="ir.ui.view">
+        <field name="name">product.attribute.max</field>
+        <field name="model">product.attribute</field>
+        <field name="inherit_id" ref="product.product_attribute_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='create_variant']" position="after">
+                <field name="nhcl_id" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_product_product_tree_inherit_vendor_qty" model="ir.ui.view">
+        <field name="name">product.product.tree.inherit.vendor.qty</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="stock.product_product_stock_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='incoming_qty']" position="after">
+                <field name="grc_qty"/>
+                <field name="main_damage_qty"/>
+                <field name="damage_main_qty"/>
+                <field name="return_main_qty"/>
+                <field name="packets_qty"/>
+                <field name="goods_return_qty"/>
+                <field name="pos_order_qty"/>
+                <field name="exchange_qty"/>
+                <field name="hpo_qty"/>
+                <field name="hpi_qty"/>
+                <field name="main_loc_qty"/>
+                <field name="damage_loc_qty"/>
+                <field name="return_loc_qty"/>
+            </xpath>
+            <xpath expr="//field[@name='display_name']" position="before">
+                <field name="family_categ_id" widget="many2one"/>
+                <field name="class_categ_id" widget="many2one"/>
+                <field name="brick_categ_id" widget="many2one"/>
+                <field name="category_name_id" widget="many2one"/>
+            </xpath>
+        </field>
+    </record>
+
+
+<!--#### Product Aging####-->
+    <record id="nhcl_product_aging_action" model="ir.actions.act_window">
+        <field name="name">Product Aging</field>
+        <field name="res_model">product.aging</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{'create': False,'edit':False}</field>
+        <field name="help" type="html">
+            <p>Product Aging</p>
+        </field>
+    </record>
+
+    <record id="nhcl_product_aging_form" model="ir.ui.view">
+        <field name="name">Product Aging Form</field>
+        <field name="model">product.aging</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="from_date"/>
+                        <field name="to_date"/>
+                    </group>
+                    <notebook>
+                        <page string="Product Aging">
+                            <field name="product_aging_ids">
+                                <tree create="0" editable="bottom" delete="0">
+                                    <field name="name"/>
+                                    <field name="from_date"/>
+                                    <field name="to_date"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <!--                                <div class="oe_chatter">-->
+                <!--                                    <field name="message_follower_ids"/>-->
+                <!--                                    <field name="activity_ids"/>-->
+                <!--                                    <field name="message_ids"/>-->
+                <!--                                </div>-->
+            </form>
+        </field>
+    </record>
+
+    <menuitem id="menu_product_aging"
+              name="Product Aging"
+              parent="stock.menu_stock_inventory_control"
+              action="nhcl_customizations.nhcl_product_aging_action"/>
+
+
+
+
+</odoo>
+

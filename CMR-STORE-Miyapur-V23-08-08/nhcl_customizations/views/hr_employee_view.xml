@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="cmr_hr_employee_form_view" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherits</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='mobile_phone']" position="before">
+                <field name="sale_employee" placeholder="Please Select Sale Employee...." required="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr.open_view_employee_list_my" model="ir.actions.act_window">
+        <field name="context">{'chat_icon': True,'create': False,'delete':False}</field>
+    </record>
+    <record id="hr.action_hr_employee_create_user" model="ir.actions.server">
+        <field name="binding_model_id" eval="False"/>
+        <field name="binding_view_types" eval="False"/>
+    </record>
+</odoo>

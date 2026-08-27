@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	
+<templates id="payment_reports_template" inherit_id="point_of_sale.template" xml:space="preserve">
+
+	<t t-name="nhcl_bi_pos_reports.ReportPaymentButtonWidget"  owl="1">
+		<div class="control-button btn btn-light rounded-0 fw-bolder"
+         t-on-click="() => this.onClick()">
+            <i class="fa fa-shopping-cart me-1" role="img" aria-label="Payment Summary" title="Payment Summary" />
+            <span> </span>
+            Payment Summary
+        </div>
+	</t>
+
+	<t t-name="nhcl_bi_pos_reports.PopupPaymentWidget" owl="1">
+
+		<div class="popup popup-import">
+            <div class="modal-header">
+                <h4 class="modal-title title drag-handle">
+                    Payment Summary
+                </h4>
+            </div>
+            <main class="body modal-body">
+                <div class="body">
+						<div id="dt_strt" class="alert" style="color: #ec1010; font-size: inherit; margin: 5px; text-align: center;">
+							<span class="closebtn"></span>  
+							Please fill Start Date.
+						</div>
+						<div id="dt_end" class="alert" style="color: #ec1010; font-size: inherit; margin: 5px; text-align: center;">
+							<span class="closebtn"></span>  
+							Please fill End Date.
+						</div>
+						<div class="form-group" id="form1">  
+							<input id="pymnt_crnt_ssn" class="pymnt_crnt_ssn" type="checkbox" 
+							t-on-click="clickCurrentSession"  
+								style="min-height: 15px !important;width: 25px !important;box-shadow: none !important;"/>
+							<label for="pymnt_crnt_ssn">Current Session</label>
+						</div>
+						<div class="left_pane" id="strt_dt" style="width: 49%;display:inline-block;">
+							<p class="text-center">Start Date</p>
+							<input type="date" name="st_date" id="pay_st_date" required="1"/>
+						</div>
+						<div class="right_pane" id="end_dt" style="width: 50%;display:inline-block;">
+							<p class="text-center">End Date</p>
+							<input type="date" name="ed_date" id="pay_ed_date" required="1"/>
+						</div>
+						<div class="full_bottom" style="margin-top: 30px;">
+							<span class="label">Summary</span>&#160;&#160;
+							<select class="smry" id="smry_payment">
+								<option>Salespersons</option>
+								<option>Journals</option>
+							</select>
+						</div>
+					</div>
+            </main>
+            <footer class="footer modal-footer">
+                <div class="button btn btn-lg btn-primary" t-on-click="render_payment_summary">
+                    Print
+                </div>
+                <div class="button cancel btn btn-lg btn-primary" t-on-click="go_back_screen">
+                    Close
+                </div>
+            </footer>
+        </div>
+	</t>
+
+	<t t-name="nhcl_bi_pos_reports.PaymentReceiptWidget" owl="1">
+
+		<div class="receipt-screen screen h-100 bg-100">
+			<div class="screen-content d-flex flex-column h-100">
+				<div class="top-content d-flex align-items-center py-3 border-bottom text-center">
+					<div class="button back btn btn-lg btn-secondary mx-2" t-on-click="back">
+						<i class="fa fa-angle-double-left"></i>
+						<span> </span>
+						<span>Back</span>
+					</div>
+					<div class="top-content-center flex-grow-1">
+						<h1> Payment Summary</h1>
+					</div>
+				</div>
+
+
+				<div class="default-view d-flex flex-lg-row flex-column overflow-hidden flex-grow-1">
+                    <div class="actions d-flex flex-column justify-content-between flex-lg-grow-1 flex-grow-0 flex-shrink-1 flex-basis-0">
+                        <div class="d-flex flex-column m-4">
+                            <div class="buttons my-3">
+                                <button class="button print btn btn-lg btn-secondary w-100 py-3" t-on-click="printReceipt">
+                                    <i class="fa fa-print ms-2" t-ref="order-print-receipt-button"></i> Print
+                                </button>
+                            </div>
+                            
+                           
+                        </div>
+                       
+                    </div>
+                    <div class="pos-receipt-container d-flex flex-grow-1 flex-lg-grow-0 user-select-none justify-content-center bg-200 text-center overflow-hidden">
+                        <div class="d-inline-block m-3 p-3 border rounded bg-view text-start overflow-y-auto">
+                            <XMLPosPaymentSummaryReceipt order="payment_receipt_data"/>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+	</t>
+
+	<t t-name="nhcl_bi_pos_reports.XMLPosPaymentSummaryReceipt" owl="1">
+		<div class="pos-receipt">
+			<t t-set="obj" t-value="props.order"/>
+
+ 			<img t-attf-src="/web/image?model=res.company&amp;id={{pos.company.id}}&amp;field=logo" alt="Logo" class="pos-receipt-logo"/>
+			<br/>
+			<div class="pos-receipt-contact">
+				<t t-if='pos.company.phone'>
+					<div><t t-esc='pos.company.phone' /></div>
+				</t>
+				<t t-if='pos.company.phone'>
+					<div>Tel:<t t-esc='pos.company.phone' /></div>
+				</t>
+				<t t-if='pos.company.vat'>
+					<div>VAT:<t t-esc='pos.company.vat' /></div>
+				</t>
+				<t t-if='pos.company.email'>
+					<div><t t-esc='pos.company.email' /></div>
+				</t>
+				<t t-if='pos.company.website'>
+					<div><t t-esc='pos.company.website' /></div>
+				</t>
+				<br/>
+				
+				<t t-if='pos.get_cashier()'>
+					<div class='cashier'>
+						
+						<div>Served by <t t-esc='pos.get_cashier().name' /></div>
+					</div>
+				</t>
+			</div>
+			<br />
+			<t t-if="obj">
+				<t t-if="!obj.is_current_session">
+					<div class="receipt-periods">
+						Start Date: <span style="float:right;" t-esc="obj.st_date_pay"/>
+					</div>
+					<div class="receipt-periods">
+						End Date: <span style="float:right;" t-esc="obj.ed_date_pay"/>
+					</div>
+				</t>
+				<br/>
+				<t t-if="obj.smry_payment == 'Salespersons'">
+					<span style="text-align: center;"><h3>Payment Summary </h3></span>
+					<span style="text-align: center;"><h4>Salesperson:<t t-esc="pos.get_cashier().name"/></h4></span>
+				</t>
+				<t t-if="obj.smry_payment == 'Journals'">
+					<span style="text-align: center;"><h3>Journal Summary </h3></span>
+				</t>
+				<t t-set="a" t-value="0"/>
+				<t t-foreach="obj.pay_summary" t-as="pay" t-key="a" >
+				<t t-set="a" t-value="a + 1"/>
+				<div class="receipt-periods-month">
+					<t t-if="pay">
+						<div style="text-align: center;">
+							<strong>Month: <span  t-esc="pay[0]"/></strong>
+						</div>
+					</t>
+					<table class='receipt-orderlines' style="margin: 0px auto;margin-top:15px;min-width: 80%;">
+						<colgroup>
+							<col width='50%' />
+							<col width='50%' />
+						</colgroup>
+						<thead style="border-bottom:2px solid black;padding-bottom:5px;">
+							<th class="text-center">Journal</th>
+							<th class="pos-receipt-right-align">Amount</th>
+						</thead>
+						<tbody>
+							<t t-set="total" t-value="0"/>
+							<t t-set="c" t-value="0"/>
+							<t t-foreach="pay[1]" t-as="lines" t-key="c">
+								<t t-set="c" t-value="c + 1"/>
+								<t t-foreach="lines" t-as="jrnl" t-key="jrnl">
+									<tr>
+										<td style="padding:5px 0;">
+											<span t-esc="jrnl"/>
+										</td>
+										<td class="pos-receipt-right-align">
+											<span t-esc="env.utils.formatCurrency(lines[jrnl])"/>
+											<t t-set="total" t-value="total + lines[jrnl]"/>
+										</td>
+									</tr>
+								</t>
+							</t>
+							<tr t-if="obj.final_total" style="border-top:2px solid black;">
+								<td style="padding:5px 0;">
+									<strong>Total</strong>
+								</td>
+								<td class="pos-receipt-right-align">
+									<value><span t-esc="env.utils.formatCurrency(total)"/></value>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				<br/><br/>
+				</div>
+			</t>
+				<span style="text-align: center;"><h3>Total Summary </h3></span>
+				<table  class='receipt-orderlines' style="margin: 0px auto;margin-top:15px;min-width: 80%;">
+				<colgroup>
+					<col width='50%' />
+					<col width='50%' />
+				</colgroup>
+				<thead style="border-bottom:2px solid black;padding-bottom:5px;">
+					<th class="text-center">Journal</th>
+					<th class="pos-receipt-right-align">Amount</th>
+				</thead>
+				<tbody>
+					<t t-set="fn_total" t-value="0"/>
+					<t t-set="b" t-value="0"/>
+					<tr t-foreach='obj.payments' t-as='payment' t-key="b">
+						<t t-set="b" t-value="b + 1"/>
+						<td style="padding:5px 0;"><t t-esc="payment['coalesce']" /></td>
+						<td class="pos-receipt-right-align">
+							<value><span t-esc="env.utils.formatCurrency(payment['total'])"/></value>
+						</td>
+						<t t-set="fn_total" t-value="fn_total + payment['total']"/>
+					</tr>
+					<tr style="border-top:2px solid black;">
+						<td style="padding:5px 0;"></td>
+						<td class="pos-receipt-right-align">
+							<value><span t-esc="env.utils.formatCurrency(fn_total)"/></value>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</t>
+		</div>
+	</t>
+
+
+</templates>

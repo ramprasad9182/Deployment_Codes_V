@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_picking_batch_form_inherit_eway" model="ir.ui.view">
+        <field name="name">stock.picking.batch.form.eway</field>
+        <field name="model">stock.picking.batch</field>
+        <field name="inherit_id" ref="stock_picking_batch.stock_picking_batch_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_eway_bills" type="object" class="oe_stat_button" icon="fa-pencil-square-o" invisible="eway_bill_count == 0">
+                    <field name="eway_bill_count" widget="statinfo" string="E-Way Bills"/>
+                </button>
+            </xpath>
+            <xpath expr="//header" position="inside">
+                <button name="action_create_eway_bill" string="Create E-Way Bill / Challan" type="object" class="btn-primary" invisible="state != 'done' or eway_bill_count != 0"/>
+            </xpath>
+            <xpath expr="//group/field[@name='company_id']" position="after">
+                <field name="batch_transfer_type"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_create_multi_eway_bill" model="ir.actions.server">
+        <field name="name">Create E-Way Bill / Challan</field>
+        <field name="model_id" ref="stock.model_stock_picking"/>
+        <field name="binding_model_id" ref="stock.model_stock_picking"/>
+        <field name="binding_view_types">list</field>
+        <field name="state">code</field>
+        <field name="code">
+            action = records.action_create_multi_eway_bill()
+        </field>
+    </record>
+</odoo>

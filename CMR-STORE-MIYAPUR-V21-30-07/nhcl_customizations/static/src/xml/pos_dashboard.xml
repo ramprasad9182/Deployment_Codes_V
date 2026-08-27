@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="x_multi.MultiSelect">
+      <div class="o-ms" t-ref="root" t-on-keydown="onKeydown">
+        <!-- Click anywhere in the field to open + focus -->
+          <div class="o-ms-field" t-on-click="onFieldClick">
+          <!-- chips -->
+              <t t-set="chips" t-value="(selectedChips || [])"/>
+              <t t-foreach="((chips || []).slice(0, (props.maxChips || 3)))" t-as="c" t-key="c.id">
+            <span class="o-ms-chip">
+              <t t-esc="c.label"/>
+                <a class="o-ms-chip-x" href="#" t-on-click.prevent="() => remove(c.id)">×</a>
+            </span>
+          </t>
+              <span t-if="(chips || []).length > (props.maxChips || 3)" class="o-ms-chip">
+            +<t t-esc="(chips.length - (props.maxChips || 3))"/>
+          </span>
+              <a t-if="(chips || []).length" href="#" class="o-ms-chip-x" t-on-click.prevent="clearAll">Clear</a>
+
+
+              <input
+                      t-ref="input"
+                      class="o-ms-input"
+                      type="text"
+                      t-att-placeholder="(chips and chips.length) ? '' : (props.placeholder || 'Select…')"
+                      t-model="state.query"
+                      t-on-input="onInput"
+                      t-on-focus="openPanel"
+              />
+        </div>
+
+          <!-- panel -->
+          <div t-if="state.open" class="o-ms-panel" t-ref="panel">
+          <div t-if="state.loading" class="o-ms-empty">Loading…</div>
+              <t t-if="!state.loading">
+            <t t-set="opts" t-value="(filteredOptions || [])"/>
+                  <t t-foreach="opts" t-as="opt" t-key="opt[props.valueKey || 'id']">
+              <div class="o-ms-item" t-on-click="() => add(opt[props.valueKey || 'id'])">
+                <t t-esc="opt[props.labelKey || 'name']"/>
+                  <span t-if="state.selected.has(opt[props.valueKey || 'id'])" class="o-ms-tick">✓</span>
+              </div>
+            </t>
+                  <div t-if="!(opts || []).length" class="o-ms-empty">No matches</div>
+          </t>
+        </div>
+      </div>
+    </t>
+
+    <t t-name="owl.OwlPosDashboard" owl="1">
+         <section class="section invoice_type">
+             <div class="title"><span>Promotions Dashboard </span></div>
+             <div class="row">
+                <div class="border m-0 p-0 bg-white"/>
+                 <div class="col-lg-3 sidebar" style="background-color: #fff; padding: 1rem;">
+                     <div class="bulk-sidebar">
+                         <t t-set="lastParent" t-value="''"/>
+                         <t t-foreach="menuItems" t-as="item" t-key="item.id">
+                             <t t-if="item.parent !== lastParent">
+                             <div class="sidebar-title">
+                                <t t-esc="item.parent"/>
+                             </div>
+                                 <t t-set="lastParent" t-value="item.parent"/>
+                             </t>
+                             <div class="sidebar-item sub-parent "
+                                  t-att-class="state.selected === item.id ? 'active' : ''"
+                                  t-on-click="() => selectMenu(item.id)">
+                                <t t-esc="item.label"/>
+                             </div>
+                         </t>
+                     </div>
+                </div>
+                 <div class="col" style="padding: 1rem; bg-white">
+                    <div class="filter-row">
+                            <div class="filter-group" style="width:300px;">
+                                <MultiSelect
+                                  options="(state.promo or [])"
+                                  value="(state.selectedPromo or [])"
+                                  onChange="onPromoChange"
+                                  placeholder="'Filter promotions'"/>
+<!--                              <MultiSelect options="state.promo" value="state.selectedPromo" onChange="onPromoChange" placeholder="'Filter promotions'"/>-->
+                            </div>
+                            <div class="filter-group" style="width:300px;">
+                                <MultiSelect
+                                  options="(state.categoryList or [])"
+                                  value="(state.selectedCategories or [])"
+                                  onChange="onCategoriesChange"
+                                  placeholder="'Filter categories'"/>
+<!--                              <MultiSelect options="state.categoryList" value="state.selectedCategories" onChange="onCategoriesChange" placeholder="'Filter categories'"/>-->
+                            </div>
+                            <div class="filter-group">
+                              <select class="o_input d-flex flex-wrap" t-model="state.period" t-on-change="onPeriodChange">
+                                <option value="0">Select Period</option>
+                                <option value="7">Last 7 Days</option>
+                                <option value="30">Last 30 Days</option>
+                                <option value="90">Last 90 Days</option>
+                                <option value="180">Last 180 Days</option>
+                                <option value="365">Last 365 Days</option>
+                                <option value="1068">Last 3 Years</option>
+                              </select>
+                            </div>
+                            <div class="record-count" style="width:150px;">Total Categories: <t t-esc="state.recordCount"/></div>
+                          </div>                     <br/>
+                    <t t-if="state.selected === 1">
+                        <div class="report-table-wrapper">
+                                <table class="report-table header-table">
+                                <thead style="font-weight:bold;">
+                                  <tr>
+                                    <th class="text-center" style="width:20%">Category Name</th>
+                                    <th class="text-center" style="width:13%">Active Promotions</th>
+                                    <th class="text-center" style="width:13%">No Of Quantity</th>
+                                    <th class="text-center" style="width:13%">Sold Quantity</th>
+                                    <th class="text-center" style="width:13%">Available</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <t t-foreach="(state.categorySummary or [])" t-as="cat" t-key="cat.category_id">
+                                    <tr>
+                                      <td><t t-esc="cat.category_name"/></td>
+                                      <td>
+                                          <span role="button"
+                                                class="text-primary"
+                                                style="color:#0d6efd; cursor:pointer;"
+                                                t-att-data-promos="(cat.promotion_ids || []).join(',')"
+                                                t-on-click="openCategoryPromotions">
+                                            <t t-esc="cat.promotion_count"/>
+                                              <div><i class="fa fa-chevron-down" style="font-size:10px;"></i></div>
+                                          </span>
+                                      </td>
+                                      <td><t t-esc="cat.total_serials"/></td>
+                                      <td><t t-esc="cat.sold_serials"/></td>
+                                      <td><t t-esc="cat.available_serials"/></td>
+                                    </tr>
+                                  </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </div>
+             </div>
+         </section>
+    </t>
+</templates>

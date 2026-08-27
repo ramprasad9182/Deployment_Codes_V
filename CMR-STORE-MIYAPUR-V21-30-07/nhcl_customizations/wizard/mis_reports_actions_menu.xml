@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="nhcl_sale_daily_report" model="ir.actions.act_window">
+        <field name="name">Daily Sale Report</field>
+        <field name="res_model">nhcl.daily.sale.report</field>
+        <field name="view_mode">form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="nhcl_pos_delivery_hour_report" model="ir.actions.act_window">
+        <field name="name">Pos Delivery Hour Report</field>
+        <field name="res_model">nhcl.pos.delivery.hour.report</field>
+        <field name="view_mode">form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="nhcl_pos_sale_report" model="ir.actions.act_window">
+        <field name="name">Pos Sale Report</field>
+        <field name="res_model">nhcl.pos.sale.report</field>
+        <field name="view_mode">form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="nhcl_store_asset_report" model="ir.actions.act_window">
+        <field name="name">Store Wise Asset Report</field>
+        <field name="res_model">nhcl.store.asset.report</field>
+        <field name="view_mode">form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="nhcl_pos_hour_report" model="ir.actions.act_window">
+        <field name="name">Pos Hour Report</field>
+        <field name="res_model">nhcl.pos.hour.report</field>
+        <field name="view_mode">form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="nhcl_pos_cancelled_bill_report" model="ir.actions.act_window">
+        <field name="name">Cancelled Bills Summary</field>
+        <field name="res_model">nhcl.pos.cancelled.bills.report</field>
+        <field name="view_mode">form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="nhcl_hsn_wise_tax_report_action" model="ir.actions.act_window">
+        <field name="name">HSN Wise Tax Report</field>
+        <field name="res_model">nhcl.hsn.tax.report</field>
+        <field name="view_mode">form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="pos_mop_wise_reports" model="ir.actions.act_window">
+        <field name="name">POS Mode of Payment Report</field>
+        <field name="res_model">pos.mop.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="pos_tax_wise_reports" model="ir.actions.act_window">
+        <field name="name">pos tax report wizard</field>
+        <field name="res_model">pos.tax.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="pos_lfb_wise_reports" model="ir.actions.act_window">
+        <field name="name">pos lfb report wizard</field>
+        <field name="res_model">pos.lfb.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="daily_sale_detailed_reports" model="ir.actions.act_window">
+        <field name="name">Article wise Detailed Sale Report</field>
+        <field name="res_model">nhcl.daily.sale.detailed.report</field>
+        <field name="view_mode">form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="terminal_wise_mop_reports" model="ir.actions.act_window">
+        <field name="name">Terminal wise MOP Report</field>
+        <field name="res_model">nhcl.teminal.mop.report</field>
+        <field name="view_mode">form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="sale_person_report_action" model="ir.actions.act_window">
+        <field name="name">Sale Person Report</field>
+        <field name="res_model">pos.sales.employee.report</field>
+        <field name="view_mode">form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+
+    <record id="nhcl_credit_note_settlement_summary_report" model="ir.actions.act_window">
+        <field name="name">Credit Note Settlement Summary</field>
+        <field name="res_model">credit.note.settlement.report</field>
+        <field name="view_mode">form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record id="empty_page" model="ir.actions.client">
+        <field name="name">Empty</field>
+        <field name="tag">empty_report</field>
+    </record>
+
+    <record id="nhcl_credit_notes_bill_report" model="ir.actions.act_window">
+        <field name="name">Return Bills Summary</field>
+        <field name="res_model">nhcl.credit.notes.bills.report</field>
+        <field name="view_mode">form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+
+
+    <menuitem id="hour_report_menu_root"
+              web_icon="nhcl_customizations,static/description/report_icon.png"
+              name="MIS Reports/Dashboards"
+              action="empty_page"/>
+
+
+    <menuitem id="reporting_status"
+              name="Reports"
+              parent="hour_report_menu_root"
+              sequence="1"/>
+
+    
+    <menuitem id="menu_nhcl_credit_notes_bill_report"
+              name="Return Bills Summary"
+              parent="reporting_status"
+              action="nhcl_customizations.nhcl_credit_notes_bill_report"
+              sequence="12"/>
+
+    <menuitem id="menu_nhcl_credit_note_settlement_summary_report"
+              name="Credit Note Settlement Summary Report"
+              parent="reporting_status"
+              action="nhcl_customizations.nhcl_credit_note_settlement_summary_report"
+              sequence="12"/>
+
+    <menuitem id="reporting_status_sale_daily"
+              name="Daily Sale DSD Report"
+              parent="reporting_status"
+              action="nhcl_customizations.nhcl_sale_daily_report"
+              sequence="2"/>
+
+    <menuitem id="reporting_status_pos_delivery_hour"
+              name="POS Delivery Based on Quantity"
+              parent="reporting_status"
+              action="nhcl_customizations.nhcl_pos_delivery_hour_report"
+              sequence="3"/>
+
+    <menuitem id="reporting_status_pos_sale"
+              name="Hourly Sale Report"
+              parent="reporting_status"
+              action="nhcl_customizations.nhcl_pos_sale_report"
+              sequence="4"/>
+
+    <menuitem id="reporting_status_store_asset"
+              name="Store Wise Asset Report"
+              parent="reporting_status"
+              action="nhcl_customizations.nhcl_store_asset_report"
+              sequence="5"/>
+
+    <menuitem id="hourly_sale_report_menu"
+              name="Bill Wise Sale Report"
+              parent="reporting_status"
+              action="nhcl_customizations.nhcl_pos_hour_report"
+              sequence="6"/>
+
+    <menuitem id="hsn_wise_tax_report_menu"
+              name="HSN Wise Sale Report"
+              parent="reporting_status"
+              action="nhcl_customizations.nhcl_hsn_wise_tax_report_action"
+              sequence="7"/>
+
+    <menuitem
+            id="pos_mop_wise_report_menu"
+            name="POS MOP Wise Report"
+            action="nhcl_customizations.pos_mop_wise_reports"
+            parent="reporting_status"
+            sequence="8"
+    />
+
+    <menuitem id="menu_nhcl_pos_cancelled_bill_report"
+              name="Cancelled Bills Summary Report"
+              parent="reporting_status"
+              action="nhcl_customizations.nhcl_pos_cancelled_bill_report"
+              sequence="11"/>
+
+    <menuitem
+            id="pos_tax_wise_report_menu"
+            name="POS Tax Wise Report"
+            action="nhcl_customizations.pos_tax_wise_reports"
+            parent="reporting_status"
+            sequence="9"
+    />
+
+    <menuitem
+            id="pos_lfb_wise_report_menu"
+            name="POS lfb Wise Report"
+            action="nhcl_customizations.pos_lfb_wise_reports"
+            parent="reporting_status"
+            sequence="10"
+    />
+
+    <menuitem
+            id="daily_sale_detailed_report_menu"
+            name="Article wise Detailed Sale Report"
+            action="nhcl_customizations.daily_sale_detailed_reports"
+            parent="reporting_status"
+            sequence="10"
+    />
+    <menuitem
+            id="terminal_wise_mop_report_menu"
+            name="Terminal Wise Mode Of Payment Report"
+            action="nhcl_customizations.terminal_wise_mop_reports"
+            parent="reporting_status"
+            sequence="10"
+    />
+        <menuitem id="sale_person_report_menu"
+              name="Sales Employee Report"
+              parent="reporting_status"
+              action="nhcl_customizations.sale_person_report_action"
+              sequence="10"/>
+
+    <record id="action_nhcl_customer_credit_note_report" model="ir.actions.act_window">
+        <field name="name">Customer Credit Note Report</field>
+        <field name="res_model">nhcl.customer.credit.note.report</field>
+        <field name="view_mode">form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem id="menu_nhcl_customer_credit_note_report"
+        name="Customer Credit Note Report"
+        parent="reporting_status"
+        action="nhcl_customizations.action_nhcl_customer_credit_note_report"
+        sequence="13"/>
+
+</odoo>
