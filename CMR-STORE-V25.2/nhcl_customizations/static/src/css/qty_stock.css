@@ -1,0 +1,365 @@
+/* responsive-dashboard-stack-pills.css
+   Ensures pills stack inside card on small screens and never overflow
+*/
+
+/* CONFIG */
+:root{
+  --card-min-width: 260px;
+  --dash-gap: 18px;
+  --dash-padding: 12px 14px;
+  --card-bg: #ffffff;
+  --card-border: #e3e7e7;
+  --card-accent: transparent;        /* <- changed */
+  --title-color: #0f6b63;
+  --summary-color: #2f8b84;
+  --small-color: #6b9b96;
+  --pill-completed: #2e9d8f;
+  --pill-pending: #6e3f4e;
+  --pill-text: #ffffff;
+  --font-family: "Helvetica Neue", Arial, sans-serif;
+  --card-min-height: 130px;
+  --pill-radius: 10px;
+  --pill-font-size: 13px;
+}
+
+.stock-page{
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Make the table fully centered and remove spacing issues */
+.custom-dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+/* Row styling */
+.custom-dashboard-table tr {
+    vertical-align: middle;
+}
+
+/* Cell styling */
+.custom-dashboard-table td {
+    padding: 15px 10px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* Pill container alignment */
+.custom-dashboard-table .oe-card-center-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* space between pills */
+}
+
+/* Each pill-block centered with hover effect */
+.custom-dashboard-table .pill-block {
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Optional hover animation */
+.custom-dashboard-table .pill-block:hover {
+    transform: scale(1.05);
+    transition: 0.2s ease;
+}
+
+/* Label below each pill */
+.custom-dashboard-table .pill-label {
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+}
+
+
+.pill-label{
+ padding-left:2px;
+ font-size:12px;
+}
+/* header styles that match your dashboard title */
+.inventory-header {
+  padding: 18px 14px;
+  background: transparent;
+  display: flex;
+  align-items: center;      /* vertically center */
+  gap: 12px;
+}
+
+/* main page title */
+.inventory-title {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;          /* tune larger/smaller if you prefer */
+  color: #374151;           /* same teal used across cards */
+  letter-spacing: 0.1px;
+  line-height: 1;
+}
+
+/* responsive reduce title size on very small screens */
+@media (max-width: 420px) {
+  .inventory-title { font-size: 18px; }
+}
+
+
+/* global box-sizing */
+*,*::before,*::after{ box-sizing: border-box; }
+
+/* Fluid grid container */
+.inventory-dashboard{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--card-min-width), 1fr));
+  gap: var(--dash-gap);
+  padding: var(--dash-padding);
+  align-items: start;
+  font-family: var(--font-family);
+  grid-auto-rows: minmax(var(--card-min-height), auto);
+  width: 100%;
+}
+
+/* Card */
+.inventory-dashboard .oe-card{
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 3px;
+  padding: 16px 18px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  min-height: var(--card-min-height);
+  overflow: visible; /* leave visible so stacked pills are visible */
+}
+
+/* Title */
+.oe-card-title{
+  display:block;
+  margin-bottom: 10px;
+}
+.oe-card-title .oe-card-title-text{
+  color: var(--title-color);
+  font-weight:400;
+  font-size:15px;
+  line-height:1.2;
+  margin-bottom:6px;
+  word-break: break-word;
+}
+
+/* Title menu (optional) */
+.oe-card-title .oe-card-menu{
+  float: right;
+  margin-top: -28px;
+  font-size: 18px;
+  color: #6f6f6f;
+  cursor: pointer;
+  padding: 4px;
+}
+.oe-card-title::after{ content:""; display:table; clear:both; }
+
+/* Buttons container (default desktop) */
+.oe-card-center-btns{
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+  gap:14px;
+  margin: 4px 0 8px 0;
+  flex-wrap: nowrap;
+}
+
+/* Pill button base */
+.oe-pill{
+  display:inline-flex;
+  gap:10px;
+  align-items:center;
+  border:none;
+  cursor:pointer;
+  padding:9px 16px;
+  border-radius: var(--pill-radius);
+  color: var(--pill-text);
+  font-weight:500;
+  font-size: var(--pill-font-size);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+  white-space: nowrap;
+  min-width: 90px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* ensure internal spans behave when width constrained */
+.oe-pill > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* number badge inside pill */
+
+
+/* pill colors */
+.oe-pill--completed{ background: var(--pill-completed); }
+.oe-pill--pending  { background: var(--pill-pending); }
+
+/* Summary footer pinned to bottom */
+.oe-card-summary{
+  margin-top:auto;
+  text-align:right;
+  color: var(--summary-color);
+  font-size:13px;
+  line-height:1.3;
+}
+.oe-card-summary .small{ font-size:12px; color: var(--small-color); }
+.oe-card-summary .strong{ font-weight:700; }
+
+/* ---------- Small-screen stacking behavior ---------- */
+
+/* Primary stacking breakpoint: when card width is small enough, stack pills vertically.
+   This ensures pills never overflow and remain fully inside the card */
+@media (max-width: 520px) {
+  :root { --card-min-width: 220px; } /* allow more columns if needed */
+
+  /* Stack the pills vertically */
+  .oe-card-center-btns {
+    flex-direction: column;
+    align-items: stretch;     /* make pills stretch to card width */
+    gap: 10px;
+  }
+
+  /* Make each pill full width and allow label to ellipsis if long */
+  .oe-pill {
+    width: 100%;
+    justify-content: space-between; /* number left, label right */
+    padding: 10px 12px;
+    min-width: 0; /* allow shrink */
+  }
+
+  /* Make number badge stay left and small label on the right */
+  .pill-num { margin-right: 8px; flex: 0 0 auto; }
+
+  /* allow labels inside pill to shrink/ellipsis */
+  .oe-pill > span { max-width: calc(100% - 56px); } /* 56px reserved for badge + gap */
+}
+
+/* Tighter phones - ensure comfortable tappable sizes and smaller pill padding */
+@media (max-width: 380px) {
+  :root { --card-min-width: 180px; }
+  .oe-pill { padding: 8px 10px; font-size: 12px; }
+  .pill-num { padding: 4px 8px; min-width: 22px; }
+  .oe-card { padding: 12px; }
+}
+
+/* Accessibility: keyboard focus */
+.oe-pill:focus{
+  outline: 3px solid rgba(46,157,143,0.18);
+  outline-offset: 2px;
+  box-shadow: 0 2px 8px rgba(46,157,143,0.08);
+}
+
+/* small cleanup */
+.inventory-dashboard .oe-card > *{ margin: 0; }
+
+
+
+
+/* FULLSCREEN OVERLAY */
+.cmr_overlay {
+    position: fixed;
+
+    width: 75vw;
+    height: 75vh;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    border-radius: 16px; /* optional for modal look */
+    z-index: 9999;
+}
+
+/* GLASS CARD EFFECT */
+.cmr_loader_box {
+    position: relative;
+    width: 120px;
+    height: 120px;
+
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* OUTER RING */
+.cmr_ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+
+    border: 3px solid transparent;
+    border-top: 3px solid #6C63FF;
+    border-right: 3px solid #00C9A7;
+
+    animation: cmr_rotate 1.2s linear infinite;
+}
+
+/* SECOND RING (opposite direction) */
+.cmr_ring2 {
+    width: 80px;
+    height: 80px;
+
+    border-top: 3px solid #FF6FD8;
+    border-left: 3px solid #3813C2;
+
+    animation: cmr_rotate_reverse 1.6s linear infinite;
+}
+
+/* CENTER TEXT */
+.cmr_center {
+    position: absolute;
+}
+
+.cmr_logo {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    background: linear-gradient(45deg, #6C63FF, #00C9A7, #FF6FD8);
+    background-size: 200% 200%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: cmr_gradient 3s ease infinite;
+}
+
+/* ANIMATIONS */
+@keyframes cmr_rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes cmr_rotate_reverse {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes cmr_gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <!-- Extend PDF Options Modal -->
+    <t t-inherit="report_pdf_options.ButtonOptions" t-inherit-mode="extension">
+
+        <!-- Hide only OK button -->
+        <xpath expr="//button[normalize-space()='Ok']" position="attributes">
+            <attribute name="style">display: none !important;</attribute>
+        </xpath>
+
+    </t>
+
+</templates>

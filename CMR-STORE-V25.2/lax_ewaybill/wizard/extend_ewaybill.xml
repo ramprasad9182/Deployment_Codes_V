@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="extend_ewaybill_wizard" model="ir.ui.view">
+            <field name="name">extend.ewaybill</field>
+            <field name="model">extend.ewaybill</field>
+            <field name="arch" type="xml">
+                <form string="Extend Validity of E-Way Bill">
+                    <group>
+                        <field name="extn_rsn_code" required="1"/>
+                        <field name="extn_remarks" required="1"/>
+                        <field name="consignment_status"/>
+                        <field name="transit_type"/>
+                        <field name="street"/>
+                        <field name="street2"/>
+                        <field name="street3"/>
+                        <!-- <field name="ewb_valid_till"/> -->
+                    </group>
+                    <footer>
+                        <button class="btn-primary" name="extend_ewaybill" string="Submit" type="object"/>
+                        <button class="btn-primary" special="cancel" string="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

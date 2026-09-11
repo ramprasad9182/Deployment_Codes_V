@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="StockOwlDashboard" owl="1">
+        <section class="stock-page">
+            <header class="inventory-header">
+              <h1 class="inventory-title">Quantity Summary Overview</h1>
+            </header>
+            <div class="inventory-dashboard">
+                <!-- 1. Receipts -->
+                <div class="oe-card">
+                    <div class="oe-card-title"><div class="oe-card-title-text">Receipts</div></div>
+                    <table class="custom-dashboard-table">
+                        <tr>
+                            <td>
+                                <div class="oe-card-center-btns"
+                                     style="display:flex; justify-content:center; gap:25px;">
+                                    <div class="pill-block" t-on-click="open_receipts_done" style="text-align:center;">
+                                        <button class="oe-pill oe-pill--completed">
+                                            <span><t t-esc="state.receipts.done_display"/></span>
+                                        </button>
+                                        <div class="pill-label">Completed</div>
+                                    </div>
+
+                                    <div class="pill-block" t-on-click="open_receipts_ready" style="text-align:center;">
+                                        <button class="oe-pill oe-pill--pending">
+                                            <span><t t-esc="state.receipts.ready_display"/></span>
+                                        </button>
+                                        <div class="pill-label">Pending</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="oe-card-center-btns"
+                                     style="display:flex; justify-content:center; gap:25px;">
+                                    <div class="pill-block" t-on-click="open_receipts_done" style="text-align:center;">
+                                        <button class="oe-pill oe-pill--completed">
+                                            <span><t t-esc="state.receipts.done_rec"/></span>
+                                        </button>
+                                        <div class="pill-label">Records No</div>
+                                    </div>
+
+                                    <div class="pill-block" t-on-click="open_receipts_ready" style="text-align:center;">
+                                        <button class="oe-pill oe-pill--pending" style="text-align:center;">
+                                            <span><t t-esc="state.receipts.ready_rec"/></span>
+                                        </button>
+                                        <div class="pill-label">Records No</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- 2. Main-Damage -->
+                <div class="oe-card">
+                    <div class="oe-card-title"><div class="oe-card-title-text">Main-Damage</div></div>
+                    <table class="custom-dashboard-table">
+                        <tr>
+                            <td>
+                                <div class="oe-card-center-btns">
+                                    <div class="pill-block" t-on-click="open_Main_Damage_done">
+                                        <button class="oe-pill oe-pill--completed"><span><t t-esc="state.main_damage_JC.done_display"/></span></button>
+                                        <div class="pill-label">Completed</div>
+                                    </div>
+                                    <div class="pill-block" t-on-click="open_Main_Damage_ready">
+                                        <button class="oe-pill oe-pill--pending"><span><t t-esc="state.main_damage_JC.ready_display"/></span></button>
+                                        <div class="pill-label">Pending</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="oe-card-center-btns">
+                                    <div class="pill-block" t-on-click="open_Main_Damage_done">
+                                        <button class="oe-pill oe-pill--completed"><span><t t-esc="state.main_damage_JC.done_rec"/></span></button>
+                                        <div class="pill-label">Records No</div>
+                                    </div>
+                                    <div class="pill-block" t-on-click="open_Main_Damage_ready">
+                                        <button class="oe-pill oe-pill--pending"><span><t t-esc="state.main_damage_JC.ready_rec"/></span></button>
+                                        <div class="pill-label">Records No</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- 3. Damage-Main -->
+                <div class="oe-card">
+                    <div class="oe-card-title"><div class="oe-card-title-text">Damage-Main</div></div>
+                    <table class="custom-dashboard-table">
+                        <tr>
+                            <td>
+                                <div class="oe-card-center-btns">
+                                <div class="pill-block" t-on-click="open_Damage_Main_done">
+                                    <button class="oe-pill oe-pill--completed"><span><t t-esc="state.damage_main_JC.done_display"/></span></button>
+                                    <div class="pill-label">Completed</div>
+                                </div>
+                                <div class="pill-block" t-on-click="open_Damage_Main_ready">
+                                    <button class="oe-pill oe-pill--pending"><span><t t-esc="state.damage_main_JC.ready_display"/></span></button>
+                                    <div class="pill-label">Pending</div>
+                                </div>
+                            </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="oe-card-center-btns">
+                                    <div class="pill-block" t-on-click="open_Damage_Main_done">
+                                        <button class="oe-pill oe-pill--completed"><span><t t-esc="state.damage_main_JC.done_rec"/></span></button>
+                                        <div class="pill-label">Records No</div>
+                                    </div>
+                                    <div class="pill-block" t-on-click="open_Damage_Main_ready">
+                                        <button class="oe-pill oe-pill--pending"><span><t t-esc="state.damage_main_JC.ready_rec"/></span></button>
+                                        <div class="pill-label">Records No</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- 4. Return-Main-JUDGE COURT -->
+                <div class="oe-card">
+                    <div class="oe-card-title"><div class="oe-card-title-text">Return-Main</div></div>
+                    <table class="custom-dashboard-table">
+                        <tr>
+                            <td>
+                                <div class="oe-card-center-btns">
+                                    <div class="pill-block" t-on-click="open_Return_Main_done">
+                                        <button class="oe-pill oe-pill--completed"><span><t t-esc="state.return_main_JC.done_display"/></span></button>
+                                        <div class="pill-label">Completed</div>
+                                    </div>
+                                    <div class="pill-block" t-on-click="open_Return_Main_ready">
+                                        <button class="oe-pill oe-pill--pending"><span><t t-esc="state.return_main_JC.ready_display"/></span></button>
+                                        <div class="pill-label">Pending</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="oe-card-center-btns">
+                                    <div class="pill-block" t-on-click="open_Return_Main_done">
+                                        <button class="oe-pill oe-pill--completed"><span><t t-esc="state.return_main_JC.done_rec"/></span></button>
+                                        <div class="pill-label">Records No</div>
+                                    </div>
+                                    <div class="pill-block" t-on-click="open_Return_Main_ready">
+                                        <button class="oe-pill oe-pill--pending"><span><t t-esc="state.return_main_JC.ready_rec"/></span></button>
+                                        <div class="pill-label">Records No</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- 5. Delivery Orders -->
+                <div class="oe-card">
+                    <div class="oe-card-title"><div class="oe-card-title-text">Delivery Orders</div></div>
+                    <table class="custom-dashboard-table">
+                        <tr>
+                            <td>
+                                <div class="oe-card-center-btns">
+                                    <div class="pill-block" t-on-click="open_Return_done">
+                                        <button class="oe-pill oe-pill--completed"><span><t t-esc="state.delivery_orders.done_display"/></span></button>
+                                        <div class="pill-label">Completed</div>
+                                    </div>
+                                    <div class="pill-block" t-on-click="open_Return_ready">
+                                        <button class="oe-pill oe-pill--pending"><span><t t-esc="state.delivery_orders.ready_display"/></span></button>
+                                        <div class="pill-label">Pending</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="oe-card-center-btns">
+                                    <div class="pill-block" t-on-click="open_Return_done">
+                                        <button class="oe-pill oe-pill--completed"><span><t t-esc="state.delivery_orders.done_rec"/></span></button>
+                                        <div class="pill-label">Records No</div>
+                                    </div>
+                                    <div class="pill-block" t-on-click="open_Return_ready">
+                                        <button class="oe-pill oe-pill--pending"><span><t t-esc="state.delivery_orders.ready_rec"/></span></button>
+                                        <div class="pill-label">Records No</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- 6. Goods Return-Damage -->
+                <div class="oe-card">
+                    <div class="oe-card-title"><div class="oe-card-title-text">Goods Return-Damage</div></div>
+                    <table class="custom-dashboard-table">
+                        <tr>
+                            <td>
+                                <div class="oe-card-center-btns">
+                                    <div class="pill-block" t-on-click="open_Damage_done">
+                                        <button class="oe-pill oe-pill--completed"><span><t t-esc="state.good_return_damage.done_display"/></span></button>
+                                        <div class="pill-label">Completed</div>
+                                    </div>
+                                    <div class="pill-block" t-on-click="open_Damage_ready">
+                                        <button class="oe-pill oe-pill--pending"><span><t t-esc="state.good_return_damage.ready_display"/></span></button>
+                                        <div class="pill-label">Pending</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="oe-card-center-btns">
+                                    <div class="pill-block" t-on-click="open_Damage_done">
+                                        <button class="oe-pill oe-pill--completed"><span><t t-esc="state.good_return_damage.done_rec"/></span></button>
+                                        <div class="pill-label">Records No</div>
+                                    </div>
+                                    <div class="pill-block" t-on-click="open_Damage_ready">
+                                        <button class="oe-pill oe-pill--pending"><span><t t-esc="state.good_return_damage.ready_rec"/></span></button>
+                                        <div class="pill-label">Records No</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- 7. PoS Orders -->
+                <div class="oe-card">
+                    <div class="oe-card-title"><div class="oe-card-title-text">PoS Orders</div></div>
+                    <table class="custom-dashboard-table">
+                        <tr>
+                            <td>
+                                <div class="oe-card-center-btns">
+                                    <div class="pill-block" t-on-click="open_POS_Order_done">
+                                        <button class="oe-pill oe-pill--completed"><span><t t-esc="state.pos_orders.done_display"/></span></button>
+                                        <div class="pill-label">Completed</div>
+                                    </div>
+                                    <div class="pill-block" t-on-click="open_POS_Order_ready">
+                                        <button class="oe-pill oe-pill--pending"><span><t t-esc="state.pos_orders.ready_display"/></span></button>
+                                        <div class="pill-label">Pending</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="oe-card-center-btns">
+                                    <div class="pill-block" t-on-click="open_POS_Order_done">
+                                        <button class="oe-pill oe-pill--completed"><span><t t-esc="state.pos_orders.done_rec"/></span></button>
+                                        <div class="pill-label">Records No</div>
+                                    </div>
+                                    <div class="pill-block" t-on-click="open_POS_Order_ready">
+                                        <button class="oe-pill oe-pill--pending"><span><t t-esc="state.pos_orders.ready_rec"/></span></button>
+                                        <div class="pill-label">Records No</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- 8. Manufacturing -->
+                <div class="oe-card">
+                    <div class="oe-card-title"><div class="oe-card-title-text">Manufacturing</div></div>
+                    <table class="custom-dashboard-table">
+                        <tr>
+                            <td>
+                                <div class="oe-card-center-btns">
+                                    <div class="pill-block" t-on-click="open_Manufacturing_done">
+                                        <button class="oe-pill oe-pill--completed"><span><t t-esc="state.manufacturing.done_display"/></span></button>
+                                        <div class="pill-label">Completed</div>
+                                    </div>
+                                    <div class="pill-block" t-on-click="open_Manufacturing_ready">
+                                        <button class="oe-pill oe-pill--pending"><span><t t-esc="state.manufacturing.ready_display"/></span></button>
+                                        <div class="pill-label">Pending</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="oe-card-center-btns">
+                                    <div class="pill-block" t-on-click="open_Manufacturing_done">
+                                        <button class="oe-pill oe-pill--completed"><span><t t-esc="state.manufacturing.done_rec"/></span></button>
+                                        <div class="pill-label">Records No</div>
+                                    </div>
+                                    <div class="pill-block" t-on-click="open_Manufacturing_ready">
+                                        <button class="oe-pill oe-pill--pending"><span><t t-esc="state.manufacturing.ready_rec"/></span></button>
+                                        <div class="pill-label">Records No</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- 9. Pos Exchange -->
+                <div class="oe-card">
+                    <div class="oe-card-title"><div class="oe-card-title-text"> POS Exchange</div></div>
+                    <table class="custom-dashboard-table">
+                        <tr>
+                            <td>
+                                <div class="oe-card-center-btns">
+                                    <div class="pill-block" t-on-click="open_Exchange_done">
+                                        <button class="oe-pill oe-pill--completed"><span><t t-esc="state.pos_exchange.done_display"/></span></button>
+                                        <div class="pill-label">Completed</div>
+                                    </div>
+                                    <div class="pill-block" t-on-click="open_Exchange_ready">
+                                        <button class="oe-pill oe-pill--pending"><span><t t-esc="state.pos_exchange.ready_display"/></span></button>
+                                        <div class="pill-label">Pending</div>
+                                    </div>
+                                </div>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="oe-card-center-btns">
+                                    <div class="pill-block" t-on-click="open_Exchange_done">
+                                        <button class="oe-pill oe-pill--completed"><span><t t-esc="state.pos_exchange.done_rec"/></span></button>
+                                        <div class="pill-label">Records No</div>
+                                    </div>
+                                    <div class="pill-block" t-on-click="open_Exchange_ready">
+                                        <button class="oe-pill oe-pill--pending"><span><t t-esc="state.pos_exchange.ready_rec"/></span></button>
+                                        <div class="pill-label">Records No</div>
+                                    </div>
+                                </div>
+
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!--                &lt;!&ndash; 10. Damage-Receipts &ndash;&gt;-->
+                <!--                <div class="oe-card">-->
+                <!--                    <div class="oe-card-title"><div class="oe-card-title-text">Damage-Receipts</div></div>-->
+                <!--                    <div class="oe-card-center-btns">-->
+                <!--                        <div class="pill-block">-->
+                <!--                            <button class="oe-pill oe-pill&#45;&#45;completed"><span><t t-esc="state.damage_receipts.done_display"/></span></button>-->
+                <!--                            <div class="pill-label">Completed</div>-->
+                <!--                        </div>-->
+                <!--                        <div class="pill-block">-->
+                <!--                            <button class="oe-pill oe-pill&#45;&#45;pending"><span><t t-esc="state.damage_receipts.ready_display"/></span></button>-->
+                <!--                            <div class="pill-label">Pending</div>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+
+                <!--                &lt;!&ndash; 11. Product Exchange POS &ndash;&gt;-->
+                <!--                <div class="oe-card">-->
+                <!--                    <div class="oe-card-title"><div class="oe-card-title-text">Product Exchange - POS</div></div>-->
+                <!--                    <div class="oe-card-center-btns">-->
+                <!--                        <div class="pill-block">-->
+                <!--                            <button class="oe-pill oe-pill&#45;&#45;completed"><span><t t-esc="state.product_exchange_pos.done_display"/></span></button>-->
+                <!--                            <div class="pill-label">Completed</div>-->
+                <!--                        </div>-->
+                <!--                        <div class="pill-block">-->
+                <!--                            <button class="oe-pill oe-pill&#45;&#45;pending"><span><t t-esc="state.product_exchange_pos.ready_display"/></span></button>-->
+                <!--                            <div class="pill-label">Pending</div>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+
+                <!--                &lt;!&ndash; 12. Receipts-Damage &ndash;&gt;-->
+                <!--                <div class="oe-card">-->
+                <!--                    <div class="oe-card-title"><div class="oe-card-title-text">Receipts-Damage</div></div>-->
+                <!--                    <div class="oe-card-center-btns">-->
+                <!--                        <div class="pill-block">-->
+                <!--                            <button class="oe-pill oe-pill&#45;&#45;completed"><span><t t-esc="state.receipts_damage.done_display"/></span></button>-->
+                <!--                            <div class="pill-label">Completed</div>-->
+                <!--                        </div>-->
+                <!--                        <div class="pill-block">-->
+                <!--                            <button class="oe-pill oe-pill&#45;&#45;pending"><span><t t-esc="state.receipts_damage.ready_display"/></span></button>-->
+                <!--                            <div class="pill-label">Pending</div>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+
+            </div>
+        </section>
+
+    </t>
+</templates>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="wt_pos_fix_discount.SetFixDiscountButton">
+        <div t-if="this.pos.get_cashier().allow_amount_discount"
+             class="control-button btn btn-light rounded-0 fw-bolder" t-on-click="() => this.click()">
+            <i class="fa fa-inr me-1" role="img" aria-label="Price list" title="Price list" />
+            <span>Amount Discount</span>
+        </div>
+    </t>
+
+</templates>

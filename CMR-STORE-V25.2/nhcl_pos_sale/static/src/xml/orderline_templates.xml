@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Add salesperson in orderline-->
+<templates id="template" xml:space="preserve">
+    <t t-name="Orderline" t-inherit="point_of_sale.Orderline"
+          t-inherit-mode="extension" owl="1">
+
+<!--        PRANAV START-->
+        <xpath expr="//div[hasclass('product-name')]" position="before">
+            <div t-if="!props.line.is_reward_line and
+                        props.slots.default?.__ctx.constructor.name != 'OrderReceipt' and
+                        !props.line.line_obj.get_is_fix_discount_line()" class="ps-2">
+                <input type="checkbox" t-on-click="() => props.line.line_obj.onClickSelectLine()"
+                       t-att-checked="props.line.line_obj.select_order_line"
+                   class="very-narrow p-2 rounded-2"/>
+            </div>
+            <div class="fw-bolder pe-2 ps-1"><span t-out="props.line.nf_sequence"/>. </div>
+        </xpath>
+<!--        END-->
+
+        <xpath expr="//ul[hasclass('info-list')]/li[2]" position="replace">
+           <b>
+                <t t-if="line.fix_discount">
+                    <li t-if="line.price !== 0 and line.fix_discount !== 0">
+                        With a <em t-if="line.fix_discount">₹ <t t-esc="line.fix_discount" /></em> <em t-else=""><t t-esc="line.line_obj.get_discount_str()" />% </em> discount
+                    </li>
+                </t>
+               <t t-if="line.discount">
+                   <li t-if="line.price !== 0 and line.discount > 0">
+                       <t t-esc="line.price_without_discount"/> With a <em><t t-esc="line.line_obj.get_discount_str()" />% </em>
+                       <t t-if="line.reward_id">Program Disc</t>
+                       <t t-else="">discount</t>, amount is <em><t t-esc="line.line_obj.get_discount_amount_str()"/></em>
+                   </li>
+               </t>
+           </b>
+        </xpath>
+
+        <xpath expr="//ul[hasclass('info-list')]" position="inside">
+               <b>
+                <t t-if="line.product_mrp">
+                RS Price:
+            <span id="variant_values" t-esc="line.product_mrp"/>
+            </t>
+               </b>
+
+                 <b>
+                <t t-if="line.gdiscount">
+                , Global Disc:
+            <span id="variant_values" t-esc="line.gdiscount"/>%. <em>Disc value: <t t-esc="line.line_obj.get_gdiscount_amount_str()"/></em>
+            </t>
+                 </b>
+               <br/>
+
+               <t t-if="line.barcode">
+                barcode:
+            <span id="variant_values" t-esc="line.barcode"/>
+            </t>
+            <t t-if="line.product_tax and !line.is_reward_line and !props.line.line_obj.get_is_fix_discount_line()">
+                Tax:
+                <span id="variant_values" t-esc="line.product_tax"/>
+            </t>
+               <t t-if="line.empNo">
+                Sales Man:
+            <span id="variant_values" t-esc="line.empNo"/>
+            </t>
+        </xpath>
+    </t>
+</templates>

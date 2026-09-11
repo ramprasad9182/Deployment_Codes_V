@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="nhcl_pos_sale.DuplicateLotSelectionPopup">
+        <div class="popup duplicate-lot-popup" style="max-width: 580px; width: 90%; min-width: 320px;">
+            <div class="modal-header border-bottom py-2 px-3">
+                <h4 class="modal-title text-primary fs-5 mb-0">
+                    <i class="fa fa-list-alt me-2"/>
+                    <t t-esc="props.title" />
+                </h4>
+            </div>
+
+            <div class="modal-body p-3">
+                <p class="text-muted mb-2 small" t-if="props.formattedValue">
+                    Duplicate item match found for <strong><t t-esc="props.formattedValue"/></strong>. Please select the correct record:
+                </p>
+                <div style="max-height: 260px; overflow-y: auto; border: 1px solid #dee2e6; border-radius: 6px;">
+                    <table class="table table-sm table-hover align-middle mb-0" style="font-size: 13px; width: 100%;">
+                        <thead style="background-color: #f8f9fa; position: sticky; top: 0; z-index: 1;">
+                            <tr style="border-bottom: 2px solid #dee2e6;">
+                                <th style="padding: 8px 10px;">Lot / Serial</th>
+                                <th style="padding: 8px 10px;">Barcode</th>
+                                <th style="padding: 8px 10px;">Product Name</th>
+                                <th style="padding: 8px 10px; text-align: right;">RSP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="props.lots" t-as="lot" t-key="lot.id">
+                                <tr t-on-click="() => this.selectLot(lot)" style="cursor: pointer; border-bottom: 1px solid #e9ecef;">
+                                    <td style="padding: 8px 10px; font-weight: 600; color: #0d6efd;">
+                                        <t t-esc="lot.name"/>
+                                    </td>
+                                    <td style="padding: 8px 10px; color: #6c757d;">
+                                        <t t-esc="lot.ref || '-'"/>
+                                    </td>
+                                    <td style="padding: 8px 10px; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" t-att-title="lot.product_id ? lot.product_id[1] : ''">
+                                        <t t-esc="lot.product_id ? lot.product_id[1] : '-'"/>
+                                    </td>
+                                    <td style="padding: 8px 10px; text-align: right; font-weight: 600;">
+                                        ₹<t t-esc="lot.rs_price ? lot.rs_price.toFixed(2) : '0.00'"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <footer class="footer modal-footer py-2 px-3 border-top">
+                <div class="button cancel btn btn-secondary" t-on-click="cancel">
+                    <t t-esc="props.cancelText" />
+                </div>
+            </footer>
+        </div>
+    </t>
+
+</templates>

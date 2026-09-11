@@ -1,0 +1,32 @@
+<odoo>
+    <record id="view_pos_exchange_wizard_wizard" model="ir.ui.view">
+        <field name="name">Pos Exchange Wizard</field>
+        <field name="model">pos.exchange.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="reason" readonly="1" force_save="1"/>
+                    <field name="nhcl_picking_id" invisible="1"/>
+                </group>
+                <footer>
+                    <button name="action_confirm" type="object" string="Ok" class="btn-primary"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="message_wizard_popup" model="ir.ui.view">
+        <field name="name">message.wizard</field>
+        <field name="model">message.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Message">
+                <field name="message" readonly="1"/>
+                <footer>
+                    <button string="OK" class="btn-primary" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

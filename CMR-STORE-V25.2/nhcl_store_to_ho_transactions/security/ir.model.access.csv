@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_job_initiated_status,nhcl.initiated.status.log,model_nhcl_initiated_status_log,,1,1,1,1
+access_transaction_replication_log,nhcl.transaction.replication.log,model_nhcl_transaction_replication_log,,1,1,1,1
+access_scan_pt_upload_lines_user,access.scan.pt.upload.lines.user,model_scan_pt_upload_lines,,1,1,1,1
+access_store_replenishment,access.store.replenishment,model_store_replenishment,,1,1,1,1
+access_store_replenishment_line,access.store.replenishment.line,model_store_replenishment_line,,1,1,1,1
+access_mbq_division_wizard,access.mbq.division.wizard,model_mbq_division_wizard,,1,1,1,1
+access_mbq_division_wizard_line,access.mbq.division.wizard.line,model_mbq_division_wizard_line,,1,1,1,1
+access_replenishment_wizard,access.replenishment.wizard,model_replenishment_wizard,,1,1,1,1
+access_replenishment_wizard_line,access.replenishment.wizard.line,model_replenishment_wizard_line,,1,1,1,1
+access_price_grade_master,access.price.grade.master,model_price_grade_master,,1,1,1,1
+access_price_grade_master_line,access.price.grade.master.line,model_price_grade_master_line,,1,1,1,1
+access_replenishment_source,access.replenishment.source,model_replenishment_source,,1,1,1,1
+access_offer_master,access.offer.master,model_offer_master,,1,1,1,1

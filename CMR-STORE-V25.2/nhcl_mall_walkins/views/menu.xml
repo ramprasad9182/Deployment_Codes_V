@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_store_year" model="ir.actions.act_window">
+        <field name="name">Store Years</field>
+        <field name="res_model">year.master</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+
+    <!-- Action for Walkin Screen -->
+    <record id="action_walkin_screen" model="ir.actions.act_window">
+        <field name="name">Walkin Screen</field>
+        <field name="res_model">walkin.screen</field> <!-- Replace with actual model -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+     <record id="action_reporting" model="ir.actions.act_window">
+        <field name="name">Reporting</field>
+        <field name="res_model">day.report</field> <!-- Replace with actual model -->
+        <field name="view_mode">form</field>
+    </record>
+
+    <record id="action_day_reporting" model="ir.actions.act_window">
+        <field name="name">Day Reporting</field>
+        <field name="res_model">day.report</field> <!-- Replace with actual model -->
+        <field name="view_mode">form</field>
+    </record>
+
+    <record id="action_hour_reporting" model="ir.actions.act_window">
+        <field name="name">Hourly Reporting</field>
+        <field name="res_model">hour.report</field> <!-- Replace with actual model -->
+        <field name="view_mode">form</field>
+    </record>
+
+    <!-- Root Menu -->
+    <menuitem id="slot_master_root" name="Store Walkins" web_icon="nhcl_mall_walkins,static/description/shopping.png" sequence="10"/>
+
+    <!-- Submenus -->
+    <menuitem id="master_data" name="Master Data" parent="slot_master_root"  sequence="20"/>
+    <menuitem id="year_master" name="Year Master Data" parent="master_data" action="action_store_year"/>
+    <menuitem id="walkin_screen_menu" name="Walkin Screen" parent="slot_master_root" action="action_walkin_screen" sequence="30"/>
+    <menuitem id="reporting_menu" name="Reporting" parent="slot_master_root" sequence="40"/>
+    <menuitem id="reporting_day_menu" name="Day Reporting" parent="reporting_menu" action="action_day_reporting" sequence="40"/>
+    <menuitem id="reporting_hour_menu" name="Hourly Reporting" parent="reporting_menu" action="action_hour_reporting" sequence="40"/>
+</odoo>

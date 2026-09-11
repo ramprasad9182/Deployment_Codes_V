@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sale_order_form_inherit_eway" model="ir.ui.view">
+        <field name="name">sale.order.form.eway.button</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_create_eway_bill" string="Create E-Way Bill / Challan" type="object" class="btn-primary"/>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_eway_bills" type="object" class="oe_stat_button" icon="fa-pencil-square-o" invisible="eway_bill_count == 0">
+                    <field name="eway_bill_count" widget="statinfo" string="E-Way Bills"/>
+                </button>
+            </xpath>        
+        </field>
+    </record>
+</odoo>

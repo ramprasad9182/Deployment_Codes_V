@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_company_form_inherit" model="ir.ui.view">
+        <field name="name">res.company.inherit</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="e_bill_details" string="E-Way Bill Details" invisible="country_code != 'IN'">
+                    <group>
+                        <group>
+                            <field name="e_bill_environment"/>
+                            <field name="e_bill_api_url"/>
+                            <field name="e_bill_email"/>
+                            <field name="e_bill_username"/>
+                            <field name="e_bill_password" password="True"/>
+                            <field name="e_bill_client_id" password="True"/>
+                            <field name="e_bill_client_secret" password="True"/>
+                            <button class="oe_highlight" name="generate_token_for_e_bill" string="Generate Token" type="object"/>
+                        </group>
+                        <group>
+                            <field name="e_bill_sek" readonly="1"/>
+                            <field name="e_bill_clientId" readonly="1"/>
+                            <field name="e_bill_authtoken" readonly="1"/>
+                            <field name="e_bill_tokenexpiry" readonly="1"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>    
+        </field>
+    </record>
+</odoo>

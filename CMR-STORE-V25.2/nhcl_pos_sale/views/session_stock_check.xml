@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+
+
+ <record id="view_pos_session_form_inherit_tracking" model="ir.ui.view">
+        <field name="name">pos.session.form.inherit.tracking</field>
+        <field name="model">pos.session</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_session_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <notebook>
+                    <page string="Tracking Lines">
+                        <field name="tracking_ids" nocreate="1" noedit="1">
+                            <tree editable="bottom">
+                                <field name="date"/>
+                                <field name="stock_lot"/>
+                                <field name="qty"/>
+                                <field name="location_id"/>
+                                <field name="location_real_id"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+
+
+     <record id="view_location_tracking_tree" model="ir.ui.view">
+        <field name="name">location.tracking.tree</field>
+        <field name="model">location.tracking</field>
+        <field name="arch" type="xml">
+            <tree create="0" edit="0">
+                <field name="date"/>
+                <field name="session_id"/>
+                <field name="stock_lot"/>
+                <field name="qty"/>
+                <field name="location_id"/>
+                <field name="location_real_id"/>
+
+            </tree>
+        </field>
+    </record>
+
+
+
+     <record id="action_location_tracking_eod" model="ir.actions.act_window">
+        <field name="name">Location Tracking</field>
+        <field name="res_model">location.tracking</field>
+        <field name="view_mode">tree,form</field>
+             <field name="domain">[('location_real_id.name', '!=', 'Customers')]</field>
+    </record>
+    <!-- Menu under Point of Sale root -->
+    <menuitem id="menu_location_tracking"
+              name="EOD Tracking Report"
+              parent="point_of_sale.menu_point_root"
+              action="action_location_tracking_eod"
+              sequence="10"/>
+
+
+
+</odoo>

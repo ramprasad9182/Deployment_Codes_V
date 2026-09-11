@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+ <record id="default_nhcl_ho_ip" model="ir.config_parameter">
+        <field name="key">nhcl_customizations.nhcl_ho_ip</field>
+        <field name="value"/>
+    </record>
+    <record id="default_nhcl_ho_port" model="ir.config_parameter">
+        <field name="key">nhcl_customizations.nhcl_ho_port</field>
+        <field name="value"/>
+    </record>
+    <record id="default_nhcl_ho_api_key" model="ir.config_parameter">
+        <field name="key">nhcl_customizations.nhcl_ho_api_key</field>
+        <field name="value"/>
+    </record>
+</odoo>

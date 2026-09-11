@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_nhcl_stock_report_tree" model="ir.ui.view">
+        <field name="name">nhcl.stock.report.tree</field>
+        <field name="model">nhcl.stock.report</field>
+        <field name="arch" type="xml">
+
+            <tree string="Stock Report">
+
+                <field name="site"/>
+                <field name="family"/>
+                <field name="section"/>
+                <field name="class_name"/>
+                <field name="brick"/>
+                <field name="article"/>
+                <field name="ageing"/>
+                <field name="brand"/>
+                <field name="design"/>
+                <field name="barcode"/>
+                <field name="unit_rsp"/>
+           
+                <field name="mrp"/>
+
+                <field name="description_8"/>
+                <field name="promo"/>
+
+                <field name="on_hand_qty"/>
+
+            </tree>
+
+        </field>
+    </record>
+
+    <record id="view_nhcl_stock_report_search" model="ir.ui.view">
+        <field name="name">nhcl.stock.report.search</field>
+        <field name="model">nhcl.stock.report</field>
+        <field name="arch" type="xml">
+
+            <search string="Stock Report">
+
+                <!-- Search Fields -->
+                <field name="site"/>
+                <field name="family"/>
+                <field name="section"/>
+                <field name="class_name"/>
+                <field name="brick"/>
+                <field name="article"/>
+                <field name="ageing"/>
+                <field name="brand"/>
+                <field name="design"/>
+                <field name="barcode"/>
+                <field name="unit_rsp"/>
+                
+                <field name="mrp"/>
+                <field name="description_8"/>
+                <field name="promo"/>
+
+                <group expand="0" string="Group By">
+
+                    <filter
+                            name="group_by_site"
+                            string="Site"
+                            context="{'group_by': 'site'}"/>
+
+                    <filter
+                            name="group_by_family"
+                            string="Family"
+                            context="{'group_by': 'family'}"/>
+
+                    <filter
+                            name="group_by_section"
+                            string="Section"
+                            context="{'group_by': 'section'}"/>
+
+                    <filter
+                            name="group_by_class"
+                            string="Class"
+                            context="{'group_by': 'class_name'}"/>
+
+                    <filter
+                            name="group_by_brick"
+                            string="Brick"
+                            context="{'group_by': 'brick'}"/>
+
+                    <filter
+                            name="group_by_article"
+                            string="Article"
+                            context="{'group_by': 'article'}"/>
+
+                    <filter
+                            name="group_by_ageing"
+                            string="Ageing"
+                            context="{'group_by': 'ageing'}"/>
+
+                    <filter
+                            name="group_by_brand"
+                            string="Brand"
+                            context="{'group_by': 'brand'}"/>
+
+                    <filter
+                            name="group_by_design"
+                            string="Design"
+                            context="{'group_by': 'design'}"/>
+
+                    <filter
+                            name="group_by_barcode"
+                            string="Barcode"
+                            context="{'group_by': 'barcode'}"/>
+
+                    <filter
+                            name="group_by_unit_rsp"
+                            string="Unit RSP"
+                            context="{'group_by': 'unit_rsp'}"/>
+
+                    <filter
+                            name="group_by_cp"
+                            string="CP"
+                            context="{'group_by': 'cp'}"/>
+
+                    <filter
+                            name="group_by_mrp"
+                            string="MRP"
+                            context="{'group_by': 'mrp'}"/>
+
+                    <filter
+                            name="group_by_description_8"
+                            string="Description 8"
+                            context="{'group_by': 'description_8'}"/>
+
+                    <filter
+                            name="group_by_promo"
+                            string="Promo"
+                            context="{'group_by': 'promo'}"/>
+
+                    <filter
+                            name="group_by_on_hand_qty"
+                            string="On Hand Qty"
+                            context="{'group_by': 'on_hand_qty'}"/>
+
+                </group>
+
+            </search>
+
+        </field>
+    </record>
+
+
+    <record id="action_nhcl_stock_report" model="ir.actions.act_window">
+        <field name="name">Stock Report</field>
+        <field name="res_model">nhcl.stock.report</field>
+        <field name="view_mode">list</field>
+        <field name="search_view_id" ref="view_nhcl_stock_report_search"/>
+
+    </record>
+
+
+    <menuitem
+            id="menu_nhcl_stock_report"
+            name="Stock Report"
+            parent="nhcl_customizations.reporting_status"
+            action="action_nhcl_stock_report"
+            sequence="10000"/>
+
+
+</odoo>

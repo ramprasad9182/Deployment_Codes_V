@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_form_hour_report" model="ir.ui.view">
+        <field name="name">hour.report.form</field>
+        <field name="model">hour.report</field>
+        <field name="arch" type="xml">
+           <form string="Daily Walkin vs Sale - Slot Wise">
+                <sheet>
+                    <!-- Header Title -->
+                    <div style="
+                        text-align: center;
+
+                        color: white;
+                        border: 2px solid #1F618D;
+                        border-radius: 10px;
+                        padding: 12px;
+                        margin-bottom: 20px;
+                    ">
+                        <h1 style="margin: 0; font-size: 36px;">Daily Walkin vs Sale - Slot Wise</h1>
+                    </div>
+                    <header>
+                        <button name="action_export_excel" type="object" string="Export to Excel" class="btn-primary" />
+                    </header>
+                    <group>
+                        <group>
+                            <field name="from_date"/>
+<!--                            <field name="slot_ids" widget="many2many_tags"/>-->
+                        </group>
+                        <group>
+                            <field name="to_date"/>
+                        </group>
+                    </group>
+                    <field name="line_ids">
+                    <tree editable="false" create="false" delete="false">
+                        <field name="date"/>
+<!--                        <field name="slot_id"/>-->
+                        <field name="walkin_count"/>
+                        <field name="sale_total"/>
+                    </tree>
+                </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

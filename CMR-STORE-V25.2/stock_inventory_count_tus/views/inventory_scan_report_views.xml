@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!-- Form View -->
+    <record id="view_inventory_scan_report_form" model="ir.ui.view">
+        <field name="name">inventory.scan.report.form</field>
+        <field name="model">inventory.scan.report</field>
+        <field name="arch" type="xml">
+            <form string="Inventory Scan Report">
+                <header>
+                    <button name="action_get_scan_lines"
+                            string="Load Scan Lines"
+                            type="object"
+                            class="btn-primary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="plan_id" options="{'no_create': True, 'no_create_edit': True, 'no_quick_create': True, 'no_open': True}"/>
+                            <field name="user_id"
+                                   options="{'no_create': True, 'no_create_edit': True, 'no_quick_create': True, 'no_open': True}"/>
+                            <field name="allowed_user_ids" widget="many2many" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="from_date"/>
+                            <field name="to_date"/>
+                        </group>
+
+                    </group>
+
+                    <notebook>
+                        <page string="Scan Lines">
+                            <field name="line_ids" readonly="0" force_save="1">
+                                <tree delete="0" create="0" editable="bottom" edit="0">
+                                    <field name="lot_id"/>
+                                    <field name="user_id"/>
+                                    <field name="scan_time"/>
+                                    <field name="count"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <!-- Tree View -->
+    <record id="view_inventory_scan_report_tree" model="ir.ui.view">
+        <field name="name">inventory.scan.report.tree</field>
+        <field name="model">inventory.scan.report</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="plan_id"/>
+                <field name="user_id"/>
+
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- Action -->
+    <record id="action_inventory_scan_report" model="ir.actions.act_window">
+        <field name="name">Inventory Scan Report</field>
+        <field name="res_model">inventory.scan.report</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    Menu
+    <menuitem
+            id="menu_inventory_scan_report"
+            name="Inventory Scan Report"
+            parent="stock_inventory_count_tus.menu_action_inventory_root_parent"
+            action="action_inventory_scan_report"
+    />
+
+</odoo>

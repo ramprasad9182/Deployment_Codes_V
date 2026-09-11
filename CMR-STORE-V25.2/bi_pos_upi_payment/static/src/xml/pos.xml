@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="PaymentScreen" t-inherit="point_of_sale.PaymentScreenMethods" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('paymentmethods')]" position="replace">
+            <div class="paymentmethods-container d-flex flex-column">
+                <h4 class="title-category pt-3 pb-2 px-3 m-0 bg-view border-bottom border-2">Payment Method</h4>
+
+                <t t-foreach="payment_methods_from_config" t-as="paymentMethod" t-key="paymentMethod.id">
+                    <t t-if="!paymentMethod.upi">
+                        <div class="button paymentmethod btn btn-light rounded-0 border-bottom w-100"
+                             t-on-click="() => this.upiNewPaymentLine(paymentMethod)"
+                             t-att-class="{ 'highlight-selection': kbState.highlightedId === paymentMethod.id }">
+                            <div class="payment-method-display d-flex align-items-center flex-grow-1">
+                                <img class="payment-method-icon me-2" t-att-src="paymentMethodImage(paymentMethod.id)" style="width: 40px; height: 40px;"/>
+                                <t t-esc="paymentMethod.name"/>
+                            </div>
+                        </div>
+                    </t>
+
+                    <t t-else="">
+                        <t t-foreach="upi_payments" t-as="upiMethod" t-key="upiMethod.id">
+                            <div class="button paymentmethod btn btn-light rounded-0 border-bottom w-100"
+                                 t-on-click="() => { this.upiNewPaymentLine(paymentMethod); }"
+                                 t-att-class="{ 'highlight-selection': kbState.highlightedId === paymentMethod.id }">
+                                <div class="payment-method-display d-flex align-items-center flex-grow-1">
+                                    <t t-if="upiMethod.upi_image">
+                                        <img t-att-src="upi_image" style="height: 37px; width: 40px; border-radius: 50%;" class="avatar me-2"/>
+                                    </t>
+                                    <t t-esc="upiMethod.name"/>
+                                </div>
+                            </div>
+                        </t>
+                    </t>
+                </t>
+            </div>
+        </xpath>
+    </t>
+    <t t-name="bi_pos_upi_payment.UPIQRPopup" owl="1">
+        <div class="popup popup-textarea">
+        </div>
+        <div class="popup" style="text-align:center;margin-left:-60%;">
+            <div class="modal-header">
+                <t t-if="props.upi_image">
+                    <img t-att-src="upi_image" t-att-alt="user" style="height: 37px;margin-top: 0px;width: 40px;border-radius: 19px;margin-bottom: -12px;" class="avatar"/>
+                </t>
+                <span> <t t-esc="props.name"/></span>
+            </div>
+            <main class="body traceback" style="font-family: 'Lato-Reg';text-align: center;min-height: 315px;margin-left: 60px;">
+                <div class="text-center" align="center">
+                    <img t-att-src="qrcode" style="height: 300px;width: 300px;margin-right: 60px;"/>
+                </div>
+            </main>
+            <footer class="footer footer-flex modal-footer">
+                <div class="button cancel btn btn-lg btn-primary" t-on-click="cancel">
+                    Close
+                </div>
+                <div class="button btn btn-lg btn-primary" t-on-click="confirm_payment">
+                    Confirm
+                </div>
+            </footer>
+        </div>
+    </t>
+</templates>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_order_view_form_inherit_reset_discount" model="ir.ui.view">
+        <field name="name">sale.order.view.form.inherit.reset.discount</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="priority">10</field>
+        <field name="arch" type="xml">
+            <button name="action_open_discount_wizard" position="after">
+                <button name="button_to_reset_discount"
+                        type="object"
+                        string="Reset Discount"
+                        class="btn btn-secondary"/>
+            </button>
+        </field>
+    </record>
+
+<!--    <record id="cmr_loyalty_reward_rule_view_form_view" model="ir.ui.view">-->
+<!--        <field name="name">loyalty.rule.reward.view.form.inherit</field>-->
+<!--        <field name="model">loyalty.rule</field>-->
+<!--        <field name="inherit_id" ref="cmr_customizations.cmr_loyalty_rule_view_form_view"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//button[@name='reset_to_filters']" position="after">-->
+<!--                <button name="create_rewards" string="Create Reward" type="object" class="btn-primary"/>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+</odoo>
+

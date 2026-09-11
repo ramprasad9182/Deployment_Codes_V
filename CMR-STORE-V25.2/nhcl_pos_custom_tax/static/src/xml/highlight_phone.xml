@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-inherit="point_of_sale.PartnerDetailsEdit" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('partner-details-box')]" position="replace">
+            <div class="partner-details-box row row-cols-1 row-cols-sm-2 gy-3 mt-3">
+<!--                &lt;!&ndash; Street &ndash;&gt;-->
+<!--                <div class="partner-detail col">-->
+<!--                    <label class="form-label label" for="street" t-esc="partnerDetailsFields['Street']"/>-->
+<!--                    <input class="detail form-control"-->
+<!--                           id="street"-->
+<!--                           name="street"-->
+<!--                           t-model="changes.street"-->
+<!--                           t-attf-placeholder="{{partnerDetailsFields['Street']}}"-->
+<!--                           t-att="{'disabled': isFieldCommercialAndPartnerIsChild('street')}"-->
+<!--                           t-att-class="{'border-danger': missingFields.includes('street')}"/>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; City &ndash;&gt;-->
+<!--                <div class="partner-detail col">-->
+<!--                    <label class="form-label label" for="city" t-esc="partnerDetailsFields['City']"/>-->
+<!--                    <input class="detail form-control"-->
+<!--                           id="city"-->
+<!--                           name="city"-->
+<!--                           t-model="changes.city"-->
+<!--                           t-attf-placeholder="{{partnerDetailsFields['City']}}"-->
+<!--                           t-att="{'disabled': isFieldCommercialAndPartnerIsChild('city')}"-->
+<!--                           t-att-class="{'border-danger': missingFields.includes('city')}"/>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Zip &ndash;&gt;-->
+<!--                <div class="partner-detail col">-->
+<!--                    <label class="form-label label" for="zip" t-esc="partnerDetailsFields['Zip']"/>-->
+<!--                    <input class="detail form-control"-->
+<!--                           id="zip"-->
+<!--                           name="zip"-->
+<!--                           t-model="changes.zip"-->
+<!--                           t-attf-placeholder="{{partnerDetailsFields['Zip']}}"-->
+<!--                           t-att="{'disabled': isFieldCommercialAndPartnerIsChild('zip')}"-->
+<!--                           t-att-class="{'border-danger': missingFields.includes('zip')}"/>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Email &ndash;&gt;-->
+<!--                <div class="partner-detail col">-->
+<!--                    <label class="form-label label" for="email" t-esc="partnerDetailsFields['Email']"/>-->
+<!--                    <input class="detail form-control"-->
+<!--                           id="email"-->
+<!--                           name="email"-->
+<!--                           t-model="changes.email"-->
+<!--                           t-attf-placeholder="{{partnerDetailsFields['Email']}}"-->
+<!--                           t-att="{'disabled': isFieldCommercialAndPartnerIsChild('email')}"-->
+<!--                           t-att-class="{'border-danger': missingFields.includes('email')}"/>-->
+<!--                </div>-->
+                <!-- Phone -->
+                <div class="partner-detail col">
+                    <label class="form-label label" name="Phone" style="font-weight:900 !important" for="phone" t-esc="partnerDetailsFields['Phone']"/>
+                    <span>*</span>
+                    <input class="detail form-control" style="font-weight:700 !important "
+                           id="phone"
+                           name="phone"
+                           t-model="changes.phone"
+                           t-attf-placeholder="{{partnerDetailsFields['Phone']}}"
+                           t-att="{'disabled': isFieldCommercialAndPartnerIsChild('phone')}"
+                           t-att-class="{'border-danger': missingFields.includes('phone')}"/>
+                </div>
+<!--                &lt;!&ndash; Mobile &ndash;&gt;-->
+<!--                <div class="partner-detail col">-->
+<!--                    <label class="form-label label" for="mobile" t-esc="partnerDetailsFields['Mobile']"/>-->
+<!--                    <input class="detail form-control"-->
+<!--                           id="mobile"-->
+<!--                           name="mobile"-->
+<!--                           t-model="changes.mobile"-->
+<!--                           t-attf-placeholder="{{partnerDetailsFields['Mobile']}}"-->
+<!--                           t-att="{'disabled': isFieldCommercialAndPartnerIsChild('mobile')}"-->
+<!--                           t-att-class="{'border-danger': missingFields.includes('mobile')}"/>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Barcode &ndash;&gt;-->
+<!--                <div class="partner-detail col">-->
+<!--                    <label class="form-label label" for="barcode" t-esc="partnerDetailsFields['Barcode']"/>-->
+<!--                    <input class="detail form-control"-->
+<!--                           id="barcode"-->
+<!--                           name="barcode"-->
+<!--                           t-model="changes.barcode"-->
+<!--                           t-attf-placeholder="{{partnerDetailsFields['Barcode']}}"-->
+<!--                           t-att="{'disabled': isFieldCommercialAndPartnerIsChild('barcode')}"-->
+<!--                           t-att-class="{'border-danger': missingFields.includes('barcode')}"/>-->
+<!--                </div>-->
+                <!-- State -->
+                <div class="partner-detail col">
+                <label class="form-label label" for="state">State</label>
+                <select class="detail form-select" id="state" name="state_id" t-model="changes.state_id"
+                        t-att="{'disabled': isFieldCommercialAndPartnerIsChild('state_id')}"
+                        t-att-class="{'border-danger': missingFields.includes('state_id')}">
+                    <option value="">None</option>
+                    <t t-foreach="pos.states" t-as="state" t-key="state.id">
+                        <option t-if="changes.country_id == state.country_id[0]" t-att-value="state.id">
+                            <t t-esc="state.name"/>
+                        </option>
+                    </t>
+                </select>
+                </div>
+                <!-- Country -->
+                <div class="partner-detail col">
+                    <label class="form-label label" for="country">Country</label>
+                    <select class="detail form-select" id="country" name="country_id" t-model="changes.country_id"
+                            t-att="{'disabled': isFieldCommercialAndPartnerIsChild('country_id')}"
+                            t-att-class="{'border-danger': missingFields.includes('country_id')}">
+                        <option value="">None</option>
+                        <t t-foreach="pos.countries" t-as="country" t-key="country.id">
+                            <option t-att-value="country.id">
+                                <t t-esc="country.name"/>
+                            </option>
+                        </t>
+                    </select>
+                </div>
+<!--                &lt;!&ndash; Language &ndash;&gt;-->
+<!--                <div class="partner-detail col">-->
+<!--                    <label class="form-label label" for="language">Language</label>-->
+<!--                    <select class="detail form-select" id="language" name="lang" t-model="changes.lang"-->
+<!--                            t-att="{'disabled': isFieldCommercialAndPartnerIsChild('lang')}"-->
+<!--                            t-att-class="{'border-danger': missingFields.includes('lang')}">-->
+<!--                        <t t-foreach="pos.langs" t-as="lang" t-key="lang.id">-->
+<!--                            <option t-att-value="lang.code"-->
+<!--                                    t-att-selected="changes.lang ? ((lang.code === changes.lang) ? true : undefined) : lang.code === pos.user.lang? true : undefined">-->
+<!--                                <t t-esc="lang.name"/>-->
+<!--                            </option>-->
+<!--                        </t>-->
+<!--                    </select>-->
+<!--                </div>-->
+<!--                &lt;!&ndash; Pricelist &ndash;&gt;-->
+<!--                <div t-if="pos.pricelists.length gt 1" class="partner-detail col">-->
+<!--                    <label class="form-label label" for="pricelist">Pricelist</label>-->
+<!--                    <select class="detail form-select" id="pricelist" name="property_product_pricelist"-->
+<!--                            t-model="changes.property_product_pricelist"-->
+<!--                            t-att="{'disabled': isFieldCommercialAndPartnerIsChild('property_product_pricelist')}"-->
+<!--                            t-att-class="{'border-danger': missingFields.includes('property_product_pricelist')}">-->
+<!--                        <t t-foreach="pos.pricelists" t-as="pricelist" t-key="pricelist.id">-->
+<!--                            <option t-att-value="pricelist.id"-->
+<!--                                    t-att-selected="props.partner.property_product_pricelist ? (pricelist.id === props.partner.property_product_pricelist[0] ? true : undefined) : pricelist.id === pos.default_pricelist?.id ? true : undefined">-->
+<!--                                <t t-esc="pricelist.display_name"/>-->
+<!--                            </option>-->
+<!--                        </t>-->
+<!--                    </select>-->
+<!--                </div>-->
+                <!-- Tax ID -->
+                <div class="partner-detail col">
+                    <label class="form-label label" for="vat">Tax ID</label>
+                    <input class="detail vat form-control" id="vat" name="vat" t-model="changes.vat"
+                           t-att="{'disabled': isFieldCommercialAndPartnerIsChild('vat')}"
+                           t-att-class="{'border-danger': missingFields.includes('vat')}"/>
+                </div>
+            </div>
+        </xpath>
+    </t>
+</templates>
+
+
+
+
+
+

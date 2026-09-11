@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template id="template" xml:space="preserve">
+    <t t-name="ultimate_pos_shortcuts.KeyboardShortcuts">
+        <div class="ksc_section">
+            <div class="ksc_header">
+                <!-- button list -->
+                <t t-foreach="keyboard_shortcuts" t-as="shortcut" t-key="shortcut.id">
+                    <div class="ksc_header_item" t-att-class="{'active':isActive(shortcut.id)}" t-on-click="() => setActiveShortcut(shortcut.id,this)">
+                        <t t-esc="shortcut.name"/>
+                    </div>
+                </t>
+
+                <div class="ksc_close" t-on-click="closeHelpWidget">
+                    <span class="svg-container">
+                        <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                            <path fill="#ffffffb2" fill-opacity="1" fill-rule="nonzero" stroke="none" d="m6 5.293 4.789-4.79.707.708-4.79 4.79 4.79 4.789-.707.707-4.79-4.79-4.789 4.79-.707-.707L5.293 6 .502 1.211 1.21.504 6 5.294z"></path>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="ksc_content">
+                <div class="ksc_content_container">
+                    <t t-foreach="keyboard_shortcut.columns" t-as="rows" t-key="rows[0].name">
+                        <!-- rows -->
+                        <div class="ksc_column">
+                            <t t-foreach="rows" t-as="row" t-key="row.name">
+                                <div class="ksc_row">
+                                    <div>
+                                        <t t-esc="row.name"/>
+                                    </div>
+                                    <div class="ksc_keys">
+                                        <t t-foreach="row.keys" t-as="key" t-key="key">
+                                            <span>
+                                                <t t-esc="key"/>
+                                            </span>
+                                        </t>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </div>
+    </t>
+</template>

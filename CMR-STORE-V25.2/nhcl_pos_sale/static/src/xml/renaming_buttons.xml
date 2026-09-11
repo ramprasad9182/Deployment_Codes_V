@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+      <!-- Inherit SaveButton template and change the name -->
+    <t t-inherit="point_of_sale.SaveButton" t-inherit-mode="extension">
+        <xpath expr="//div[contains(@class,'control-button')]" position="replace">
+            <div class="control-button btn btn-light rounded-0 fw-bolder" t-on-click="onClick">
+                <i class="fa fa-upload" role="img" aria-label="Hold Order" title="Hold Order"/>
+                Hold Order
+            </div>
+        </xpath>
+    </t>
+
+    <!-- Inherit PromoCodeButtonn template and change the name  -->
+    <t t-inherit="pos_loyalty.PromoCodeButton" t-inherit-mode="extension">
+        <xpath expr="//span[text()='Enter Code']" position="replace">
+            <span>Gift Card</span>
+        </xpath>
+    </t>
+
+</templates>

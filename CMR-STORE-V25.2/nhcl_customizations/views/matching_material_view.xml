@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="matching_material_tree_view" model="ir.ui.view">
+        <field name="name">matching.material.tree</field>
+        <field name="model">matching.material</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="date_time_nh"/>
+                <field name="product_description"/>
+                <field name="quantity"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="matching_material_form_view" model="ir.ui.view">
+        <field name="name">matching.material.form</field>
+        <field name="model">matching.material</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_allow_slip" type="object" string="Allow Slip" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+
+                    <group>
+                        <group>
+                            <field name="date_time_nh"  readonly="1"/>
+                            <field name="product_description"/>
+                            <field name="quantity"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="nhcl_matching_materials_action" model="ir.actions.act_window">
+        <field name="name">Matching Materials</field>
+        <field name="res_model">matching.material</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to add a new record
+            </p>
+        </field>
+    </record>
+
+    <menuitem name="Matching Materials" id="nhcl_menu_matching_materials"
+              action="nhcl_matching_materials_action"
+              parent="point_of_sale.menu_point_rep" sequence="10"/>
+</odoo>

@@ -1,0 +1,4557 @@
+<odoo>
+    <data noupdate="1">
+        <record id="port_code_INACH1" model="port.code">
+            <field name="port_code">INACH1</field>
+            <field name="port_name">Achra</field>
+        </record>
+        <record id="port_code_INADA6" model="port.code">
+            <field name="port_code">INADA6</field>
+            <field name="port_name">Ahmedabad Adalaj</field>
+        </record>
+        <record id="port_code_INADI1" model="port.code">
+            <field name="port_code">INADI1</field>
+            <field name="port_name">Androth Island</field>
+        </record>
+        <record id="port_code_INAGI1" model="port.code">
+            <field name="port_code">INAGI1</field>
+            <field name="port_name">Agatti Island</field>
+        </record>
+        <record id="port_code_INAGR4" model="port.code">
+            <field name="port_code">INAGR4</field>
+            <field name="port_name">Agra</field>
+        </record>
+        <record id="port_code_INAGR5" model="port.code">
+            <field name="port_code">INAGR5</field>
+            <field name="port_name">FPO AGRA</field>
+        </record>
+        <record id="port_code_INAGR6" model="port.code">
+            <field name="port_code">INAGR6</field>
+            <field name="port_name">Agra</field>
+        </record>
+        <record id="port_code_INAGTB" model="port.code">
+            <field name="port_code">INAGTB</field>
+            <field name="port_name">Agartala</field>
+        </record>
+        <record id="port_code_INAGX4" model="port.code">
+            <field name="port_code">INAGX4</field>
+            <field name="port_name">Agatti Island</field>
+        </record>
+        <record id="port_code_INAHD6" model="port.code">
+            <field name="port_code">INAHD6</field>
+            <field name="port_name">ICD SANAND</field>
+        </record>
+        <record id="port_code_INAIG6" model="port.code">
+            <field name="port_code">INAIG6</field>
+            <field name="port_name">GE PVT. LTD.</field>
+        </record>
+        <record id="port_code_INAII6" model="port.code">
+            <field name="port_code">INAII6</field>
+            <field name="port_name">M/S IGATE GS LTD.</field>
+        </record>
+        <record id="port_code_INAIK6" model="port.code">
+            <field name="port_code">INAIK6</field>
+            <field name="port_name">IBRAHIMPURICD KHURJA</field>
+        </record>
+        <record id="port_code_INAIR6" model="port.code">
+            <field name="port_code">INAIR6</field>
+            <field name="port_name">SP PVT. LTD.</field>
+        </record>
+        <record id="port_code_INAJE6" model="port.code">
+            <field name="port_code">INAJE6</field>
+            <field name="port_name">WLSPUN ANJAR SEZ</field>
+        </record>
+        <record id="port_code_INAJJ6" model="port.code">
+            <field name="port_code">INAJJ6</field>
+            <field name="port_name">Arakkonam Melpakkam</field>
+        </record>
+        <record id="port_code_INAJL4" model="port.code">
+            <field name="port_code">INAJL4</field>
+            <field name="port_name">Aizawl</field>
+        </record>
+        <record id="port_code_INAJM6" model="port.code">
+            <field name="port_code">INAJM6</field>
+            <field name="port_name">MUNDRA PORT SEZ</field>
+        </record>
+        <record id="port_code_INAKB6" model="port.code">
+            <field name="port_code">INAKB6</field>
+            <field name="port_name">BIACPL SEZ</field>
+        </record>
+        <record id="port_code_INAKD4" model="port.code">
+            <field name="port_code">INAKD4</field>
+            <field name="port_name">Akola</field>
+        </record>
+        <record id="port_code_INAKP6" model="port.code">
+            <field name="port_code">INAKP6</field>
+            <field name="port_name">APIICL SEZ</field>
+        </record>
+        <record id="port_code_INAKR6" model="port.code">
+            <field name="port_code">INAKR6</field>
+            <field name="port_name">RPCIPL SEZ</field>
+        </record>
+        <record id="port_code_INAKV6" model="port.code">
+            <field name="port_code">INAKV6</field>
+            <field name="port_name">Ankleshwar ICD</field>
+        </record>
+        <record id="port_code_INALA1" model="port.code">
+            <field name="port_code">INALA1</field>
+            <field name="port_name">ALANG SBY</field>
+        </record>
+        <record id="port_code_INALF1" model="port.code">
+            <field name="port_code">INALF1</field>
+            <field name="port_name">Allepey</field>
+        </record>
+        <record id="port_code_INAMD4" model="port.code">
+            <field name="port_code">INAMD4</field>
+            <field name="port_name">Ahmedabad</field>
+        </record>
+        <record id="port_code_INAMD5" model="port.code">
+            <field name="port_code">INAMD5</field>
+            <field name="port_name">Ahmedabad</field>
+        </record>
+        <record id="port_code_INAMD6" model="port.code">
+            <field name="port_code">INAMD6</field>
+            <field name="port_name">Ahmedabad</field>
+        </record>
+        <record id="port_code_INAMG6" model="port.code">
+            <field name="port_code">INAMG6</field>
+            <field name="port_name">Amingaon (Gauhati)</field>
+        </record>
+        <record id="port_code_INAMI1" model="port.code">
+            <field name="port_code">INAMI1</field>
+            <field name="port_name">Amini Island</field>
+        </record>
+        <record id="port_code_INAMK6" model="port.code">
+            <field name="port_code">INAMK6</field>
+            <field name="port_name">KSITIL/SEZ/ALAPPUZHA</field>
+        </record>
+        <record id="port_code_INANG1" model="port.code">
+            <field name="port_code">INANG1</field>
+            <field name="port_name">Anijengo</field>
+        </record>
+        <record id="port_code_INANL1" model="port.code">
+            <field name="port_code">INANL1</field>
+            <field name="port_name">Arnala</field>
+        </record>
+        <record id="port_code_INAPI6" model="port.code">
+            <field name="port_code">INAPI6</field>
+            <field name="port_name">AAP-SEZ AHMEDABAD</field>
+        </record>
+        <record id="port_code_INAPL6" model="port.code">
+            <field name="port_code">INAPL6</field>
+            <field name="port_name">Dadri ACPL CFS</field>
+        </record>
+        <record id="port_code_INAPT6" model="port.code">
+            <field name="port_code">INAPT6</field>
+            <field name="port_name">Anaparti</field>
+        </record>
+        <record id="port_code_INARR6" model="port.code">
+            <field name="port_code">INARR6</field>
+            <field name="port_name">Aroor</field>
+        </record>
+        <record id="port_code_INASR2" model="port.code">
+            <field name="port_code">INASR2</field>
+            <field name="port_name">Amritsar Railway Stn</field>
+        </record>
+        <record id="port_code_INASR6" model="port.code">
+            <field name="port_code">INASR6</field>
+            <field name="port_name">Amritsar</field>
+        </record>
+        <record id="port_code_INATQ4" model="port.code">
+            <field name="port_code">INATQ4</field>
+            <field name="port_name">Amritsar</field>
+        </record>
+        <record id="port_code_INATQ6" model="port.code">
+            <field name="port_code">INATQ6</field>
+            <field name="port_name">Amritsar</field>
+        </record>
+        <record id="port_code_INATRB" model="port.code">
+            <field name="port_code">INATRB</field>
+            <field name="port_name">Attari Road</field>
+        </record>
+        <record id="port_code_INATT2" model="port.code">
+            <field name="port_code">INATT2</field>
+            <field name="port_name">Attari  Railway Stat</field>
+        </record>
+        <record id="port_code_INAWM6" model="port.code">
+            <field name="port_code">INAWM6</field>
+            <field name="port_name">SEZ, SHENDRA</field>
+        </record>
+        <record id="port_code_INAWS6" model="port.code">
+            <field name="port_code">INAWS6</field>
+            <field name="port_name">SOMANI SEZ BHIWADI</field>
+        </record>
+        <record id="port_code_INAWW6" model="port.code">
+            <field name="port_code">INAWW6</field>
+            <field name="port_name">WIDL AEZ, AURANGABAD</field>
+        </record>
+        <record id="port_code_INAZK1" model="port.code">
+            <field name="port_code">INAZK1</field>
+            <field name="port_name">Azhikkal</field>
+        </record>
+        <record id="port_code_INBAG6" model="port.code">
+            <field name="port_code">INBAG6</field>
+            <field name="port_name">GEM&amp;JEWEL-SEZ/ULWE</field>
+        </record>
+        <record id="port_code_INBAI6" model="port.code">
+            <field name="port_code">INBAI6</field>
+            <field name="port_name">IT/ITES-B-SEZ/ULWE</field>
+        </record>
+        <record id="port_code_INBAM6" model="port.code">
+            <field name="port_code">INBAM6</field>
+            <field name="port_name">MULTISERVCE-SEZ/ULWE</field>
+        </record>
+        <record id="port_code_INBAP6" model="port.code">
+            <field name="port_code">INBAP6</field>
+            <field name="port_name">MULTISERVICEDRONAGIR</field>
+        </record>
+        <record id="port_code_INBAT6" model="port.code">
+            <field name="port_code">INBAT6</field>
+            <field name="port_name">IT/ITES-C SEZ/UIWE</field>
+        </record>
+        <record id="port_code_INBAU6" model="port.code">
+            <field name="port_code">INBAU6</field>
+            <field name="port_name">IT/ITES-A-SEZ/ULWE</field>
+        </record>
+        <record id="port_code_INBAW6" model="port.code">
+            <field name="port_code">INBAW6</field>
+            <field name="port_name">ICD BAWAL</field>
+        </record>
+        <record id="port_code_INBBI4" model="port.code">
+            <field name="port_code">INBBI4</field>
+            <field name="port_name">Bhubaneswar</field>
+        </record>
+        <record id="port_code_INBBM6" model="port.code">
+            <field name="port_code">INBBM6</field>
+            <field name="port_name">Bari Brahamna ICD</field>
+        </record>
+        <record id="port_code_INBBP1" model="port.code">
+            <field name="port_code">INBBP1</field>
+            <field name="port_name">Bahabal Pur</field>
+        </record>
+        <record id="port_code_INBBS6" model="port.code">
+            <field name="port_code">INBBS6</field>
+            <field name="port_name">SEZ, OIIDC, BHUBANES</field>
+        </record>
+        <record id="port_code_INBCH6" model="port.code">
+            <field name="port_code">INBCH6</field>
+            <field name="port_name">HARI SEZ VARANASI</field>
+        </record>
+        <record id="port_code_INBCO6" model="port.code">
+            <field name="port_code">INBCO6</field>
+            <field name="port_name">EURO MULTIVISION SEZ</field>
+        </record>
+        <record id="port_code_INBCP6" model="port.code">
+            <field name="port_code">INBCP6</field>
+            <field name="port_name">PRITECH/SEZ/BANGLORE</field>
+        </record>
+        <record id="port_code_INBDB6" model="port.code">
+            <field name="port_code">INBDB6</field>
+            <field name="port_name">PRECIOUSCARGOCUSTOMS</field>
+        </record>
+        <record id="port_code_INBDG1" model="port.code">
+            <field name="port_code">INBDG1</field>
+            <field name="port_name">Badagara</field>
+        </record>
+        <record id="port_code_INBDH6" model="port.code">
+            <field name="port_code">INBDH6</field>
+            <field name="port_name">ICD BADOHI</field>
+        </record>
+        <record id="port_code_INBDI6" model="port.code">
+            <field name="port_code">INBDI6</field>
+            <field name="port_name">ICD BADDI,</field>
+        </record>
+        <record id="port_code_INBDM6" model="port.code">
+            <field name="port_code">INBDM6</field>
+            <field name="port_name">ICD, PANCHI, SONIPAT</field>
+        </record>
+        <record id="port_code_INBDQ1" model="port.code">
+            <field name="port_code">INBDQ1</field>
+            <field name="port_name">Vadodara</field>
+        </record>
+        <record id="port_code_INBDR1" model="port.code">
+            <field name="port_code">INBDR1</field>
+            <field name="port_name">Baindur</field>
+        </record>
+        <record id="port_code_INBED1" model="port.code">
+            <field name="port_code">INBED1</field>
+            <field name="port_name">Bedi</field>
+        </record>
+        <record id="port_code_INBEK4" model="port.code">
+            <field name="port_code">INBEK4</field>
+            <field name="port_name">Bareilly</field>
+        </record>
+        <record id="port_code_INBEP4" model="port.code">
+            <field name="port_code">INBEP4</field>
+            <field name="port_name">Bellary</field>
+        </record>
+        <record id="port_code_INBET1" model="port.code">
+            <field name="port_code">INBET1</field>
+            <field name="port_name">Betul</field>
+        </record>
+        <record id="port_code_INBEY1" model="port.code">
+            <field name="port_code">INBEY1</field>
+            <field name="port_name">Beypore</field>
+        </record>
+        <record id="port_code_INBFR6" model="port.code">
+            <field name="port_code">INBFR6</field>
+            <field name="port_name">M/S GRFL, ICD, BALLA</field>
+        </record>
+        <record id="port_code_INBGK6" model="port.code">
+            <field name="port_code">INBGK6</field>
+            <field name="port_name">Bhagat ki Kothi Jodh</field>
+        </record>
+        <record id="port_code_INBGMB" model="port.code">
+            <field name="port_code">INBGMB</field>
+            <field name="port_name">Baghmara</field>
+        </record>
+        <record id="port_code_INBGQ6" model="port.code">
+            <field name="port_code">INBGQ6</field>
+            <field name="port_name">QUEST SEZ BELGAUM</field>
+        </record>
+        <record id="port_code_INBGUB" model="port.code">
+            <field name="port_code">INBGUB</field>
+            <field name="port_name">Bairgania</field>
+        </record>
+        <record id="port_code_INBGW1" model="port.code">
+            <field name="port_code">INBGW1</field>
+            <field name="port_name">Bhagwa</field>
+        </record>
+        <record id="port_code_INBHC6" model="port.code">
+            <field name="port_code">INBHC6</field>
+            <field name="port_name">JUBILANT/SEZ/VILAYAT</field>
+        </record>
+        <record id="port_code_INBHD6" model="port.code">
+            <field name="port_code">INBHD6</field>
+            <field name="port_name">DAHEZ SEZ</field>
+        </record>
+        <record id="port_code_INBHJ4" model="port.code">
+            <field name="port_code">INBHJ4</field>
+            <field name="port_name">Bhuj</field>
+        </record>
+        <record id="port_code_INBHL6" model="port.code">
+            <field name="port_code">INBHL6</field>
+            <field name="port_name">Bhilwara</field>
+        </record>
+
+        <record id="port_code_INBHM1" model="port.code">
+            <field name="port_code">INBHM1</field>
+            <field name="port_name">Bheemunipatnam</field>
+        </record>
+
+        <record id="port_code_INBHO4" model="port.code">
+            <field name="port_code">INBHO4</field>
+            <field name="port_name">Bhopal</field>
+        </record>
+
+        <record id="port_code_INBHS6" model="port.code">
+            <field name="port_code">INBHS6</field>
+            <field name="port_name">STERLING BHARUCH</field>
+        </record>
+
+        <record id="port_code_INBHU1" model="port.code">
+            <field name="port_code">INBHU1</field>
+            <field name="port_name">Bhavanagar</field>
+        </record>
+
+        <record id="port_code_INBHU4" model="port.code">
+            <field name="port_code">INBHU4</field>
+            <field name="port_name">Bhavanagar</field>
+        </record>
+
+        <record id="port_code_INBKB4" model="port.code">
+            <field name="port_code">INBKB4</field>
+            <field name="port_name">Bikaner</field>
+        </record>
+
+        <record id="port_code_INBKR1" model="port.code">
+            <field name="port_code">INBKR1</field>
+            <field name="port_name">Belekeri</field>
+        </record>
+
+        <record id="port_code_INBKT1" model="port.code">
+            <field name="port_code">INBKT1</field>
+            <field name="port_name">Bankot</field>
+        </record>
+
+        <record id="port_code_INBLC6" model="port.code">
+            <field name="port_code">INBLC6</field>
+            <field name="port_name">CESSNA/SEZ/BANGALORE</field>
+        </record>
+
+        <record id="port_code_INBLE6" model="port.code">
+            <field name="port_code">INBLE6</field>
+            <field name="port_name">CONCOR ICD BALASORE</field>
+        </record>
+
+        <record id="port_code_INBLJ6" model="port.code">
+            <field name="port_code">INBLJ6</field>
+            <field name="port_name">Agra</field>
+        </record>
+
+        <record id="port_code_INBLK1" model="port.code">
+            <field name="port_code">INBLK1</field>
+            <field name="port_name">Belekeri</field>
+        </record>
+
+        <record id="port_code_INBLM1" model="port.code">
+            <field name="port_code">INBLM1</field>
+            <field name="port_name">Bilimora</field>
+        </record>
+
+        <record id="port_code_INBLP1" model="port.code">
+            <field name="port_code">INBLP1</field>
+            <field name="port_name">Belapur</field>
+        </record>
+
+        <record id="port_code_INBLR4" model="port.code">
+            <field name="port_code">INBLR4</field>
+            <field name="port_name">Bangalore</field>
+        </record>
+
+        <record id="port_code_INBLR5" model="port.code">
+            <field name="port_code">INBLR5</field>
+            <field name="port_name">Bangalore </field>
+        </record>
+
+        <record id="port_code_INBLR6" model="port.code">
+            <field name="port_code">INBLR6</field>
+            <field name="port_name">Bangalore</field>
+        </record>
+
+        <record id="port_code_INBLTB" model="port.code">
+            <field name="port_code">INBLTB</field>
+            <field name="port_name">Balet</field>
+        </record>
+
+        <record id="port_code_INBLV6" model="port.code">
+            <field name="port_code">INBLV6</field>
+            <field name="port_name">VTV/SEZ/BANGALORE</field>
+        </record>
+
+        <record id="port_code_INBMA6" model="port.code">
+            <field name="port_code">INBMA6</field>
+            <field name="port_name">APIIC PRAKASHAM</field>
+        </record>
+
+        <record id="port_code_INBMR2" model="port.code">
+            <field name="port_code">INBMR2</field>
+            <field name="port_name">Barmer Railway Stati</field>
+        </record>
+
+        <record id="port_code_INBNC6" model="port.code">
+            <field name="port_code">INBNC6</field>
+            <field name="port_name">KBITS SEZ BANGALORE</field>
+        </record>
+
+        <record id="port_code_INBND1" model="port.code">
+            <field name="port_code">INBND1</field>
+            <field name="port_name">Bandra</field>
+        </record>
+
+        <record id="port_code_INBNG6" model="port.code">
+            <field name="port_code">INBNG6</field>
+            <field name="port_name">MAHAGAON ICD, THANE</field>
+        </record>
+
+        <record id="port_code_INBNK6" model="port.code">
+            <field name="port_code">INBNK6</field>
+            <field name="port_name">KOLKATA IT PARK</field>
+        </record>
+
+        <record id="port_code_INBNP1" model="port.code">
+            <field name="port_code">INBNP1</field>
+            <field name="port_name">Bheemunipatnam</field>
+        </record>
+
+        <record id="port_code_INBNRB" model="port.code">
+            <field name="port_code">INBNRB</field>
+            <field name="port_name">Bhimnagar</field>
+        </record>
+
+        <record id="port_code_INBNT6" model="port.code">
+            <field name="port_code">INBNT6</field>
+            <field name="port_name">TCS</field>
+        </record>
+
+        <record id="port_code_INBNW6" model="port.code">
+            <field name="port_code">INBNW6</field>
+            <field name="port_name">WIPRO SEZ</field>
+        </record>
+
+        <record id="port_code_INBNX6" model="port.code">
+            <field name="port_code">INBNX6</field>
+            <field name="port_name">CANDOR ONE HTSPL,SEZ</field>
+        </record>
+
+        <record id="port_code_INBNYB" model="port.code">
+            <field name="port_code">INBNYB</field>
+            <field name="port_name">Berhni</field>
+        </record>
+
+        <record id="port_code_INBOK6" model="port.code">
+            <field name="port_code">INBOK6</field>
+            <field name="port_name">BORKHEDI ICD NAGPUR</field>
+        </record>
+
+        <record id="port_code_INBOLB" model="port.code">
+            <field name="port_code">INBOLB</field>
+            <field name="port_name">Bolanganj</field>
+        </record>
+
+        <record id="port_code_INBOM1" model="port.code">
+            <field name="port_code">INBOM1</field>
+            <field name="port_name">Mumbai (Ex Bombay)</field>
+        </record>
+
+        <record id="port_code_INBOM4" model="port.code">
+            <field name="port_code">INBOM4</field>
+            <field name="port_name">Mumbai (Ex Bombay)</field>
+        </record>
+
+        <record id="port_code_INBOM5" model="port.code">
+            <field name="port_code">INBOM5</field>
+            <field name="port_name">Mumbai (Ex Bombay)</field>
+        </record>
+
+        <record id="port_code_INBOM6" model="port.code">
+            <field name="port_code">INBOM6</field>
+            <field name="port_name">Mumbai(EPZ/SEZ)</field>
+        </record>
+
+        <record id="port_code_INBPL5" model="port.code">
+            <field name="port_code">INBPL5</field>
+            <field name="port_name">BHOPAL FPO</field>
+        </record>
+
+        <record id="port_code_INBPS5" model="port.code">
+            <field name="port_code">INBPS5</field>
+            <field name="port_name">APSO MUMBAI</field>
+        </record>
+
+        <record id="port_code_INBRAB" model="port.code">
+            <field name="port_code">INBRAB</field>
+            <field name="port_name">Barsora</field>
+        </record>
+
+        <record id="port_code_INBRC6" model="port.code">
+            <field name="port_code">INBRC6</field>
+            <field name="port_name">Baroda</field>
+        </record>
+
+        <record id="port_code_INBRH1" model="port.code">
+            <field name="port_code">INBRH1</field>
+            <field name="port_name">Broach</field>
+        </record>
+
+        <record id="port_code_INBRI6" model="port.code">
+            <field name="port_code">INBRI6</field>
+            <field name="port_name">RNBIPL SEZ BIKANER</field>
+        </record>
+
+        <record id="port_code_INBRL6" model="port.code">
+            <field name="port_code">INBRL6</field>
+            <field name="port_name">L &amp; T/SEZ/VADODARA</field>
+        </record>
+
+        <record id="port_code_INBRM1" model="port.code">
+            <field name="port_code">INBRM1</field>
+            <field name="port_name">Borlai ¿ Mandla</field>
+        </record>
+
+        <record id="port_code_INBRS6" model="port.code">
+            <field name="port_code">INBRS6</field>
+            <field name="port_name">S E &amp; C/SEZ/WAGHODIA</field>
+        </record>
+
+        <record id="port_code_INBRY1" model="port.code">
+            <field name="port_code">INBRY1</field>
+            <field name="port_name">Borya</field>
+        </record>
+
+        <record id="port_code_INBSAB" model="port.code">
+            <field name="port_code">INBSAB</field>
+            <field name="port_name">Banbasa</field>
+        </record>
+
+        <record id="port_code_INBSB6" model="port.code">
+            <field name="port_code">INBSB6</field>
+            <field name="port_name">Varanasi</field>
+        </record>
+
+        <record id="port_code_INBSL6" model="port.code">
+            <field name="port_code">INBSL6</field>
+            <field name="port_name">Bhusaval ICD </field>
+        </record>
+
+        <record id="port_code_INBSN1" model="port.code">
+            <field name="port_code">INBSN1</field>
+            <field name="port_name">Bassein</field>
+        </record>
+
+        <record id="port_code_INBSR1" model="port.code">
+            <field name="port_code">INBSR1</field>
+            <field name="port_name">Bulsar</field>
+        </record>
+
+        <record id="port_code_INBSW6" model="port.code">
+            <field name="port_code">INBSW6</field>
+            <field name="port_name">AFS KAPASHERA</field>
+        </record>
+
+        <record id="port_code_INBTK1" model="port.code">
+            <field name="port_code">INBTK1</field>
+            <field name="port_name">Bhatkal</field>
+        </record>
+
+        <record id="port_code_INBTMB" model="port.code">
+            <field name="port_code">INBTMB</field>
+            <field name="port_name">Bhithamore(Sursnad)</field>
+        </record>
+
+        <record id="port_code_INBTR1" model="port.code">
+            <field name="port_code">INBTR1</field>
+            <field name="port_name">Bitra Island</field>
+        </record>
+
+        <record id="port_code_INBUD1" model="port.code">
+            <field name="port_code">INBUD1</field>
+            <field name="port_name">Budge-Budge</field>
+        </record>
+
+        <record id="port_code_INBUL6" model="port.code">
+            <field name="port_code">INBUL6</field>
+            <field name="port_name">AN FTWZ BULANDSHAHR</field>
+        </record>
+
+        <record id="port_code_INBUP4" model="port.code">
+            <field name="port_code">INBUP4</field>
+            <field name="port_name">Bhatinda</field>
+        </record>
+
+        <record id="port_code_INBUP6" model="port.code">
+            <field name="port_code">INBUP6</field>
+            <field name="port_name">Bhatinda</field>
+        </record>
+
+        <record id="port_code_INBVC6" model="port.code">
+            <field name="port_code">INBVC6</field>
+            <field name="port_name">CONCR-ICD/BALLABGARH</field>
+        </record>
+        <record id="port_code_INBWD6" model="port.code">
+            <field name="port_code">INBWD6</field>
+            <field name="port_name">Bhiwadi</field>
+        </record>
+
+        <record id="port_code_INBWN1" model="port.code">
+            <field name="port_code">INBWN1</field>
+            <field name="port_name">Bhiwandi</field>
+        </record>
+
+        <record id="port_code_INBXR6" model="port.code">
+            <field name="port_code">INBXR6</field>
+            <field name="port_name">DLF LTD., SEZ</field>
+        </record>
+
+        <record id="port_code_INBYT1" model="port.code">
+            <field name="port_code">INBYT1</field>
+            <field name="port_name">Beyt</field>
+        </record>
+
+        <record id="port_code_INCAG6" model="port.code">
+            <field name="port_code">INCAG6</field>
+            <field name="port_name">TATA STEEL SEZGANJAM</field>
+        </record>
+
+        <record id="port_code_INCAM1" model="port.code">
+            <field name="port_code">INCAM1</field>
+            <field name="port_name">Cambay</field>
+        </record>
+
+        <record id="port_code_INCAP1" model="port.code">
+            <field name="port_code">INCAP1</field>
+            <field name="port_name">Calingapatam</field>
+        </record>
+
+        <record id="port_code_INCAR1" model="port.code">
+            <field name="port_code">INCAR1</field>
+            <field name="port_name">Carijam</field>
+        </record>
+
+        <record id="port_code_INCAS6" model="port.code">
+            <field name="port_code">INCAS6</field>
+            <field name="port_name">SAPL SEZ/ GANJAM</field>
+        </record>
+
+        <record id="port_code_INCBC6" model="port.code">
+            <field name="port_code">INCBC6</field>
+            <field name="port_name">CHIPL SEZ/ COIMBATOR</field>
+        </record>
+
+        <record id="port_code_INCBD4" model="port.code">
+            <field name="port_code">INCBD4</field>
+            <field name="port_name">Car Nicobar</field>
+        </record>
+
+        <record id="port_code_INCBDB" model="port.code">
+            <field name="port_code">INCBDB</field>
+            <field name="port_name">Changrabandh</field>
+        </record>
+
+        <record id="port_code_INCBE6" model="port.code">
+            <field name="port_code">INCBE6</field>
+            <field name="port_name">COIMBATORE</field>
+        </record>
+
+        <record id="port_code_INCBL1" model="port.code">
+            <field name="port_code">INCBL1</field>
+            <field name="port_name">Chandbali</field>
+        </record>
+
+        <record id="port_code_INCBS6" model="port.code">
+            <field name="port_code">INCBS6</field>
+            <field name="port_name">SE&amp;C COIMBATORE</field>
+        </record>
+
+        <record id="port_code_INCCH6" model="port.code">
+            <field name="port_code">INCCH6</field>
+            <field name="port_name">Chinchwad ICD </field>
+        </record>
+
+        <record id="port_code_INCCI6" model="port.code">
+            <field name="port_code">INCCI6</field>
+            <field name="port_name">WIPRO SEZ HINJEWADI</field>
+        </record>
+
+        <record id="port_code_INCCJ1" model="port.code">
+            <field name="port_code">INCCJ1</field>
+            <field name="port_name">Kozhikode (ex Calicu</field>
+        </record>
+
+        <record id="port_code_INCCJ4" model="port.code">
+            <field name="port_code">INCCJ4</field>
+            <field name="port_name">Kozhikode (ex Calicu</field>
+        </record>
+
+        <record id="port_code_INCCP6" model="port.code">
+            <field name="port_code">INCCP6</field>
+            <field name="port_name">PEPPL SEZ, CHINCHWAD</field>
+        </record>
+
+        <record id="port_code_INCCQ6" model="port.code">
+            <field name="port_code">INCCQ6</field>
+            <field name="port_name">M/S QB PARK LTD.</field>
+        </record>
+
+        <record id="port_code_INCCT6" model="port.code">
+            <field name="port_code">INCCT6</field>
+            <field name="port_name">KINFRAFP SEZ</field>
+        </record>
+
+        <record id="port_code_INCCU1" model="port.code">
+            <field name="port_code">INCCU1</field>
+            <field name="port_name">Calcutta</field>
+        </record>
+
+        <record id="port_code_INCCU4" model="port.code">
+            <field name="port_code">INCCU4</field>
+            <field name="port_name">Calcutta</field>
+        </record>
+
+        <record id="port_code_INCCU5" model="port.code">
+            <field name="port_code">INCCU5</field>
+            <field name="port_name">Calcutta</field>
+        </record>
+
+        <record id="port_code_INCCW6" model="port.code">
+            <field name="port_code">INCCW6</field>
+            <field name="port_name">WIPRO LTD.</field>
+        </record>
+
+        <record id="port_code_INCDC6" model="port.code">
+            <field name="port_code">INCDC6</field>
+            <field name="port_name">RGT PARK (PHASE-II)</field>
+        </record>
+
+        <record id="port_code_INCDD6" model="port.code">
+            <field name="port_code">INCDD6</field>
+            <field name="port_name">RGT PARK (PHASE-I)</field>
+        </record>
+
+        <record id="port_code_INCDL1" model="port.code">
+            <field name="port_code">INCDL1</field>
+            <field name="port_name">Cuddalore</field>
+        </record>
+
+        <record id="port_code_INCDP1" model="port.code">
+            <field name="port_code">INCDP1</field>
+            <field name="port_name">Coondapur (Ganguly)</field>
+        </record>
+
+        <record id="port_code_INCDP4" model="port.code">
+            <field name="port_code">INCDP4</field>
+            <field name="port_name">Cuddapah</field>
+        </record>
+
+        <record id="port_code_INCDP6" model="port.code">
+            <field name="port_code">INCDP6</field>
+            <field name="port_name">M/S APIIC LTD SEZ.</field>
+        </record>
+
+        <record id="port_code_INCDQ6" model="port.code">
+            <field name="port_code">INCDQ6</field>
+            <field name="port_name">QUARKCITY/SEZ/MOHALI</field>
+        </record>
+
+        <record id="port_code_INCDR6" model="port.code">
+            <field name="port_code">INCDR6</field>
+            <field name="port_name">SUN PHARMACEUTICALS</field>
+        </record>
+
+        <record id="port_code_INCEC6" model="port.code">
+            <field name="port_code">INCEC6</field>
+            <field name="port_name">L&amp;T AE IT SEZ PVT.</field>
+        </record>
+
+        <record id="port_code_INCGA6" model="port.code">
+            <field name="port_code">INCGA6</field>
+            <field name="port_name">MWCD APARELS CHENGPA</field>
+        </record>
+
+        <record id="port_code_INCGE6" model="port.code">
+            <field name="port_code">INCGE6</field>
+            <field name="port_name">ETA TECH. PVT. LTD.</field>
+        </record>
+
+        <record id="port_code_INCGI6" model="port.code">
+            <field name="port_code">INCGI6</field>
+            <field name="port_name">MWCD SEZ CHENGALPATU</field>
+        </record>
+
+        <record id="port_code_INCGL6" model="port.code">
+            <field name="port_code">INCGL6</field>
+            <field name="port_name">MWCD AUTO ANCILARIES</field>
+        </record>
+
+        <record id="port_code_INCHE6" model="port.code">
+            <field name="port_code">INCHE6</field>
+            <field name="port_name">Tiruppur-Chettipalay</field>
+        </record>
+
+        <record id="port_code_INCHJ6" model="port.code">
+            <field name="port_code">INCHJ6</field>
+            <field name="port_name">ICD WARDHA</field>
+        </record>
+
+        <record id="port_code_INCHL1" model="port.code">
+            <field name="port_code">INCHL1</field>
+            <field name="port_name">Colachel</field>
+        </record>
+
+        <record id="port_code_INCHMB" model="port.code">
+            <field name="port_code">INCHMB</field>
+            <field name="port_name">Chamurchi</field>
+        </record>
+
+        <record id="port_code_INCHN6" model="port.code">
+            <field name="port_code">INCHN6</field>
+            <field name="port_name">Vadodara Chhani CFS</field>
+        </record>
+
+        <record id="port_code_INCHPB" model="port.code">
+            <field name="port_code">INCHPB</field>
+            <field name="port_name">Champai</field>
+        </record>
+
+        <record id="port_code_INCHR1" model="port.code">
+            <field name="port_code">INCHR1</field>
+            <field name="port_name">Chapora</field>
+        </record>
+        <record id="port_code_INCJA6" model="port.code">
+            <field name="port_code">INCJA6</field>
+            <field name="port_name">L&amp;T AE IT SEZ</field>
+        </record>
+
+        <record id="port_code_INCJB4" model="port.code">
+            <field name="port_code">INCJB4</field>
+            <field name="port_name">Coimbatore</field>
+        </record>
+
+        <record id="port_code_INCJB6" model="port.code">
+            <field name="port_code">INCJB6</field>
+            <field name="port_name">Coimbatore</field>
+        </record>
+
+        <record id="port_code_INCJC6" model="port.code">
+            <field name="port_code">INCJC6</field>
+            <field name="port_name">NCTL (ENGG.) SEZ/ KA</field>
+        </record>
+
+        <record id="port_code_INCJD6" model="port.code">
+            <field name="port_code">INCJD6</field>
+            <field name="port_name">DLF INFOCITY DEV.</field>
+        </record>
+
+        <record id="port_code_INCJE6" model="port.code">
+            <field name="port_code">INCJE6</field>
+            <field name="port_name">ECTN KANCHEEPURAM</field>
+        </record>
+
+        <record id="port_code_INCJF6" model="port.code">
+            <field name="port_code">INCJF6</field>
+            <field name="port_name">FTIL SRIPERUMBUDUR</field>
+        </record>
+
+        <record id="port_code_INCJH6" model="port.code">
+            <field name="port_code">INCJH6</field>
+            <field name="port_name">ICD WARDHA</field>
+        </record>
+
+        <record id="port_code_INCJI6" model="port.code">
+            <field name="port_code">INCJI6</field>
+            <field name="port_name">ETL IS LTD.</field>
+        </record>
+
+        <record id="port_code_INCJJ6" model="port.code">
+            <field name="port_code">INCJJ6</field>
+            <field name="port_name">J M FTZ/SEZ/MANNUR</field>
+        </record>
+
+        <record id="port_code_INCJN6" model="port.code">
+            <field name="port_code">INCJN6</field>
+            <field name="port_name">NIPL SEZ SRIPERUMBUD</field>
+        </record>
+
+        <record id="port_code_INCJO6" model="port.code">
+            <field name="port_code">INCJO6</field>
+            <field name="port_name">SIPCOT ORAGADAM SRIP</field>
+        </record>
+
+        <record id="port_code_INCJS6" model="port.code">
+            <field name="port_code">INCJS6</field>
+            <field name="port_name">SIPCOT SRIPERUMBUDUR</field>
+        </record>
+
+        <record id="port_code_INCLK6" model="port.code">
+            <field name="port_code">INCLK6</field>
+            <field name="port_name">KSITIL/SEZ/KOZHIKODE</field>
+        </record>
+
+        <record id="port_code_INCLU6" model="port.code">
+            <field name="port_code">INCLU6</field>
+            <field name="port_name">ULCCS/SEZ/KOZHIKODE</field>
+        </record>
+
+        <record id="port_code_INCLX6" model="port.code">
+            <field name="port_code">INCLX6</field>
+            <field name="port_name">Chirala</field>
+        </record>
+
+        <record id="port_code_INCMB1" model="port.code">
+            <field name="port_code">INCMB1</field>
+            <field name="port_name">Cambay</field>
+        </record>
+
+        <record id="port_code_INCML6" model="port.code">
+            <field name="port_code">INCML6</field>
+            <field name="port_name">KATHUWAS ICD ALWAR</field>
+        </record>
+
+        <record id="port_code_INCNB1" model="port.code">
+            <field name="port_code">INCNB1</field>
+            <field name="port_name">Car-Nicobar</field>
+        </record>
+
+        <record id="port_code_INCNC6" model="port.code">
+            <field name="port_code">INCNC6</field>
+            <field name="port_name">NCT PVT. LTD. SEZ</field>
+        </record>
+
+        <record id="port_code_INCNN1" model="port.code">
+            <field name="port_code">INCNN1</field>
+            <field name="port_name">Cannanore</field>
+        </record>
+
+        <record id="port_code_INCOA6" model="port.code">
+            <field name="port_code">INCOA6</field>
+            <field name="port_name">KAKINADA SEZ KAKINAD</field>
+        </record>
+        <record id="port_code_INCOH4" model="port.code">
+            <field name="port_code">INCOH4</field>
+            <field name="port_name">Cooch Behar</field>
+        </record>
+
+        <record id="port_code_INCOK1" model="port.code">
+            <field name="port_code">INCOK1</field>
+            <field name="port_name">Cochin</field>
+        </record>
+
+        <record id="port_code_INCOK4" model="port.code">
+            <field name="port_code">INCOK4</field>
+            <field name="port_name">Cochin</field>
+        </record>
+
+        <record id="port_code_INCOK6" model="port.code">
+            <field name="port_code">INCOK6</field>
+            <field name="port_name">Cochin(EPZ/SEZ)</field>
+        </record>
+
+        <record id="port_code_INCOL1" model="port.code">
+            <field name="port_code">INCOL1</field>
+            <field name="port_name">Colochel</field>
+        </record>
+
+        <record id="port_code_INCOO1" model="port.code">
+            <field name="port_code">INCOO1</field>
+            <field name="port_name">Coondapur (Ganguly)</field>
+        </record>
+
+        <record id="port_code_INCOP6" model="port.code">
+            <field name="port_code">INCOP6</field>
+            <field name="port_name">PARRY SEZ KAKINADA</field>
+        </record>
+
+        <record id="port_code_INCPC6" model="port.code">
+            <field name="port_code">INCPC6</field>
+            <field name="port_name">Kanpur Chakeri  </field>
+        </record>
+
+        <record id="port_code_INCPL6" model="port.code">
+            <field name="port_code">INCPL6</field>
+            <field name="port_name">Dadri CGML</field>
+        </record>
+
+        <record id="port_code_INCPR6" model="port.code">
+            <field name="port_code">INCPR6</field>
+            <field name="port_name">ICD CHAWAPAYAL</field>
+        </record>
+
+        <record id="port_code_INCRL6" model="port.code">
+            <field name="port_code">INCRL6</field>
+            <field name="port_name">RGA SEZ CHIKKANKANNE</field>
+        </record>
+
+        <record id="port_code_INCRN1" model="port.code">
+            <field name="port_code">INCRN1</field>
+            <field name="port_name">Cornwallis</field>
+        </record>
+
+        <record id="port_code_INCRW6" model="port.code">
+            <field name="port_code">INCRW6</field>
+            <field name="port_name">WIPRO/SEZ/BANGALORE</field>
+        </record>
+
+        <record id="port_code_INCRXB" model="port.code">
+            <field name="port_code">INCRXB</field>
+            <field name="port_name">LOKSAN LCS</field>
+        </record>
+
+        <record id="port_code_INCSP6" model="port.code">
+            <field name="port_code">INCSP6</field>
+            <field name="port_name">SI PVT. LTD.</field>
+        </record>
+
+        <record id="port_code_INCSV6" model="port.code">
+            <field name="port_code">INCSV6</field>
+            <field name="port_name">SPVL SEZ COIMBATORE</field>
+        </record>
+
+        <record id="port_code_INCTI1" model="port.code">
+            <field name="port_code">INCTI1</field>
+            <field name="port_name">Chetlat Island</field>
+        </record>
+
+        <record id="port_code_INCUM1" model="port.code">
+            <field name="port_code">INCUM1</field>
+            <field name="port_name">Cutch Mandvi</field>
+        </record>
+
+        <record id="port_code_INDAE4" model="port.code">
+            <field name="port_code">INDAE4</field>
+            <field name="port_name">Daparizo</field>
+        </record>
+
+        <record id="port_code_INDAH1" model="port.code">
+            <field name="port_code">INDAH1</field>
+            <field name="port_name">Dahej</field>
+        </record>
+        <record id="port_code_INDAI4" model="port.code">
+            <field name="port_code">INDAI4</field>
+            <field name="port_name">Darjeeling</field>
+        </record>
+
+        <record id="port_code_INDAM1" model="port.code">
+            <field name="port_code">INDAM1</field>
+            <field name="port_name">Daman</field>
+        </record>
+
+        <record id="port_code_INDAM4" model="port.code">
+            <field name="port_code">INDAM4</field>
+            <field name="port_name">Daman</field>
+        </record>
+
+        <record id="port_code_INDAR6" model="port.code">
+            <field name="port_code">INDAR6</field>
+            <field name="port_name">ARTHA SEZ GR. NOIDA</field>
+        </record>
+
+        <record id="port_code_INDBD4" model="port.code">
+            <field name="port_code">INDBD4</field>
+            <field name="port_name">Dhanbad</field>
+        </record>
+
+        <record id="port_code_INDBS6" model="port.code">
+            <field name="port_code">INDBS6</field>
+            <field name="port_name">SANTA-SEZ/ViII-MUPPI</field>
+        </record>
+
+        <record id="port_code_INDDL6" model="port.code">
+            <field name="port_code">INDDL6</field>
+            <field name="port_name">PSWC ICD DHANDARIKAL</field>
+        </record>
+
+        <record id="port_code_INDEA6" model="port.code">
+            <field name="port_code">INDEA6</field>
+            <field name="port_name">AS PVT. LTD.</field>
+        </record>
+
+        <record id="port_code_INDED4" model="port.code">
+            <field name="port_code">INDED4</field>
+            <field name="port_name">Dehra Dun</field>
+        </record>
+
+        <record id="port_code_INDEF6" model="port.code">
+            <field name="port_code">INDEF6</field>
+            <field name="port_name">INFOSYS SEZ DADRI</field>
+        </record>
+
+        <record id="port_code_INDEG1" model="port.code">
+            <field name="port_code">INDEG1</field>
+            <field name="port_name">Deogad</field>
+        </record>
+
+        <record id="port_code_INDEH6" model="port.code">
+            <field name="port_code">INDEH6</field>
+            <field name="port_name">HCL TECH. LTD. DEV.</field>
+        </record>
+
+        <record id="port_code_INDEI6" model="port.code">
+            <field name="port_code">INDEI6</field>
+            <field name="port_name">IVR SEZ NOIDA</field>
+        </record>
+
+        <record id="port_code_INDEJ6" model="port.code">
+            <field name="port_code">INDEJ6</field>
+            <field name="port_name">JUBILANT SEZ NOIDA</field>
+        </record>
+
+        <record id="port_code_INDEL4" model="port.code">
+            <field name="port_code">INDEL4</field>
+            <field name="port_name">Delhi</field>
+        </record>
+
+        <record id="port_code_INDEL5" model="port.code">
+            <field name="port_code">INDEL5</field>
+            <field name="port_name">Delhi</field>
+        </record>
+
+        <record id="port_code_INDEM6" model="port.code">
+            <field name="port_code">INDEM6</field>
+            <field name="port_name">MOSERBAER/SEZ/NOIDA</field>
+        </record>
+
+        <record id="port_code_INDEN6" model="port.code">
+            <field name="port_code">INDEN6</field>
+            <field name="port_name">M/S NIIT TECH. LTD.</field>
+        </record>
+
+        <record id="port_code_INDEP4" model="port.code">
+            <field name="port_code">INDEP4</field>
+            <field name="port_name">Deparizo</field>
+        </record>
+
+        <record id="port_code_INDER6" model="port.code">
+            <field name="port_code">INDER6</field>
+            <field name="port_name">Dadri</field>
+        </record>
+
+        <record id="port_code_INDES6" model="port.code">
+            <field name="port_code">INDES6</field>
+            <field name="port_name">M/S SEAVIEW DEV. LTD</field>
+        </record>
+
+        <record id="port_code_INDET6" model="port.code">
+            <field name="port_code">INDET6</field>
+            <field name="port_name">UNITECH HITECH NOIDA</field>
+        </record>
+
+        <record id="port_code_INDEU6" model="port.code">
+            <field name="port_code">INDEU6</field>
+            <field name="port_name">UNITECHINFRA NOIDA</field>
+        </record>
+
+        <record id="port_code_INDEW6" model="port.code">
+            <field name="port_code">INDEW6</field>
+            <field name="port_name">M/S WIPRO LTD.</field>
+        </record>
+
+        <record id="port_code_INDGI6" model="port.code">
+            <field name="port_code">INDGI6</field>
+            <field name="port_name">GALLANT SEZ NOIDA</field>
+        </record>
+
+        <record id="port_code_INDGT6" model="port.code">
+            <field name="port_code">INDGT6</field>
+            <field name="port_name">GOLDEN SEZ NOIDA</field>
+        </record>
+
+        <record id="port_code_INDHA6" model="port.code">
+            <field name="port_code">INDHA6</field>
+            <field name="port_name">Indore-Dhannad</field>
+        </record>
+
+        <record id="port_code_INDHBB" model="port.code">
+            <field name="port_code">INDHBB</field>
+            <field name="port_name">Dhubri Steamerghat</field>
+        </record>
+
+        <record id="port_code_INDHLB" model="port.code">
+            <field name="port_code">INDHLB</field>
+            <field name="port_name">Dhalaighat</field>
+        </record>
+
+        <record id="port_code_INDHM4" model="port.code">
+            <field name="port_code">INDHM4</field>
+            <field name="port_name">Dharamsala</field>
+        </record>
+
+        <record id="port_code_INDHN1" model="port.code">
+            <field name="port_code">INDHN1</field>
+            <field name="port_name">Dahanu</field>
+        </record>
+
+        <record id="port_code_INDHP1" model="port.code">
+            <field name="port_code">INDHP1</field>
+            <field name="port_name">Dabhol Port</field>
+        </record>
+
+        <record id="port_code_INDHR1" model="port.code">
+            <field name="port_code">INDHR1</field>
+            <field name="port_name">Dholera</field>
+        </record>
+
+        <record id="port_code_INDHU1" model="port.code">
+            <field name="port_code">INDHU1</field>
+            <field name="port_name">Dahanu</field>
+        </record>
+
+        <record id="port_code_INDIB4" model="port.code">
+            <field name="port_code">INDIB4</field>
+            <field name="port_name">Dibrugarh</field>
+        </record>
+
+        <record id="port_code_INDID6" model="port.code">
+            <field name="port_code">INDID6</field>
+            <field name="port_name">SEZ, MIDC, NANDED</field>
+        </record>
+
+        <record id="port_code_INDIG1" model="port.code">
+            <field name="port_code">INDIG1</field>
+            <field name="port_name">Dighi Port </field>
+        </record>
+
+        <record id="port_code_INDIG6" model="port.code">
+            <field name="port_code">INDIG6</field>
+            <field name="port_name">Dighi (Pune)</field>
+        </record>
+
+        <record id="port_code_INDIT6" model="port.code">
+            <field name="port_code">INDIT6</field>
+            <field name="port_name">ANSAL IT/SEZ/NOIDA</field>
+        </record>
+
+        <record id="port_code_INDIU1" model="port.code">
+            <field name="port_code">INDIU1</field>
+            <field name="port_name">Diu</field>
+        </record>
+        <record id="port_code_INDIU4" model="port.code">
+            <field name="port_code">INDIU4</field>
+            <field name="port_name">Diu</field>
+        </record>
+
+        <record id="port_code_INDIV1" model="port.code">
+            <field name="port_code">INDIV1</field>
+            <field name="port_name">Div</field>
+        </record>
+
+        <record id="port_code_INDLAB" model="port.code">
+            <field name="port_code">INDLAB</field>
+            <field name="port_name">Dharchula</field>
+        </record>
+
+        <record id="port_code_INDLH6" model="port.code">
+            <field name="port_code">INDLH6</field>
+            <field name="port_name">APLLP SEZ BENGALURU</field>
+        </record>
+
+        <record id="port_code_INDLI2" model="port.code">
+            <field name="port_code">INDLI2</field>
+            <field name="port_name">Delhi Railway Statio</field>
+        </record>
+
+        <record id="port_code_INDLOB" model="port.code">
+            <field name="port_code">INDLOB</field>
+            <field name="port_name">BIRPARA LCS</field>
+        </record>
+
+        <record id="port_code_INDLUB" model="port.code">
+            <field name="port_code">INDLUB</field>
+            <field name="port_name">Dalu</field>
+        </record>
+
+        <record id="port_code_INDMA1" model="port.code">
+            <field name="port_code">INDMA1</field>
+            <field name="port_name">DHAMRA</field>
+        </record>
+
+        <record id="port_code_INDMRB" model="port.code">
+            <field name="port_code">INDMRB</field>
+            <field name="port_name">Demagir</field>
+        </record>
+
+        <record id="port_code_INDMT1" model="port.code">
+            <field name="port_code">INDMT1</field>
+            <field name="port_name">Dharamtar</field>
+        </record>
+
+        <record id="port_code_INDMU4" model="port.code">
+            <field name="port_code">INDMU4</field>
+            <field name="port_name">Dimapur</field>
+        </record>
+
+        <record id="port_code_INDPC4" model="port.code">
+            <field name="port_code">INDPC4</field>
+            <field name="port_name">DPC BKC Mumbai</field>
+        </record>
+
+        <record id="port_code_INDPR6" model="port.code">
+            <field name="port_code">INDPR6</field>
+            <field name="port_name">DAPPER    </field>
+        </record>
+
+        <record id="port_code_INDRC6" model="port.code">
+            <field name="port_code">INDRC6</field>
+            <field name="port_name">RCIPL SEZ NOIDA</field>
+        </record>
+
+        <record id="port_code_INDRGB" model="port.code">
+            <field name="port_code">INDRGB</field>
+            <field name="port_name">Darranga</field>
+        </record>
+
+        <record id="port_code_INDRK1" model="port.code">
+            <field name="port_code">INDRK1</field>
+            <field name="port_name">Dwarka (Rupen)</field>
+        </record>
+
+        <record id="port_code_INDRL1" model="port.code">
+            <field name="port_code">INDRL1</field>
+            <field name="port_name">Dabolim</field>
+        </record>
+
+        <record id="port_code_INDRU6" model="port.code">
+            <field name="port_code">INDRU6</field>
+            <field name="port_name">Belgaum Desur</field>
+        </record>
+
+        <record id="port_code_INDSK1" model="port.code">
+            <field name="port_code">INDSK1</field>
+            <field name="port_name">Dhanu-shkodi</field>
+        </record>
+
+        <record id="port_code_INDSM6" model="port.code">
+            <field name="port_code">INDSM6</field>
+            <field name="port_name">SMRTPL SEZ NOIDA</field>
+        </record>
+
+        <record id="port_code_INDTW1" model="port.code">
+            <field name="port_code">INDTW1</field>
+            <field name="port_name">Dantiwara</field>
+        </record>
+
+        <record id="port_code_INDUR6" model="port.code">
+            <field name="port_code">INDUR6</field>
+            <field name="port_name">ICD Durgapur</field>
+        </record>
+
+        <record id="port_code_INDWA1" model="port.code">
+            <field name="port_code">INDWA1</field>
+            <field name="port_name">Dwarka</field>
+        </record>
+
+        <record id="port_code_INDWKB" model="port.code">
+            <field name="port_code">INDWKB</field>
+            <field name="port_name">Dawki</field>
+        </record>
+
+        <record id="port_code_INBWD6" model="port.code">
+            <field name="port_code">INBWD6</field>
+            <field name="port_name">Bhiwadi</field>
+        </record>
+
+        <record id="port_code_INBWN1" model="port.code">
+            <field name="port_code">INBWN1</field>
+            <field name="port_name">Bhiwandi</field>
+        </record>
+
+        <record id="port_code_INBXR6" model="port.code">
+            <field name="port_code">INBXR6</field>
+            <field name="port_name">DLF LTD., SEZ</field>
+        </record>
+
+        <record id="port_code_INBYT1" model="port.code">
+            <field name="port_code">INBYT1</field>
+            <field name="port_name">Beyt</field>
+        </record>
+
+        <record id="port_code_INDWN6" model="port.code">
+            <field name="port_code">INDWN6</field>
+            <field name="port_name">ICD SAMALKHA PANIPAT</field>
+        </record>
+
+        <record id="port_code_INDWR6" model="port.code">
+            <field name="port_code">INDWR6</field>
+            <field name="port_name">INFOSYS SEZ HUBLI</field>
+        </record>
+
+        <record id="port_code_INENR1" model="port.code">
+            <field name="port_code">INENR1</field>
+            <field name="port_name">KAMARAJAR PORT LTD</field>
+        </record>
+
+        <record id="port_code_INERP6" model="port.code">
+            <field name="port_code">INERP6</field>
+            <field name="port_name">PUTHUVYPEEN SEZ</field>
+        </record>
+
+        <record id="port_code_INERV6" model="port.code">
+            <field name="port_code">INERV6</field>
+            <field name="port_name">VALLARPADOM SEZ</field>
+        </record>
+
+        <record id="port_code_INESH1" model="port.code">
+            <field name="port_code">INESH1</field>
+            <field name="port_name">Elphinstone Harbour</field>
+        </record>
+
+        <record id="port_code_INFBD6" model="port.code">
+            <field name="port_code">INFBD6</field>
+            <field name="port_name">ICD Faridabad</field>
+        </record>
+
+        <record id="port_code_INFBE6" model="port.code">
+            <field name="port_code">INFBE6</field>
+            <field name="port_name">ESPIRE SEZ FARIDABAD</field>
+        </record>
+
+        <record id="port_code_INFBM6" model="port.code">
+            <field name="port_code">INFBM6</field>
+            <field name="port_name">METRO SEZ GURGAON</field>
+        </record>
+
+        <record id="port_code_INFBP6" model="port.code">
+            <field name="port_code">INFBP6</field>
+            <field name="port_name">PERPETUAL FARIDABAD</field>
+        </record>
+
+        <record id="port_code_INFBRB" model="port.code">
+            <field name="port_code">INFBRB</field>
+            <field name="port_name">Fulbari LCS </field>
+        </record>
+
+        <record id="port_code_INFBS6" model="port.code">
+            <field name="port_code">INFBS6</field>
+            <field name="port_name">SELECTOSEZ FARIDABAD</field>
+        </record>
+
+        <record id="port_code_INFCH5" model="port.code">
+            <field name="port_code">INFCH5</field>
+            <field name="port_name">FPO(SEA) CHENNAI</field>
+        </record>
+
+        <record id="port_code_INFLT6" model="port.code">
+            <field name="port_code">INFLT6</field>
+            <field name="port_name">Falta(SEZ)</field>
+        </record>
+
+        <record id="port_code_INFMA6" model="port.code">
+            <field name="port_code">INFMA6</field>
+            <field name="port_name">APIICL MEDAK</field>
+        </record>
+
+        <record id="port_code_INFMH6" model="port.code">
+            <field name="port_code">INFMH6</field>
+            <field name="port_name">HGSEZL RANGA REDDY</field>
+        </record>
+
+        <record id="port_code_INFMJ6" model="port.code">
+            <field name="port_code">INFMJ6</field>
+            <field name="port_name">M/S J.T. SEZ, RANGAR</field>
+        </record>
+
+        <record id="port_code_INFMS6" model="port.code">
+            <field name="port_code">INFMS6</field>
+            <field name="port_name">M/S STARGAZE, SEZ</field>
+        </record>
+
+        <record id="port_code_INGAIB" model="port.code">
+            <field name="port_code">INGAIB</field>
+            <field name="port_name">Gauriphanta</field>
+        </record>
+
+        <record id="port_code_INGALB" model="port.code">
+            <field name="port_code">INGALB</field>
+            <field name="port_name">Galgalia</field>
+        </record>
+
+        <record id="port_code_INGAO6" model="port.code">
+            <field name="port_code">INGAO6</field>
+            <field name="port_name">OPGS POWER GUJARAT</field>
+        </record>
+
+        <record id="port_code_INGAS6" model="port.code">
+            <field name="port_code">INGAS6</field>
+            <field name="port_name">ANSAL SEZ GURGAON</field>
+        </record>
+
+        <record id="port_code_INGAU1" model="port.code">
+            <field name="port_code">INGAU1</field>
+            <field name="port_name">Gauhati (Panidi)</field>
+        </record>
+
+        <record id="port_code_INGAU2" model="port.code">
+            <field name="port_code">INGAU2</field>
+            <field name="port_name">Gauhati (Panidi)</field>
+        </record>
+
+        <record id="port_code_INGAU4" model="port.code">
+            <field name="port_code">INGAU4</field>
+            <field name="port_name">Gauhati (Panidi)</field>
+        </record>
+
+        <record id="port_code_INGAU5" model="port.code">
+            <field name="port_code">INGAU5</field>
+            <field name="port_name">FPO GUWAHATI</field>
+        </record>
+
+        <record id="port_code_INGAW2" model="port.code">
+            <field name="port_code">INGAW2</field>
+            <field name="port_name">Guwahati</field>
+        </record>
+
+        <record id="port_code_INGAY4" model="port.code">
+            <field name="port_code">INGAY4</field>
+            <field name="port_name">Gaya</field>
+        </record>
+
+        <record id="port_code_INGDL6" model="port.code">
+            <field name="port_code">INGDL6</field>
+            <field name="port_name">DLF CYBERCITY SEZ,</field>
+        </record>
+
+        <record id="port_code_INGDM6" model="port.code">
+            <field name="port_code">INGDM6</field>
+            <field name="port_name">MF PARK PVT. LTD.</field>
+        </record>
+
+        <record id="port_code_INGDP6" model="port.code">
+            <field name="port_code">INGDP6</field>
+            <field name="port_name">FLLPL SEZ THIRUVALUR</field>
+        </record>
+
+        <record id="port_code_INGED2" model="port.code">
+            <field name="port_code">INGED2</field>
+            <field name="port_name">Gede Railway Station</field>
+        </record>
+
+        <record id="port_code_INGGA1" model="port.code">
+            <field name="port_code">INGGA1</field>
+            <field name="port_name">Gogha</field>
+        </record>
+
+        <record id="port_code_INGGB6" model="port.code">
+            <field name="port_code">INGGB6</field>
+            <field name="port_name">SBPL SEZ GURGAON</field>
+        </record>
+        <record id="port_code_INGGC6" model="port.code">
+            <field name="port_code">INGGC6</field>
+            <field name="port_name">ORIENT SEZ GURGAON</field>
+        </record>
+
+        <record id="port_code_INGGD6" model="port.code">
+            <field name="port_code">INGGD6</field>
+            <field name="port_name">DLF LTD.</field>
+        </record>
+
+        <record id="port_code_INGGE6" model="port.code">
+            <field name="port_code">INGGE6</field>
+            <field name="port_name">AEPL SEZ GURGAON</field>
+        </record>
+
+        <record id="port_code_INGGF6" model="port.code">
+            <field name="port_code">INGGF6</field>
+            <field name="port_name">FRESH SEZ GURGAON</field>
+        </record>
+
+        <record id="port_code_INGGG6" model="port.code">
+            <field name="port_code">INGGG6</field>
+            <field name="port_name">GHI SEZ GURGAON</field>
+        </record>
+
+        <record id="port_code_INGGI6" model="port.code">
+            <field name="port_code">INGGI6</field>
+            <field name="port_name">GIL SEZ, GURGAON</field>
+        </record>
+
+        <record id="port_code_INGGL6" model="port.code">
+            <field name="port_code">INGGL6</field>
+            <field name="port_name">LUXOR SEZ GURGAON</field>
+        </record>
+
+        <record id="port_code_INGGM6" model="port.code">
+            <field name="port_code">INGGM6</field>
+            <field name="port_name">MIPPL SEZ GURGAON</field>
+        </record>
+
+        <record id="port_code_INGGN2" model="port.code">
+            <field name="port_code">INGGN2</field>
+            <field name="port_name">Gurgaon</field>
+        </record>
+
+        <record id="port_code_INGGO6" model="port.code">
+            <field name="port_code">INGGO6</field>
+            <field name="port_name">ORIENTCRAFT SEZ GGN</field>
+        </record>
+
+        <record id="port_code_INGGP6" model="port.code">
+            <field name="port_code">INGGP6</field>
+            <field name="port_name">SUNWISE SEZ GURGAON</field>
+        </record>
+
+        <record id="port_code_INGGS6" model="port.code">
+            <field name="port_code">INGGS6</field>
+            <field name="port_name">SUNCITY SEZ GURGAON</field>
+        </record>
+
+        <record id="port_code_INGGU6" model="port.code">
+            <field name="port_code">INGGU6</field>
+            <field name="port_name">URP LTD.</field>
+        </record>
+
+        <record id="port_code_INGGV1" model="port.code">
+            <field name="port_code">INGGV1</field>
+            <field name="port_name">GANGAVARAM PORT</field>
+        </record>
+
+        <record id="port_code_INGHA1" model="port.code">
+            <field name="port_code">INGHA1</field>
+            <field name="port_name">Ghogha</field>
+        </record>
+
+        <record id="port_code_INGHC6" model="port.code">
+            <field name="port_code">INGHC6</field>
+            <field name="port_name">ASF INSIGNIA  SEZ</field>
+        </record>
+
+        <record id="port_code_INGHPB" model="port.code">
+            <field name="port_code">INGHPB</field>
+            <field name="port_name">Ghasuapara</field>
+        </record>
+
+        <record id="port_code_INGHR6" model="port.code">
+            <field name="port_code">INGHR6</field>
+            <field name="port_name">Garhi Harsaru Gurgao</field>
+        </record>
+
+        <record id="port_code_INGHWB" model="port.code">
+            <field name="port_code">INGHWB</field>
+            <field name="port_name">Gauhati Steamerghat</field>
+        </record>
+
+        <record id="port_code_INGID6" model="port.code">
+            <field name="port_code">INGID6</field>
+            <field name="port_name">MID PLTD SEZ GURGAON</field>
+        </record>
+
+        <record id="port_code_INGIN6" model="port.code">
+            <field name="port_code">INGIN6</field>
+            <field name="port_name">Gandhidham</field>
+        </record>
+        <record id="port_code_INGJIB" model="port.code">
+            <field name="port_code">INGJIB</field>
+            <field name="port_name">Gunji</field>
+        </record>
+        <record id="port_code_INGJXB" model="port.code">
+            <field name="port_code">INGJXB</field>
+            <field name="port_name">Ghojadanga</field>
+        </record>
+        <record id="port_code_INGKJ2" model="port.code">
+            <field name="port_code">INGKJ2</field>
+            <field name="port_name">Golakganj Railway St</field>
+        </record>
+        <record id="port_code_INGKJB" model="port.code">
+            <field name="port_code">INGKJB</field>
+            <field name="port_name">Golakganj LCS</field>
+        </record>
+        <record id="port_code_INGLY6" model="port.code">
+            <field name="port_code">INGLY6</field>
+            <field name="port_name">APIIC MAHABOOBNAGAR</field>
+        </record>
+        <record id="port_code_INGMI6" model="port.code">
+            <field name="port_code">INGMI6</field>
+            <field name="port_name">MID PVT LTD.</field>
+        </record>
+        <record id="port_code_INGNA6" model="port.code">
+            <field name="port_code">INGNA6</field>
+            <field name="port_name">APPL, SEZ</field>
+        </record>
+        <record id="port_code_INGNC6" model="port.code">
+            <field name="port_code">INGNC6</field>
+            <field name="port_name">GIFT SEZ LTD</field>
+        </record>
+        <record id="port_code_INGNG6" model="port.code">
+            <field name="port_code">INGNG6</field>
+            <field name="port_name">GIDC, SEZ</field>
+        </record>
+        <record id="port_code_INGNL6" model="port.code">
+            <field name="port_code">INGNL6</field>
+            <field name="port_name">LOMA ITPARK GHANSOLI</field>
+        </record>
+        <record id="port_code_INGNP6" model="port.code">
+            <field name="port_code">INGNP6</field>
+            <field name="port_name">GPRPL SEZ GURGAON</field>
+        </record>
+        <record id="port_code_INGNR6" model="port.code">
+            <field name="port_code">INGNR6</field>
+            <field name="port_name">LIPL/MARRIPLEMGUNTUR</field>
+        </record>
+        <record id="port_code_INGNT6" model="port.code">
+            <field name="port_code">INGNT6</field>
+            <field name="port_name">TCSL, SEZ</field>
+        </record>
+        <record id="port_code_INGOI4" model="port.code">
+            <field name="port_code">INGOI4</field>
+            <field name="port_name">Goa</field>
+        </record>
+        <record id="port_code_INGOP4" model="port.code">
+            <field name="port_code">INGOP4</field>
+            <field name="port_name">Gorakhpur</field>
+        </record>
+        <record id="port_code_INGPB6" model="port.code">
+            <field name="port_code">INGPB6</field>
+            <field name="port_name">PROGRESSIVE GURGAON</field>
+        </record>
+        <record id="port_code_INGPR1" model="port.code">
+            <field name="port_code">INGPR1</field>
+            <field name="port_name">Gopalpur</field>
+        </record>
+        <record id="port_code_INGRD6" model="port.code">
+            <field name="port_code">INGRD6</field>
+            <field name="port_name">Mumbai DP-II</field>
+        </record>
+        <record id="port_code_INGRL6" model="port.code">
+            <field name="port_code">INGRL6</field>
+            <field name="port_name">GPRL SEZ GURGAON</field>
+        </record>
+        <record id="port_code_INGRN6" model="port.code">
+            <field name="port_code">INGRN6</field>
+            <field name="port_name">RELIANCE SEZ GURGAON</field>
+        </record>
+        <record id="port_code_INGRR6" model="port.code">
+            <field name="port_code">INGRR6</field>
+            <field name="port_name">Mumbai DP-I</field>
+        </record>
+        <record id="port_code_INGRS6" model="port.code">
+            <field name="port_code">INGRS6</field>
+            <field name="port_name">RAHEJA SEZ GURGAON</field>
+        </record>
+        <record id="port_code_INGRW6" model="port.code">
+            <field name="port_code">INGRW6</field>
+            <field name="port_name">APM ICD BHAMBOLIKHED</field>
+        </record>
+        <record id="port_code_INGTGB" model="port.code">
+            <field name="port_code">INGTGB</field>
+            <field name="port_name">Gitaldah road</field>
+        </record>
+        <record id="port_code_INGTI6" model="port.code">
+            <field name="port_code">INGTI6</field>
+            <field name="port_name">INFOSYS TECH. LTD.</field>
+        </record>
+        <record id="port_code_INGTR2" model="port.code">
+            <field name="port_code">INGTR2</field>
+            <field name="port_name">Guntur</field>
+        </record>
+        <record id="port_code_INGTS6" model="port.code">
+            <field name="port_code">INGTS6</field>
+            <field name="port_name">SP PVT. LTD.</field>
+        </record>
+        <record id="port_code_INGTZB" model="port.code">
+            <field name="port_code">INGTZB</field>
+            <field name="port_name">Getandah</field>
+        </record>
+        <record id="port_code_INGUX4" model="port.code">
+            <field name="port_code">INGUX4</field>
+            <field name="port_name">Guna</field>
+        </record>
+        <record id="port_code_INGWL4" model="port.code">
+            <field name="port_code">INGWL4</field>
+            <field name="port_name">Gwalior</field>
+        </record>
+        <record id="port_code_INGWL6" model="port.code">
+            <field name="port_code">INGWL6</field>
+            <field name="port_name">Malanpuri (Gwalior)</field>
+        </record>
+        <record id="port_code_INGWM4" model="port.code">
+            <field name="port_code">INGWM4</field>
+            <field name="port_name">VIJAYAWADA AIRPORT</field>
+        </record>
+        <record id="port_code_INHAL1" model="port.code">
+            <field name="port_code">INHAL1</field>
+            <field name="port_name">Haldia</field>
+        </record>
+        <record id="port_code_INHAN6" model="port.code">
+            <field name="port_code">INHAN6</field>
+            <field name="port_name">HINDAUN ICD KARAULI</field>
+        </record>
+        <record id="port_code_INHAO6" model="port.code">
+            <field name="port_code">INHAO6</field>
+            <field name="port_name">OPTOINFRA/SEZ/HASSAN</field>
+        </record>
+        <record id="port_code_INHAS6" model="port.code">
+            <field name="port_code">INHAS6</field>
+            <field name="port_name">HASSAN ICD</field>
+        </record>
+        <record id="port_code_INHBB6" model="port.code">
+            <field name="port_code">INHBB6</field>
+            <field name="port_name">SDPL SEZ BENGALURU</field>
+        </record>
+        <record id="port_code_INHBX4" model="port.code">
+            <field name="port_code">INHBX4</field>
+            <field name="port_name">Hubli</field>
+        </record>
+        <record id="port_code_INHDD6" model="port.code">
+            <field name="port_code">INHDD6</field>
+            <field name="port_name">SIDCUL ICD PANTNAGAR</field>
+        </record>
+        <record id="port_code_INHEB6" model="port.code">
+            <field name="port_code">INHEB6</field>
+            <field name="port_name">GOCL SEZ BENGALURU</field>
+        </record>
+        <record id="port_code_INHEI6" model="port.code">
+            <field name="port_code">INHEI6</field>
+            <field name="port_name">INFOSYS/SEZ/MYSORE</field>
+        </record>
+        <record id="port_code_INHEM6" model="port.code">
+            <field name="port_code">INHEM6</field>
+            <field name="port_name">MEBP/SEZ/BANGALORE</field>
+        </record>
+        <record id="port_code_INHGLB" model="port.code">
+            <field name="port_code">INHGLB</field>
+            <field name="port_name">Hingalganj</field>
+        </record>
+        <record id="port_code_INHGT1" model="port.code">
+            <field name="port_code">INHGT1</field>
+            <field name="port_name">Hangarkatta</field>
+        </record>
+        <record id="port_code_INHIR6" model="port.code">
+            <field name="port_code">INHIR6</field>
+            <field name="port_name">SHB ICD SURAT</field>
+        </record>
+        <record id="port_code_INHJR4" model="port.code">
+            <field name="port_code">INHJR4</field>
+            <field name="port_name">Khajuraho</field>
+        </record>
+        <record id="port_code_INHLD2" model="port.code">
+            <field name="port_code">INHLD2</field>
+            <field name="port_name">Haldibari Railway St</field>
+        </record>
+        <record id="port_code_INHLE6" model="port.code">
+            <field name="port_code">INHLE6</field>
+            <field name="port_name">INFY SEZ BEGURHOBLI</field>
+        </record>
+        <record id="port_code_INHLIB" model="port.code">
+            <field name="port_code">INHLIB</field>
+            <field name="port_name">Hilli</field>
+        </record>
+        <record id="port_code_INHND1" model="port.code">
+            <field name="port_code">INHND1</field>
+            <field name="port_name">HEMNAGAR PORT</field>
+        </record>
+        <record id="port_code_INHON1" model="port.code">
+            <field name="port_code">INHON1</field>
+            <field name="port_name">Honavar</field>
+        </record>
+        <record id="port_code_INHPI6" model="port.code">
+            <field name="port_code">INHPI6</field>
+            <field name="port_name">SANDKHERA ICD KASHIP</field>
+        </record>
+        <record id="port_code_INHRN1" model="port.code">
+            <field name="port_code">INHRN1</field>
+            <field name="port_name">Harnai</field>
+        </record>
+        <record id="port_code_INHSF6" model="port.code">
+            <field name="port_code">INHSF6</field>
+            <field name="port_name">KIADBFP SEZ HASSAN</field>
+        </record>
+        <record id="port_code_INHSP6" model="port.code">
+            <field name="port_code">INHSP6</field>
+            <field name="port_name">KIADBP SEZ HASSAN</field>
+        </record>
+        <record id="port_code_INHSS4" model="port.code">
+            <field name="port_code">INHSS4</field>
+            <field name="port_name">Hissar</field>
+        </record>
+        <record id="port_code_INHST6" model="port.code">
+            <field name="port_code">INHST6</field>
+            <field name="port_name">KIADBT SEZ HASSAN</field>
+        </record>
+        <record id="port_code_INHSU6" model="port.code">
+            <field name="port_code">INHSU6</field>
+            <field name="port_name">ICD HOSUR</field>
+        </record>
+        <record id="port_code_INHTSB" model="port.code">
+            <field name="port_code">INHTSB</field>
+            <field name="port_name">Hatisar</field>
+        </record>
+        <record id="port_code_INHUR6" model="port.code">
+            <field name="port_code">INHUR6</field>
+            <field name="port_name">M/S RASSI, SEZ</field>
+        </record>
+        <record id="port_code_INHWR1" model="port.code">
+            <field name="port_code">INHWR1</field>
+            <field name="port_name">Honawar</field>
+        </record>
+        <record id="port_code_INHYB6" model="port.code">
+            <field name="port_code">INHYB6</field>
+            <field name="port_name">LHT PARK PVT. LTD.</field>
+        </record>
+        <record id="port_code_INHYD4" model="port.code">
+            <field name="port_code">INHYD4</field>
+            <field name="port_name">Hyderabad</field>
+        </record>
+        <record id="port_code_INHYD5" model="port.code">
+            <field name="port_code">INHYD5</field>
+            <field name="port_name">FPO HYDERABAD</field>
+        </record>
+        <record id="port_code_INHYD6" model="port.code">
+            <field name="port_code">INHYD6</field>
+            <field name="port_name">Hyderabad</field>
+        </record>
+        <record id="port_code_INHZA1" model="port.code">
+            <field name="port_code">INHZA1</field>
+            <field name="port_name">HAZIRA, SURAT</field>
+        </record>
+        <record id="port_code_INHZA6" model="port.code">
+            <field name="port_code">INHZA6</field>
+            <field name="port_name">Hazira SEZ, Surat</field>
+        </record>
+        <record id="port_CODE_INIDR4" model="port.code">
+            <field name="port_code">INIDR4</field>
+            <field name="port_name">Indore</field>
+        </record>
+        <record id="port_CODE_INIDR6" model="port.code">
+            <field name="port_code">INIDR6</field>
+            <field name="port_name">Indore(EPZ/SEZ)</field>
+        </record>
+        <record id="port_CODE_INIGU6" model="port.code">
+            <field name="port_code">INIGU6</field>
+            <field name="port_name">Coimbatore Irugur IC</field>
+        </record>
+        <record id="port_code_INILP6" model="port.code">
+            <field name="port_code">INILP6</field>
+            <field name="port_name">Tiruvallur-ILP ICD</field>
+        </record>
+
+        <record id="port_code_INIMF4" model="port.code">
+            <field name="port_code">INIMF4</field>
+            <field name="port_name">Imphal</field>
+        </record>
+
+        <record id="port_code_ININB6" model="port.code">
+            <field name="port_code">ININB6</field>
+            <field name="port_name">CRYSTAL IT PARK, SEZ</field>
+        </record>
+
+        <record id="port_code_ININD6" model="port.code">
+            <field name="port_code">ININD6</field>
+            <field name="port_name">ICD Pithampur</field>
+        </record>
+
+        <record id="port_code_ININI6" model="port.code">
+            <field name="port_code">ININI6</field>
+            <field name="port_name">IMPETUS INFOTECH SEZ</field>
+        </record>
+
+        <record id="port_code_ININN6" model="port.code">
+            <field name="port_code">ININN6</field>
+            <field name="port_name">INFOSYS SEZ INDORE</field>
+        </record>
+
+        <record id="port_code_ININT6" model="port.code">
+            <field name="port_code">ININT6</field>
+            <field name="port_name">TCS SEZ INDORE</field>
+        </record>
+
+        <record id="port_code_INISK4" model="port.code">
+            <field name="port_code">INISK4</field>
+            <field name="port_name">Nasik</field>
+        </record>
+
+        <record id="port_code_INISK6" model="port.code">
+            <field name="port_code">INISK6</field>
+            <field name="port_name">Nasik</field>
+        </record>
+
+        <record id="port_code_INIXA4" model="port.code">
+            <field name="port_code">INIXA4</field>
+            <field name="port_name">Agartala</field>
+        </record>
+
+        <record id="port_code_INIXB4" model="port.code">
+            <field name="port_code">INIXB4</field>
+            <field name="port_name">Bagdogra</field>
+        </record>
+
+        <record id="port_code_INIXC4" model="port.code">
+            <field name="port_code">INIXC4</field>
+            <field name="port_name">Chandigarh</field>
+        </record>
+
+        <record id="port_code_INIXD4" model="port.code">
+            <field name="port_code">INIXD4</field>
+            <field name="port_name">Allahabad</field>
+        </record>
+
+        <record id="port_code_INIXE1" model="port.code">
+            <field name="port_code">INIXE1</field>
+            <field name="port_name">Mangalore</field>
+        </record>
+
+        <record id="port_code_INIXE4" model="port.code">
+            <field name="port_code">INIXE4</field>
+            <field name="port_name">Mangalore</field>
+        </record>
+
+        <record id="port_code_INIXG4" model="port.code">
+            <field name="port_code">INIXG4</field>
+            <field name="port_name">Belgaum</field>
+        </record>
+
+        <record id="port_code_INIXH4" model="port.code">
+            <field name="port_code">INIXH4</field>
+            <field name="port_name">Kailashahar</field>
+        </record>
+
+        <record id="port_code_INIXI4" model="port.code">
+            <field name="port_code">INIXI4</field>
+            <field name="port_name">Lilabari</field>
+        </record>
+
+        <record id="port_code_INIXJ4" model="port.code">
+            <field name="port_code">INIXJ4</field>
+            <field name="port_name">Jammu</field>
+        </record>
+
+        <record id="port_code_INIXK4" model="port.code">
+            <field name="port_code">INIXK4</field>
+            <field name="port_name">Keshod</field>
+        </record>
+
+        <record id="port_code_INIXL4" model="port.code">
+            <field name="port_code">INIXL4</field>
+            <field name="port_name">Leh</field>
+        </record>
+
+        <record id="port_code_INIXL5" model="port.code">
+            <field name="port_code">INIXL5</field>
+            <field name="port_name">FPO LEH</field>
+        </record>
+
+        <record id="port_code_INIXM4" model="port.code">
+            <field name="port_code">INIXM4</field>
+            <field name="port_name">Madurai</field>
+        </record>
+
+        <record id="port_code_INIXM6" model="port.code">
+            <field name="port_code">INIXM6</field>
+            <field name="port_name">Madurai ICD</field>
+        </record>
+
+        <record id="port_code_INIXN4" model="port.code">
+            <field name="port_code">INIXN4</field>
+            <field name="port_name">Khowai</field>
+        </record>
+
+        <record id="port_code_INIXP4" model="port.code">
+            <field name="port_code">INIXP4</field>
+            <field name="port_name">Pathankot</field>
+        </record>
+
+        <record id="port_code_INIXQ4" model="port.code">
+            <field name="port_code">INIXQ4</field>
+            <field name="port_name">Kamalpur</field>
+        </record>
+
+        <record id="port_code_INIXR4" model="port.code">
+            <field name="port_code">INIXR4</field>
+            <field name="port_name">Ranchi</field>
+        </record>
+
+        <record id="port_code_INIXS4" model="port.code">
+            <field name="port_code">INIXS4</field>
+            <field name="port_name">Silchar</field>
+        </record>
+
+        <record id="port_code_INIXT4" model="port.code">
+            <field name="port_code">INIXT4</field>
+            <field name="port_name">Pasighat</field>
+        </record>
+
+        <record id="port_code_INIXU4" model="port.code">
+            <field name="port_code">INIXU4</field>
+            <field name="port_name">Aurangabad</field>
+        </record>
+
+        <record id="port_code_INIXW4" model="port.code">
+            <field name="port_code">INIXW4</field>
+            <field name="port_name">Jamshedpur</field>
+        </record>
+
+        <record id="port_code_INIXW6" model="port.code">
+            <field name="port_code">INIXW6</field>
+            <field name="port_name">Jamshedpur ICD</field>
+        </record>
+
+        <record id="port_code_INIXY1" model="port.code">
+            <field name="port_code">INIXY1</field>
+            <field name="port_name">Kandla</field>
+        </record>
+
+        <record id="port_code_INIXY4" model="port.code">
+            <field name="port_code">INIXY4</field>
+            <field name="port_name">Kandla</field>
+        </record>
+
+        <record id="port_code_INIXY6" model="port.code">
+            <field name="port_code">INIXY6</field>
+            <field name="port_name">Kandla SEZ</field>
+        </record>
+        <record id="port_code_INIXZ1" model="port.code">
+            <field name="port_code">INIXZ1</field>
+            <field name="port_name">Port Blair</field>
+        </record>
+
+        <record id="port_code_INIXZ4" model="port.code">
+            <field name="port_code">INIXZ4</field>
+            <field name="port_name">Port Blair</field>
+        </record>
+
+        <record id="port_code_INJAI4" model="port.code">
+            <field name="port_code">INJAI4</field>
+            <field name="port_name">Jaipur</field>
+        </record>
+
+        <record id="port_code_INJAI5" model="port.code">
+            <field name="port_code">INJAI5</field>
+            <field name="port_name">Jaipur</field>
+        </record>
+
+        <record id="port_code_INJAI6" model="port.code">
+            <field name="port_code">INJAI6</field>
+            <field name="port_name">Jaipur</field>
+        </record>
+
+        <record id="port_code_INJAK1" model="port.code">
+            <field name="port_code">INJAK1</field>
+            <field name="port_name">Jakhau</field>
+        </record>
+
+        <record id="port_code_INJAL6" model="port.code">
+            <field name="port_code">INJAL6</field>
+            <field name="port_name">Jalgaon</field>
+        </record>
+
+        <record id="port_code_INJAYB" model="port.code">
+            <field name="port_code">INJAYB</field>
+            <field name="port_name">Jayanagar</field>
+        </record>
+
+        <record id="port_code_INJBD1" model="port.code">
+            <field name="port_code">INJBD1</field>
+            <field name="port_name">Jafrabad</field>
+        </record>
+
+        <record id="port_code_INJBL6" model="port.code">
+            <field name="port_code">INJBL6</field>
+            <field name="port_name">E-COMPLEX SEZ/Amreli</field>
+        </record>
+
+        <record id="port_code_INJBNB" model="port.code">
+            <field name="port_code">INJBNB</field>
+            <field name="port_name">JOGBANI</field>
+        </record>
+
+        <record id="port_code_INJDA1" model="port.code">
+            <field name="port_code">INJDA1</field>
+            <field name="port_name">Jodia</field>
+        </record>
+
+        <record id="port_code_INJDH4" model="port.code">
+            <field name="port_code">INJDH4</field>
+            <field name="port_name">Jodhpur</field>
+        </record>
+
+        <record id="port_code_INJDH6" model="port.code">
+            <field name="port_code">INJDH6</field>
+            <field name="port_name">Jodhpur</field>
+        </record>
+
+        <record id="port_code_INJGA4" model="port.code">
+            <field name="port_code">INJGA4</field>
+            <field name="port_name">Jamnagar</field>
+        </record>
+
+        <record id="port_code_INJGB4" model="port.code">
+            <field name="port_code">INJGB4</field>
+            <field name="port_name">Jagdalpur</field>
+        </record>
+
+        <record id="port_code_INJGD1" model="port.code">
+            <field name="port_code">INJGD1</field>
+            <field name="port_name">Jaigad</field>
+        </record>
+
+        <record id="port_code_INJGI6" model="port.code">
+            <field name="port_code">INJGI6</field>
+            <field name="port_name">GENPACT SEZ JAIPUR</field>
+        </record>
+
+        <record id="port_code_INJHA6" model="port.code">
+            <field name="port_code">INJHA6</field>
+            <field name="port_name">VEDANTA ALU. LTD.</field>
+        </record>
+
+        <record id="port_code_INJHOB" model="port.code">
+            <field name="port_code">INJHOB</field>
+            <field name="port_name">Jhulaghat (Pithoraga</field>
+        </record>
+
+        <record id="port_code_INJHV6" model="port.code">
+            <field name="port_code">INJHV6</field>
+            <field name="port_name">VEDANTASEZJHARSUGUDA</field>
+        </record>
+
+        <record id="port_code_INJIGB" model="port.code">
+            <field name="port_code">INJIGB</field>
+            <field name="port_name">Jaigaon</field>
+        </record>
+
+        <record id="port_code_INJJK6" model="port.code">
+            <field name="port_code">INJJK6</field>
+            <field name="port_name">ICD JSL JAJPUR</field>
+        </record>
+
+        <record id="port_code_INJKA6" model="port.code">
+            <field name="port_code">INJKA6</field>
+            <field name="port_name">SACHANA ICD VIRAMGAM</field>
+        </record>
+
+        <record id="port_code_INJLR4" model="port.code">
+            <field name="port_code">INJLR4</field>
+            <field name="port_name">Jabalpur</field>
+        </record>
+
+        <record id="port_code_INJRH4" model="port.code">
+            <field name="port_code">INJRH4</field>
+            <field name="port_name">Jorhat</field>
+        </record>
+
+        <record id="port_code_INJSA4" model="port.code">
+            <field name="port_code">INJSA4</field>
+            <field name="port_name">Jaisalmer</field>
+        </record>
+        <record id="port_code_INJSG6" model="port.code">
+            <field name="port_code">INJSG6</field>
+            <field name="port_name">CONCOR JHARSUGUDA</field>
+        </record>
+
+        <record id="port_code_INJSM6" model="port.code">
+            <field name="port_code">INJSM6</field>
+            <field name="port_name">ADANI POWER SEZ</field>
+        </record>
+
+        <record id="port_code_INJSZ6" model="port.code">
+            <field name="port_code">INJSZ6</field>
+            <field name="port_name">JAIPUR SEZ</field>
+        </record>
+
+        <record id="port_code_INJTP1" model="port.code">
+            <field name="port_code">INJTP1</field>
+            <field name="port_name">Jaitapur</field>
+        </record>
+
+        <record id="port_code_INJUC6" model="port.code">
+            <field name="port_code">INJUC6</field>
+            <field name="port_name">Jalandhar</field>
+        </record>
+
+        <record id="port_code_INJUX6" model="port.code">
+            <field name="port_code">INJUX6</field>
+            <field name="port_name">Basni Jodhpur ICD</field>
+        </record>
+
+        <record id="port_code_INJWAB" model="port.code">
+            <field name="port_code">INJWAB</field>
+            <field name="port_name">Jarwa</field>
+        </record>
+
+        <record id="port_code_INKAK1" model="port.code">
+            <field name="port_code">INKAK1</field>
+            <field name="port_name">Kakinada</field>
+        </record>
+
+        <record id="port_code_INKAK6" model="port.code">
+            <field name="port_code">INKAK6</field>
+            <field name="port_name">Kakinada</field>
+        </record>
+
+        <record id="port_code_INKAL1" model="port.code">
+            <field name="port_code">INKAL1</field>
+            <field name="port_name">Kallai</field>
+        </record>
+
+        <record id="port_code_INKAP6" model="port.code">
+            <field name="port_code">INKAP6</field>
+            <field name="port_name">Kapadra (Surat)</field>
+        </record>
+
+        <record id="port_code_INKAR6" model="port.code">
+            <field name="port_code">INKAR6</field>
+            <field name="port_name">Karur ICD</field>
+        </record>
+
+        <record id="port_code_INKAT1" model="port.code">
+            <field name="port_code">INKAT1</field>
+            <field name="port_name">KATTUPALLI PORT</field>
+        </record>
+
+        <record id="port_code_INKBC6" model="port.code">
+            <field name="port_code">INKBC6</field>
+            <field name="port_name">ICD HAZIRA</field>
+        </record>
+
+        <record id="port_code_INKBT1" model="port.code">
+            <field name="port_code">INKBT1</field>
+            <field name="port_name">Khambhat</field>
+        </record>
+
+        <record id="port_code_INKCG6" model="port.code">
+            <field name="port_code">INKCG6</field>
+            <field name="port_name">NSL SEZ PVT. LTD.</field>
+        </record>
+
+        <record id="port_code_INKDD6" model="port.code">
+            <field name="port_code">INKDD6</field>
+            <field name="port_name">Karedu</field>
+        </record>
+
+        <record id="port_code_INKDI1" model="port.code">
+            <field name="port_code">INKDI1</field>
+            <field name="port_name">Kadmat Island</field>
+        </record>
+
+        <record id="port_code_INKDL6" model="port.code">
+            <field name="port_code">INKDL6</field>
+            <field name="port_name">KANDLA SEZ</field>
+        </record>
+
+        <record id="port_code_INKDN1" model="port.code">
+            <field name="port_code">INKDN1</field>
+            <field name="port_name">Kodinar(Muldwarka)</field>
+        </record>
+
+        <record id="port_code_INKDP1" model="port.code">
+            <field name="port_code">INKDP1</field>
+            <field name="port_name">Kondiapetnam</field>
+        </record>
+
+        <record id="port_code_INKELB" model="port.code">
+            <field name="port_code">INKELB</field>
+            <field name="port_name">Kel Sahar Subdivision</field>
+        </record>
+
+        <record id="port_code_INKGG6" model="port.code">
+            <field name="port_code">INKGG6</field>
+            <field name="port_name">GLOBAL/SEZ/BANGALORE</field>
+        </record>
+
+        <record id="port_code_INKGJ1" model="port.code">
+            <field name="port_code">INKGJ1</field>
+            <field name="port_name">KARIMGANJ STEAMERGHA</field>
+        </record>
+
+        <record id="port_code_INKHD6" model="port.code">
+            <field name="port_code">INKHD6</field>
+            <field name="port_name">ICD Kheda-Dhar</field>
+        </record>
+
+        <record id="port_code_INKIW1" model="port.code">
+            <field name="port_code">INKIW1</field>
+            <field name="port_name">Kelwa</field>
+        </record>
+
+        <record id="port_code_INKJA6" model="port.code">
+            <field name="port_code">INKJA6</field>
+            <field name="port_name">APP/SEZ/DODAKANAHALI</field>
+        </record>
+
+        <record id="port_code_INKJB6" model="port.code">
+            <field name="port_code">INKJB6</field>
+            <field name="port_name">BAGMAN/SEZ/BANGALORE</field>
+        </record>
+
+        <record id="port_code_INKJD6" model="port.code">
+            <field name="port_code">INKJD6</field>
+            <field name="port_name">DIVYA/SEZ/BANGALORE</field>
+        </record>
+
+        <record id="port_code_INKJG6" model="port.code">
+            <field name="port_code">INKJG6</field>
+            <field name="port_name">GOPALAN/SEZ/BANGALORE</field>
+        </record>
+        <record id="port_code_INKJH6" model="port.code">
+            <field name="port_code">INKJH6</field>
+            <field name="port_name">HCL/SEZ/BANGALORE</field>
+        </record>
+        <record id="port_code_INKJIB" model="port.code">
+            <field name="port_code">INKJIB</field>
+            <field name="port_name">PIPRAUN LCS</field>
+        </record>
+        <record id="port_code_INKJM6" model="port.code">
+            <field name="port_code">INKJM6</field>
+            <field name="port_name">BD SEZ BENGALURU</field>
+        </record>
+        <record id="port_code_INKJR6" model="port.code">
+            <field name="port_code">INKJR6</field>
+            <field name="port_name">BBREL KUNDALAHALLI</field>
+        </record>
+        <record id="port_code_INKKR1" model="port.code">
+            <field name="port_code">INKKR1</field>
+            <field name="port_name">Kilakari</field>
+        </record>
+        <record id="port_code_INKKU6" model="port.code">
+            <field name="port_code">INKKU6</field>
+            <field name="port_name">Kanakpura Jaipur ICD</field>
+        </record>
+        <record id="port_code_INKLB6" model="port.code">
+            <field name="port_code">INKLB6</field>
+            <field name="port_name">BLUE/SEZ/ERNAKULAM</field>
+        </record>
+        <record id="port_code_INKLC6" model="port.code">
+            <field name="port_code">INKLC6</field>
+            <field name="port_name">CARB/SEZ/ERNAKULAM</field>
+        </record>
+        <record id="port_code_INKLG6" model="port.code">
+            <field name="port_code">INKLG6</field>
+            <field name="port_name">SGS/SEZ/ERNAKULAM</field>
+        </record>
+        <record id="port_code_INKLH4" model="port.code">
+            <field name="port_code">INKLH4</field>
+            <field name="port_name">Kohlapur</field>
+        </record>
+        <record id="port_code_INKLI6" model="port.code">
+            <field name="port_code">INKLI6</field>
+            <field name="port_name">INFOPARK/SEZ/EKM</field>
+        </record>
+        <record id="port_code_INKLK6" model="port.code">
+            <field name="port_code">INKLK6</field>
+            <field name="port_name">KINFRA KANAYANNOOR</field>
+        </record>
+        <record id="port_code_INKLM6" model="port.code">
+            <field name="port_code">INKLM6</field>
+            <field name="port_name">MULTISERVCEKALAMBOLI</field>
+        </record>
+        <record id="port_code_INKLN6" model="port.code">
+            <field name="port_code">INKLN6</field>
+            <field name="port_name">IT/ITES/SEZ/KALAMBOL</field>
+        </record>
+        <record id="port_code_INKLS6" model="port.code">
+            <field name="port_code">INKLS6</field>
+            <field name="port_name">SMART CITY SEZ KOCHI</field>
+        </record>
+        <record id="port_code_INKLY1" model="port.code">
+            <field name="port_code">INKLY1</field>
+            <field name="port_name">Kalyan</field>
+        </record>
+        <record id="port_code_INKMAB" model="port.code">
+            <field name="port_code">INKMAB</field>
+            <field name="port_name">KULKULI LCS</field>
+        </record>
+        <record id="port_code_INKMB1" model="port.code">
+            <field name="port_code">INKMB1</field>
+            <field name="port_name">Kumbharu</field>
+        </record>
+        <record id="port_code_INKMI6" model="port.code">
+            <field name="port_code">INKMI6</field>
+            <field name="port_name">INFO SEZ ERNAKULAM</field>
+        </record>
+        <record id="port_code_INKML6" model="port.code">
+            <field name="port_code">INKML6</field>
+            <field name="port_name">DEIPL KURUBARAPALLI</field>
+        </record>
+        <record id="port_code_INKND1" model="port.code">
+            <field name="port_code">INKND1</field>
+            <field name="port_name">Kankudy</field>
+        </record>
+        <record id="port_code_INKNK6" model="port.code">
+            <field name="port_code">INKNK6</field>
+            <field name="port_name">INFOPARK SEZ KORATTY</field>
+        </record>
+        <record id="port_code_INKNLB" model="port.code">
+            <field name="port_code">INKNLB</field>
+            <field name="port_name">Kunauli</field>
+        </record>
+        <record id="port_code_INKNU4" model="port.code">
+            <field name="port_code">INKNU4</field>
+            <field name="port_name">Kanpur</field>
+        </record>
+        <record id="port_code_INKNU5" model="port.code">
+            <field name="port_code">INKNU5</field>
+            <field name="port_name">FPO KANPUR</field>
+        </record>
+        <record id="port_code_INKNU6" model="port.code">
+            <field name="port_code">INKNU6</field>
+            <field name="port_name">Kanpur</field>
+        </record>
+        <record id="port_code_INKOC5" model="port.code">
+            <field name="port_code">INKOC5</field>
+            <field name="port_name">Kochi</field>
+        </record>
+        <record id="port_code_INKOD1" model="port.code">
+            <field name="port_code">INKOD1</field>
+            <field name="port_name">Kodinar</field>
+        </record>
+        <record id="port_code_INKOI1" model="port.code">
+            <field name="port_code">INKOI1</field>
+            <field name="port_name">Koilthottum</field>
+        </record>
+        <record id="port_code_INKOK1" model="port.code">
+            <field name="port_code">INKOK1</field>
+            <field name="port_name">Koka</field>
+        </record>
+        <record id="port_code_INKON1" model="port.code">
+            <field name="port_code">INKON1</field>
+            <field name="port_name">Konarak</field>
+        </record>
+        <record id="port_code_INKPK6" model="port.code">
+            <field name="port_code">INKPK6</field>
+            <field name="port_name">CONCOR ICD MIHAN</field>
+        </record>
+        <record id="port_code_INKRI1" model="port.code">
+            <field name="port_code">INKRI1</field>
+            <field name="port_name">Krishnapatnam</field>
+        </record>
+        <record id="port_code_INKRK1" model="port.code">
+            <field name="port_code">INKRK1</field>
+            <field name="port_name">Karaikal</field>
+        </record>
+        <record id="port_code_INKRM6" model="port.code">
+            <field name="port_code">INKRM6</field>
+            <field name="port_name">MADC LTD.</field>
+        </record>
+        <record id="port_code_INKRN1" model="port.code">
+            <field name="port_code">INKRN1</field>
+            <field name="port_name">Karanja</field>
+        </record>
+        <record id="port_code_INKRP1" model="port.code">
+            <field name="port_code">INKRP1</field>
+            <field name="port_name">Kiranpani</field>
+        </record>
+        <record id="port_code_INKRW1" model="port.code">
+            <field name="port_code">INKRW1</field>
+            <field name="port_name">Karwar</field>
+        </record>
+        <record id="port_code_INKSG1" model="port.code">
+            <field name="port_code">INKSG1</field>
+            <field name="port_name">Kasargod</field>
+        </record>
+        <record id="port_code_INKSH1" model="port.code">
+            <field name="port_code">INKSH1</field>
+            <field name="port_name">Kelshi</field>
+        </record>
+        <record id="port_code_INKSP1" model="port.code">
+            <field name="port_code">INKSP1</field>
+            <field name="port_name">Kulasekarapatnam</field>
+        </record>
+        <record id="port_code_INKTD1" model="port.code">
+            <field name="port_code">INKTD1</field>
+            <field name="port_name">Kotda</field>
+        </record>
+        <record id="port_code_INKTGB" model="port.code">
+            <field name="port_code">INKTGB</field>
+            <field name="port_name">Katarniyaghat</field>
+        </record>
+        <record id="port_code_INKTI1" model="port.code">
+            <field name="port_code">INKTI1</field>
+            <field name="port_name">Kiltan Island</field>
+        </record>
+        <record id="port_code_INKTRB" model="port.code">
+            <field name="port_code">INKTRB</field>
+            <field name="port_name">Kathihar</field>
+        </record>
+        <record id="port_code_INKTT6" model="port.code">
+            <field name="port_code">INKTT6</field>
+            <field name="port_name">Kota</field>
+        </record>
+        <record id="port_code_INKTU4" model="port.code">
+            <field name="port_code">INKTU4</field>
+            <field name="port_name">Kota</field>
+        </record>
+        <record id="port_code_INKTU6" model="port.code">
+            <field name="port_code">INKTU6</field>
+            <field name="port_name">Kota</field>
+        </record>
+        <record id="port_code_INKTW1" model="port.code">
+            <field name="port_code">INKTW1</field>
+            <field name="port_name">Koteshwar</field>
+        </record>
+        <record id="port_code_INKTW1" model="port.code">
+            <field name="port_code">INKTW1</field>
+            <field name="port_name">Koteshwar</field>
+        </record>
+        <record id="port_code_INKTY6" model="port.code">
+            <field name="port_code">INKTY6</field>
+            <field name="port_name">CHEYYAR POCHAMPALLI</field>
+        </record>
+        <record id="port_code_INKUK1" model="port.code">
+            <field name="port_code">INKUK1</field>
+            <field name="port_name">KOLLAM PORT</field>
+        </record>
+        <record id="port_code_INKUK6" model="port.code">
+            <field name="port_code">INKUK6</field>
+            <field name="port_name">KSITIL/SEZ/KOLLAM</field>
+        </record>
+        <record id="port_code_INKUR6" model="port.code">
+            <field name="port_code">INKUR6</field>
+            <field name="port_name">OIIDC SEZ KHURDA</field>
+        </record>
+        <record id="port_code_INKUU4" model="port.code">
+            <field name="port_code">INKUU4</field>
+            <field name="port_name">Kulu</field>
+        </record>
+        <record id="port_code_INKVI1" model="port.code">
+            <field name="port_code">INKVI1</field>
+            <field name="port_name">Kavi</field>
+        </record>
+        <record id="port_code_INKVL1" model="port.code">
+            <field name="port_code">INKVL1</field>
+            <field name="port_name">Kovalam</field>
+        </record>
+        <record id="port_code_INKVR6" model="port.code">
+            <field name="port_code">INKVR6</field>
+            <field name="port_name">WFPML SEZ KOVVUR</field>
+        </record>
+        <record id="port_code_INKVT1" model="port.code">
+            <field name="port_code">INKVT1</field>
+            <field name="port_name">Kavaratti Island</field>
+        </record>
+        <record id="port_code_INKWAB" model="port.code">
+            <field name="port_code">INKWAB</field>
+            <field name="port_name">Khunwa</field>
+        </record>
+        <record id="port_code_INKWGB" model="port.code">
+            <field name="port_code">INKWGB</field>
+            <field name="port_name">Khowaighat</field>
+        </record>
+        <record id="port_code_INKWHB" model="port.code">
+            <field name="port_code">INKWHB</field>
+            <field name="port_name">KAKRAHAWA LCS</field>
+        </record>
+        <record id="port_code_INKXJ2" model="port.code">
+            <field name="port_code">INKXJ2</field>
+            <field name="port_name">Karimganj Railway St</field>
+        </record>
+        <record id="port_code_INKYM6" model="port.code">
+            <field name="port_code">INKYM6</field>
+            <field name="port_name">KOTTAYAM</field>
+        </record>
+        <record id="port_code_INKZE6" model="port.code">
+            <field name="port_code">INKZE6</field>
+            <field name="port_name">E TECH-I/SEZ/THPURAM</field>
+        </record>
+        <record id="port_code_INKZP6" model="port.code">
+            <field name="port_code">INKZP6</field>
+            <field name="port_name">E PARK-III/SEZ/T'RAM</field>
+        </record>
+        <record id="port_code_INKZT6" model="port.code">
+            <field name="port_code">INKZT6</field>
+            <field name="port_name">E PARK-II/SEZ/TPURAM</field>
+        </record>
+        <record id="port_code_INLCH6" model="port.code">
+            <field name="port_code">INLCH6</field>
+            <field name="port_name">HCL IT SEZ LUCKNOW</field>
+        </record>
+        <record id="port_code_INLDA4" model="port.code">
+            <field name="port_code">INLDA4</field>
+            <field name="port_name">Malda</field>
+        </record>
+        <record id="port_code_INLDH6" model="port.code">
+            <field name="port_code">INLDH6</field>
+            <field name="port_name">Ludhiana</field>
+        </record>
+        <record id="port_code_INLGLB" model="port.code">
+            <field name="port_code">INLGLB</field>
+            <field name="port_name">Lalgola Town</field>
+        </record>
+        <record id="port_code_INLKO4" model="port.code">
+            <field name="port_code">INLKO4</field>
+            <field name="port_name">Lucknow</field>
+        </record>
+        <record id="port_code_INLKQB" model="port.code">
+            <field name="port_code">INLKQB</field>
+            <field name="port_name">LAUKAHA LCS</field>
+        </record>
+        <record id="port_code_INLON6" model="port.code">
+            <field name="port_code">INLON6</field>
+            <field name="port_name">ICD Loni</field>
+        </record>
+        <record id="port_code_INLPB6" model="port.code">
+            <field name="port_code">INLPB6</field>
+            <field name="port_name">BBLLP NANAKRAMGUDA</field>
+        </record>
+        <record id="port_code_INLPC6" model="port.code">
+            <field name="port_code">INLPC6</field>
+            <field name="port_name">CMC LTD.</field>
+        </record>
+        <record id="port_code_INLPD6" model="port.code">
+            <field name="port_code">INLPD6</field>
+            <field name="port_name">M/S DLF, SEZ</field>
+        </record>
+        <record id="port_code_INLPG6" model="port.code">
+            <field name="port_code">INLPG6</field>
+            <field name="port_name">GCPL SEZ KOKAPET</field>
+        </record>
+        <record id="port_code_INLPI6" model="port.code">
+            <field name="port_code">INLPI6</field>
+            <field name="port_name">M/S SUNDEW, SEZ</field>
+        </record>
+        <record id="port_code_INLPJ6" model="port.code">
+            <field name="port_code">INLPJ6</field>
+            <field name="port_name">RELIANCE SEZ</field>
+        </record>
+        <record id="port_code_INLPM6" model="port.code">
+            <field name="port_code">INLPM6</field>
+            <field name="port_name">MDL NANAKRAMGUDA</field>
+        </record>
+        <record id="port_code_INLPR1" model="port.code">
+            <field name="port_code">INLPR1</field>
+            <field name="port_name">Leapuram</field>
+        </record>
+        <record id="port_code_INLPS6" model="port.code">
+            <field name="port_code">INLPS6</field>
+            <field name="port_name">D NSL IP LTD.</field>
+        </record>
+        <record id="port_code_INLPW6" model="port.code">
+            <field name="port_code">INLPW6</field>
+            <field name="port_name">WIPRO LTD. HYDERABAD</field>
+        </record>
+        <record id="port_code_INLTBB" model="port.code">
+            <field name="port_code">INLTBB</field>
+            <field name="port_name">Latu Bazar</field>
+        </record>
+        <record id="port_code_INLUD6" model="port.code">
+            <field name="port_code">INLUD6</field>
+            <field name="port_name">LUDHIANA</field>
+        </record>
+        <record id="port_code_INLUH4" model="port.code">
+            <field name="port_code">INLUH4</field>
+            <field name="port_name">Ludhiana</field>
+        </record>
+        <record id="port_code_INLUH5" model="port.code">
+            <field name="port_code">INLUH5</field>
+            <field name="port_name">FPO LUDHIANA</field>
+        </record>
+        <record id="port_code_INLUH6" model="port.code">
+            <field name="port_code">INLUH6</field>
+            <field name="port_name">Ludhiana</field>
+        </record>
+        <record id="port_code_INLWG6" model="port.code">
+            <field name="port_code">INLWG6</field>
+            <field name="port_name">WIPRO LTD.</field>
+        </record>
+        <record id="port_code_INMAA1" model="port.code">
+            <field name="port_code">INMAA1</field>
+            <field name="port_name">Chennai (Ex Madras)</field>
+        </record>
+        <record id="port_code_INMAA4" model="port.code">
+            <field name="port_code">INMAA4</field>
+            <field name="port_name">Chennai (Ex Madras)</field>
+        </record>
+        <record id="port_code_INMAA5" model="port.code">
+            <field name="port_code">INMAA5</field>
+            <field name="port_name">Chennai (Ex Madras)</field>
+        </record>
+        <record id="port_code_INMAA6" model="port.code">
+            <field name="port_code">INMAA6</field>
+            <field name="port_name">Chennai(EPZ/SEZ)</field>
+        </record>
+        <record id="port_code_INMAB6" model="port.code">
+            <field name="port_code">INMAB6</field>
+            <field name="port_name">BRIGADE/SEZ/KANNADA</field>
+        </record>
+        <record id="port_code_INMAE6" model="port.code">
+            <field name="port_code">INMAE6</field>
+            <field name="port_name">EC OF TAMIL NADU</field>
+        </record>
+        <record id="port_code_INMAH1" model="port.code">
+            <field name="port_code">INMAH1</field>
+            <field name="port_name">Mahe</field>
+        </record>
+        <record id="port_code_INMAI6" model="port.code">
+            <field name="port_code">INMAI6</field>
+            <field name="port_name">INFOSYS/SEZ/MANGALOR</field>
+        </record>
+        <record id="port_code_INMAL1" model="port.code">
+            <field name="port_code">INMAL1</field>
+            <field name="port_name">Malpe</field>
+        </record>
+        <record id="port_code_INMAP1" model="port.code">
+            <field name="port_code">INMAP1</field>
+            <field name="port_name">Masulipatnam</field>
+        </record>
+        <record id="port_code_INMAQ6" model="port.code">
+            <field name="port_code">INMAQ6</field>
+            <field name="port_name">MANGALORE SEZ</field>
+        </record>
+        <record id="port_code_INMAS6" model="port.code">
+            <field name="port_code">INMAS6</field>
+            <field name="port_name">TRIL INFOPARK LTD.</field>
+        </record>
+        <record id="port_code_INMBC6" model="port.code">
+            <field name="port_code">INMBC6</field>
+            <field name="port_name">Moradabad(EPZ/SEZ)</field>
+        </record>
+        <record id="port_code_INMBD6" model="port.code">
+            <field name="port_code">INMBD6</field>
+            <field name="port_name">Pakwara (Moradabad)</field>
+        </record>
+        <record id="port_code_INMBS6" model="port.code">
+            <field name="port_code">INMBS6</field>
+            <field name="port_name">Madhosingh ICD</field>
+        </record>
+        <record id="port_code_INMCI1" model="port.code">
+            <field name="port_code">INMCI1</field>
+            <field name="port_name">Minicoi I</field>
+        </record>
+        <record id="port_code_INMDA1" model="port.code">
+            <field name="port_code">INMDA1</field>
+            <field name="port_name">Magdalla</field>
+        </record>
+        <record id="port_code_INMDD6" model="port.code">
+            <field name="port_code">INMDD6</field>
+            <field name="port_name">Mandideep ICD</field>
+        </record>
+        <record id="port_code_INMDE6" model="port.code">
+            <field name="port_code">INMDE6</field>
+            <field name="port_name">APIIC SEZ MEDAK</field>
+        </record>
+        <record id="port_code_INMDG6" model="port.code">
+            <field name="port_code">INMDG6</field>
+            <field name="port_name">Margao</field>
+        </record>
+        <record id="port_code_INMDK1" model="port.code">
+            <field name="port_code">INMDK1</field>
+            <field name="port_name">Muldwarka</field>
+        </record>
+        <record id="port_code_INMDP1" model="port.code">
+            <field name="port_code">INMDP1</field>
+            <field name="port_name">Mandapam</field>
+        </record>
+        <record id="port_code_INMDU6" model="port.code">
+            <field name="port_code">INMDU6</field>
+            <field name="port_name">KERN ICD MADURAI</field>
+        </record>
+        <record id="port_code_INMDV1" model="port.code">
+            <field name="port_code">INMDV1</field>
+            <field name="port_name">Mandvi</field>
+        </record>
+        <record id="port_code_INMDW1" model="port.code">
+            <field name="port_code">INMDW1</field>
+            <field name="port_name">Meadows</field>
+        </record>
+        <record id="port_code_INMEA6" model="port.code">
+            <field name="port_code">INMEA6</field>
+            <field name="port_name">APIIC-SEZ/ViII-LALGA</field>
+        </record>
+        <record id="port_code_INMEC6" model="port.code">
+            <field name="port_code">INMEC6</field>
+            <field name="port_name">EC OF TAMIL NADU</field>
+        </record>
+        <record id="port_code_INMGHB" model="port.code">
+            <field name="port_code">INMGHB</field>
+            <field name="port_name">Mahendraganj</field>
+        </record>
+        <record id="port_code_INMGR1" model="port.code">
+            <field name="port_code">INMGR1</field>
+            <field name="port_name">Mangrol</field>
+        </record>
+        <record id="port_code_INMHA1" model="port.code">
+            <field name="port_code">INMHA1</field>
+            <field name="port_name">Mahuva</field>
+        </record>
+        <record id="port_code_INMHDB" model="port.code">
+            <field name="port_code">INMHDB</field>
+            <field name="port_name">Kotawalighat (Mohedi)</field>
+        </record>
+        <record id="port_code_INMHE1" model="port.code">
+            <field name="port_code">INMHE1</field>
+            <field name="port_name">Mahe</field>
+        </record>
+        <record id="port_code_INMHGB" model="port.code">
+            <field name="port_code">INMHGB</field>
+            <field name="port_name">Mahurighat</field>
+        </record>
+        <record id="port_code_INMHN2" model="port.code">
+            <field name="port_code">INMHN2</field>
+            <field name="port_name">Mahisashan Railway S</field>
+        </record>
+        <record id="port_code_INMKCB" model="port.code">
+            <field name="port_code">INMKCB</field>
+            <field name="port_name">Manikarchar</field>
+        </record>
+        <record id="port_code_INMKD6" model="port.code">
+            <field name="port_code">INMKD6</field>
+            <field name="port_name">MIKADO SEZ GURGAON</field>
+        </record>
+        <record id="port_code_INMLI1" model="port.code">
+            <field name="port_code">INMLI1</field>
+            <field name="port_name">Maroli</field>
+        </record>
+        <record id="port_code_INMLP1" model="port.code">
+            <field name="port_code">INMLP1</field>
+            <field name="port_name">Mallipuram</field>
+        </record>
+        <record id="port_code_INMLW1" model="port.code">
+            <field name="port_code">INMLW1</field>
+            <field name="port_name">Malwan</field>
+        </record>
+        <record id="port_code_INMNB2" model="port.code">
+            <field name="port_code">INMNB2</field>
+            <field name="port_name">Munabao Railway Stat</field>
+        </record>
+        <record id="port_code_INMNR1" model="port.code">
+            <field name="port_code">INMNR1</field>
+            <field name="port_name">Manori</field>
+        </record>
+        <record id="port_code_INMNUB" model="port.code">
+            <field name="port_code">INMNUB</field>
+            <field name="port_name">Manu</field>
+        </record>
+        <record id="port_code_INMNW1" model="port.code">
+            <field name="port_code">INMNW1</field>
+            <field name="port_name">Mandwa</field>
+        </record>
+        <record id="port_code_INMOH4" model="port.code">
+            <field name="port_code">INMOH4</field>
+            <field name="port_name">Mohanbari</field>
+        </record>
+        <record id="port_code_INMOR2" model="port.code">
+            <field name="port_code">INMOR2</field>
+            <field name="port_name">Moradabad</field>
+        </record>
+        <record id="port_code_INMPC1" model="port.code">
+            <field name="port_code">INMPC1</field>
+            <field name="port_name">TEST</field>
+        </record>
+        <record id="port_code_INMPR6" model="port.code">
+            <field name="port_code">INMPR6</field>
+            <field name="port_name">Malanpur ICD</field>
+        </record>
+        <record id="port_code_INMQK6" model="port.code">
+            <field name="port_code">INMQK6</field>
+            <field name="port_name">KIADB/SEZ/MANGALORE</field>
+        </record>
+        <record id="port_code_INMRA1" model="port.code">
+            <field name="port_code">INMRA1</field>
+            <field name="port_name">Mora</field>
+        </record>
+        <record id="port_code_INMRD1" model="port.code">
+            <field name="port_code">INMRD1</field>
+            <field name="port_name">Murad</field>
+        </record>
+        <record id="port_code_INMREB" model="port.code">
+            <field name="port_code">INMREB</field>
+            <field name="port_name">Moreh</field>
+        </record>
+        <record id="port_code_INMRG4" model="port.code">
+            <field name="port_code">INMRG4</field>
+            <field name="port_name">Margao</field>
+        </record>
+        <record id="port_code_INMRJ6" model="port.code">
+            <field name="port_code">INMRJ6</field>
+            <field name="port_name">Miraj</field>
+        </record>
+        <record id="port_code_INMRM1" model="port.code">
+            <field name="port_code">INMRM1</field>
+            <field name="port_name">Marmagoa</field>
+        </record>
+        <record id="port_code_INMSR6" model="port.code">
+            <field name="port_code">INMSR6</field>
+            <field name="port_name">RENAIS/SEZ/BANGALORE</field>
+        </record>
+        <record id="port_code_INMTW1" model="port.code">
+            <field name="port_code">INMTW1</field>
+            <field name="port_name">Metwad</field>
+        </record>
+        <record id="port_code_INMUC6" model="port.code">
+            <field name="port_code">INMUC6</field>
+            <field name="port_name">SCPL/SEZ/MULUND</field>
+        </record>
+        <record id="port_code_INMUL6" model="port.code">
+            <field name="port_code">INMUL6</field>
+            <field name="port_name">Mulund ICD</field>
+        </record>
+        <record id="port_code_INMUN1" model="port.code">
+            <field name="port_code">INMUN1</field>
+            <field name="port_name">Mundra</field>
+        </record>
+        <record id="port_code_INMUR1" model="port.code">
+            <field name="port_code">INMUR1</field>
+            <field name="port_name">Murad</field>
+        </record>
+        <record id="port_code_INMUZ6" model="port.code">
+            <field name="port_code">INMUZ6</field>
+            <field name="port_name">MODINAGAR ICD</field>
+        </record>
+        <record id="port_code_INMWA6" model="port.code">
+            <field name="port_code">INMWA6</field>
+            <field name="port_name">ICD Maliwada</field>
+        </record>
+        <record id="port_code_INMYB1" model="port.code">
+            <field name="port_code">INMYB1</field>
+            <field name="port_name">Mayabandar</field>
+        </record>
+        <record id="port_code_INMYL6" model="port.code">
+            <field name="port_code">INMYL6</field>
+            <field name="port_name">L AND T/SEZ/MYSORE</field>
+        </record>
+        <record id="port_code_INMYO6" model="port.code">
+            <field name="port_code">INMYO6</field>
+            <field name="port_name">OPTOINFRA/SEZ/MYSORE</field>
+        </record>
+        <record id="port_code_INMYQ4" model="port.code">
+            <field name="port_code">INMYQ4</field>
+            <field name="port_name">Mysore</field>
+        </record>
+        <record id="port_code_INMZA4" model="port.code">
+            <field name="port_code">INMZA4</field>
+            <field name="port_name">Muzaffarnagar</field>
+        </record>
+        <record id="port_code_INMZU4" model="port.code">
+            <field name="port_code">INMZU4</field>
+            <field name="port_name">Muzaffarpur</field>
+        </record>
+        <record id="port_code_INNAG4" model="port.code">
+            <field name="port_code">INNAG4</field>
+            <field name="port_name">Nagpur</field>
+        </record>
+        <record id="port_code_INNAG6" model="port.code">
+            <field name="port_code">INNAG6</field>
+            <field name="port_name">Nagpur</field>
+        </record>
+        <record id="port_code_INNAN1" model="port.code">
+            <field name="port_code">INNAN1</field>
+            <field name="port_name">Nancowrie</field>
+        </record>
+        <record id="port_code_INNAV1" model="port.code">
+            <field name="port_code">INNAV1</field>
+            <field name="port_name">Navlakhi</field>
+        </record>
+        <record id="port_code_INNDA6" model="port.code">
+            <field name="port_code">INNDA6</field>
+            <field name="port_name">Noida(EPZ/SEZ)</field>
+        </record>
+        <record id="port_code_INNDC4" model="port.code">
+            <field name="port_code">INNDC4</field>
+            <field name="port_name">Nanded</field>
+        </record>
+        <record id="port_code_INNDG1" model="port.code">
+            <field name="port_code">INNDG1</field>
+            <field name="port_name">Nandgaon</field>
+        </record>
+        <record id="port_code_INNDP1" model="port.code">
+            <field name="port_code">INNDP1</field>
+            <field name="port_name">Tuglakabad</field>
+        </record>
+        <record id="port_code_INNEE1" model="port.code">
+            <field name="port_code">INNEE1</field>
+            <field name="port_name">Neendakara</field>
+        </record>
+        <record id="port_code_INNEL1" model="port.code">
+            <field name="port_code">INNEL1</field>
+            <field name="port_name">Nellore</field>
+        </record>
+        <record id="port_code_INNGB6" model="port.code">
+            <field name="port_code">INNGB6</field>
+            <field name="port_name">BUTIBORI ICD NAGPUR</field>
+        </record>
+        <record id="port_code_INNGKB" model="port.code">
+            <field name="port_code">INNGKB</field>
+            <field name="port_name">NAGARKATA LCS</field>
+        </record>
+        <record id="port_code_INNGO6" model="port.code">
+            <field name="port_code">INNGO6</field>
+            <field name="port_name">OSE SEZ NOIDA</field>
+        </record>
+        <record id="port_code_INNGP6" model="port.code">
+            <field name="port_code">INNGP6</field>
+            <field name="port_name">Nagpur</field>
+        </record>
+        <record id="port_code_INNGRB" model="port.code">
+            <field name="port_code">INNGRB</field>
+            <field name="port_name">Nepalgunj Road</field>
+        </record>
+        <record id="port_code_INNGSB" model="port.code">
+            <field name="port_code">INNGSB</field>
+            <field name="port_name">Village Namgaya Ship</field>
+        </record>
+        <record id="port_code_INNKI6" model="port.code">
+            <field name="port_code">INNKI6</field>
+            <field name="port_name">INDIABULLS NASHIK</field>
+        </record>
+        <record id="port_code_INNKNB" model="port.code">
+            <field name="port_code">INNKNB</field>
+            <field name="port_name">Namkhana</field>
+        </record>
+        <record id="port_code_INNML1" model="port.code">
+            <field name="port_code">INNML1</field>
+            <field name="port_name">New Mangalore</field>
+        </record>
+        <record id="port_code_INNMTB" model="port.code">
+            <field name="port_code">INNMTB</field>
+            <field name="port_name">Neamati steamer Ghat</field>
+        </record>
+        <record id="port_code_INNNN6" model="port.code">
+            <field name="port_code">INNNN6</field>
+            <field name="port_name">AMRL SEZ NANGUNERI</field>
+        </record>
+        <record id="port_code_INNPGB" model="port.code">
+            <field name="port_code">INNPGB</field>
+            <field name="port_name">Nampong</field>
+        </record>
+        <record id="port_code_INNPT1" model="port.code">
+            <field name="port_code">INNPT1</field>
+            <field name="port_name">Nagapattinam</field>
+        </record>
+        <record id="port_code_INNRP6" model="port.code">
+            <field name="port_code">INNRP6</field>
+            <field name="port_name">AA LTD.</field>
+        </record>
+        <record id="port_code_INNSA1" model="port.code">
+            <field name="port_code">INNSA1</field>
+            <field name="port_name">Jawaharlal Nehru (Nh</field>
+        </record>
+        <record id="port_code_INNSK6" model="port.code">
+            <field name="port_code">INNSK6</field>
+            <field name="port_name">Nasik</field>
+        </record>
+        <record id="port_code_INNTLB" model="port.code">
+            <field name="port_code">INNTLB</field>
+            <field name="port_name">SHERATHANG LCS</field>
+        </record>
+        <record id="port_code_INNTVB" model="port.code">
+            <field name="port_code">INNTVB</field>
+            <field name="port_name">THOOTHIBARI LCS</field>
+        </record>
+        <record id="port_code_INNUR6" model="port.code">
+            <field name="port_code">INNUR6</field>
+            <field name="port_name">Kundli</field>
+        </record>
+        <record id="port_code_INNVB1" model="port.code">
+            <field name="port_code">INNVB1</field>
+            <field name="port_name">Navabunder(with its</field>
+        </record>
+        <record id="port_code_INNVP1" model="port.code">
+            <field name="port_code">INNVP1</field>
+            <field name="port_name">Navaspur</field>
+        </record>
+        <record id="port_code_INNVT1" model="port.code">
+            <field name="port_code">INNVT1</field>
+            <field name="port_name">Nivti</field>
+        </record>
+        <record id="port_code_INNVY4" model="port.code">
+            <field name="port_code">INNVY4</field>
+            <field name="port_name">Neyveli</field>
+        </record>
+        <record id="port_code_INNWP1" model="port.code">
+            <field name="port_code">INNWP1</field>
+            <field name="port_name">Newapur</field>
+        </record>
+        <record id="port_code_INNYP6" model="port.code">
+            <field name="port_code">INNYP6</field>
+            <field name="port_name">APIIC LTD.</field>
+        </record>
+        <record id="port_code_INOKH1" model="port.code">
+            <field name="port_code">INOKH1</field>
+            <field name="port_name">Okha</field>
+        </record>
+        <record id="port_code_INOMN4" model="port.code">
+            <field name="port_code">INOMN4</field>
+            <field name="port_name">Osmanabad</field>
+        </record>
+        <record id="port_code_INOMU1" model="port.code">
+            <field name="port_code">INOMU1</field>
+            <field name="port_name">Old Mundra Port</field>
+        </record>
+        <record id="port_code_INONJ1" model="port.code">
+            <field name="port_code">INONJ1</field>
+            <field name="port_name">Onjal</field>
+        </record>
+        <record id="port_code_INPAB4" model="port.code">
+            <field name="port_code">INPAB4</field>
+            <field name="port_name">Bilaspur</field>
+        </record>
+        <record id="port_code_INPAK6" model="port.code">
+            <field name="port_code">INPAK6</field>
+            <field name="port_name">KSITIL/SEZ/PAYYANOOR</field>
+        </record>
+        <record id="port_code_INPAN1" model="port.code">
+            <field name="port_code">INPAN1</field>
+            <field name="port_name">Panaji Port</field>
+        </record>
+        <record id="port_code_INPAO6" model="port.code">
+            <field name="port_code">INPAO6</field>
+            <field name="port_name">HBS SEZ PANOLI</field>
+        </record>
+        <record id="port_code_INPAP2" model="port.code">
+            <field name="port_code">INPAP2</field>
+            <field name="port_name">Panipat</field>
+        </record>
+        <record id="port_code_INPAT4" model="port.code">
+            <field name="port_code">INPAT4</field>
+            <field name="port_name">Patna</field>
+        </record>
+        <record id="port_code_INPAV1" model="port.code">
+            <field name="port_code">INPAV1</field>
+            <field name="port_name">Pipavav (Victor) Por</field>
+        </record>
+        <record id="port_code_INPAV2" model="port.code">
+            <field name="port_code">INPAV2</field>
+            <field name="port_name">Pipavav (Victor) Por</field>
+        </record>
+        <record id="port_code_INPBD1" model="port.code">
+            <field name="port_code">INPBD1</field>
+            <field name="port_name">Porbandar</field>
+        </record>
+        <record id="port_code_INPBD4" model="port.code">
+            <field name="port_code">INPBD4</field>
+            <field name="port_name">Porbandar</field>
+        </record>
+        <record id="port_code_INPBLB" model="port.code">
+            <field name="port_code">INPBLB</field>
+            <field name="port_name">KAMARDWISA LCS</field>
+        </record>
+        <record id="port_code_INPDD1" model="port.code">
+            <field name="port_code">INPDD1</field>
+            <field name="port_name">Padubidri Minor Port</field>
+        </record>
+        <record id="port_code_INPEK6" model="port.code">
+            <field name="port_code">INPEK6</field>
+            <field name="port_name">EKIPL/SEZ/PUNE</field>
+        </record>
+        <record id="port_code_INPGH4" model="port.code">
+            <field name="port_code">INPGH4</field>
+            <field name="port_name">Pantnagar</field>
+        </record>
+        <record id="port_code_INPHBB" model="port.code">
+            <field name="port_code">INPHBB</field>
+            <field name="port_name">Phulbari</field>
+        </record>
+        <record id="port_code_INPID1" model="port.code">
+            <field name="port_code">INPID1</field>
+            <field name="port_name">Port Indai</field>
+        </record>
+        <record id="port_code_INPIN1" model="port.code">
+            <field name="port_code">INPIN1</field>
+            <field name="port_name">Pindhara</field>
+        </record>
+        <record id="port_code_INPIT6" model="port.code">
+            <field name="port_code">INPIT6</field>
+            <field name="port_name">ITL/SEZ/PUNE</field>
+        </record>
+        <record id="port_code_INPKD6" model="port.code">
+            <field name="port_code">INPKD6</field>
+            <field name="port_name">IGEL SEZ SETTIPALI</field>
+        </record>
+        <record id="port_code_INPKR6" model="port.code">
+            <field name="port_code">INPKR6</field>
+            <field name="port_name">ICD PALI, REWARI</field>
+        </record>
+        <record id="port_code_INPMB1" model="port.code">
+            <field name="port_code">INPMB1</field>
+            <field name="port_name">Pamban</field>
+        </record>
+        <record id="port_code_INPMP6" model="port.code">
+            <field name="port_code">INPMP6</field>
+            <field name="port_name">Pimpri</field>
+        </record>
+        <record id="port_code_INPMT6" model="port.code">
+            <field name="port_code">INPMT6</field>
+            <field name="port_name">MTDCCL/SEZ/PUNE</field>
+        </record>
+        <record id="port_code_INPNB6" model="port.code">
+            <field name="port_code">INPNB6</field>
+            <field name="port_name">BTSL SEZ PUNE</field>
+        </record>
+        <record id="port_code_INPNE6" model="port.code">
+            <field name="port_code">INPNE6</field>
+            <field name="port_name">NT PVT. LTD.</field>
+        </record>
+        <record id="port_code_INPNF5" model="port.code">
+            <field name="port_code">INPNF5</field>
+            <field name="port_name">PATNA FPO</field>
+        </record>
+        <record id="port_code_INPNI6" model="port.code">
+            <field name="port_code">INPNI6</field>
+            <field name="port_name">MITTAL SEZ PANIPAT</field>
+        </record>
+        <record id="port_code_INPNJ1" model="port.code">
+            <field name="port_code">INPNJ1</field>
+            <field name="port_name">Panjim</field>
+        </record>
+        <record id="port_code_INPNK6" model="port.code">
+            <field name="port_code">INPNK6</field>
+            <field name="port_name">KLPPL PANKI</field>
+        </record>
+        <record id="port_code_INPNL6" model="port.code">
+            <field name="port_code">INPNL6</field>
+            <field name="port_name">PERSIPINA SEZ RAIGAD</field>
+        </record>
+        <record id="port_code_INPNM1" model="port.code">
+            <field name="port_code">INPNM1</field>
+            <field name="port_name">Panambur</field>
+        </record>
+        <record id="port_code_INPNN1" model="port.code">
+            <field name="port_code">INPNN1</field>
+            <field name="port_name">Ponnani</field>
+        </record>
+        <record id="port_code_INPNP6" model="port.code">
+            <field name="port_code">INPNP6</field>
+            <field name="port_name">Babarpur</field>
+        </record>
+        <record id="port_code_INPNQ2" model="port.code">
+            <field name="port_code">INPNQ2</field>
+            <field name="port_name">Pune</field>
+        </record>
+        <record id="port_code_INPNQ4" model="port.code">
+            <field name="port_code">INPNQ4</field>
+            <field name="port_name">Pune</field>
+        </record>
+        <record id="port_code_INPNQ6" model="port.code">
+            <field name="port_code">INPNQ6</field>
+            <field name="port_name">SERUM BIO/SEZ/PUNE</field>
+        </record>
+        <record id="port_code_INPNTB" model="port.code">
+            <field name="port_code">INPNTB</field>
+            <field name="port_name">Panitanki(Naxalbari)</field>
+        </record>
+        <record id="port_code_INPNU6" model="port.code">
+            <field name="port_code">INPNU6</field>
+            <field name="port_name">TMSF PVT. LTD.</field>
+        </record>
+        <record id="port_code_INPNV6" model="port.code">
+            <field name="port_code">INPNV6</field>
+            <field name="port_name">ICD Panvel</field>
+        </record>
+        <record id="port_code_INPNY1" model="port.code">
+            <field name="port_code">INPNY1</field>
+            <field name="port_name">Pondicherry</field>
+        </record>
+        <record id="port_code_INPNY4" model="port.code">
+            <field name="port_code">INPNY4</field>
+            <field name="port_name">Pondicherry</field>
+        </record>
+        <record id="port_code_INPNY6" model="port.code">
+            <field name="port_code">INPNY6</field>
+            <field name="port_name">ICD PULICHAPALLAM</field>
+        </record>
+        <record id="port_code_INPPG6" model="port.code">
+            <field name="port_code">INPPG6</field>
+            <field name="port_name">Patparganj ICD,DELHI</field>
+        </record>
+        <record id="port_code_INPPJ1" model="port.code">
+            <field name="port_code">INPPJ1</field>
+            <field name="port_name">Pellet Plant Jetty a</field>
+        </record>
+        <record id="port_code_INPRD6" model="port.code">
+            <field name="port_code">INPRD6</field>
+            <field name="port_name">PREPL SEZ PERUNGUDI</field>
+        </record>
+        <record id="port_code_INPRG1" model="port.code">
+            <field name="port_code">INPRG1</field>
+            <field name="port_name">Purangad</field>
+        </record>
+        <record id="port_code_INPRK6" model="port.code">
+            <field name="port_code">INPRK6</field>
+            <field name="port_name">ICD POWARKHEDA</field>
+        </record>
+        <record id="port_code_INPRT1" model="port.code">
+            <field name="port_code">INPRT1</field>
+            <field name="port_name">Paradeep</field>
+        </record>
+        <record id="port_code_INPSH1" model="port.code">
+            <field name="port_code">INPSH1</field>
+            <field name="port_name">Palshet</field>
+        </record>
+        <record id="port_code_INPSI6" model="port.code">
+            <field name="port_code">INPSI6</field>
+            <field name="port_name">SIPL/SEZ/PUNE</field>
+        </record>
+        <record id="port_code_INPSN6" model="port.code">
+            <field name="port_code">INPSN6</field>
+            <field name="port_name">PERFECT SEZ NOIDA</field>
+        </record>
+        <record id="port_code_INPSP6" model="port.code">
+            <field name="port_code">INPSP6</field>
+            <field name="port_name">NSPL SEZ HINJEWADI</field>
+        </record>
+        <record id="port_code_INPTL6" model="port.code">
+            <field name="port_code">INPTL6</field>
+            <field name="port_name">Patli ICD</field>
+        </record>
+        <record id="port_code_INPTN1" model="port.code">
+            <field name="port_code">INPTN1</field>
+            <field name="port_name">Portonovo</field>
+        </record>
+        <record id="port_code_INPTPB" model="port.code">
+            <field name="port_code">INPTPB</field>
+            <field name="port_name">Petrapole LCS</field>
+        </record>
+        <record id="port_code_INPUA6" model="port.code">
+            <field name="port_code">INPUA6</field>
+            <field name="port_name">AIGP SEZ WAGHOLI</field>
+        </record>
+        <record id="port_code_INPUE6" model="port.code">
+            <field name="port_code">INPUE6</field>
+            <field name="port_name">EON KHARADI SEZ</field>
+        </record>
+        <record id="port_code_INPUI6" model="port.code">
+            <field name="port_code">INPUI6</field>
+            <field name="port_name">KIPPLGDPLSEZ KHARADI</field>
+        </record>
+        <record id="port_code_INPUL1" model="port.code">
+            <field name="port_code">INPUL1</field>
+            <field name="port_name">Pulicat</field>
+        </record>
+        <record id="port_code_INPUM6" model="port.code">
+            <field name="port_code">INPUM6</field>
+            <field name="port_name">MIDC PUNE</field>
+        </record>
+        <record id="port_code_INPUN6" model="port.code">
+            <field name="port_code">INPUN6</field>
+            <field name="port_name">M/S KBTV PVT., PUNE</field>
+        </record>
+        <record id="port_code_INPUR1" model="port.code">
+            <field name="port_code">INPUR1</field>
+            <field name="port_name">Puri</field>
+        </record>
+        <record id="port_code_INPUT4" model="port.code">
+            <field name="port_code">INPUT4</field>
+            <field name="port_name">Puttaparthi</field>
+        </record>
+        <record id="port_code_INPVL6" model="port.code">
+            <field name="port_code">INPVL6</field>
+            <field name="port_name">Panvel ICD</field>
+        </record>
+        <record id="port_code_INPVS6" model="port.code">
+            <field name="port_code">INPVS6</field>
+            <field name="port_name">SNPIP SEZ TAMBARAM</field>
+        </record>
+
+        <record id="port_code_INPWL6" model="port.code">
+            <field name="port_code">INPWL6</field>
+            <field name="port_name">PALWAL ICD</field>
+        </record>
+
+        <record id="port_code_INPYB4" model="port.code">
+            <field name="port_code">INPYB4</field>
+            <field name="port_name">Jeypore</field>
+        </record>
+
+        <record id="port_code_INPYS6" model="port.code">
+            <field name="port_code">INPYS6</field>
+            <field name="port_name">SIPCOT SEZ ERODE</field>
+        </record>
+
+        <record id="port_code_INQRP6" model="port.code">
+            <field name="port_code">INQRP6</field>
+            <field name="port_name">ADANI ICD KILARAIPUR</field>
+        </record>
+
+        <record id="port_code_INQUI1" model="port.code">
+            <field name="port_code">INQUI1</field>
+            <field name="port_name">Quilon</field>
+        </record>
+
+        <record id="port_code_INRAI6" model="port.code">
+            <field name="port_code">INRAI6</field>
+            <field name="port_name">Raipur</field>
+        </record>
+        <record id="port_code_INRAJ4" model="port.code">
+            <field name="port_code">INRAJ4</field>
+            <field name="port_name">Rajkot</field>
+        </record>
+
+        <record id="port_code_INRAJ6" model="port.code">
+            <field name="port_code">INRAJ6</field>
+            <field name="port_name">Rajkot</field>
+        </record>
+
+        <record id="port_code_INRAM1" model="port.code">
+            <field name="port_code">INRAM1</field>
+            <field name="port_name">Rameshwaram</field>
+        </record>
+
+        <record id="port_code_INRDP2" model="port.code">
+            <field name="port_code">INRDP2</field>
+            <field name="port_name">Radhikapur Railway S</field>
+        </record>
+
+        <record id="port_code_INREA6" model="port.code">
+            <field name="port_code">INREA6</field>
+            <field name="port_name">Rewari</field>
+        </record>
+
+        <record id="port_code_INRED1" model="port.code">
+            <field name="port_code">INRED1</field>
+            <field name="port_name">Redi</field>
+        </record>
+
+        <record id="port_code_INREW4" model="port.code">
+            <field name="port_code">INREW4</field>
+            <field name="port_name">Rewa</field>
+        </record>
+
+        <record id="port_code_INRGBB" model="port.code">
+            <field name="port_code">INRGBB</field>
+            <field name="port_name">Old Raghna Bazar</field>
+        </record>
+
+        <record id="port_code_INRGH4" model="port.code">
+            <field name="port_code">INRGH4</field>
+            <field name="port_name">Balurghat</field>
+        </record>
+
+        <record id="port_code_INRGJ2" model="port.code">
+            <field name="port_code">INRGJ2</field>
+            <field name="port_name">RAIGANJ LCS RLY</field>
+        </record>
+
+        <record id="port_code_INRGT1" model="port.code">
+            <field name="port_code">INRGT1</field>
+            <field name="port_name">Ranghat Bay</field>
+        </record>
+
+        <record id="port_code_INRGUB" model="port.code">
+            <field name="port_code">INRGUB</field>
+            <field name="port_name">Ryngku</field>
+        </record>
+
+        <record id="port_code_INRJA4" model="port.code">
+            <field name="port_code">INRJA4</field>
+            <field name="port_name">Rajahmundry</field>
+        </record>
+
+        <record id="port_code_INRJI4" model="port.code">
+            <field name="port_code">INRJI4</field>
+            <field name="port_name">Rajouri</field>
+        </record>
+
+        <record id="port_code_INRJN6" model="port.code">
+            <field name="port_code">INRJN6</field>
+            <field name="port_name">LS PVT. LTD.</field>
+        </record>
+
+        <record id="port_code_INRJP1" model="port.code">
+            <field name="port_code">INRJP1</field>
+            <field name="port_name">Rajpara</field>
+        </record>
+
+        <record id="port_code_INRJR1" model="port.code">
+            <field name="port_code">INRJR1</field>
+            <field name="port_name">Rajpuri</field>
+        </record>
+
+        <record id="port_code_INRKG1" model="port.code">
+            <field name="port_code">INRKG1</field>
+            <field name="port_name">Rajakkamangalam</field>
+        </record>
+
+        <record id="port_code_INRMD4" model="port.code">
+            <field name="port_code">INRMD4</field>
+            <field name="port_name">Ramagundam</field>
+        </record>
+        <record id="port_code_INRML6" model="port.code">
+            <field name="port_code">INRML6</field>
+            <field name="port_name">CONCOR ICDNAYARAIPUR</field>
+        </record>
+        <record id="port_code_INRNC5" model="port.code">
+            <field name="port_code">INRNC5</field>
+            <field name="port_name">RANCHI FPO</field>
+        </record>
+        <record id="port_code_INRNG2" model="port.code">
+            <field name="port_code">INRNG2</field>
+            <field name="port_name">Ranaghat Railway Sta</field>
+        </record>
+        <record id="port_code_INRNR1" model="port.code">
+            <field name="port_code">INRNR1</field>
+            <field name="port_name">Ranpar</field>
+        </record>
+        <record id="port_code_INRPL6" model="port.code">
+            <field name="port_code">INRPL6</field>
+            <field name="port_name">Raddipalam</field>
+        </record>
+        <record id="port_code_INRPR4" model="port.code">
+            <field name="port_code">INRPR4</field>
+            <field name="port_name">Raipur</field>
+        </record>
+        <record id="port_code_INRPR6" model="port.code">
+            <field name="port_code">INRPR6</field>
+            <field name="port_name">Raipur</field>
+        </record>
+        <record id="port_code_INRPU5" model="port.code">
+            <field name="port_code">INRPU5</field>
+            <field name="port_name">RAIPUR FPO</field>
+        </record>
+        <record id="port_code_INRRI1" model="port.code">
+            <field name="port_code">INRRI1</field>
+            <field name="port_name">Raili</field>
+        </record>
+        <record id="port_code_INRRK4" model="port.code">
+            <field name="port_code">INRRK4</field>
+            <field name="port_name">Rourkela</field>
+        </record>
+        <record id="port_code_INRTC1" model="port.code">
+            <field name="port_code">INRTC1</field>
+            <field name="port_name">Ratnagiri</field>
+        </record>
+        <record id="port_code_INRTC4" model="port.code">
+            <field name="port_code">INRTC4</field>
+            <field name="port_name">Ratnagiri</field>
+        </record>
+        <record id="port_code_INRTM6" model="port.code">
+            <field name="port_code">INRTM6</field>
+            <field name="port_name">CONCOR ICD RATLAM</field>
+        </record>
+        <record id="port_code_INRUP4" model="port.code">
+            <field name="port_code">INRUP4</field>
+            <field name="port_name">Rupsi</field>
+        </record>
+        <record id="port_code_INRVD1" model="port.code">
+            <field name="port_code">INRVD1</field>
+            <field name="port_name">Revdanda</field>
+        </record>
+        <record id="port_code_INRWR1" model="port.code">
+            <field name="port_code">INRWR1</field>
+            <field name="port_name">Rameshwaram</field>
+        </record>
+        <record id="port_code_INRXLB" model="port.code">
+            <field name="port_code">INRXLB</field>
+            <field name="port_name">Raxaul</field>
+        </record>
+        <record id="port_code_INSABB" model="port.code">
+            <field name="port_code">INSABB</field>
+            <field name="port_name">Sabroom</field>
+        </record>
+        <record id="port_code_INSAC6" model="port.code">
+            <field name="port_code">INSAC6</field>
+            <field name="port_name">Sachin (Surat)</field>
+        </record>
+        <record id="port_code_INSAJ6" model="port.code">
+            <field name="port_code">INSAJ6</field>
+            <field name="port_name">NAVKAR ICD UMBERGAON</field>
+        </record>
+        <record id="port_code_INSAL1" model="port.code">
+            <field name="port_code">INSAL1</field>
+            <field name="port_name">Salaya</field>
+        </record>
+        <record id="port_code_INSAS6" model="port.code">
+            <field name="port_code">INSAS6</field>
+            <field name="port_name">INFOSYS SEZ MOHALI</field>
+        </record>
+        <record id="port_code_INSAU6" model="port.code">
+            <field name="port_code">INSAU6</field>
+            <field name="port_name">THAR DRY PORT</field>
+        </record>
+        <record id="port_code_INSBC6" model="port.code">
+            <field name="port_code">INSBC6</field>
+            <field name="port_name">BIOCON SEZ BANGALORE</field>
+        </record>
+        <record id="port_code_INSBH1" model="port.code">
+            <field name="port_code">INSBH1</field>
+            <field name="port_name">Sinbhour</field>
+        </record>
+        <record id="port_code_INSBI6" model="port.code">
+            <field name="port_code">INSBI6</field>
+            <field name="port_name">ICD Sabarmati</field>
+        </record>
+        <record id="port_code_INSBK6" model="port.code">
+            <field name="port_code">INSBK6</field>
+            <field name="port_name">KIADB/SEZ/BANGALORE</field>
+        </record>
+        <record id="port_code_INSBL6" model="port.code">
+            <field name="port_code">INSBL6</field>
+            <field name="port_name">INFOSYS/SEZ/BANGLORE</field>
+        </record>
+        <record id="port_code_INSBW6" model="port.code">
+            <field name="port_code">INSBW6</field>
+            <field name="port_name">WIPRO ELEC/SEZ/BLR</field>
+        </record>
+        <record id="port_code_INSBZ1" model="port.code">
+            <field name="port_code">INSBZ1</field>
+            <field name="port_name">SHELLA BAZAR</field>
+        </record>
+        <record id="port_code_INSCH6" model="port.code">
+            <field name="port_code">INSCH6</field>
+            <field name="port_name">SAP-SEZ SURAT</field>
+        </record>
+        <record id="port_code_INSGF6" model="port.code">
+            <field name="port_code">INSGF6</field>
+            <field name="port_name">GRFL ICD SAHNEWAL</field>
+        </record>
+        <record id="port_code_INSHI1" model="port.code">
+            <field name="port_code">INSHI1</field>
+            <field name="port_name">Shirola</field>
+        </record>
+        <record id="port_code_INSHL4" model="port.code">
+            <field name="port_code">INSHL4</field>
+            <field name="port_name">Shillong</field>
+        </record>
+        <record id="port_code_INSHP1" model="port.code">
+            <field name="port_code">INSHP1</field>
+            <field name="port_name">Sinbhour Port</field>
+        </record>
+        <record id="port_code_INSIK1" model="port.code">
+            <field name="port_code">INSIK1</field>
+            <field name="port_name">Sikka</field>
+        </record>
+        <record id="port_code_INSJR6" model="port.code">
+            <field name="port_code">INSJR6</field>
+            <field name="port_name">Surajpur</field>
+        </record>
+        <record id="port_code_INSKD6" model="port.code">
+            <field name="port_code">INSKD6</field>
+            <field name="port_name">ICD KALINGANAGAR</field>
+        </record>
+        <record id="port_code_INSKPB" model="port.code">
+            <field name="port_code">INSKPB</field>
+            <field name="port_name">Sukhia Pokhari</field>
+        </record>
+        <record id="port_code_INSLL6" model="port.code">
+            <field name="port_code">INSLL6</field>
+            <field name="port_name">Singanallur</field>
+        </record>
+        <record id="port_code_INSLR2" model="port.code">
+            <field name="port_code">INSLR2</field>
+            <field name="port_name">Silcher R.M.S. Offic</field>
+        </record>
+        <record id="port_code_INSLRB" model="port.code">
+            <field name="port_code">INSLRB</field>
+            <field name="port_name">Silcher Steamerghat</field>
+        </record>
+        <record id="port_code_INSLT6" model="port.code">
+            <field name="port_code">INSLT6</field>
+            <field name="port_name">SALT LAKE (EPZ/SEZ)</field>
+        </record>
+        <record id="port_code_INSLV4" model="port.code">
+            <field name="port_code">INSLV4</field>
+            <field name="port_name">Simla</field>
+        </record>
+        <record id="port_code_INSMK6" model="port.code">
+            <field name="port_code">INSMK6</field>
+            <field name="port_name">KEONICS/SEZ/SHIMOGA</field>
+        </record>
+        <record id="port_code_INSMPB" model="port.code">
+            <field name="port_code">INSMPB</field>
+            <field name="port_name">Srimantapur</field>
+        </record>
+        <record id="port_code_INSMR1" model="port.code">
+            <field name="port_code">INSMR1</field>
+            <field name="port_name">Simor</field>
+        </record>
+        <record id="port_code_INSNA6" model="port.code">
+            <field name="port_code">INSNA6</field>
+            <field name="port_name">ANSAL SEZ SONEPAT</field>
+        </record>
+        <record id="port_code_INSNBB" model="port.code">
+            <field name="port_code">INSNBB</field>
+            <field name="port_name">Sonabarsa</field>
+        </record>
+        <record id="port_code_INSNF6" model="port.code">
+            <field name="port_code">INSNF6</field>
+            <field name="port_name">ICD, Hyderabad</field>
+        </record>
+        <record id="port_code_INSNG2" model="port.code">
+            <field name="port_code">INSNG2</field>
+            <field name="port_name">Singabad Railway Sta</field>
+        </record>
+        <record id="port_code_INSNI6" model="port.code">
+            <field name="port_code">INSNI6</field>
+            <field name="port_name">KANECH, ICD SAHNEWAL</field>
+        </record>
+        <record id="port_code_INSNLB" model="port.code">
+            <field name="port_code">INSNLB</field>
+            <field name="port_name">Sonauli</field>
+        </record>
+        <record id="port_code_INSNM6" model="port.code">
+            <field name="port_code">INSNN6</field>
+            <field name="port_name">APIIC LTD.</field>
+        </record>
+        <record id="port_code_INSNRA" model="port.code">
+            <field name="port_code">INSNR6</field>
+            <field name="port_name">ARI LTD.</field>
+        </record>
+        <record id="port_code_INSNS6" model="port.code">
+            <field name="port_code">INSNS6</field>
+            <field name="port_name">NLE PVT. LTD.</field>
+        </record>
+        <record id="port_code_INSPC6" model="port.code">
+            <field name="port_code">INSPC6</field>
+            <field name="port_name">CCLPIL SEZ VIZAG</field>
+        </record>
+        <record id="port_code_INSPE6" model="port.code">
+            <field name="port_code">INSPE6</field>
+            <field name="port_name">ASDI SEZ NELLORE</field>
+        </record>
+        <record id="port_code_INSRE6" model="port.code">
+            <field name="port_code">INSRE6</field>
+            <field name="port_name">Saharanpur</field>
+        </record>
+        <record id="port_code_INSRK6" model="port.code">
+            <field name="port_code">INSRK6</field>
+            <field name="port_name">KSITILA/SEZ/PALI/ALZ</field>
+        </record>
+        <record id="port_code_INSRV1" model="port.code">
+            <field name="port_code">INSRV1</field>
+            <field name="port_name">Surasani-Yanam</field>
+        </record>
+        <record id="port_code_INSSE4" model="port.code">
+            <field name="port_code">INSSE4</field>
+            <field name="port_name">Sholapur</field>
+        </record>
+        <record id="port_code_INSTFB" model="port.code">
+            <field name="port_code">INSTFB</field>
+            <field name="port_name">SIKTA LCS</field>
+        </record>
+        <record id="port_code_INSTIB" model="port.code">
+            <field name="port_code">INSTIB</field>
+            <field name="port_name">Sitai</field>
+        </record>
+        <record id="port_code_INSTM6" model="port.code">
+            <field name="port_code">INSTM6</field>
+            <field name="port_name">MIDC PHALTAN SEZ</field>
+        </record>
+        <record id="port_code_INSTP1" model="port.code">
+            <field name="port_code">INSTP1</field>
+            <field name="port_name">Satpati</field>
+        </record>
+        <record id="port_code_INSTRB" model="port.code">
+            <field name="port_code">INSTRB</field>
+            <field name="port_name">Sutarkandi</field>
+        </record>
+        <record id="port_code_INSTT6" model="port.code">
+            <field name="port_code">INSTT6</field>
+            <field name="port_name">Dadri STTPL CFS</field>
+        </record>
+        <record id="port_code_INSTU6" model="port.code">
+            <field name="port_code">INSTU6</field>
+            <field name="port_name">MIDC SEZ SATARA</field>
+        </record>
+        <record id="port_code_INSTV1" model="port.code">
+            <field name="port_code">INSTV1</field>
+            <field name="port_name">Surat</field>
+        </record>
+        <record id="port_code_INSTV4" model="port.code">
+            <field name="port_code">INSTV4</field>
+            <field name="port_name">Surat</field>
+        </record>
+        <record id="port_code_INSTV6" model="port.code">
+            <field name="port_code">INSTV6</field>
+            <field name="port_name">Surat(EPZ/SEZ)</field>
+        </record>
+        <record id="port_code_INSWD1" model="port.code">
+            <field name="port_code">INSWD1</field>
+            <field name="port_name">Shriwardhan</field>
+        </record>
+        <record id="port_code_INSXE6" model="port.code">
+            <field name="port_code">INSXE6</field>
+            <field name="port_name">ELCOT AMMAPALAYAM</field>
+        </record>
+        <record id="port_code_INSXR4" model="port.code">
+            <field name="port_code">INSXR4</field>
+            <field name="port_name">Srinagar</field>
+        </record>
+        <record id="port_code_INSXR5" model="port.code">
+            <field name="port_code">INSXR5</field>
+            <field name="port_name">FPO SRINAGAR</field>
+        </record>
+        <record id="port_code_INSXV4" model="port.code">
+            <field name="port_code">INSXV4</field>
+            <field name="port_name">Salem</field>
+        </record>
+        <record id="port_code_INSXV6" model="port.code">
+            <field name="port_code">INSXV6</field>
+            <field name="port_name">Salem</field>
+        </record>
+        <record id="port_code_INTAD1" model="port.code">
+            <field name="port_code">INTAD1</field>
+            <field name="port_name">Tadri</field>
+        </record>
+        <record id="port_code_INTAS6" model="port.code">
+            <field name="port_code">INTAS6</field>
+            <field name="port_name">SRICITYPVTLTD-SEZ</field>
+        </record>
+        <record id="port_code_INTBC6" model="port.code">
+            <field name="port_code">INTBC6</field>
+            <field name="port_name">CTS PVT. LTD.</field>
+        </record>
+        <record id="port_code_INTBM6" model="port.code">
+            <field name="port_code">INTBM6</field>
+            <field name="port_name">PHPL SEZ KANCHEPURAM</field>
+        </record>
+        <record id="port_code_INTBP6" model="port.code">
+            <field name="port_code">INTBP6</field>
+            <field name="port_name">SPIPL SEZ, PERUGULTH</field>
+        </record>
+        <record id="port_code_INTBS6" model="port.code">
+            <field name="port_code">INTBS6</field>
+            <field name="port_name">HEXAWARE TECH. LTD.</field>
+        </record>
+        <record id="port_code_INTBT6" model="port.code">
+            <field name="port_code">INTBT6</field>
+            <field name="port_name">TCS LTD.</field>
+        </record>
+        <record id="port_code_INTCR6" model="port.code">
+            <field name="port_code">INTCR6</field>
+            <field name="port_name">M/S TICS, ICD MATHIL</field>
+        </record>
+        <record id="port_code_INTDE6" model="port.code">
+            <field name="port_code">INTDE6</field>
+            <field name="port_name">Tudiyalur-Coimbatore</field>
+        </record>
+        <record id="port_code_INTEI4" model="port.code">
+            <field name="port_code">INTEI4</field>
+            <field name="port_name">Tezu</field>
+        </record>
+        <record id="port_code_INTEL1" model="port.code">
+            <field name="port_code">INTEL1</field>
+            <field name="port_name">Tellicherry</field>
+        </record>
+        <record id="port_code_INTEN6" model="port.code">
+            <field name="port_code">INTEN6</field>
+            <field name="port_name">SIPCOT GANGAKONDAN</field>
+        </record>
+        <record id="port_code_INTEZ4" model="port.code">
+            <field name="port_code">INTEZ4</field>
+            <field name="port_name">Tezpur</field>
+        </record>
+        <record id="port_code_INTGN6" model="port.code">
+            <field name="port_code">INTGN6</field>
+            <field name="port_name">KEIPL/ PUNE</field>
+        </record>
+        <record id="port_code_INTHA6" model="port.code">
+            <field name="port_code">INTHA6</field>
+            <field name="port_name">Thar Dry Port Jodhpu</field>
+        </record>
+        <record id="port_code_INTHL1" model="port.code">
+            <field name="port_code">INTHL1</field>
+            <field name="port_name">Thal</field>
+        </record>
+        <record id="port_code_INTHO6" model="port.code">
+            <field name="port_code">INTHO6</field>
+            <field name="port_name">Tiruppur-Thottiplaya</field>
+        </record>
+        <record id="port_code_INTIR4" model="port.code">
+            <field name="port_code">INTIR4</field>
+            <field name="port_name">Tirupati</field>
+        </record>
+        <record id="port_code_INTIV1" model="port.code">
+            <field name="port_code">INTIV1</field>
+            <field name="port_name">Tiviri</field>
+        </record>
+        <record id="port_code_INTJA1" model="port.code">
+            <field name="port_code">INTJA1</field>
+            <field name="port_name">Talaja</field>
+        </record>
+        <record id="port_code_INTJPB" model="port.code">
+            <field name="port_code">INTJPB</field>
+            <field name="port_name">Tezpur Steamerghat</field>
+        </record>
+        <record id="port_code_INTJV4" model="port.code">
+            <field name="port_code">INTJV4</field>
+            <field name="port_name">Thanjavur</field>
+        </record>
+        <record id="port_code_INTKD2" model="port.code">
+            <field name="port_code">INTKD2</field>
+            <field name="port_name">Tuglakabad</field>
+        </record>
+        <record id="port_code_INTKD6" model="port.code">
+            <field name="port_code">INTKD6</field>
+            <field name="port_name">Tuglakabad</field>
+        </record>
+        <record id="port_code_INTKNB" model="port.code">
+            <field name="port_code">INTKNB</field>
+            <field name="port_name">Tikonia</field>
+        </record>
+        <record id="port_code_INTLG6" model="port.code">
+            <field name="port_code">INTLG6</field>
+            <field name="port_name">Pune-Talegoan ICD</field>
+        </record>
+        <record id="port_code_INTLT6" model="port.code">
+            <field name="port_code">INTLT6</field>
+            <field name="port_name">L&amp;T SBL L&amp;T CHENNAI</field>
+        </record>
+        <record id="port_code_INTMI6" model="port.code">
+            <field name="port_code">INTMI6</field>
+            <field name="port_name">M/S IFFCO KISAN, SEZ</field>
+        </record>
+        <record id="port_code_INTMP1" model="port.code">
+            <field name="port_code">INTMP1</field>
+            <field name="port_name">Trombay</field>
+        </record>
+        <record id="port_code_INTMX6" model="port.code">
+            <field name="port_code">INTMX6</field>
+            <field name="port_name">ICD, THIMMAPUR</field>
+        </record>
+        <record id="port_code_INTNA1" model="port.code">
+            <field name="port_code">INTNA1</field>
+            <field name="port_name">Thana</field>
+        </record>
+        <record id="port_code_INTNC6" model="port.code">
+            <field name="port_code">INTNC6</field>
+            <field name="port_name">CCCL SEZ TUTICORIN</field>
+        </record>
+        <record id="port_code_INTND1" model="port.code">
+            <field name="port_code">INTND1</field>
+            <field name="port_name">Tondi</field>
+        </record>
+        <record id="port_code_INTNGB" model="port.code">
+            <field name="port_code">INTNGB</field>
+            <field name="port_name">Tungi</field>
+        </record>
+        <record id="port_code_INTNI6" model="port.code">
+            <field name="port_code">INTNI6</field>
+            <field name="port_name">HIPL SEZ</field>
+        </record>
+        <record id="port_code_INTNK1" model="port.code">
+            <field name="port_code">INTNK1</field>
+            <field name="port_name">Tankari</field>
+        </record>
+        <record id="port_code_INTNS6" model="port.code">
+            <field name="port_code">INTNS6</field>
+            <field name="port_name">SSL SEZ TUTICORIN</field>
+        </record>
+        <record id="port_code_INTPH1" model="port.code">
+            <field name="port_code">INTPH1</field>
+            <field name="port_name">Thopputhurai</field>
+        </record>
+        <record id="port_code_INTPJ6" model="port.code">
+            <field name="port_code">INTPJ6</field>
+            <field name="port_name">ECTN SEZ TRICHY</field>
+        </record>
+        <record id="port_code_INTPN1" model="port.code">
+            <field name="port_code">INTPN1</field>
+            <field name="port_name">Talpona</field>
+        </record>
+        <record id="port_code_INTRA1" model="port.code">
+            <field name="port_code">INTRA1</field>
+            <field name="port_name">Tranquebar</field>
+        </record>
+        <record id="port_code_INTRL6" model="port.code">
+            <field name="port_code">INTRL6</field>
+            <field name="port_name">ICD Tiruvallur</field>
+        </record>
+        <record id="port_code_INTRP1" model="port.code">
+            <field name="port_code">INTRP1</field>
+            <field name="port_name">Tarapur</field>
+        </record>
+        <record id="port_code_INTRV4" model="port.code">
+            <field name="port_code">INTRV4</field>
+            <field name="port_name">Thiruvananthapuram</field>
+        </record>
+        <record id="port_code_INTRZ4" model="port.code">
+            <field name="port_code">INTRZ4</field>
+            <field name="port_name">Tiruchirapalli</field>
+        </record>
+        <record id="port_code_INTSI6" model="port.code">
+            <field name="port_code">INTSI6</field>
+            <field name="port_name">HVCPL SEZ KADAYAM</field>
+        </record>
+        <record id="port_code_INTTP6" model="port.code">
+            <field name="port_code">INTTP6</field>
+            <field name="port_name">Dadri TTPL</field>
+        </record>
+        <record id="port_code_INTTS1" model="port.code">
+            <field name="port_code">INTTS1</field>
+            <field name="port_name">T.T. SHED (KIDDERPOR</field>
+        </record>
+        <record id="port_code_INTUI6" model="port.code">
+            <field name="port_code">INTUI6</field>
+            <field name="port_name">FCPL SEZ KESAVARAM</field>
+        </record>
+        <record id="port_code_INTUN1" model="port.code">
+            <field name="port_code">INTUN1</field>
+            <field name="port_name">Tuna</field>
+        </record>
+        <record id="port_code_INTUP6" model="port.code">
+            <field name="port_code">INTUP6</field>
+            <field name="port_name">Tirupur</field>
+        </record>
+        <record id="port_code_INTUT1" model="port.code">
+            <field name="port_code">INTUT1</field>
+            <field name="port_name">Tuticorin</field>
+        </record>
+        <record id="port_code_INTUT6" model="port.code">
+            <field name="port_code">INTUT6</field>
+            <field name="port_name">Tuticorin ICD</field>
+        </record>
+        <record id="port_code_INTVT6" model="port.code">
+            <field name="port_code">INTVT6</field>
+            <field name="port_name">ICD TONDIARPET CHENN</field>
+        </record>
+        <record id="port_code_INTYR1" model="port.code">
+            <field name="port_code">INTYR1</field>
+            <field name="port_name">Tirukkadayyur</field>
+        </record>
+        <record id="port_code_INUDI6" model="port.code">
+            <field name="port_code">INUDI6</field>
+            <field name="port_name">SYNEFRA-SEZ/UDUPI</field>
+        </record>
+        <record id="port_code_INUDN6" model="port.code">
+            <field name="port_code">INUDN6</field>
+            <field name="port_name">GHB-SEZ SURAT</field>
+        </record>
+        <record id="port_code_INUDR4" model="port.code">
+            <field name="port_code">INUDR4</field>
+            <field name="port_name">Udaipur</field>
+        </record>
+        <record id="port_code_INUDR6" model="port.code">
+            <field name="port_code">INUDR6</field>
+            <field name="port_name">Udaipur</field>
+        </record>
+        <record id="port_code_INUDZ6" model="port.code">
+            <field name="port_code">INUDZ6</field>
+            <field name="port_name">Udaipur</field>
+        </record>
+        <record id="port_code_INVAD1" model="port.code">
+            <field name="port_code">INVAD1</field>
+            <field name="port_name">Vadinar</field>
+        </record>
+        <record id="port_code_INVAL6" model="port.code">
+            <field name="port_code">INVAL6</field>
+            <field name="port_name">Valvada ICD</field>
+        </record>
+        <record id="port_code_INVAP1" model="port.code">
+            <field name="port_code">INVAP1</field>
+            <field name="port_name">Vapi</field>
+        </record>
+        <record id="port_code_INVEN1" model="port.code">
+            <field name="port_code">INVEN1</field>
+            <field name="port_name">Vengurla</field>
+        </record>
+        <record id="port_code_INVEP1" model="port.code">
+            <field name="port_code">INVEP1</field>
+            <field name="port_name">Veppalodai</field>
+        </record>
+        <record id="port_code_INVGA4" model="port.code">
+            <field name="port_code">INVGA4</field>
+            <field name="port_name">Vijayawada</field>
+        </record>
+        <record id="port_code_INVGA5" model="port.code">
+            <field name="port_code">INVGA5</field>
+            <field name="port_name">FPO VIJAYAWADA</field>
+        </record>
+        <record id="port_code_INVKM1" model="port.code">
+            <field name="port_code">INVKM1</field>
+            <field name="port_name">Valinokkam</field>
+        </record>
+        <record id="port_code_INVLD6" model="port.code">
+            <field name="port_code">INVLD6</field>
+            <field name="port_name">DISH/SEZ/KALYANGADH</field>
+        </record>
+        <record id="port_code_INVLN6" model="port.code">
+            <field name="port_code">INVLN6</field>
+            <field name="port_name">NG REALTY-SEZ/TALUKA</field>
+        </record>
+        <record id="port_code_INVLR6" model="port.code">
+            <field name="port_code">INVLR6</field>
+            <field name="port_name">SIPCOT LTD.</field>
+        </record>
+        <record id="port_code_INVNG1" model="port.code">
+            <field name="port_code">INVNG1</field>
+            <field name="port_name">Vengurla</field>
+        </record>
+        <record id="port_code_INVNS4" model="port.code">
+            <field name="port_code">INVNS4</field>
+            <field name="port_name">Varanasi</field>
+        </record>
+        <record id="port_code_INVNS5" model="port.code">
+            <field name="port_code">INVNS5</field>
+            <field name="port_name">FPO VARANASI</field>
+        </record>
+        <record id="port_code_INVNS6" model="port.code">
+            <field name="port_code">INVNS6</field>
+            <field name="port_name">Varanasi</field>
+        </record>
+        <record id="port_code_INVPI6" model="port.code">
+            <field name="port_code">INVPI6</field>
+            <field name="port_name">Vapi</field>
+        </record>
+        <record id="port_code_INVRD1" model="port.code">
+            <field name="port_code">INVRD1</field>
+            <field name="port_name">Varavda</field>
+        </record>
+        <record id="port_code_INVRU1" model="port.code">
+            <field name="port_code">INVRU1</field>
+            <field name="port_name">Vadarevu</field>
+        </record>
+        <record id="port_code_INVSA6" model="port.code">
+            <field name="port_code">INVSA6</field>
+            <field name="port_name">APIIC (HALL NO.3)</field>
+        </record>
+        <record id="port_code_INVSI1" model="port.code">
+            <field name="port_code">INVSI1</field>
+            <field name="port_name">Vansi-Borsi</field>
+        </record>
+        <record id="port_code_INVSK6" model="port.code">
+            <field name="port_code">INVSK6</field>
+            <field name="port_name">APIIC- (HALL NO. 2)</field>
+        </record>
+        <record id="port_code_INVSP6" model="port.code">
+            <field name="port_code">INVSP6</field>
+            <field name="port_name">WIPRO SEZRESPUVANIPA</field>
+        </record>
+        <record id="port_code_INVSV1" model="port.code">
+            <field name="port_code">INVSV1</field>
+            <field name="port_name">Varsova</field>
+        </record>
+        <record id="port_code_INVTC6" model="port.code">
+            <field name="port_code">INVTC6</field>
+            <field name="port_name">CHEYYAR VELLORE</field>
+        </record>
+        <record id="port_code_INVTZ1" model="port.code">
+            <field name="port_code">INVTZ1</field>
+            <field name="port_name">Visakhapatnam</field>
+        </record>
+        <record id="port_code_INVTZ4" model="port.code">
+            <field name="port_code">INVTZ4</field>
+            <field name="port_name">Visakhapatnam</field>
+        </record>
+        <record id="port_code_INVTZ6" model="port.code">
+            <field name="port_code">INVTZ6</field>
+            <field name="port_name">Visakhapatnam SEZ</field>
+        </record>
+        <record id="port_code_INVVA1" model="port.code">
+            <field name="port_code">INVVA1</field>
+            <field name="port_name">Veraval</field>
+        </record>
+        <record id="port_code_INVYD1" model="port.code">
+            <field name="port_code">INVYD1</field>
+            <field name="port_name">Vijaydurg</field>
+        </record>
+        <record id="port_code_INVZJ1" model="port.code">
+            <field name="port_code">INVZJ1</field>
+            <field name="port_name">Vazhinjam</field>
+        </record>
+        <record id="port_code_INVZM6" model="port.code">
+            <field name="port_code">INVZM6</field>
+            <field name="port_name">DLL SEZ</field>
+        </record>
+        <record id="port_code_INVZR6" model="port.code">
+            <field name="port_code">INVZR6</field>
+            <field name="port_name">M/S DR. REDDY SEZ</field>
+        </record>
+        <record id="port_code_INWAL6" model="port.code">
+            <field name="port_code">INWAL6</field>
+            <field name="port_name">Waluj (Aurangabad)</field>
+        </record>
+        <record id="port_code_INWFD6" model="port.code">
+            <field name="port_code">INWFD6</field>
+            <field name="port_name">ICD Bangalore</field>
+        </record>
+        <record id="port_code_INWFI6" model="port.code">
+            <field name="port_code">INWFI6</field>
+            <field name="port_name">INFO/SEZ/BANGALORE</field>
+        </record>
+        <record id="port_code_INWFT6" model="port.code">
+            <field name="port_code">INWFT6</field>
+            <field name="port_name">ITPL SEZ II BENGALUR</field>
+        </record>
+        <record id="port_code_INWGC4" model="port.code">
+            <field name="port_code">INWGC4</field>
+            <field name="port_name">Warrangal</field>
+        </record>
+        <record id="port_code_INWRR6" model="port.code">
+            <field name="port_code">INWRR6</field>
+            <field name="port_name">WARDHA POWER CO LTD</field>
+        </record>
+        <record id="port_code_INYMA6" model="port.code">
+            <field name="port_code">INYMA6</field>
+            <field name="port_name">MODERN ASSET SEZ II</field>
+        </record>
+        <record id="port_code_INYNA6" model="port.code">
+            <field name="port_code">INYNA6</field>
+            <field name="port_name">MOSERN ASSET SEZ I</field>
+        </record>
+        <record id="port_code_INYNK6" model="port.code">
+            <field name="port_code">INYNK6</field>
+            <field name="port_name">KIP/SEZ/N BANGALORE</field>
+        </record>
+        <record id="port_code_INYNL6" model="port.code">
+            <field name="port_code">INYNL6</field>
+            <field name="port_name">L&amp;T CEL SEZ II</field>
+        </record>
+        <record id="port_code_INYNM6" model="port.code">
+            <field name="port_code">INYNM6</field>
+            <field name="port_name">MILESTONE/SEZ/BLR</field>
+        </record>
+        <record id="port_code_INYNT6" model="port.code">
+            <field name="port_code">INYNT6</field>
+            <field name="port_name">L&amp;T CEL SEZ I</field>
+        </record>
+        <record id="port_code_INZIP6" model="port.code">
+            <field name="port_code">INZIP6</field>
+            <field name="port_name">ZIPL-SEZ AHMEDABAD</field>
+        </record>
+        <record id="port_code_INQRH6" model="port.code">
+            <field name="port_code">INQRH6</field>
+            <field name="port_name">HTPL ICD KILARAIPUR</field>
+        </record>
+        <record id="port_code_INKQZ6" model="port.code">
+            <field name="port_code">INKQZ6</field>
+            <field name="port_name">SATTVA ICD BENGALURU</field>
+        </record>
+        <record id="port_code_INWDH6" model="port.code">
+            <field name="port_code">INWDH6</field>
+            <field name="port_name">ICD MORBI</field>
+        </record>
+        <record id="port_code_INBOA6" model="port.code">
+            <field name="port_code">INBOA6</field>
+            <field name="port_name">ADANI ICD-BORKHED</field>
+        </record>
+        <record id="port_code_INLPN6" model="port.code">
+            <field name="port_code">INLPN6</field>
+            <field name="port_name">Phoenix Tech Zone SEZ 115 Nanakramguda RR Dist Tel</field>
+        </record>
+        <record id="port_code_INLPF6" model="port.code">
+            <field name="port_code">INLPF6</field>
+            <field name="port_name">Phoenix Ventures SEZ 35(P)36 Gachibowli RRDist Tel</field>
+        </record>
+        <record id="port_code_INLPA6" model="port.code">
+            <field name="port_code">INLPA6</field>
+            <field name="port_name">Phoenix Infocity SEZ 35(P)36 Gachibowli RRDist Tel</field>
+        </record>
+        <record id="port_code_INNDB6" model="port.code">
+            <field name="port_code">INNDB6</field>
+            <field name="port_name">Yash Technologies SEZ, Plot 1/Scheme 166, Indore</field>
+        </record>
+        <record id="port_code_INSCA6" model="port.code">
+            <field name="port_code">INSCA6</field>
+            <field name="port_name">Sustain Properties SEZ, Raidurg, Ranga Reddy Tel.</field>
+        </record>
+        <record id="port_code_INLPP6" model="port.code">
+            <field name="port_code">INLPP6</field>
+            <field name="port_name">Phoenix Spaces SEZ Puppalguda, R. Nagar, Hyderabad</field>
+        </record>
+        <record id="port_code_INNZM6" model="port.code">
+            <field name="port_code">INNZM6</field>
+            <field name="port_name">Tata Consultancy Services SEZ Sector 157, NOIDA UP</field>
+        </record>
+        <record id="port_code_INTBI6" model="port.code">
+            <field name="port_code">INTBI6</field>
+            <field name="port_name">INFOSYS  LTD SEZ SHOLINGNALLUR, KANCHIPURAM 600119</field>
+        </record>
+        <record id="port_code_INTBA6" model="port.code">
+            <field name="port_code">INTBA6</field>
+            <field name="port_name">TCS SEZ, EGATTUR, SIRUSERI, TamilNadu 603103</field>
+        </record>
+        <record id="port_code_INLPY6" model="port.code">
+            <field name="port_code">INLPY6</field>
+            <field name="port_name">Google Connect ServicesSEZ Nanakramguda RangaReddy</field>
+        </record>
+        <record id="port_code_INLPR6" model="port.code">
+            <field name="port_code">INLPR6</field>
+            <field name="port_name">Phoenix Tech Zone SEZ 203/P Manikonda Ranga Reddy</field>
+        </record>
+        <record id="port_code_INADC6" model="port.code">
+            <field name="port_code">INADC6</field>
+            <field name="port_name">3RD EYE VOICE SEZ, CCIPL, DASCROI AHMEDABAD 380060</field>
+        </record>
+        <record id="port_code_INADG6" model="port.code">
+            <field name="port_code">INADG6</field>
+            <field name="port_name">GANESH HOUSING CORPN SEZ CHARODI DASCROI AHMEDABAD</field>
+        </record>
+        <record id="port_code_INAIP6" model="port.code">
+            <field name="port_code">INAIP6</field>
+            <field name="port_name">ICBP PVT LTD FTWZ SEZ, EDAYANCHAVADI</field>
+        </record>
+        <record id="port_code_INBLO6" model="port.code">
+            <field name="port_code">INBLO6</field>
+            <field name="port_name">ICD BALLI, NEAR RAILWAY STATION BALLI, GOA, 403703</field>
+        </record>
+        <record id="port_code_INBNP6" model="port.code">
+            <field name="port_code">INBNP6</field>
+            <field name="port_name">AEQUES SEZ, BHANAPUR-TALBAL KUKNOOR, KOPPAL-583238</field>
+        </record>
+        <record id="port_code_INBWS6" model="port.code">
+            <field name="port_code">INBWS6</field>
+            <field name="port_name">AFS KAPASHERA, BIJWASAN ROAD, NEW DELHI - 110037</field>
+        </record>
+        <record id="port_code_INBZA6" model="port.code">
+            <field name="port_code">INBZA6</field>
+            <field name="port_name">HCL TECHNOLOGIES SEZ KESARAPALLI  KRISHNA AP521102</field>
+        </record>
+        <record id="port_code_INCCN6" model="port.code">
+            <field name="port_code">INCCN6</field>
+            <field name="port_name">INFOSYS LTD  SEZ, HINJEWADI, PHASE-II, PUNE, MAH.</field>
+        </record>
+        <record id="port_code_INCNN4" model="port.code">
+            <field name="port_code">INCNN4</field>
+            <field name="port_name">AIR CARGO COMPLEX, KANNUR INTERNATIONAL AIRPORT</field>
+        </record>
+        <record id="port_code_INCTY6" model="port.code">
+            <field name="port_code">INCTY6</field>
+            <field name="port_name">DIVIS LABSEZ LINGOJIGUDEM YADADRI BHUVANGIRI505252</field>
+        </record>
+        <record id="port_code_INDHB1" model="port.code">
+            <field name="port_code">INDHB1</field>
+            <field name="port_name">LCS STEAMER GHAT, DHUBRI - 783301</field>
+        </record>
+        <record id="port_code_INGHW1" model="port.code">
+            <field name="port_code">INGHW1</field>
+            <field name="port_name">LCS STEAMER GHAT, PANDU, GUWAHATI - 781012</field>
+        </record>
+        <record id="port_code_INGNI6" model="port.code">
+            <field name="port_code">INGNI6</field>
+            <field name="port_name">LTIMINDTREE LTD SEZ, MAHAPE, NAVI MUMBAI, MAH.</field>
+        </record>
+        <record id="port_code_INGOX4" model="port.code">
+            <field name="port_code">INGOX4</field>
+            <field name="port_name">ACC MANOHAR INTERNATIONAL AIRPORT MOPA GOA 403512</field>
+        </record>
+        <record id="port_code_INGPL6" model="port.code">
+            <field name="port_code">INGPL6</field>
+            <field name="port_name">ICD-PLIL GHUNGRANA, MALERKOTLA ROAD, LUDHIANA</field>
+        </record>
+        <record id="port_code_INHBL6" model="port.code">
+            <field name="port_code">INHBL6</field>
+            <field name="port_name">EMBASSY PROPERTY DEVELOPMENT  SEZ BENGULURU 560001</field>
+        </record>
+        <record id="port_code_INHEL6" model="port.code">
+            <field name="port_code">INHEL6</field>
+            <field name="port_name">L &amp; T REALTY DEVELOPERS LTD SEZ,  BENGALURU 560024</field>
+        </record>
+        <record id="port_code_INHLS6" model="port.code">
+            <field name="port_code">INHLS6</field>
+            <field name="port_name">SIEMENS HEALTHCARE BOMMASANDRA ANEKAL BENGULURU099</field>
+        </record>
+        <record id="port_code_INHSA6" model="port.code">
+            <field name="port_code">INHSA6</field>
+            <field name="port_name">ELCOT SEZ, HOSUR, KRISHNAGIRI - 635109</field>
+        </record>
+        <record id="port_code_INHYC6" model="port.code">
+            <field name="port_code">INHYC6</field>
+            <field name="port_name">DIVIJA COMMERCIAL PROP. SEZ RAIDURGAM HYDERABAD-32</field>
+        </record>
+        <record id="port_code_INHZR6" model="port.code">
+            <field name="port_code">INHZR6</field>
+            <field name="port_name">KRIBHCO INFSTR LTD,HAZIRA,KRIBHCO NGR,SURAT,GUJRAT</field>
+        </record>
+        <record id="port_code_INKGJB" model="port.code">
+            <field name="port_code">INKGJB</field>
+            <field name="port_name">LCS KARIMGANJ STEAMERGHAT &amp; FERRY</field>
+        </record>
+        <record id="port_code_INKJW6" model="port.code">
+            <field name="port_code">INKJW6</field>
+            <field name="port_name">WIPRO LIMITED SEZ, KODATHI, BENGALURU- 560035</field>
+        </record>
+        <record id="port_code_INLGL1" model="port.code">
+            <field name="port_code">INLGL1</field>
+            <field name="port_name">MAIA, RIVERINE PORT, MURSHIDABAD, WEST BENGAL</field>
+        </record>
+        <record id="port_code_INLPU6" model="port.code">
+            <field name="port_code">INLPU6</field>
+            <field name="port_name">LAXMI INFOBAHN SEZ KOKAPET GANDIPET HYDERABAD-075</field>
+        </record>
+        <record id="port_code_INMDC6" model="port.code">
+            <field name="port_code">INMDC6</field>
+            <field name="port_name">ELCOT SEZ, VADAPALANJI, MADURAI- 625021</field>
+        </record>
+        <record id="port_code_INMEM6" model="port.code">
+            <field name="port_code">INMEM6</field>
+            <field name="port_name">VISA RADIANT CORPN SEZ MUPPIREDDIPALY MEDAK 502336</field>
+        </record>
+        <record id="port_code_INNJP6" model="port.code">
+            <field name="port_code">INNJP6</field>
+            <field name="port_name">ICD DABGRAM, GHORA MORE, WB</field>
+        </record>
+        <record id="port_code_INNPK6" model="port.code">
+            <field name="port_code">INNPK6</field>
+            <field name="port_name">NDR INFRA PVT LTD SEZ, NANDIAMBAKKAM, CHENNAI</field>
+        </record>
+        <record id="port_code_INPJN6" model="port.code">
+            <field name="port_code">INPJN6</field>
+            <field name="port_name">JAWAHARLAL NEHRU PORT AUTHORITY SEZ, NAVI MUMBAI</field>
+        </record>
+        <record id="port_code_INRUG6" model="port.code">
+            <field name="port_code">INRUG6</field>
+            <field name="port_name">ICD BARHI, GANAUR, SONEPAT DISTRICT, HARYANA</field>
+        </record>
+        <record id="port_code_INSBZB" model="port.code">
+            <field name="port_code">INSBZB</field>
+            <field name="port_name">LAND CUSTOMS STATION  SHELLABAZAR, MEGHALAYA</field>
+        </record>
+        <record id="port_code_INSCB6" model="port.code">
+            <field name="port_code">INSCB6</field>
+            <field name="port_name">TECH MAHENDRA LTD SEZ BAHADURPALLY HYDERABAD500043</field>
+        </record>
+        <record id="port_code_INSCM6" model="port.code">
+            <field name="port_code">INSCM6</field>
+            <field name="port_name">TECH MAHENDRA LTD SEZ MADHAPUR HYDERABAD 500081</field>
+        </record>
+        <record id="port_code_INSCV6" model="port.code">
+            <field name="port_code">INSCV6</field>
+            <field name="port_name">VAXENIC INDIA PVT LTD  SEZ SHAMEERPET MEDCHAL TEL.</field>
+        </record>
+        <record id="port_code_INSPB6" model="port.code">
+            <field name="port_code">INSPB6</field>
+            <field name="port_name">BHARTIYA INTERNATIONAL SEZ KONDURU, NELLORE 524401</field>
+        </record>
+        <record id="port_code_INTAN6" model="port.code">
+            <field name="port_code">INTAN6</field>
+            <field name="port_name">ROMA BUILDERS PVT LTD SEZ KAVESAR, THANE, MAH.</field>
+        </record>
+        <record id="port_code_INTVM6" model="port.code">
+            <field name="port_code">INTVM6</field>
+            <field name="port_name">CHEYYAR DEVELOPERSEZ THINDIVANAM VILLUPURAM 604001</field>
+        </record>
+        <record id="port_code_INVKNB" model="port.code">
+            <field name="port_code">INVKNB</field>
+            <field name="port_name">LCS VALMIKINAGAR, WEST CHAMPARAN, BIHAR - 845107</field>
+        </record>
+        <record id="port_code_INVRM6" model="port.code">
+            <field name="port_code">INVRM6</field>
+            <field name="port_name">ICD VARNAMA, DISTRICT - VADODARA, GUJARAT-391243</field>
+        </record>
+
+    </data>
+</odoo>

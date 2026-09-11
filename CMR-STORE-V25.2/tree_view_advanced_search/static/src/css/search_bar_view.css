@@ -1,0 +1,106 @@
+.search-input {
+    border: 1px solid #ccc;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 5px;
+    background-color: #E7E8ED;
+    max-height: 71px;
+    overflow: auto;
+}
+.search-input::-webkit-scrollbar {
+    display: none;
+}
+.input_data {
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 16px;
+    background-color: #E7E8ED;
+}
+.dp-class {
+    height: 48px;
+    margin-bottom: 5px;
+    border-radius: 9px;
+}
+.fa-search {
+    margin-top: 18px;
+    margin-left: -18px;
+    transform: translateY(-50%);
+    color: #030202;
+}
+.fa-close {
+    margin-left: 5px;
+    color: #f50505;
+}
+.tag {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 2px 5px;
+    margin-top: 2px;
+    margin-right: 5px;
+    display: inline-flex;
+    align-items: center;
+}
+.tag-remove {
+    cursor: pointer;
+    margin-left: 5px;
+    color: #777;
+    font-weight: bold;
+}
+.date-input {
+     border: 1px solid #ccc;
+     font-size: 15px;
+     height: 48px;
+     background-color: #E7E8ED;
+     padding-left: 12px;
+     padding-top: 11px;
+     margin-left: 2px;
+     border-radius: 5px;
+     margin-top: -16px;
+}
+.arrow{
+    padding-bottom: 15px;
+    padding-left: 2px;
+}
+
+/* --- ADDED: spacing/containment fixes for merged filter cells --- */
+.search-input,
+.date-input,
+.dp-class {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin-right: 6px;
+}
+
+.o_list_renderer table thead th {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.dp-class .dropdown-toggle,
+.dp-class button {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.dp-class .dropdown-menu {
+    z-index: 1000;
+}
+
+/* --- ADDED: make Many2One filter input visually match .input_data, without touching existing rules --- */
+.search-input .o-autocomplete--input.o_input {
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-size: 16px;
+    background-color: #E7E8ED;
+    box-shadow: none;
+    width: 100%;
+    box-sizing: border-box;
+}

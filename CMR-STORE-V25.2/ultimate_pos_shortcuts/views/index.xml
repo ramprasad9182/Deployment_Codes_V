@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="template_index" inherit_id="point_of_sale.index" name="Index">
+        <xpath expr="//head/t[last()]" position="replace">
+            <t t-call-assets="ultimate_pos_shortcuts.hotkeys"/>
+        </xpath>
+    </template>
+
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="cancel_irn_wizard" model="ir.ui.view">
+            <field name="name">cancel.irn.wizard</field>
+            <field name="model">cancel.irn.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Cancel IRN">
+                    <group>
+                        <field name="cancel_reason" required="1"/>
+                        <field name="cancel_irn_remark" required="1"/>
+                    </group>
+                    <footer>
+                        <button class="btn-primary" name="action_cancel_irn" string="Submit" type="object"/>
+                        <button class="btn-primary" special="cancel" string="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

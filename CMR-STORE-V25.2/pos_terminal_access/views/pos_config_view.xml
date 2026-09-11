@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="inherit_ip_pos_config_view_form" model="ir.ui.view">
+            <field name="name">pos.config.view.form.inherit.ip</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('o_settings_container')][1]" position="after">
+                    <div class="col-12 col-lg-6 o_setting_box" title="Default Cusotmer in POS Order.">
+                        <div class="o_setting_right_pane">
+                            <label for="system_ip_address"/>
+                            <div class="text-muted">
+                               System Server IP Address
+                            </div>
+                            <div class="content-group mt16">
+                                <field name="system_ip_address" colspan="4" nolabel="1"/>
+
+
+                            </div>
+
+                            <div class="text-muted">
+                               user name
+                            </div>
+                            <div class="content-group mt16">
+
+                                <field name="user_name" colspan="4" nolabel="1"/>
+
+                            </div>
+
+                             <div class="text-muted">
+                              Password
+                            </div>
+                            <div class="content-group mt16">
+
+                                <field name="password" type="password"/>
+
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

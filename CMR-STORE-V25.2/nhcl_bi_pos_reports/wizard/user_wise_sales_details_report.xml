@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="user_wise_sales_detail_report_view_form" model="ir.ui.view">
+            <field name="name">user.wise.sales.detail.report.form.view</field>
+            <field name="model">user.wise.sales.detail.report</field>
+            <field name="arch" type="xml">
+                <form string="User Wise Sales Detail Report">
+                    <group>
+                        <group>
+                            <field name="start_date" required="1"/>
+                            <field name="end_date" required="1"/>
+                        </group>
+                        <group>
+                            <field name="select_state"/>
+                            <field name="company_ids" widget="many2many_tags" options="{'no_create_edit': True}"/>
+                        </group>
+                    </group>
+                    <field name="user_ids" groups="sales_team.group_sale_manager" nolabel="1">
+                        <tree create="true" delete="true">
+                            <field name="name" string="Salesperson"/>
+                        </tree>
+                    </field>
+                    <footer>
+                        <button name="user_wise_sale_detail_pdf_report" class="btn btn-primary" string="Print PDF"
+                                type="object"/>
+                        <button name="user_wise_sale_detail_xls_report" class="btn btn-primary" string="Print XLS"
+                                type="object"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="user_wise_sales_detail_wizard_action" model="ir.actions.act_window">
+            <field name="name">User Wise POS Sales Detail Report</field>
+            <field name="res_model">user.wise.sales.detail.report</field>
+            <field name="view_id" ref="user_wise_sales_detail_report_view_form"/>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+                id="user_wise_sales_detail_report_menu"
+                name="User Wise Pos Sales Detail Report"
+                action="user_wise_sales_detail_wizard_action"
+                parent="nhcl_bi_pos_reports.menu_report_parent"
+                sequence="7"
+        />
+        <record id="user_wise_sales_detail_report_action" model="ir.actions.report">
+            <field name="name">User Wise POS Sales Detail Report</field>
+            <field name="model">user.wise.sales.detail.report</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">nhcl_bi_pos_reports.user_wise_sales_detail_doc</field>
+            <field name="report_file">nhcl_bi_pos_reports.user_wise_sales_detail_doc</field>
+            <field name="binding_type">report</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Wizard Form View -->
+    <record id="view_nhcl_pos_mop_change_report_form" model="ir.ui.view">
+        <field name="name">nhcl.pos.mop.change.report.form</field>
+        <field name="model">nhcl.pos.mop.change.report</field>
+        <field name="arch" type="xml">
+            <form string="POS MOP Change Report" create="0">
+                <h1 style="color:black;text-align:center;">POS MOP Change Report</h1>
+                <sheet>
+                    <header>
+                        <button name="action_load_data" type="object" string="Load Report" class="oe_highlight"/>
+                        <button name="action_to_reset" type="object" string="Reset"/>
+                        <button name="action_get_excel" type="object" string="Excel"/>
+                    </header>
+                    <group style="border: 2px solid #990099; padding: 10px;">
+                        <group>
+                            <field name="company_id" placeholder="Select Store" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="config_id" placeholder="Select Terminal" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="session_id" placeholder="Select Session" options="{'no_create': True, 'no_open': True}"/>
+                        </group>
+                        <group>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="MOP Change Details">
+                            <field name="line_ids" readonly="1">
+                                <tree create="0" delete="0" edit="0" limit="1000000">
+                                    <field name="sequence_no" string="S.NO"/>
+                                    <field name="bill_ref" string="Bill Ref"/>
+                                    <field name="order_ref" string="Order Ref"/>
+                                    <field name="date" string="Date"/>
+                                    <field name="session_id" string="Session"/>
+                                    <field name="cashier" string="Cashier"/>
+                                    <field name="amount" string="Amount" sum="Total Amount"/>
+                                    <field name="payment_method_id" string="Payment Method"/>
+                                    <field name="old_payment_method_id" string="Old Payment"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Line Tree View -->
+    <record id="view_nhcl_pos_mop_change_report_line_tree" model="ir.ui.view">
+        <field name="name">nhcl.pos.mop.change.report.line.tree</field>
+        <field name="model">nhcl.pos.mop.change.report.line</field>
+        <field name="arch" type="xml">
+            <tree create="0" delete="0" edit="0" limit="1000000">
+                <field name="sequence_no" string="S.NO"/>
+                <field name="bill_ref" string="Bill Ref"/>
+                <field name="order_ref" string="Order Ref"/>
+                <field name="date" string="Date"/>
+                <field name="session_id" string="Session"/>
+                <field name="cashier" string="Cashier"/>
+                <field name="amount" string="Amount" sum="Total Amount"/>
+                <field name="payment_method_id" string="Payment Method"/>
+                <field name="old_payment_method_id" string="Old Payment"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Line Pivot View -->
+    <record id="view_nhcl_pos_mop_change_report_line_pivot" model="ir.ui.view">
+        <field name="name">nhcl.pos.mop.change.report.line.pivot</field>
+        <field name="model">nhcl.pos.mop.change.report.line</field>
+        <field name="arch" type="xml">
+            <pivot string="POS MOP Change Analysis">
+                <field name="session_id" type="row"/>
+                <field name="payment_method_id" type="col"/>
+                <field name="amount" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+</odoo>

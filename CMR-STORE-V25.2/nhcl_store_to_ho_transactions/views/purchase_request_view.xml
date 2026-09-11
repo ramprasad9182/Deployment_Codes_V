@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="purchase_request_view_form_inherit" model="ir.ui.view">
+        <field name="name">purchase.order.request.form.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+             <xpath expr="//field[@name='partner_ref']" position="after">
+                <field name="scan_barcode"
+                       style="border: 4px solid #714B67;padding-top: 6px;margin-bottom: 10px;"
+                       placeholder="Please, Scan Barcode Here......"
+                       invisible="upload_type != 'pt_upload'"
+                />
+            </xpath>
+            <xpath expr="//page[@name='products']" position="after">
+                <page string="Scan PT Upload" name="scan_pt_upload" invisible="upload_type != 'pt_upload'">
+                    <field name="scan_pt_upload_line_ids" readonly="1" force_save="1">
+                        <tree editable="bottom" create="0" delete="0">
+                            <field name="barcode"/>
+                            <field name="quantity"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+<!--            <xpath expr="//field[@name='order_line']" position="attributes">-->
+<!--                <attribute name="readonly">nhcl_update_status == True</attribute>-->
+<!--            </xpath>-->
+
+            <xpath expr="//field[@name='order_line']" position="attributes">
+                <attribute name="readonly">(upload_type == 'pt_upload' and nhcl_replication_status) or (upload_type !=
+                    'pt_upload' and nhcl_update_status)
+                </attribute>
+            </xpath>
+            <xpath expr="//sheet" position="before">
+                <div class="alert alert-success" role="alert" invisible="nhcl_replication_status == False">
+                    <field name="warning_message" style="white-space: pre-wrap;"/>
+                </div>
+                <div class="alert alert-danger" role="alert" invisible="nhcl_replication_status == True">
+                    <field name="warning_message" style="white-space: pre-wrap;"/>
+                </div>
+                 <div class="alert alert-success" role="alert" invisible="nhcl_update_status == False or upload_type == 'pt_upload'">
+                    <field name="update_warning_message" style="white-space: pre-wrap;"/>
+                </div>
+                <div class="alert alert-danger" role="alert" invisible="nhcl_update_status == True or upload_type == 'pt_upload'">
+                    <field name="update_warning_message" style="white-space: pre-wrap;"/>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='nhcl_po_type']" position="after">
+                <field name="nhcl_replication_status" readonly="1"/>
+                <field name="nhcl_update_status" readonly="1"/>
+
+            </xpath>
+            <xpath expr="//field[@name='picking_type_id']" position="after">
+                <field name="invoice_number" string="PO Number"
+                       readonly="nhcl_replication_status"
+                       required="upload_type == 'pt_upload'"
+                       invisible="upload_type != 'pt_upload'"/>
+                <field name="upload_type" readonly="nhcl_replication_status == True"/>
+                <button name="action_open_upload_wizard" type="object" string="Upload PT" class="btn-primary"
+                        invisible="upload_type != 'pt_upload' or nhcl_replication_status"/>
+            </xpath>
+              <xpath expr="//field[@name='product_template_id']" position="after">
+                <field name="icode_barcode" column_invisible="parent.upload_type != 'pt_upload'"/>
+<!--                 <field name="article_name"/>-->
+                <field name="brand" column_invisible="parent.upload_type != 'pt_upload'"/>
+                <field name="size" column_invisible="parent.upload_type != 'pt_upload'"/>
+                <field name="design" column_invisible="parent.upload_type != 'pt_upload'"/>
+                <field name="fit" column_invisible="parent.upload_type != 'pt_upload'"/>
+                <field name="color" column_invisible="parent.upload_type != 'pt_upload'"/>
+                <field name="product_excel" column_invisible="parent.upload_type != 'pt_upload'"/>
+<!--                <field name="standard_rate" column_invisible="parent.upload_type != 'pt_upload'"/>-->
+                <field name="mrp" column_invisible="parent.upload_type != 'pt_upload'" optional="hide"/>
+                <field name="rsp" column_invisible="parent.upload_type != 'pt_upload'" optional="hide"/>
+                <field name="item_vendor_id" column_invisible="parent.upload_type != 'pt_upload'"/>
+                <field name="hsn_sac_code" column_invisible="parent.upload_type != 'pt_upload'"/>
+                <field name="des5" column_invisible="parent.upload_type != 'pt_upload'" optional="hide"/>
+<!--                <field name="des6" column_invisible="parent.upload_type != 'pt_upload'"/>-->
+
+            </xpath>
+            <xpath expr="//header/button[@name='action_rfq_send']" position="after">
+                <button name="send_purchase_request_to_ho"
+                        string="Sync to HO" class="oe_highlight" type="object"
+                        invisible="nhcl_replication_status == True"
+                />
+                <button name="update_purchase_request_to_ho"  invisible="nhcl_update_status == True or nhcl_replication_status == False or  upload_type in ['pt_upload']"
+                        string="Update to HO" class="oe_highlight" type="object"
+
+                />
+                <button name="cancel_purchase_request_to_ho"
+                        string="Cancel to HO" class="oe_highlight" type="object" invisible="state != 'cancel'"/>
+            </xpath>
+            <xpath expr="//header/button[@id='draft_confirm']" position="replace">
+                <button name="button_confirm" type="object" invisible="1" string="Confirm Order"
+                        context="{'validate_analytic': True}" class="oe_highlight" id="bid_confirm" data-hotkey="q"/>
+            </xpath>
+            <xpath expr="//header/field[@name='state']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='taxes_id']" position="attributes">
+                <attribute name="column_invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="attributes">
+                <attribute name="column_invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='price_subtotal']" position="attributes">
+                <attribute name="column_invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='tax_totals']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//tree" position="inside">
+                <field name="mbq_plan" readonly="1" force_save="1"/>
+                <field name="mbq_max_qty" readonly="1" force_save="1"/>
+                <field name="offer_id" readonly="1" force_save="1"/>
+                <button name="action_open_replenishment_wizard" type="object" string="MBQ"
+                        class="oe_highlight"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_purchase_order_line_tree_custom" model="ir.ui.view">
+        <field name="name">purchase.order.line.tree.custom</field>
+        <field name="model">purchase.order.line</field>
+        <field name="arch" type="xml">
+            <tree string="Purchase Order Lines"
+                  decoration-success="status == 'done'"
+                  decoration-warning="status == 'partial'"
+                  decoration-danger="status == 'pending'">
+                <field name="company_id" string="Store Name"/>
+                <field name="create_date" string="Indent Date"/>
+                <field name="order_id" string="Indent No"/>
+                <field name="divison"/>
+                <field name="section"/>
+                <field name="department"/>
+                <field name="brick"/>
+                <field name="product_id"/>
+                <field name="product_qty" string="Quantity"/>
+                <field name="nhcl_onhand_qty"/>
+                <field name="issued_qty"/>
+                <field name="diff_qty"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="action_purchase_order_line_tree_custom" model="ir.actions.act_window">
+        <field name="name">Store Indent References</field>
+        <field name="res_model">purchase.order.line</field>
+        <field name="view_mode">tree,pivot,search</field>
+        <field name="view_id" ref="view_purchase_order_line_tree_custom"/>
+        <field name="context">{'create': False,'edit':False, 'delete':False}</field>
+        <field name="domain">[('order_id.upload_type', '=', 'normal')]</field>
+    </record>
+
+
+    <menuitem id="menu_store_indent_reference"
+              name="Indent Dashboard"
+              parent="purchase.menu_purchase_root"
+              action="action_purchase_order_line_tree_custom"
+              sequence="1"/>
+</odoo>
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+    <t t-name="Many2OneFilter">
+        <div class="search-input" t-att-id="props.name + 'Container'">
+            <div style="display: flex;">
+                <Many2XAutocomplete t-props="many2xProps"/>
+                <i class="fa fa-search" t-on-click="onSearchIconClick"/>
+            </div>
+        </div>
+    </t>
+</templates>

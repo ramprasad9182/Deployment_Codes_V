@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="highest_selling_product_report_template">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <h1 style="width:100%; text-align:center;">
+                            <strong>Highest Selling Product Report</strong>
+                        </h1>
+                        <t t-if="docs.report_type == 'basic'">
+                            <h5 style="width:100%; text-align:center;">
+                                <strong>Companies :
+                                    <t t-esc="docs.company_record()"/>
+                                </strong>
+                            </h5>
+                            <div style="width:100%;" class="row">
+                                <div style="width:33%; text-align:left;" class="column">
+                                    <h5>
+                                        <strong>Start Date :
+                                            <t t-esc="docs.from_date"/>
+                                        </strong>
+                                    </h5>
+                                </div>
+                                <div style="width:67%; text-align:right;" class="column">
+                                    <div style="float:right; margin-left:80px;">
+                                        <h5>
+                                            <strong>End Date :
+                                                <t t-esc="docs.to_date"/>
+                                            </strong>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                        <t t-if="docs.report_type == 'compare'">
+                            <h5 style="width:100%; text-align:center;">
+                                <strong>Companies :
+                                    <t t-esc="docs.company_record()"/>
+                                </strong>
+                            </h5>
+                            <div style="width:100%;" class="row">
+                                <div style="width:50%; text-align:left;" class="column">
+                                    <h5>
+                                        <strong>From Date :
+                                            <t t-esc="docs.from_date"/>
+                                        </strong>
+                                        <br/>
+                                        <strong>To Date :
+                                            <t t-esc="docs.to_date"/>
+                                        </strong>
+                                    </h5>
+                                </div>
+                                <div style="width:50%;" class="column">
+                                    <div style="float:right;">
+                                        <h5>
+                                            <strong>
+                                                <span>Compare From Date :</span>
+                                                <t t-esc="docs.compare_from_date"/>
+                                                <br/>
+                                                <span>Compare To Date :</span>
+                                                <t t-esc="docs.compare_to_date"/>
+                                                <br/>
+                                            </strong>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                        <br/>
+                        <t t-set="report_data" t-value="docs.set_table_values()"/>
+                        <t t-as="k" t-foreach="report_data">
+                            <t t-if="k == 'basic'">
+                                <table style="width:90%; margin-left:auto; margin-right: auto;"
+                                       class="table table-bordered" t-if="docs.report_type == 'basic'">
+                                    <tr>
+                                        <th style="text-align:center;background-color:powderblue;">
+                                            <b>#</b>
+                                        </th>
+                                        <th style="text-align:center;background-color:powderblue;">
+                                            <b>Product</b>
+                                        </th>
+                                        <th style="text-align:center;background-color:powderblue;">
+                                            <b>Qty Sold</b>
+                                        </th>
+                                    </tr>
+
+
+                                    <t t-set="counter" t-value="0"/>
+                                    <t t-as="d" t-foreach="report_data[k]">
+                                        <tr>
+                                            <t t-set="counter" t-value="counter + 1"/>
+                                            <td style="text-align:center;">
+                                                <t t-esc="counter"/>
+                                            </td>
+                                            <td style="text-align:center;">
+                                                <t t-esc="d[0]"/>
+                                            </td>
+                                            <td style="text-align:center;">
+                                                <t t-esc="'%.2f'% d[1]"/>
+                                            </td>
+                                        </tr>
+
+                                    </t>
+                                </table>
+                            </t>
+                        </t>
+                        <t t-as="x" t-foreach="report_data">
+                            <t t-if="x == 'basic'">
+                                <div style="float: left;width: 50%;padding: 5px;"
+                                     t-if="docs.report_type == 'compare'">
+                                    <table style="width:90%; margin-left:auto; margin-right: auto;"
+                                           class="table table-bordered"
+                                           t-if="docs.report_type == 'compare'">
+                                        <tr>
+                                            <th style="text-align:center;background-color:powderblue;">
+                                                <b>#</b>
+                                            </th>
+                                            <th style="text-align:center;background-color:powderblue;">
+                                                <b>Product</b>
+                                            </th>
+                                            <th style="text-align:center;background-color:powderblue;">
+                                                <b>Qty Sold</b>
+                                            </th>
+                                        </tr>
+                                        <t t-set="counter" t-value="0"/>
+                                        <t t-as="d" t-foreach="report_data[x]">
+                                            <tr>
+                                                <t t-set="counter" t-value="counter + 1"/>
+                                                <td style="text-align:center;">
+                                                    <t t-esc="counter"/>
+                                                </td>
+                                                <td style="text-align:center;">
+                                                    <t t-esc="d[0]"/>
+                                                </td>
+                                                <td style="text-align:center;">
+                                                    <t t-esc="'%.2f'% d[1]"/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </table>
+                                    <br/>
+                                    <t t-as="y" t-foreach="report_data">
+                                        <t t-if="y in ['new']">
+                                            <t t-if="y == 'new' and len(report_data[y]) >=1">
+                                                <table
+                                                        style="width:90%; margin-left:auto; margin-right: auto;"
+                                                        class="table table-bordered"
+                                                        t-if="docs.report_type == 'compare'">
+                                                    <tr>
+                                                        <th style="text-align:center;background-color:powderblue;">
+                                                            <b>New Product</b>
+                                                        </th>
+                                                    </tr>
+                                                    <t t-as="d" t-foreach="report_data[y]">
+                                                        <tr>
+                                                            <td style="text-align:center;">
+                                                                <t t-esc="d"/>
+                                                            </td>
+                                                        </tr>
+                                                    </t>
+                                                </table>
+                                            </t>
+                                        </t>
+                                    </t>
+                                </div>
+                            </t>
+
+                            <t t-if="x == 'compare'">
+                                <div style="float: right;width: 50%;padding: 5px;"
+                                     t-if="docs.report_type == 'compare'">
+                                    <table style="width:90%; margin-left:auto; margin-right: auto;"
+                                           class="table table-bordered">
+                                        <tr>
+                                            <th style="text-align:center;background-color:powderblue;">
+                                                <b>#</b>
+                                            </th>
+                                            <th style="text-align:center;background-color:powderblue;">
+                                                <b>Product</b>
+                                            </th>
+                                            <th style="text-align:center;background-color:powderblue;">
+                                                <b>Qty Sold</b>
+                                            </th>
+                                        </tr>
+                                        <t t-set="counter" t-value="0"/>
+                                        <t t-as="d" t-foreach="report_data[x]">
+                                            <tr>
+                                                <t t-set="counter" t-value="counter + 1"/>
+                                                <td style="text-align:center;">
+                                                    <t t-esc="counter"/>
+                                                </td>
+                                                <td style="text-align:center;">
+                                                    <t t-esc="d[0]"/>
+                                                </td>
+                                                <td style="text-align:center;">
+                                                    <t t-esc="'%.2f'% d[1]"/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </table>
+                                    <br/>
+                                    <t t-as="z" t-foreach="report_data">
+                                        <t t-if="z in ['lost']">
+                                            <t t-if="z == 'lost' and len(report_data[z]) >=1">
+                                                <table
+                                                        style="width:90%; margin-left:auto; margin-right: auto;"
+                                                        class="table table-bordered"
+                                                        t-if="docs.report_type == 'compare'">
+                                                    <tr>
+                                                        <th style="text-align:center;background-color:powderblue;">
+                                                            <b>Lost Product</b>
+                                                        </th>
+                                                    </tr>
+                                                    <t t-as="d" t-foreach="report_data[z]">
+                                                        <tr>
+                                                            <td style="text-align:center;">
+                                                                <t t-esc="d[0]"/>
+                                                            </td>
+                                                        </tr>
+                                                    </t>
+                                                </table>
+                                            </t>
+                                        </t>
+                                    </t>
+                                </div>
+                            </t>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+
+</odoo>
+
+
+

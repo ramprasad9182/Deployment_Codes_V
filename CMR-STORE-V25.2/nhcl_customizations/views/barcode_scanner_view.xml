@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_barcode_scanner_session_form" model="ir.ui.view">
+        <field name="name">barcode.scanner.session.form</field>
+        <field name="model">barcode.scanner.session</field>
+        <field name="arch" type="xml">
+            <form string="Barcode Scanner">
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="scan_date" readonly="1" />
+                            <field name="scan_field" placeholder="Scan Barcode..." default_focus="1"/>
+                        </group>
+                    </group>
+
+                    <separator string="Scanned Barcodes List"/>
+                    <field name="matched_barcode_ids" force_save="1" readonly="1">
+                        <tree create="false" edit="false" readonly="1">
+                            <field name="barcode" string="Barcode Number"/>
+                            <field name="stock_picking_delivery_id" string="Delivery Reference"/>
+                            <field name="status" widget="badge" decoration-success="status == 'matched'"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_barcode_scanner_session" model="ir.actions.act_window">
+        <field name="name">Bale Barcode Scanner</field>
+        <field name="res_model">barcode.scanner.session</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_barcode_scanner_root" name="Bale Barcode Scanner"
+              parent="stock.menu_stock_transfers"
+              sequence="1000"
+              action="action_barcode_scanner_session"/>
+</odoo>

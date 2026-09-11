@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form View -->
+    <record id="view_walkin_screen_form" model="ir.ui.view">
+        <field name="name">walkin.screen.form</field>
+        <field name="model">walkin.screen</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="doc_number"/>
+                        <field name="creation_date"/>
+                        <field name="month"/>
+                        <field name="year_id"/>
+                        <field name="date_type"/>
+<!--                        <field name="date" invisible="date_type != 'hour'"/>-->
+                    </group>
+
+                    <notebook>
+                        <page string="Lines">
+                            <field name="line_ids">
+                                <tree editable="bottom">
+                                    <field name="date" column_invisible="parent.date_type != 'day'" readonly="1" force_save="1"/>
+                                    <field name="select_date" column_invisible="parent.date_type != 'hour'" readonly="1" force_save="1"/>
+                                    <field name="end_time" column_invisible="parent.date_type != 'hour'" readonly="1" force_save="1"/>
+                                    <field name="no_of_walkins"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View -->
+    <record id="view_tree_walkin_screen" model="ir.ui.view">
+        <field name="name">walkin.screen.tree</field>
+        <field name="model">walkin.screen</field>
+        <field name="arch" type="xml">
+            <tree string="Walk-In Screens">
+                <field name="doc_number"/>
+                <field name="creation_date"/>
+                <field name="month"/>
+                <field name="year_id"/>
+                <field name="date_type"/>
+            </tree>
+        </field>
+    </record>
+
+
+</odoo>

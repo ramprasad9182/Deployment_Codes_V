@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="nhcl_pos_sale.LineDiscountButton">
+        <span t-if="this.pos.get_cashier().allow_selected_lines_discount"
+                class="control-button js_discount btn btn-light rounded-0 fw-bolder" t-on-click="() => this.click()">
+            <i class="fa fa-scissors me-1"></i>
+            <span> </span>
+            <span>Selected Lines Discount</span>
+        </span>
+    </t>
+
+</templates>

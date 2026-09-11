@@ -1,0 +1,82 @@
+$color1 : rgb(56, 56, 56);
+$color2 : #1e1e1e;
+$color3 : #ffffffb2;
+.ksc_section {
+    background-color: $color2;
+    height: 227px;
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-size: 12px;
+    color: $color3;
+}
+
+
+.ksc_close {
+    position: absolute;
+    right: 20px;
+    top: 7px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.ksc_item_list{
+    display: flex;
+}
+.ksc_header {
+    display: flex;
+    justify-content: center;
+
+}
+.ksc_header_item {
+    padding: 9px 15px;
+    text-align: center;
+    cursor: pointer;
+    min-width: 120px;
+    border-bottom: 1px solid $color1;
+}
+.ksc_header_item.active {
+    border-bottom: none;
+    border-left: 1px solid $color1;
+    border-right: 1px solid $color1;
+    color: white;
+}
+.ksc_header::before, .ksc_header::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid $color1;
+}
+.ksc_content {
+    padding: 8px 182px;
+}
+
+.ksc_content_container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 50px;
+    padding: 15px 10px 5px 10px;
+}
+.ksc_row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 13px;
+}
+.ksc_row:hover {
+    color : white;
+}
+
+.ksc_keys {
+    display: flex;
+    gap: 4px;
+}
+
+.ksc_keys span {
+    text-align: center;
+    min-width: 25.5px;
+    padding: 3px;
+    border: 1px solid $color3;
+    border-radius: 2px;
+    font-size: 11px;
+}
+

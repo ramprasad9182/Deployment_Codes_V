@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="unit_code_bag" model="uqc.code">
+            <field name="name">BAG</field>
+            <field name="description">BAGS</field>
+        </record>
+        <record id="unit_code_bal" model="uqc.code">
+            <field name="name">BAL</field>
+            <field name="description">BALE</field>
+        </record>
+        <record id="unit_code_bdl" model="uqc.code">
+            <field name="name">BDL</field>
+            <field name="description">BUNDLES</field>
+        </record>
+        <record id="unit_code_bkl" model="uqc.code">
+            <field name="name">BKL</field>
+            <field name="description">BUCKLES</field>
+        </record>
+        <record id="unit_code_bou" model="uqc.code">
+            <field name="name">BOU</field>
+            <field name="description">BILLION OF UNITS</field>
+        </record>
+        <record id="unit_code_box" model="uqc.code">
+            <field name="name">BOX</field>
+            <field name="description">BOX</field>
+        </record>
+        <record id="unit_code_btl" model="uqc.code">
+            <field name="name">BTL</field>
+            <field name="description">BOTTLES</field>
+        </record>
+        <record id="unit_code_bun" model="uqc.code">
+            <field name="name">BUN</field>
+            <field name="description">BUNCHES</field>
+        </record>
+        <record id="unit_code_can" model="uqc.code">
+            <field name="name">CAN</field>
+            <field name="description">CANS</field>
+        </record>
+        <record id="unit_code_cbm" model="uqc.code">
+            <field name="name">CBM</field>
+            <field name="description">CUBIC METERS</field>
+        </record>
+        <record id="unit_code_ccm" model="uqc.code">
+            <field name="name">CCM</field>
+            <field name="description">CUBIC CENTIMETERS</field>
+        </record>
+        <record id="unit_code_cms" model="uqc.code">
+            <field name="name">CMS</field>
+            <field name="description">CENTIMETERS</field>
+        </record>
+        <record id="unit_code_ctn" model="uqc.code">
+            <field name="name">CTN</field>
+            <field name="description">CARTONS</field>
+        </record>
+        <record id="unit_code_doz" model="uqc.code">
+            <field name="name">DOZ</field>
+            <field name="description">DOZENS</field>
+        </record>
+        <record id="unit_code_drm" model="uqc.code">
+            <field name="name">DRM</field>
+            <field name="description">DRUMS</field>
+        </record>
+        <record id="unit_code_ggk" model="uqc.code">
+            <field name="name">GGK</field>
+            <field name="description">GREAT GROSS</field>
+        </record>
+        <record id="unit_code_gms" model="uqc.code">
+            <field name="name">GMS</field>
+            <field name="description">GRAMMES</field>
+        </record>
+        <record id="unit_code_grs" model="uqc.code">
+            <field name="name">GRS</field>
+            <field name="description">GROSS</field>
+        </record>
+        <record id="unit_code_gyd" model="uqc.code">
+            <field name="name">GYD</field>
+            <field name="description">GROSS YARDS</field>
+        </record>
+        <record id="unit_code_kgs" model="uqc.code">
+            <field name="name">KGS</field>
+            <field name="description">KILOGRAMS</field>
+        </record>
+        <record id="unit_code_klr" model="uqc.code">
+            <field name="name">KLR</field>
+            <field name="description">KILOLITRE</field>
+        </record>
+        <record id="unit_code_kme" model="uqc.code">
+            <field name="name">KME</field>
+            <field name="description">KILOMETRE</field>
+        </record>
+        <record id="unit_code_ltr" model="uqc.code">
+            <field name="name">LTR</field>
+            <field name="description">LITRES</field>
+        </record>
+        <record id="unit_code_mlt" model="uqc.code">
+            <field name="name">MLT</field>
+            <field name="description">MILILITRE</field>
+        </record>
+        <record id="unit_code_mtr" model="uqc.code">
+            <field name="name">MTR</field>
+            <field name="description">METERS</field>
+        </record>
+        <record id="unit_code_mts" model="uqc.code">
+            <field name="name">MTS</field>
+            <field name="description">METRIC TON</field>
+        </record>
+        <record id="unit_code_nos" model="uqc.code">
+            <field name="name">NOS</field>
+            <field name="description">NUMBERS</field>
+        </record>
+        <record id="unit_code_oth" model="uqc.code">
+            <field name="name">OTH</field>
+            <field name="description">OTHERS</field>
+        </record>
+        <record id="unit_code_pac" model="uqc.code">
+            <field name="name">PAC</field>
+            <field name="description">PACKS</field>
+        </record>
+        <record id="unit_code_pcs" model="uqc.code">
+            <field name="name">PCS</field>
+            <field name="description">PIECES</field>
+        </record>
+        <record id="unit_code_prs" model="uqc.code">
+            <field name="name">PRS</field>
+            <field name="description">PAIRS</field>
+        </record>
+        <record id="unit_code_qtl" model="uqc.code">
+            <field name="name">QTL</field>
+            <field name="description">QUINTAL</field>
+        </record>
+        <record id="unit_code_rol" model="uqc.code">
+            <field name="name">ROL</field>
+            <field name="description">ROLLS</field>
+        </record>
+        <record id="unit_code_set" model="uqc.code">
+            <field name="name">SET</field>
+            <field name="description">SETS</field>
+        </record>
+        <record id="unit_code_sqf" model="uqc.code">
+            <field name="name">SQF</field>
+            <field name="description">SQUARE FEET</field>
+        </record>
+        <record id="unit_code_sqm" model="uqc.code">
+            <field name="name">SQM</field>
+            <field name="description">SQUARE METERS</field>
+        </record>
+        <record id="unit_code_sqy" model="uqc.code">
+            <field name="name">SQY</field>
+            <field name="description">SQUARE YARDS</field>
+        </record>
+        <record id="unit_code_tbs" model="uqc.code">
+            <field name="name">TBS</field>
+            <field name="description">TABLETS</field>
+        </record>
+        <record id="unit_code_tgm" model="uqc.code">
+            <field name="name">TGM</field>
+            <field name="description">TEN GROSS</field>
+        </record>
+        <record id="unit_code_thd" model="uqc.code">
+            <field name="name">THD</field>
+            <field name="description">THOUSANDS</field>
+        </record>
+        <record id="unit_code_ton" model="uqc.code">
+            <field name="name">TON</field>
+            <field name="description">TONNES</field>
+        </record>
+        <record id="unit_code_tub" model="uqc.code">
+            <field name="name">TUB</field>
+            <field name="description">TUBES</field>
+        </record>
+        <record id="unit_code_ugs" model="uqc.code">
+            <field name="name">UGS</field>
+            <field name="description">US GALLONS</field>
+        </record>
+        <record id="unit_code_unt" model="uqc.code">
+            <field name="name">UNT</field>
+            <field name="description">UNITS</field>
+        </record>
+        <record id="unit_code_yds" model="uqc.code">
+            <field name="name">YDS</field>
+            <field name="description">YARDS</field>
+        </record>
+    </data>
+</odoo>

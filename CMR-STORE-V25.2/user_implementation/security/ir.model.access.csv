@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_license_key,mass.license.key,model_license_key,,1,1,1,1
+access_license_key_line,access.license.key.line,model_license_key_line,,1,1,1,0
+access_license_key_user_create_wizard,access.license.key.user.create.wizard,model_license_key_user_create_wizard,,1,1,1,1
+access_license_key_create_users_wizard,access.license.key.create.users.wizard,model_license_key_create_users_wizard,,1,1,1,1

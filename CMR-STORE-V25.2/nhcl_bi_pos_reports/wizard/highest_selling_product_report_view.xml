@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="highest_selling_product_report_view_form" model="ir.ui.view">
+        <field name="name">highest.selling.product.report.form.view</field>
+        <field name="model">highest.selling.product.report</field>
+        <field name="arch" type="xml">
+            <form string="Highest Selling Product Report">
+                <group>
+                    <field name="report_type" widget="radio"/>
+                </group>
+                <group>
+                    <group>
+                        <field name="from_date" required="1"/>
+                        <field name="to_date" required="1"/>
+                        <field name="no_item"/>
+                    </group>
+                    <group>
+                        <field name="compare_from_date"
+                               invisible="report_type != 'compare'" required="report_type == 'compare'"/>
+                        <field name="compare_to_date"
+                               invisible="report_type != 'compare'" required="report_type == 'compare'"/>
+                    </group>
+                </group>
+                <group>
+                    <group>
+                        <field name="total_qty_sold"/>
+                        <field name="company_ids" widget="many2many_tags"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="update_top_selling_pdf_report" class="btn btn-primary" string="Print PDF"
+                            type="object"/>
+                    <button name="update_top_selling_xls_report" class="btn btn-primary"
+                            string="Print XLS" type="object"/>
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="highest_selling_product_report_form_action" model="ir.actions.act_window">
+        <field name="name">Highest Selling Product Report</field>
+        <field name="res_model">highest.selling.product.report</field>
+        <field name="view_id" ref="highest_selling_product_report_view_form"/>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    <menuitem
+            id="highest_selling_product_report_menu"
+            name="Highest Selling Product Report"
+            action="highest_selling_product_report_form_action"
+            parent="nhcl_bi_pos_reports.menu_report_parent"
+            sequence="8"
+    />
+    <record id="highest_selling_product_report_action" model="ir.actions.report">
+        <field name="name">Highest Selling Product Report</field>
+        <field name="model">highest.selling.product.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">nhcl_bi_pos_reports.highest_selling_product_report_template</field>
+        <field name="report_file">nhcl_bi_pos_reports.highest_selling_product_report_template</field>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

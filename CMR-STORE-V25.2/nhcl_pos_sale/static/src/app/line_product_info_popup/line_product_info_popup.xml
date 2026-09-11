@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="nhcl_pos_sale.LineProductInfoPopup">
+            <div class="popup product-info-popup">
+                <div class="modal-header">
+                    <h4 class="modal-title">Product information</h4>
+                    <div class="btn" t-on-click="cancel">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <main class="body modal-body overflow-auto">
+                    <div class="section-product-info-title d-flex flex-column flex-sm-row text-start gap-3 text-info bg-opacity-25 mx-n3 mt-n3 p-3 bg-info">
+                        <div class="d-flex flex-column flex-grow-1 text-start w-100 w-sm-25">
+                            <span t-esc="props.product.display_name" class="global-info-title fs-4 fw-bolder text-truncate"/>
+                            <span class="fs-5"><t t-if="props.product.default_code" t-esc="props.product.default_code"/> <t t-if="props.product.default_code and props.product.barcode"> - </t> <t t-if="props.product.barcode" t-esc="props.product.barcode"/></span>
+                        </div>
+                    </div>
+
+                    <div class="section-inventory mt-3 mb-4 pb-4 border-bottom text-start" t-if="productInfo.warehouses.length > 0">
+                        <h3 class="section-title">
+                            Lot Details
+                        </h3>
+                        <div class="section-inventory-body">
+                            <t t-foreach="props.lot_ids" t-as="lot" t-key="lot.name">
+                                <div class="d-flex flex-column flex-md-row gap-2">
+                                    <div>
+                                        <t t-esc="lot.name" class="fw-bolder table-name"/>
+                                        :
+                                    </div>
+                                    <div>
+                                        <span class="me-1 fw-bolder"><t t-esc="lot.product_qty_pos" class="table-name"/></span>
+                                        <t t-if="lot.product_uom_id.length > 0" t-esc="lot.product_uom_id[1]"/> Available
+                                    </div>
+                                </div>
+
+                                <div class="section-order mt-3 mb-4 pb-4 border-bottom text-start">
+                                    <div class="section-order-body">
+                                        <table class="table table-borderless w-100 w-sm-50 mb-0">
+                                            <tr t-if="lot.description_1.length > 0">
+                                                <td>Product Aging:</td>
+                                                <td t-esc="lot.description_1[1]" class="table-value"/>
+                                            </tr>
+                                            <tr t-if="lot.category_1.length > 0">
+                                                <td>Color:</td>
+                                                <td t-esc="lot.category_1[1]" class="table-value"/>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </t>
+                        </div>
+                    </div>
+
+                </main>
+            </div>
+    </t>
+</templates>

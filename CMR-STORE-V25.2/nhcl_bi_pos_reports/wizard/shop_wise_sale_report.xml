@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="shop_wise_sale_report_view" model="ir.ui.view">
+            <field name="name">shop.wise.sale.report.view</field>
+            <field name="model">shop.wise.sale.report</field>
+            <field name="arch" type="xml">
+                <form string="Shop Wise Sale Report">
+                    <group>
+                        <group>
+                            <field name="start_date" required="1"/>
+                            <field name="end_date" required="1"/>
+                        </group>
+                        <group>
+                            <field name="select_state"/>
+                            <field name="company_ids" widget="many2many_tags" options="{'no_create_edit': True}"/>
+                            <!--  <field name="pos_orders" widget="many2many_tags" options="{'no_create_edit': True}"/> -->
+                            <field name="pos_conig_ids" widget="many2many_tags" options="{'no_create_edit': True}"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="shop_wise_sale_pdf_report" class="btn btn-primary" string="Print PDF"
+                                type="object"/>
+                        <button name="shop_wise_sale_xls_report" class="btn btn-primary" string="Print XLS"
+                                type="object"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="shop_wise_sale_report_wizard_action" model="ir.actions.act_window">
+            <field name="name">Shop Wise Sale Report</field>
+            <field name="res_model">shop.wise.sale.report</field>
+            <field name="view_id" ref="shop_wise_sale_report_view"/>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+                id="shop_wise_sale_report_menu"
+                name="Shop Wise Sale Report"
+                action="shop_wise_sale_report_wizard_action"
+                parent="nhcl_bi_pos_reports.menu_report_parent"
+                sequence="9"
+        />
+
+        <record id="shop_wise_sales_detail_report_action" model="ir.actions.report">
+            <field name="name">Shop Wise Sale Report</field>
+            <field name="model">shop.wise.sale.report</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">nhcl_bi_pos_reports.shop_wise_sales_detail_doc</field>
+            <field name="report_file">nhcl_bi_pos_reports.shop_wise_sales_detail_doc</field>
+            <field name="binding_type">report</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="ir_sequence_job_initiated_status_log" model="ir.sequence">
+            <field name="name">Job Initiated Status Log</field>
+            <field name="code">nhcl.initiated.status.log</field>
+           <field name="prefix">Job-</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+         <record id="ir_sequence_transaction_replication_log" model="ir.sequence">
+            <field name="name">Transaction Replication Log</field>
+            <field name="code">nhcl.transaction.replication.log</field>
+           <field name="prefix">TR-</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+    </data>
+</odoo>

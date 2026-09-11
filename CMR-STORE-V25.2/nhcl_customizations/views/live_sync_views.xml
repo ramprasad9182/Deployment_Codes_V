@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    <record id="action_bulk_tracking" model="ir.actions.client">-->
+<!--        <field name="name">Tracking</field>-->
+<!--        <field name="tag">bulk_tracking_action</field>-->
+<!--    </record>-->
+
+<!--    <menuitem id="menu_bulk_tracking" name="Live Sync Dashboard " parent="hour_report_menu_root"-->
+<!--              action="action_bulk_tracking"/>-->
+
+<!--    <record id="cmr_job_initiated_status_dashbord_log_tree_view" model="ir.ui.view">-->
+<!--        <field name="name">nhcl.initiated.status.log.dashboard.tree</field>-->
+<!--        <field name="model">nhcl.initiated.status.dashboard.log</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree string="Job Initiated Status Log" create="0" expand-->
+<!--                    ="1">-->
+<!--                <field name="nhcl_serial_no" readonly="1" force_save="1"/>-->
+<!--                <field name="nhcl_date_of_log" readonly="1" force_save="1"/>-->
+<!--                <field name="nhcl_job_name" readonly="1" force_save="1"/>-->
+<!--                <field name="nhcl_status" readonly="1" force_save="1"/>-->
+<!--                <field name="nhcl_details_status" readonly="1" force_save="1"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--        <record id="action_cmr_job_initiated_status_log_dashboard" model="ir.actions.act_window">-->
+<!--        <field name="name">Job Initiated Status Log Dashboard</field>-->
+<!--        <field name="res_model">nhcl.initiated.status.dashboard.log</field>-->
+<!--        <field name="view_mode">tree</field>-->
+
+<!--        <field name="help" type="html">-->
+<!--            <p class="oe_view_nocontent_create">-->
+<!--                Click to add a store new Log-->
+<!--            </p>-->
+<!--        </field>-->
+<!--    </record>-->
+
+</odoo>

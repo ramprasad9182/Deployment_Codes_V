@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- List View -->
+    <record id="last_scanned_serial_number_view_tree" model="ir.ui.view">
+        <field name="name">last.scanned.serial.number.view.tree</field>
+        <field name="model">last.scanned.serial.number</field>
+        <field name="arch" type="xml">
+            <tree string="Last_scanned_serial_number" multi_edit="1">
+<!--                <field name="stock_product_id"/>-->
+                <field name="store_name" force_save="1"/>
+<!--                <field name="store_id"/>-->
+                 <field name="receipt_number" force_save="1"/>
+                <field name="document_number" force_save="1"/>
+                <field name="stock_serial" force_save="1"/>
+                <field name="stock_product_barcode" force_save="1"/>
+                <field name="stock_qty" force_save="1"/>
+                <field name="type_product" force_save="1"/>
+                <field name="create_date"/>
+<!--                <field name="stock_qty" force_save="1"/>-->
+                <field name="sent_done" force_save="1"/>
+
+
+<!--                <field name="date"/>-->
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+
+
+    <!-- Actions -->
+    <record id="last_scanned_serial_number_action" model="ir.actions.act_window">
+        <field name="name">Last scanned serial number</field>
+        <field name="res_model">last.scanned.serial.number</field>
+        <field name="view_mode">tree</field>
+<!--        <field name="search_view_id" ref="last_scanned_serial_number_view_search"/>-->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first last scanned serial number!
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="last_scanned_serial_number_menu"
+              name="Last scanned serial number"
+              action="last_scanned_serial_number_action"
+              parent="stock.menu_warehouse_report"
+              sequence="10"/>
+</odoo>
